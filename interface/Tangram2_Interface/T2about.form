@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.0" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+  <NonVisualComponents>
+    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+      <SubComponents>
+        <Menu class="javax.swing.JMenu" name="jMenu1">
+          <Properties>
+            <Property name="label" type="java.lang.String" value="Options"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="10" style="1"/>
+            </Property>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="10" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Close"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+      </SubComponents>
+    </Menu>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="title" type="java.lang.String" value="Tangram2 [About]"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
+    <SyntheticProperty name="formSizePolicy" type="int" value="2"/>
+  </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowClosing" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="closeDialog"/>
+  </Events>
+  <AuxValues>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-46,0,0,2,31"/>
+    <AuxValue name="RADVisualFormContainer_MenuComponent" type="java.lang.String" value="jMenuBar1"/>
+  </AuxValues>
+
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+    <Property name="useNullLayout" type="boolean" value="false"/>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jL_Tangram_Picture">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Tangram2/imgs/tang_main.gif"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="5" y="5" width="-1" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="10" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Close"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="415" y="360" width="110" height="30"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="5" y="50" width="520" height="300"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="jTextArea1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cd" green="cd" red="cd" type="rgb"/>
+            </Property>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="text" type="java.lang.String" value="&#xa;Many people contributed to TANGRAM-II, since this project began.&#xa;Most people worked on several different parts of the tool. &#xa;Some, though not directly involved with the tool, gave us invaluable advice.&#xa;We want to say THANKS to everyone.&#xa;In particular the project students were able to work together as a big&#xa;family.  It was a pleasure to see their enthusiasm.&#xa;Below we&#xa;acknowledge the people who contributed to the tool and indicate the main parts&#xa;they were involved with.&#xa;&#xa;The modeling paradigm was conceived by Dr. Steven Berson,&#xa;Prof. Edmundo de Souza e Silva and Prof. Richard Muntz in 1989.&#xa;This paradigm was adopted by the TANGRAM tool developed in 1989 and&#xa;led by Richard Muntz.&#xa;&#xa;The TANGRAM-II modeling environment was conceived by &#xa;Prof. Edmundo de Souza e Silva and Prof. Rosa Maria Leão.&#xa;Prof. Richard Muntz participated as a major consultant&#xa;and in the discussions that led to the TANGRAM-II project.&#xa;The current principal investigators are Edmundo de Souza e Silva and&#xa;Rosa Maria Leão.&#xa;&#xa;The drawing interface adopted by TANGRAM-II is the same as&#xa;that conceived for TANGRAM (TGIF) and was developed by Dr. William Cheng.&#xa;Several goodies were included in TGIF to support the needs of TANGRAM-II.&#xa;Dr. Cheng implemented the modifications in TGIF and participated&#xa;in the design discussions.&#xa;&#xa;The first version of the mathematical model generator &#xa;was implemented by Luiz Rogerio G. de Carvalho in 1997.&#xa;This model was completely re-designed and re-implemented by&#xa;Daniel Ratton Figueiredo and Carlos F. de Brito.&#xa;The re-design included many new constructs that were added to the&#xa;TANGRAM-II language, and reward-based measures.&#xa;The hash function and AVL tree was implemented by Magnos Martinello.&#xa;&#xa;The analytical solvers were designed/coded by: Yuguang Wu, João Carlos Guedes,&#xa;Morganna Carmem Diniz, Edmundo de Souza e Silva, Carlos F. de Brito,&#xa;João Abdalla and Ana Paula Couto da Silva.&#xa;The simulator was designed by Daniel Ratton Figueiredo, and&#xa;the FARIMA and FBM modules were implemented by &#xa;Adenilson Raniery S. Pontes (under the guidance of Prof. Rosangela Coelho).&#xa;&#xa;The module that calculates/plots measures of interest based on state&#xa;probabilities was implemented by Antonio Mauricio N. Tartarini.&#xa;The JAVA interfaces were designed and implemented by&#xa;Kelvin de Freitas Reinhardt, Adriane de Quevedo Cardozo and&#xa;Flavio Pimentel Duarte.&#xa;They also have been including new features since 1999.&#xa;The interfaces between the solvers and the JAVA screens was re-designed&#xa;by Sidney Cunha de Lucena. &#xa;The module used to visualize and permute matrices was designed&#xa;and implemented by Fernando Jorge Silveira Filho and &#xa;Daniel Sadoc Menasche.&#xa;&#xa;The TANGRAM-II simulator (that includes support for rare event simulation)&#xa;was designed and implemented by Daniel Ratton Figueiredo.&#xa;Kelvin de&#xa;Freitas Reinhardt implemented new features to support fluid simulation&#xa;with the help of Bruno F. Martins Ribeiro.&#xa;The TANGRAM-II parser has been improved and maintained by&#xa;Jorge Allyson Azevedo, Guilherme D. G.&#xa;Jaime and Flavio Pimentel Duarte.&#xa;&#xa;The traffic modeling environment was implemented by Sidney Cunha de Lucena.&#xa;The traffic generator was implemented by Daniel Ratton Figueiredo,&#xa;Carlos F. de Brito and Magnos Martinello.&#xa;Fabiano de Azevedo&#xa;Portella participated in the implementation of its user interfaces as well as&#xa;the program for calculating traffic measures from the Tangram-II traffic&#xa;trace format.&#xa;Magnos Martinello implemented the traffic &#xa;generator interface to ATM switches. Antonio A. de Aragão Rocha implemented&#xa;new traffic generation features and options that were added to the&#xa;3.0 version of Tangram-II. Hugo Sato worked on the graphical interfaces&#xa;for these new features.&#xa;&#xa;The first version of the Whiteboard Tool was designed and implemented by &#xa;Edmundo de Souza e Silva, William Cheng, Renato Santana,&#xa;Carlos F. de Brito, Magnos Martinello, Raphael S. de Moraes,&#xa;Denise Jorge de Oliveira and Flavio Pimentel Duarte.&#xa;The develop team of the second version of the Whiteboard Tool was:&#xa;Edmundo de Souza e Silva, William Cheng, Jorge Allyson Azevedo, Milena &#xa;Scanferla and Daniel Sadoc.&#xa;&#xa;Participated in the implementation of the voice tool, VivaVoz:&#xa;Daniel Ratton Figueiredo, Flavio Pimentel Duarte.&#xa;Carolina Vielmond and Edmundo Grüne&#xa;de Souza e Silva have implemented a graphical user interface for VivaVoz&#xa;its voice mixer, a new trace colector, and are now the tool&apos;s current&#xa;maintainers.&#xa;&#xa;Ana Paula Couto da Silva was responsible for the examples and the TANGRAM-II&#xa;tutorial, based on the contribution of many people, including those above.&#xa;Daniel Figueiredo was the project leader till mid 1999, and he still&#xa;acts as a consultant.&#xa;Kelvin de Freitas Reinhardt, Adriane de Quevedo&#xa;Cardozo, and Flavio Pimentel Duarte have been responsible for putting&#xa;version 1.2-6 together and several subsequent versions. For version 3.0,&#xa;Carolina Vielmond and Hugo Sato created the autotools scripts that enable&#xa;the Tangram-II source code to be compiled on several Linux plattaforms.&#xa;&#xa;We would like to thank our colleagues from the ALMADEM and COMIT projects:&#xa;Prof. Berthier Ribeiro Neto, Dr. Jorge Moreira,&#xa;Prof. Paulo Aguiar, Prof. Rosangela Coelho, Prof. Jose Augusto Suruagy Monteiro,&#xa;Prof. Sergio Campos, Prof. Nelson Fonseca,&#xa;Prof. Leana Golubchik and Prof. Don Towsley&#xa;for the insightful discussions that led to many enhancements of TANGRAM-II.&#xa;&#xa;We are in debt to Prof. Virgilio Almeida and Mr. Celso Deusdeti Costa&#xa;from ProTem/CC (CNPq) who believed in the work of our group.&#xa;CNPq (ProTem, Pronex, Free Software programs) and FAPERJ provided the&#xa;main grants that supported our Laboratory.&#xa;&#xa;-----------&#xa;LAND: [L]aboratory for Modeling/[An]alysis and [D]evelopment of Computer&#xa;      and Communications Systems&#xa;UFRJ: Federal University of Rio de Janeiro, Brazil&#xa;http://www.land.ufrj.br&#xa;&#xa;"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="530" y="395" width="1" height="1"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="On-line help is not available yet."/>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ce" type="rgb"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="260" y="10" width="-1" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Please see documentation."/>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ce" type="rgb"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="280" y="27" width="-1" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="jTB_About">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="10" style="1"/>
+        </Property>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="View About"/>
+      </Properties>
+      <Events>
+        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jTB_AboutStateChanged"/>
+      </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="5" y="360" width="140" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="jTB_Copy">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="10" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="View Copyright"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="145" y="360" width="140" height="-1"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="5" y="50" width="520" height="300"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="jTextArea2">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cd" green="cd" red="cd" type="rgb"/>
+            </Property>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="text" type="java.lang.String" value="&#xa;The copyright below applies to the free-of-charge distribution copies&#xa;of TANGRAM-II. Please send e-mail to tangram-ii@land.ufrj.br concerning other&#xa;types of licenses.&#xa;&#xa;A non-exclusive, royalty-free license limited to&#xa;use, copy, display, distribute without charging for a fee, and&#xa;produce derivative works of &quot;TANGRAM-II&quot; and its documentation for&#xa;not-for-profit purpose is granted to the party hereby receiving &quot;TANGRAM-II&quot;&#xa;(&quot;Recipient&quot;) provided that the above copyright notice, the original&#xa;author&apos;s names, and this permission notice appear in all copies made&#xa;of &quot;TANGRAM-II&quot; and both the copyright notice and this license appear&#xa;in supporting documentation.&#xa;All other rights (including, but not limited to, the&#xa;right to sell &quot;TANGRAM-II&quot;, the right to sell or distribute derivative works&#xa;of &quot;TANGRAM-II&quot;, the right to distribute &quot;TANGRAM-II&quot; for a fee, and the&#xa;right to include &quot;TANGRAM-II&quot; or derivative works of &quot;TANGRAM-II&quot; in a&#xa;for-sale product or service) are reserved by &#xa;LAND/UFRJ.&#xa;&#xa;TANGRAM-II is distributed in the hope that it will be useful for education&#xa;and research but WITHOUT ANY WARRANTY.&#xa;TANGRAM-II is provided &quot;as is&quot; without even the implied warranty of&#xa;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.&#xa;&#xa;Special Permissions to Commercial Linux OS Distributors&#xa;&#xa;Special permission is granted by the authors of TANGRAM-II to any&#xa;commercial Linux distributor to redistribute TANGRAM-II in a for-sale&#xa;Linux product provided that all the conditions below are met:&#xa;- The product is a Linux OS product (i.e., the product&#xa;  must either install or upgrade the Linux kernel).&#xa;- TANGRAM-II&apos;s copyright is included in the product.&#xa;- TANGRAM-II&apos;s copyright, authors information, and contact&#xa;  information are kept intact in the executable.&#xa;&#xa;TANGRAM-II makes extensive use of TGIF (Tangram Graphic Interface Facility).&#xa;TGIF has its own copyright.&#xa;"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel2">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="525" y="390" width="1" height="1"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+    </Container>
+  </SubComponents>
+</Form>

@@ -1,0 +1,375 @@
+ 
+Object_Desc Repair_Center (
+Declaration {
+
+State Var
+Integer : Component_Status[4];
+      /* position 0 is the Front-end status
+         position 1 is the Database status,
+         position 2 is the quantity of Processors that fail in mode 1
+ 	 position 3 is the quantity of Processors that fail in mode 2
+
+         value 0 means that the object is not failed
+         value 1 means that the object is failed
+
+         in the processors case it means the quantity of failed processors.
+      */
+
+Const
+
+Float : PROC1_REPAIR_RATE, PROC2_REPAIR_RATE, FRONT_END_REPAIR_RATE, DATABASE_REPAIR_RATE;
+
+Object: FRONT_END,DATABASE,PROCESSOR;
+
+Port:    FAILURE_REPAIR, STATUS;
+
+
+}
+Initialization {
+
+Component_Status=[0,0,0,0]
+FRONT_END        =Front_End
+DATABASE           =Database
+PROCESSOR        =Processor
+FAILURE_REPAIR =failure_repair_port
+STATUS                =sys_status_port
+PROC1_REPAIR_RATE         =0.8
+PROC2_REPAIR_RATE         =1
+FRONT_END_REPAIR_RATE=1
+DATABASE_REPAIR_RATE   =1
+
+
+
+}
+Events {
+
+
+event= Repair_Front_End(EXP,FRONT_END_REPAIR_RATE)
+/* It repairs Front-end if it is failed. */
+condition= (Component_Status[0]>0)
+action = {
+                   msg(FAILURE_REPAIR,FRONT_END,0);
+                   msg(STATUS,all,1);
+                   set_st("Component_Status[0]",0);
+              };
+
+
+
+event= Repair_Database(EXP,DATABASE_REPAIR_RATE)
+/* It repairs Database if it is failed and if there is at least one operational processor.*/
+condition= ((Component_Status[1]>0)&&(Component_Status[2]+Component_Status[3]<2))
+action = {
+                  msg(FAILURE_REPAIR,DATABASE,0);
+                  msg(STATUS,all,1);
+                  set_st("Component_Status[1]",0);
+              };
+
+event= Repair_Proc1(EXP,PROC1_REPAIR_RATE)
+/* It repairs the Processor that fail in mode 1 if :
+   there is at least one processor that fails in mode 1 and none of Front-end and Database is failed OR
+   there is at least one processor that fails in mode 1 and both processors are failed and database is
+   failed too (if both processors are failed, the Repair needs to repair a processor before to repair the Database).*/
+
+condition= (((Component_Status[2]>0)&&(Component_Status[0]==0)&&(Component_Status[1]==0))||
+ ((Component_Status[2]>0)&&(Component_Status[2]+Component_Status[3] == 2)&&(Component_Status[1]==1)))
+action = {
+                 int component_status;
+                 msg(FAILURE_REPAIR,PROCESSOR,1);
+                 component_status = Component_Status[2] - 1;
+                 if (Component_Status[1]== 0)
+                      /*All objects can fail. */
+                      msg(STATUS,all,1);
+                 set_st("Component_Status[2]",component_status);
+         };
+
+
+event= Repair_Proc2(EXP,PROC2_REPAIR_RATE)
+/* It repairs the Processor that fail in mode 2 if :
+   there is at least one processor that fails in mode 2 and none of Front-end and Database is failed OR
+   there is at least one processor that fails in mode 2 and both processors are failed and database is
+   failed too (if both processors are failed, the Repair needs to repair a processor before to repair the Database).*/
+
+condition= (((Component_Status[3]>0)&&(Component_Status[0]==0)&&(Component_Status[1]==0))||
+                   ((Component_Status[3]>0)&&(Component_Status[2]+Component_Status[3] == 2)&&(Component_Status[1]==1)))
+
+action = {
+                 int component_status;
+                 msg(FAILURE_REPAIR,PROCESSOR,2);
+                 component_status = Component_Status[3] - 1;
+                 if (Component_Status[1]== 0)
+                      /*All objects can fail. */
+                      msg(STATUS,all,1);
+                 set_st("Component_Status[3]",component_status);
+	 };
+}
+Messages {
+
+msg_rec = FAILURE_REPAIR
+action={
+                  int component_status[4],index;
+		  index = 0;
+		  while (index < 4)
+		     {
+		          component_status[index] = Component_Status[index];
+			  index = index + 1;
+		      }
+	          if(objcmp(msg_source,FRONT_END))
+                    {
+                           component_status[0]=component_status[0]+1;
+                           msg(STATUS,all,0);
+                     }
+                   if(objcmp(msg_source,DATABASE) )
+                     {
+                          component_status[1]=component_status[1]+1;
+                           msg(STATUS,all,0);
+                     }
+	         if(objcmp(msg_source,PROCESSOR))
+                    {
+                          if ( msg_data == 1 )
+                              component_status[2]= component_status[2]+1;
+                          else
+                              component_status[3]= component_status[3]+1;
+                          if (component_status[2] + component_status[3] == 2)
+                               msg(STATUS,all,0);
+                      }
+                  set_st("Component_Status[]",component_status);
+         };
+  
+         
+
+}
+Rewards {
+
+
+}
+)
+Object_Desc Processor (
+Declaration {
+
+State Var
+Integer:  Proc1_Fail, Proc2_Fail,Can_Fail;
+
+
+Const
+Float:  FAILURE_RATE,PROB,COVERAGE;
+Port:   FAILURE_REPAIR,STATUS,AFFECT;
+Object: REPAIR_CENTER;
+}
+Initialization {
+
+Proc1_Fail           =0
+Proc2_Fail           =0
+Can_Fail              =1   /* 1 means that the object can fail
+                                       0 means that the object can NOT fail */
+FAILURE_RATE   =0.0013
+FAILURE_REPAIR= failure_repair_port
+STATUS               =sys_status_port
+AFFECT                =affected_port
+REPAIR_CENTER= Repair_Center
+PROB                   =0.5
+COVERAGE         =0.8
+
+}
+Events {
+
+event=Fail(EXP,FAILURE_RATE)
+
+/* A processor fails if it can fail and at least one processor is operational */
+condition = ((Can_Fail==1) && ((Proc1_Fail + Proc2_Fail) < 2))
+action=  {
+                      /* Fail mode 1, just sends a message to Repair Center */
+                      int proc1_fail;
+                      proc1_fail = Proc1_Fail + 1;
+                      msg(FAILURE_REPAIR,REPAIR_CENTER,1);
+                      set_st("Proc1_Fail",proc1_fail);
+               }:  prob=PROB;
+
+        {
+	            /* Fail mode 2, sends a message to Database to fail and to Repair Center*/
+                    int proc2_fail;
+                    proc2_fail = Proc2_Fail + 1;
+                    msg(AFFECT,all,0);
+                    msg(FAILURE_REPAIR,REPAIR_CENTER,2);
+                    set_st("Proc2_Fail",proc2_fail);
+          }:     prob=((1-PROB)*(1-COVERAGE));
+
+        {
+	          /* Fail mode 2, just sends a message to Repair Center*/
+                    int proc2_fail;
+                    proc2_fail = Proc2_Fail + 1;
+                    msg(FAILURE_REPAIR,REPAIR_CENTER,2);
+                    set_st("Proc2_Fail",proc2_fail);
+        }:       prob=((1-PROB)*COVERAGE);
+
+
+
+}
+Messages {
+
+msg_rec= STATUS
+action={
+         /* Repair Center sends a message to all objects indicating
+            the system status. If msg_data = 0 -> system is down so
+            object can NOT fail, msg_data = 1 -> system is up so object
+            can fail. */
+            int option;
+            option = msg_data;
+            set_st("Can_Fail",option);
+       };
+
+msg_rec= FAILURE_REPAIR
+action={
+        /* Repair Center sends a message to this port indicating that
+           this object was repaired and the fail mode. */
+            int proc1_fail, proc2_fail;
+            proc1_fail = Proc1_Fail;
+            proc2_fail = Proc2_Fail;
+             if (msg_data == 1)
+                  proc1_fail = proc1_fail -1;
+            else
+                   proc2_fail = proc2_fail - 1;
+             set_st("Proc1_Fail",proc1_fail);
+             set_st("Proc2_Fail",proc2_fail);
+      };
+
+}
+Rewards {
+
+
+}
+)
+Object_Desc Front_End (
+Declaration {
+
+State Var
+Integer:  Failed,Can_Fail;
+
+
+Const
+Float:  FAILURE_RATE;
+Port:   FAILURE_REPAIR,STATUS;
+Object: REPAIR_CENTER;
+}
+Initialization {
+
+Failed                    =   0 /* 0 means the object is operational
+                                         1 means the object is down */
+Can_Fail                =1
+FAILURE_RATE    = 0.00069
+FAILURE_REPAIR = failure_repair_port
+STATUS                = sys_status_port
+REPAIR_CENTER = Repair_Center
+
+}
+Events {
+
+event = Fail (EXP,FAILURE_RATE)
+/* The Front-end fails if it can fail and it is not failed.*/
+condition = (( Can_Fail ==1 ) &&  ( Failed == 0 ))
+action={
+                   msg(FAILURE_REPAIR,REPAIR_CENTER,0);
+                   set_st("Failed",1);
+             };
+
+
+
+}
+Messages {
+
+msg_rec=FAILURE_REPAIR
+action={
+                 /* Repair Center sends a message to this port indicating that
+                   this object was repaired. */
+                   ;set_st("Failed",0);
+           };
+
+msg_rec=STATUS
+action={
+                 /* Repair Center sends a message to all objects indicating
+                    the system status. If msg_data = 0 -> system is down so
+                    object can NOT fail, msg_data = 1 -> system is up so object
+                    can fail. */
+                int option;
+                option = msg_data;
+                set_st("Can_Fail",option);
+       };
+}
+Rewards {
+
+
+}
+)
+Object_Desc Database (
+Declaration {
+
+State Var
+Integer: Failed,Can_Fail;
+
+Const
+Float: FAILURE_RATE;
+Port:  AFFECT,FAILURE_REPAIR,STATUS;
+Object:REPAIR_CENTER;
+}
+Initialization {
+
+Failed                   =0
+Can_Fail              =1
+FAILURE_RATE  =0.0003
+AFFECT                = affected_port
+FAILURE_REPAIR =failure_repair_port
+STATUS                = sys_status_port
+REPAIR_CENTER=Repair_Center
+
+}
+Events {
+
+event = Fail (EXP,FAILURE_RATE)
+/* Database fails if it can fail and it is not failed. */
+condition = (( Can_Fail == 1 ) && ( Failed == 0 ))
+action={
+               msg(FAILURE_REPAIR,REPAIR_CENTER,0);
+               set_st("Failed",1);
+       };
+
+
+}
+Messages {
+
+msg_rec = AFFECT
+action = {
+                      /* Processor affects the database.*/
+                     if ((Can_Fail == 1)&&(Failed == 0))
+                          msg(FAILURE_REPAIR,REPAIR_CENTER,0);
+                      set_st("Failed",1);
+                };
+          
+msg_rec=FAILURE_REPAIR
+action={
+                /* Repair Center sends a message to this port indicating that
+                 this object was repaired. */
+  		       ;set_st("Failed",0);
+       };
+                  
+                    
+msg_rec=STATUS
+action={
+                  /* Repair Center sends a message to all objects indicating
+                   the system status. If msg_data = 0 -> system is down so
+                    object can NOT fail, msg_data = 1 -> system is up so object
+                    can fail. */
+                    int option;
+                    option = msg_data;
+                    set_st("Can_Fail",option);
+       };
+}
+Rewards {
+
+rate_reward = Data_avail
+condition= (Failed == 0)
+value = 1;
+}
+)
+Global_Rewards {
+}
+Independent_Chains {
+}

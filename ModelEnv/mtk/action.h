@@ -1,0 +1,266 @@
+#ifndef ACTION_H
+#define ACTION_H
+
+#include <string>
+
+#include "token.h"
+
+#include "user_interface.h"
+#include "core_interface.h"
+#include "core_controller.h"
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  Action interface
+//
+///////////////////////////////////////////////////////////////////////////////
+class Action
+{
+public:
+    Action( void );
+    virtual ~Action( void ) { }
+    virtual bool execute( void ) = 0;
+protected:
+    UserInterface  * ui;
+
+private:
+
+};
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  QuitAction
+//
+///////////////////////////////////////////////////////////////////////////////
+class QuitAction : public Action
+{
+public:
+    virtual bool execute( void );
+};
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  ClearAction
+//
+///////////////////////////////////////////////////////////////////////////////
+class ClearAction : public Action
+{
+public:
+    virtual bool execute( void );
+};
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  WhichAction
+//
+///////////////////////////////////////////////////////////////////////////////
+class WhichAction : public Action
+{
+public:
+    WhichAction( const Name & );
+    virtual bool execute( void );
+private:
+    const Name object_name;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  SourceAction
+//
+///////////////////////////////////////////////////////////////////////////////
+class SourceAction : public Action
+{
+public:
+    SourceAction( const Name & );
+    virtual bool execute( void );
+private:
+    const Name file_name;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  HistoryAction
+//
+///////////////////////////////////////////////////////////////////////////////
+class HistoryAction : public Action
+{
+public:
+    HistoryAction( int );
+    virtual bool execute( void );
+private:
+    const int size;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  ListAction
+//
+///////////////////////////////////////////////////////////////////////////////
+class ListAction : public Action
+{
+public:
+    typedef enum { LIST_PLUGINS, LIST_OBJECTS } ListType;
+
+    ListAction( ListType );
+    virtual bool execute( void );
+private:
+    ListType list_type;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  HelpAction
+//
+///////////////////////////////////////////////////////////////////////////////
+class HelpAction : public Action
+{
+public:
+    typedef enum { HELP_CORE, HELP_PLUGIN } HelpType;
+
+    HelpAction( TokenType );
+    HelpAction( const Name &, const Name & );
+
+    virtual bool execute( void );
+
+private:
+    const HelpType help_type;
+    const TokenType command_type;
+    const Name plugin_name, command_name;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  CoreSetAction
+//
+///////////////////////////////////////////////////////////////////////////////
+class CoreSetAction : public Action
+{
+public:
+    CoreSetAction( const Name &, const std::string & );
+    virtual bool execute( void );
+private:
+    const Name attribute_name;
+    const std::string attribute_value;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  CoreShowAction
+//
+///////////////////////////////////////////////////////////////////////////////
+class CoreShowAction : public Action
+{
+public:
+    CoreShowAction( const Name & );
+    virtual bool execute( void );
+private:
+    const Name attribute_name;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  CreateAction
+//
+///////////////////////////////////////////////////////////////////////////////
+class CreateAction : public Action
+{
+public:
+    CreateAction( const std::string &, const std::string &,
+                  TokenList::const_iterator, TokenList::const_iterator );
+    virtual bool execute( void );
+private:
+    const std::string object_name, plugin_name;
+    Arguments arguments;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  CopyAction
+//
+///////////////////////////////////////////////////////////////////////////////
+class CopyAction : public Action
+{
+public:
+    CopyAction( const std::string &, const std::string & );
+    virtual bool execute( void );
+private:
+    const std::string object_name, copy_name;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  ObjectSetAction
+//
+///////////////////////////////////////////////////////////////////////////////
+class ObjectSetAction : public Action
+{
+public:
+    ObjectSetAction( const std::string &, const std::string &,
+                     const std::string &, const Index & );
+    virtual bool execute( void );
+private:
+    const std::string object_name, param_name, value;
+    const Index index;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  ObjectShowAction
+//
+///////////////////////////////////////////////////////////////////////////////
+class ObjectShowAction : public Action
+{
+public:
+    ObjectShowAction( const std::string &, const std::string &,
+                      const Index & );
+    virtual bool execute( void );
+private:
+    const std::string object_name, param_name;
+    const Index index;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  DestroyAction
+//
+///////////////////////////////////////////////////////////////////////////////
+class DestroyAction : public Action
+{
+public:
+    DestroyAction( const std::string & );
+    virtual bool execute( void );
+private:
+    const std::string object_name;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  DisplayAction
+//
+///////////////////////////////////////////////////////////////////////////////
+class DisplayAction : public Action
+{
+public:
+    DisplayAction( const std::string &, const std::string & );
+    virtual bool execute( void );
+private:
+    const std::string object_name, display_name;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+//
+//  ExecAction
+//
+///////////////////////////////////////////////////////////////////////////////
+class ExecAction : public Action
+{
+public:
+    ExecAction( const std::string &, const std::string &,
+                TokenList::const_iterator, TokenList::const_iterator );
+    virtual bool execute( void );
+private:
+    const std::string object_name, command_name;
+    Arguments arguments;
+};
+
+#endif /* ACTION_H */

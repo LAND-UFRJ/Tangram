@@ -1,0 +1,2 @@
+This model represents the Go_back_n protocol. It corrects the 
+deadlock problem of the Go_Back_N_deadlock example.

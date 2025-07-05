@@ -1,0 +1,16 @@
+System_2.Fail_Processor
+System_2.Repair_Processor
+System_2.Fail_Memory
+System_2.Repair_Memory
+System_2.Fail_Switch
+System_2.Repair_Switch
+Front_End.Fail
+Front_End.Repair
+Database.Fail
+Database.Repair
+System_1.Fail_Processor
+System_1.Repair_Processor
+System_1.Fail_Memory
+System_1.Repair_Memory
+System_1.Fail_Switch
+System_1.Repair_Switch

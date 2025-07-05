@@ -1,0 +1,8 @@
+*input: true
+*background: #cdcecd
+*borderColor: #626562
+*ascText*background: #ffffff
+*lstBlock*background: #ffffff
+*button*background: #bebebe
+*statusBar*background: #bebebe
+*font: fixed

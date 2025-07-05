@@ -1,0 +1,8 @@
+Repair_Center.Component_Status    10
+Processor.Proc1_Fail    10
+Processor.Proc2_Fail    10
+Processor.Can_Fail    10
+Front_End.Failed    10
+Front_End.Can_Fail    10
+Database.Failed    10
+Database.Can_Fail    10

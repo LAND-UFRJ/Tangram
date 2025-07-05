@@ -1,0 +1,177 @@
+ 
+Object_Desc On_Off_Source_1 (
+Declaration {
+
+  State Var
+   Integer: Status /* 1 - ON; 0 - OFF */;
+  Const
+   Float: ONOFF_RATE, OFFON_RATE,
+          TRANSMISSION_RATE;
+   Port: PORT_OUT1;
+}
+Initialization {
+
+  Status     = 0
+  ONOFF_RATE = 1
+  OFFON_RATE = 4
+  TRANSMISSION_RATE= 0.1
+  PORT_OUT1= connection_1  
+ 
+}
+Events {
+
+ event= On_Off (EXP, ONOFF_RATE)
+ condition= (Status == 1)
+ action= {  ;set_st("Status",0); };
+
+ event= Off_On (EXP, OFFON_RATE)
+ condition= (Status == 0)
+ action= { ;set_st("Status", 1); };
+
+ event=Packet_Generation (EXP,TRANSMISSION_RATE)
+ condition=(Status == 1)
+ action= {msg(PORT_OUT1,all,0);};
+}
+Messages {
+
+}
+Rewards {
+
+
+ 
+
+}
+)
+Object_Desc On_Off_Source_2 (
+Declaration {
+
+  State Var
+   Integer: Status /* 1 - ON; 0 - OFF */;
+  Const
+   Float: ONOFF_RATE, OFFON_RATE,
+          TRANSMISSION_RATE;
+   Port: PORT_OUT2;
+}
+Initialization {
+
+  Status     =0
+  ONOFF_RATE = 1
+  OFFON_RATE = 4
+  TRANSMISSION_RATE= 0.1
+  PORT_OUT2= connection_2
+ 
+}
+Events {
+
+ event= On_Off (EXP, ONOFF_RATE)
+ condition= (Status == 1)
+ action= {  ;set_st("Status",0); };
+
+ event= Off_On (EXP, OFFON_RATE)
+ condition= (Status == 0)
+ action= { ;set_st("Status", 1); };
+
+ event=Packet_Generation (EXP,TRANSMISSION_RATE)
+ condition=(Status == 1)
+ action= {msg(PORT_OUT2,all,0);};
+}
+Messages {
+
+}
+Rewards {
+
+
+ 
+
+}
+)
+Object_Desc Switch_2x2 (
+Declaration {
+
+State Var
+Integer: Queue_1,Queue_2;
+Const
+Integer: MAX_QUEUE_1,MAX_QUEUE_2;
+Float: TRANSMISSION_RATE_1,TRANSMISSION_RATE_2,
+       PROB_1,PROB_2;
+Port:  PORT_1,PORT_2;
+
+}
+Initialization {
+
+Queue_1 = 0
+Queue_2 = 0
+MAX_QUEUE_1 = 11
+MAX_QUEUE_2 = 11
+TRANSMISSION_RATE_1 = 0.1179
+TRANSMISSION_RATE_2 = 0.1179
+PROB_1= 0.5
+PROB_2 = 0.5
+PORT_1 = connection_1
+PORT_2 = connection_2
+
+
+}
+Events {
+
+event = Service_Queue_1(EXP,TRANSMISSION_RATE_1)
+condition = (Queue_1 > 0)
+action = {int queue_1;
+          queue_1= Queue_1;
+          queue_1 = queue_1 - 1;
+          set_st ("Queue_1",queue_1);
+         };
+
+event = Service_Queue_2(EXP,TRANSMISSION_RATE_2)
+condition = (Queue_2 > 0)
+action = {int queue_2;
+          queue_2 = Queue_2;
+          queue_2 = queue_2 - 1;
+          set_st ("Queue_2",queue_2);
+         };
+}
+Messages {
+
+msg_rec= PORT_1
+action = {  int queue_1;
+            queue_1 = Queue_1;
+            if (queue_1< MAX_QUEUE_1)
+                queue_1 = queue_1 + 1;
+            set_st("Queue_1",queue_1);
+         }:prob = PROB_1;
+         {  int queue_2;
+            queue_2 = Queue_2;
+            if (queue_2< MAX_QUEUE_2)
+                queue_2 = queue_2 + 1;
+            set_st("Queue_2",queue_2);
+         }:prob = 1 -PROB_1;
+
+
+msg_rec= PORT_2
+action = {  int queue_1;
+            queue_1 = Queue_1;
+            if (queue_1 < MAX_QUEUE_1)
+                queue_1 = queue_1 + 1;
+            set_st("Queue_1",queue_1);
+         }:prob = PROB_2;
+
+         { int queue_2;
+            queue_2 = Queue_2;
+            if (queue_2 < MAX_QUEUE_2)
+                queue_2 = queue_2 + 1;
+            set_st("Queue_2",queue_2);
+         }:prob = 1 - PROB_2;
+               
+    
+          
+
+}
+Rewards {
+
+
+}
+)
+Global_Rewards {
+}
+Independent_Chains {
+}

@@ -1,0 +1,1242 @@
+%TGIF 4.1.43-QPL
+state(0,37,100.000,0,0,0,16,1,9,1,1,0,0,1,0,1,0,'Courier',0,80640,0,0,0,10,0,0,1,1,0,16,0,0,1,1,1,1,1088,1408,1,0,2880,0).
+%
+% @(#)$Header: /export/CVS/tangram2/Domain/TANGRAM2_FLUID_OBJECTS/mmfs_source.sym,v 1.1.1.1 2005/01/19 16:14:32 develop Exp $
+% %W%
+%
+unit("1 pixel/pixel").
+color_info(220,65535,0,[
+	"magenta", 65535, 0, 65535, 65535, 0, 65535, 1,
+	"red", 65535, 0, 0, 65535, 0, 0, 1,
+	"green", 0, 65535, 0, 0, 65535, 0, 1,
+	"blue", 0, 0, 65535, 0, 0, 65535, 1,
+	"yellow", 65535, 65535, 0, 65535, 65535, 0, 1,
+	"pink", 65535, 49344, 52171, 65535, 49344, 52171, 1,
+	"cyan", 0, 65535, 65535, 0, 65535, 65535, 1,
+	"CadetBlue", 24415, 40606, 41120, 24415, 40606, 41120, 1,
+	"white", 65535, 65535, 65535, 65535, 65535, 65535, 1,
+	"black", 0, 0, 0, 0, 0, 0, 1,
+	"DarkSlateGray", 12079, 20303, 20303, 12079, 20303, 20303, 1,
+	"#DCCEC4", 56540, 52942, 50372, 56320, 52736, 50176, 1,
+	"#8C8E7C", 35980, 36494, 31868, 35840, 36352, 31744, 1,
+	"#ECD2AC", 60652, 53970, 44204, 60416, 53760, 44032, 1,
+	"#342A2C", 13364, 10794, 11308, 13312, 10752, 11264, 1,
+	"#2C2A24", 11308, 10794, 9252, 11264, 10752, 9216, 1,
+	"#2C2624", 11308, 9766, 9252, 11264, 9728, 9216, 1,
+	"#F4FEFC", 62708, 65278, 64764, 62464, 65024, 64512, 1,
+	"#2C2224", 11308, 8738, 9252, 11264, 8704, 9216, 1,
+	"#F4FAFC", 62708, 64250, 64764, 62464, 64000, 64512, 1,
+	"#F4F6FC", 62708, 63222, 64764, 62464, 62976, 64512, 1,
+	"#24261C", 9252, 9766, 7196, 9216, 9728, 7168, 1,
+	"#24221C", 9252, 8738, 7196, 9216, 8704, 7168, 1,
+	"#241E1C", 9252, 7710, 7196, 9216, 7680, 7168, 1,
+	"#241A1C", 9252, 6682, 7196, 9216, 6656, 7168, 1,
+	"#FCFEDC", 64764, 65278, 56540, 64512, 65024, 56320, 1,
+	"#FCFADC", 64764, 64250, 56540, 64512, 64000, 56320, 1,
+	"#1C1E14", 7196, 7710, 5140, 7168, 7680, 5120, 1,
+	"#FCF6DC", 64764, 63222, 56540, 64512, 62976, 56320, 1,
+	"#C4B284", 50372, 45746, 33924, 50176, 45568, 33792, 1,
+	"#1C1A14", 7196, 6682, 5140, 7168, 6656, 5120, 1,
+	"#FCF2DC", 64764, 62194, 56540, 64512, 61952, 56320, 1,
+	"#1C1614", 7196, 5654, 5140, 7168, 5632, 5120, 1,
+	"#ACA294", 44204, 41634, 38036, 44032, 41472, 37888, 1,
+	"#BCAA7C", 48316, 43690, 31868, 48128, 43520, 31744, 1,
+	"#14120C", 5140, 4626, 3084, 5120, 4608, 3072, 1,
+	"#F4EAD4", 62708, 60138, 54484, 62464, 59904, 54272, 1,
+	"#BCA27C", 48316, 41634, 31868, 48128, 41472, 31744, 1,
+	"#B4AA74", 46260, 43690, 29812, 46080, 43520, 29696, 1,
+	"#B4A674", 46260, 42662, 29812, 46080, 42496, 29696, 1,
+	"#B4A274", 46260, 41634, 29812, 46080, 41472, 29696, 1,
+	"#B49E74", 46260, 40606, 29812, 46080, 40448, 29696, 1,
+	"#ECDECC", 60652, 57054, 52428, 60416, 56832, 52224, 1,
+	"#ACA66C", 44204, 42662, 27756, 44032, 42496, 27648, 1,
+	"#AC9A6C", 44204, 39578, 27756, 44032, 39424, 27648, 1,
+	"#E4D2C4", 58596, 53970, 50372, 58368, 53760, 50176, 1,
+	"#DCCEBC", 56540, 52942, 48316, 56320, 52736, 48128, 1,
+	"#C4C6CC", 50372, 50886, 52428, 50176, 50688, 52224, 1,
+	"#D4CEB4", 54484, 52942, 46260, 54272, 52736, 46080, 1,
+	"#C4C2CC", 50372, 49858, 52428, 50176, 49664, 52224, 1,
+	"#D4CAB4", 54484, 51914, 46260, 54272, 51712, 46080, 1,
+	"#FCFEFC", 64764, 65278, 64764, 64512, 65024, 64512, 1,
+	"#FCFAFC", 64764, 64250, 64764, 64512, 64000, 64512, 1,
+	"#FCF6FC", 64764, 63222, 64764, 64512, 62976, 64512, 1,
+	"#2C261C", 11308, 9766, 7196, 11264, 9728, 7168, 1,
+	"#FCF2FC", 64764, 62194, 64764, 64512, 61952, 64512, 1,
+	"#F4FAF4", 62708, 64250, 62708, 62464, 64000, 62464, 1,
+	"#F4F6F4", 62708, 63222, 62708, 62464, 62976, 62464, 1,
+	"#F4F2F4", 62708, 62194, 62708, 62464, 61952, 62464, 1,
+	"#242214", 9252, 8738, 5140, 9216, 8704, 5120, 1,
+	"#F4EEF4", 62708, 61166, 62708, 62464, 60928, 62464, 1,
+	"#ECEEEC", 60652, 61166, 60652, 60416, 60928, 60416, 1,
+	"#FCF6D4", 64764, 63222, 54484, 64512, 62976, 54272, 1,
+	"#ECEAEC", 60652, 60138, 60652, 60416, 59904, 60416, 1,
+	"#B4A694", 46260, 42662, 38036, 46080, 42496, 37888, 1,
+	"#B4A294", 46260, 41634, 38036, 46080, 41472, 37888, 1,
+	"#FCEED4", 64764, 61166, 54484, 64512, 60928, 54272, 1,
+	"#BCB274", 48316, 45746, 29812, 48128, 45568, 29696, 1,
+	"#FCE6D4", 64764, 59110, 54484, 64512, 58880, 54272, 1,
+	"#C4BEBE", 50372, 48830, 48830, 50176, 48640, 48640, 1,
+	"#BCAA74", 48316, 43690, 29812, 48128, 43520, 29696, 1,
+	"#BCA674", 48316, 42662, 29812, 48128, 42496, 29696, 1,
+	"#F4E6CC", 62708, 59110, 52428, 62464, 58880, 52224, 1,
+	"#BCA274", 48316, 41634, 29812, 48128, 41472, 29696, 1,
+	"#B4AA6C", 46260, 43690, 27756, 46080, 43520, 27648, 1,
+	"#B4A66C", 46260, 42662, 27756, 46080, 42496, 27648, 1,
+	"#B4A26C", 46260, 41634, 27756, 46080, 41472, 27648, 1,
+	"#B49E6C", 46260, 40606, 27756, 46080, 40448, 27648, 1,
+	"#8C8E94", 35980, 36494, 38036, 35840, 36352, 37888, 1,
+	"#ACA264", 44204, 41634, 25700, 44032, 41472, 25600, 1,
+	"#8C8A94", 35980, 35466, 38036, 35840, 35328, 37888, 1,
+	"#D4D6D4", 54484, 54998, 54484, 54272, 54784, 54272, 1,
+	"#E4DEBC", 58596, 57054, 48316, 58368, 56832, 48128, 1,
+	"#D4D2D4", 54484, 53970, 54484, 54272, 53760, 54272, 1,
+	"#E4D6BC", 58596, 54998, 48316, 58368, 54784, 48128, 1,
+	"#CCCECC", 52428, 52942, 52428, 52224, 52736, 52224, 1,
+	"#CCCACC", 52428, 51914, 52428, 52224, 51712, 52224, 1,
+	"#DCD2B4", 56540, 53970, 46260, 56320, 53760, 46080, 1,
+	"#CCC6CC", 52428, 50886, 52428, 52224, 50688, 52224, 1,
+	"#ECD69C", 60652, 54998, 40092, 60416, 54784, 39936, 1,
+	"#C4C6C4", 50372, 50886, 50372, 50176, 50688, 50176, 1,
+	"#C4C2C4", 50372, 49858, 50372, 50176, 49664, 50176, 1,
+	"#D4CAAC", 54484, 51914, 44204, 54272, 51712, 44032, 1,
+	"#BCBEBC", 48316, 48830, 48316, 48128, 48640, 48128, 1,
+	"#BCBABC", 48316, 47802, 48316, 48128, 47616, 48128, 1,
+	"#CCC2A4", 52428, 49858, 42148, 52224, 49664, 41984, 1,
+	"#C4C29C", 50372, 49858, 40092, 50176, 49664, 39936, 1,
+	"#FCFEF4", 64764, 65278, 62708, 64512, 65024, 62464, 1,
+	"#C4BA9C", 50372, 47802, 40092, 50176, 47616, 39936, 1,
+	"#FCFAF4", 64764, 64250, 62708, 64512, 64000, 62464, 1,
+	"#FCF6F4", 64764, 63222, 62708, 64512, 62976, 62464, 1,
+	"#FCF2F4", 64764, 62194, 62708, 64512, 61952, 62464, 1,
+	"#F4FAEC", 62708, 64250, 60652, 62464, 64000, 60416, 1,
+	"#F4F6EC", 62708, 63222, 60652, 62464, 62976, 60416, 1,
+	"#F4F2EC", 62708, 62194, 60652, 62464, 61952, 60416, 1,
+	"#F4EEEC", 62708, 61166, 60652, 62464, 60928, 60416, 1,
+	"#CCB27C", 52428, 45746, 31868, 52224, 45568, 31744, 1,
+	"#FCFECC", 64764, 65278, 52428, 64512, 65024, 52224, 1,
+	"#5C5664", 23644, 22102, 25700, 23552, 22016, 25600, 1,
+	"#FCFACC", 64764, 64250, 52428, 64512, 64000, 52224, 1,
+	"#B4AA8C", 46260, 43690, 35980, 46080, 43520, 35840, 1,
+	"#FCF6CC", 64764, 63222, 52428, 64512, 62976, 52224, 1,
+	"#B4A68C", 46260, 42662, 35980, 46080, 42496, 35840, 1,
+	"#FCF2CC", 64764, 62194, 52428, 64512, 61952, 52224, 1,
+	"#9C9E9C", 40092, 40606, 40092, 39936, 40448, 39936, 1,
+	"#9C9A9C", 40092, 39578, 40092, 39936, 39424, 39936, 1,
+	"#ACA284", 44204, 41634, 33924, 44032, 41472, 33792, 1,
+	"#AC9E84", 44204, 40606, 33924, 44032, 40448, 33792, 1,
+	"#BCA66C", 48316, 42662, 27756, 48128, 42496, 27648, 1,
+	"#F4E6C4", 62708, 59110, 50372, 62464, 58880, 50176, 1,
+	"#949694", 38036, 38550, 38036, 37888, 38400, 37888, 1,
+	"#949294", 38036, 37522, 38036, 37888, 37376, 37888, 1,
+	"#B4A664", 46260, 42662, 25700, 46080, 42496, 25600, 1,
+	"#DCD6D4", 56540, 54998, 54484, 56320, 54784, 54272, 1,
+	"#8C8E8C", 35980, 36494, 35980, 35840, 36352, 35840, 1,
+	"#8C8A8C", 35980, 35466, 35980, 35840, 35328, 35840, 1,
+	"#8C868C", 35980, 34438, 35980, 35840, 34304, 35840, 1,
+	"#848A84", 33924, 35466, 33924, 33792, 35328, 33792, 1,
+	"#848684", 33924, 34438, 33924, 33792, 34304, 33792, 1,
+	"#E4CEB4", 58596, 52942, 46260, 58368, 52736, 46080, 1,
+	"#848284", 33924, 33410, 33924, 33792, 33280, 33792, 1,
+	"#E4CAB4", 58596, 51914, 46260, 58368, 51712, 46080, 1,
+	"#DCD6AC", 56540, 54998, 44204, 56320, 54784, 44032, 1,
+	"#CCCAC4", 52428, 51914, 50372, 52224, 51712, 50176, 1,
+	"#CCC6C4", 52428, 50886, 50372, 52224, 50688, 50176, 1,
+	"#CCC2C4", 52428, 49858, 50372, 52224, 49664, 50176, 1,
+	"#C4C6BC", 50372, 50886, 48316, 50176, 50688, 48128, 1,
+	"#5C5656", 23644, 22102, 22102, 23552, 22016, 22016, 1,
+	"#C4C2BC", 50372, 49858, 48316, 50176, 49664, 48128, 1,
+	"#C4BABC", 50372, 47802, 48316, 50176, 47616, 48128, 1,
+	"#BCBAB4", 48316, 47802, 46260, 48128, 47616, 46080, 1,
+	"#24262C", 9252, 9766, 11308, 9216, 9728, 11264, 1,
+	"#24222C", 9252, 8738, 11308, 9216, 8704, 11264, 1,
+	"#FCFEEC", 64764, 65278, 60652, 64512, 65024, 60416, 1,
+	"#C4BA94", 50372, 47802, 38036, 50176, 47616, 37888, 1,
+	"#FCFAEC", 64764, 64250, 60652, 64512, 64000, 60416, 1,
+	"#FCF6EC", 64764, 63222, 60652, 64512, 62976, 60416, 1,
+	"#BCB28C", 48316, 45746, 35980, 48128, 45568, 35840, 1,
+	"#BCAE8C", 48316, 44718, 35980, 48128, 44544, 35840, 1,
+	"#F4EEE4", 62708, 61166, 58596, 62464, 60928, 58368, 1,
+	"#5C5E5C", 23644, 24158, 23644, 23552, 24064, 23552, 1,
+	"#BCA68C", 48316, 42662, 35980, 48128, 42496, 35840, 1,
+	"#5C5A5C", 23644, 23130, 23644, 23552, 23040, 23552, 1,
+	"#B4AA84", 46260, 43690, 33924, 46080, 43520, 33792, 1,
+	"#FCF6C4", 64764, 63222, 50372, 64512, 62976, 50176, 1,
+	"#B4A684", 46260, 42662, 33924, 46080, 42496, 33792, 1,
+	"#ECE6DC", 60652, 59110, 56540, 60416, 58880, 56320, 1,
+	"#B4A284", 46260, 41634, 33924, 46080, 41472, 33792, 1,
+	"#FCEEC4", 64764, 61166, 50372, 64512, 60928, 50176, 1,
+	"#ECE2DC", 60652, 58082, 56540, 60416, 57856, 56320, 1,
+	"#545654", 21588, 22102, 21588, 21504, 22016, 21504, 1,
+	"#545254", 21588, 21074, 21588, 21504, 20992, 21504, 1,
+	"#FCE6C4", 64764, 59110, 50372, 64512, 58880, 50176, 1,
+	"#ACA67C", 44204, 42662, 31868, 44032, 42496, 31744, 1,
+	"#544E54", 21588, 20046, 21588, 21504, 19968, 21504, 1,
+	"#9C9A94", 40092, 39578, 38036, 39936, 39424, 37888, 1,
+	"#ACA27C", 44204, 41634, 31868, 44032, 41472, 31744, 1,
+	"#ECE2C8", 60652, 58082, 51400, 60416, 57856, 51200, 1,
+	"#E4DAD4", 58596, 56026, 54484, 58368, 55808, 54272, 1,
+	"#4C4E4C", 19532, 20046, 19532, 19456, 19968, 19456, 1,
+	"#94928C", 38036, 37522, 35980, 37888, 37376, 35840, 1,
+	"#948A8C", 38036, 35466, 35980, 37888, 35328, 35840, 1,
+	"#8C9284", 35980, 37522, 33924, 35840, 37376, 33792, 1,
+	"#8C8A84", 35980, 35466, 33924, 35840, 35328, 33792, 1,
+	"#8C8684", 35980, 34438, 33924, 35840, 34304, 33792, 1,
+	"#E4CEAC", 58596, 52942, 44204, 58368, 52736, 44032, 1,
+	"#84827C", 33924, 33410, 31868, 33792, 33280, 31744, 1,
+	"#948E8F", 38036, 36494, 36751, 37888, 36352, 36608, 1,
+	"#CCC2BC", 52428, 49858, 48316, 52224, 49664, 48128, 1,
+	"#C4BEB4", 50372, 48830, 46260, 50176, 48640, 46080, 1,
+	"#2C2E2C", 11308, 11822, 11308, 11264, 11776, 11264, 1,
+	"#D4C29C", 54484, 49858, 40092, 54272, 49664, 39936, 1,
+	"#2C2A2C", 11308, 10794, 11308, 11264, 10752, 11264, 1,
+	"#2C262C", 11308, 9766, 11308, 11264, 9728, 11264, 1,
+	"#242624", 9252, 9766, 9252, 9216, 9728, 9216, 1,
+	"#CCBA94", 52428, 47802, 38036, 52224, 47616, 37888, 1,
+	"#242224", 9252, 8738, 9252, 9216, 8704, 9216, 1,
+	"#241E24", 9252, 7710, 9252, 9216, 7680, 9216, 1,
+	"#241A24", 9252, 6682, 9252, 9216, 6656, 9216, 1,
+	"#FCFEE4", 64764, 65278, 58596, 64512, 65024, 58368, 1,
+	"#1C221C", 7196, 8738, 7196, 7168, 8704, 7168, 1,
+	"#FCFAE4", 64764, 64250, 58596, 64512, 64000, 58368, 1,
+	"#1C1E1C", 7196, 7710, 7196, 7168, 7680, 7168, 1,
+	"#FCF6E4", 64764, 63222, 58596, 64512, 62976, 58368, 1,
+	"#1C1A1C", 7196, 6682, 7196, 7168, 6656, 7168, 1,
+	"#FCF2E4", 64764, 62194, 58596, 64512, 61952, 58368, 1,
+	"#1C161C", 7196, 5654, 7196, 7168, 5632, 7168, 1,
+	"#64625C", 25700, 25186, 23644, 25600, 25088, 23552, 1,
+	"#645E5C", 25700, 24158, 23644, 25600, 24064, 23552, 1,
+	"#BCAE84", 48316, 44718, 33924, 48128, 44544, 33792, 1,
+	"#CCBE97", 52428, 48830, 38807, 52224, 48640, 38656, 1,
+	"#BCAA84", 48316, 43690, 33924, 48128, 43520, 33792, 1,
+	"#5C5A54", 23644, 23130, 21588, 23552, 23040, 21504, 1,
+	"#BCA284", 48316, 41634, 33924, 48128, 41472, 33792, 1,
+	"#B4AE7C", 46260, 44718, 31868, 46080, 44544, 31744, 1,
+	"#5C5254", 23644, 21074, 21588, 23552, 20992, 21504, 1,
+	"#B4A67C", 46260, 42662, 31868, 46080, 42496, 31744, 1,
+	"#ECE6D4", 60652, 59110, 54484, 60416, 58880, 54272, 1,
+	"#B4A27C", 46260, 41634, 31868, 46080, 41472, 31744, 1,
+	"#B49E7C", 46260, 40606, 31868, 46080, 40448, 31744, 1,
+	"#FCEABC", 64764, 60138, 48316, 64512, 59904, 48128, 1,
+	"#54524C", 21588, 21074, 19532, 21504, 20992, 19456, 1,
+	"#ACA674", 44204, 42662, 29812, 44032, 42496, 29696, 1,
+	"#544E4C", 21588, 20046, 19532, 21504, 19968, 19456, 1,
+	"#FCE2BC", 64764, 58082, 48316, 64512, 57856, 48128, 1,
+	"#ACA274", 44204, 41634, 29812, 44032, 41472, 29696, 1,
+	"#F4EAB4", 62708, 60138, 46260, 62464, 59904, 46080, 1,
+	"#0000ff", 0, 0, 65535, 0, 0, 65280, 1,
+	"#42ce55", 16962, 52942, 21845, 16896, 52736, 21760, 1,
+	"#fffe00000000", 65535, 0, 0, 65534, 0, 0, 1
+]).
+script_frac("0.6").
+fg_bg_colors('black','white').
+dont_reencode("FFDingbests:ZapfDingbats").
+page(1,"",1,'').
+sym([
+xpm('black','',120,40,190,225,0,206,2,0,1726050,0,70,185,0,0,0,0,0,0,[
+   "  ", "#DCCEC4", 8627, 8078, 7686,
+   " .", "#8C8E7C", 5490, 5568, 4862,
+   " X", "#ECD2AC", 9254, 8235, 6745,
+   " o", "#342A2C", 2039, 1647, 1725,
+   " O", "#2C2A24", 1725, 1647, 1411,
+   " +", "#2C2624", 1725, 1490, 1411,
+   " @", "#F4FEFC", 9568, 9960, 9882,
+   " #", "#2C2224", 1725, 1333, 1411,
+   " $", "#F4FAFC", 9568, 9803, 9882,
+   " %", "#F4F6FC", 9568, 9647, 9882,
+   " &", "#24261C", 1411, 1490, 1098,
+   " *", "#24221C", 1411, 1333, 1098,
+   " =", "#241E1C", 1411, 1176, 1098,
+   " -", "#241A1C", 1411, 1019, 1098,
+   " ;", "#FCFEDC", 9882, 9960, 8627,
+   " :", "#FCFADC", 9882, 9803, 8627,
+   " >", "#1C1E14", 1098, 1176, 784,
+   " ,", "#FCF6DC", 9882, 9647, 8627,
+   " <", "#C4B284", 7686, 6980, 5176,
+   " 1", "#1C1A14", 1098, 1019, 784,
+   " 2", "#FCF2DC", 9882, 9490, 8627,
+   " 3", "#1C1614", 1098, 862, 784,
+   " 4", "#ACA294", 6745, 6352, 5803,
+   " 5", "#BCAA7C", 7372, 6666, 4862,
+   " 6", "#14120C", 784, 705, 470,
+   " 7", "#F4EAD4", 9568, 9176, 8313,
+   " 8", "#BCA27C", 7372, 6352, 4862,
+   " 9", "#B4AA74", 7058, 6666, 4549,
+   " 0", "#B4A674", 7058, 6509, 4549,
+   " q", "#B4A274", 7058, 6352, 4549,
+   " w", "#B49E74", 7058, 6196, 4549,
+   " e", "#ECDECC", 9254, 8705, 8000,
+   " r", "#ACA66C", 6745, 6509, 4235,
+   " t", "#AC9A6C", 6745, 6039, 4235,
+   " y", "#E4D2C4", 8941, 8235, 7686,
+   " u", "#DCCEBC", 8627, 8078, 7372,
+   " i", "#C4C6CC", 7686, 7764, 8000,
+   " p", "#D4CEB4", 8313, 8078, 7058,
+   " a", "#C4C2CC", 7686, 7607, 8000,
+   " s", "#D4CAB4", 8313, 7921, 7058,
+   " d", "#FCFEFC", 9882, 9960, 9882,
+   " f", "#FCFAFC", 9882, 9803, 9882,
+   " g", "#FCF6FC", 9882, 9647, 9882,
+   " h", "#2C261C", 1725, 1490, 1098,
+   " j", "#FCF2FC", 9882, 9490, 9882,
+   " k", "#F4FAF4", 9568, 9803, 9568,
+   " l", "#F4F6F4", 9568, 9647, 9568,
+   " z", "#F4F2F4", 9568, 9490, 9568,
+   " x", "#242214", 1411, 1333, 784,
+   " c", "#F4EEF4", 9568, 9333, 9568,
+   " v", "#ECEEEC", 9254, 9333, 9254,
+   " b", "#FCF6D4", 9882, 9647, 8313,
+   " n", "#ECEAEC", 9254, 9176, 9254,
+   " m", "#B4A694", 7058, 6509, 5803,
+   " M", "#B4A294", 7058, 6352, 5803,
+   " N", "#FCEED4", 9882, 9333, 8313,
+   " B", "#BCB274", 7372, 6980, 4549,
+   " V", "#FCE6D4", 9882, 9019, 8313,
+   " C", "#C4BEBE", 7686, 7450, 7450,
+   " Z", "#BCAA74", 7372, 6666, 4549,
+   " A", "#BCA674", 7372, 6509, 4549,
+   " S", "#F4E6CC", 9568, 9019, 8000,
+   " D", "#BCA274", 7372, 6352, 4549,
+   " F", "#B4AA6C", 7058, 6666, 4235,
+   " G", "#B4A66C", 7058, 6509, 4235,
+   " H", "#B4A26C", 7058, 6352, 4235,
+   " J", "#B49E6C", 7058, 6196, 4235,
+   " K", "#8C8E94", 5490, 5568, 5803,
+   " L", "#ACA264", 6745, 6352, 3921,
+   " P", "#8C8A94", 5490, 5411, 5803,
+   " I", "#D4D6D4", 8313, 8392, 8313,
+   " U", "#E4DEBC", 8941, 8705, 7372,
+   " Y", "#D4D2D4", 8313, 8235, 8313,
+   " T", "#E4D6BC", 8941, 8392, 7372,
+   " R", "#CCCECC", 8000, 8078, 8000,
+   " E", "#CCCACC", 8000, 7921, 8000,
+   " W", "#DCD2B4", 8627, 8235, 7058,
+   " Q", "#CCC6CC", 8000, 7764, 8000,
+   " !", "#ECD69C", 9254, 8392, 6117,
+   " ~", "#C4C6C4", 7686, 7764, 7686,
+   " ^", "#C4C2C4", 7686, 7607, 7686,
+   " /", "#D4CAAC", 8313, 7921, 6745,
+   " (", "#BCBEBC", 7372, 7450, 7372,
+   " )", "#BCBABC", 7372, 7294, 7372,
+   " _", "#CCC2A4", 8000, 7607, 6431,
+   " `", "#C4C29C", 7686, 7607, 6117,
+   " '", "#FCFEF4", 9882, 9960, 9568,
+   " ]", "#C4BA9C", 7686, 7294, 6117,
+   " [", "#FCFAF4", 9882, 9803, 9568,
+   " {", "#FCF6F4", 9882, 9647, 9568,
+   " }", "#FCF2F4", 9882, 9490, 9568,
+   " |", "#F4FAEC", 9568, 9803, 9254,
+   ". ", "#F4F6EC", 9568, 9647, 9254,
+   "..", "#F4F2EC", 9568, 9490, 9254,
+   ".X", "#F4EEEC", 9568, 9333, 9254,
+   ".o", "#CCB27C", 8000, 6980, 4862,
+   ".O", "#FCFECC", 9882, 9960, 8000,
+   ".+", "#5C5664", 3607, 3372, 3921,
+   ".@", "#FCFACC", 9882, 9803, 8000,
+   ".#", "#B4AA8C", 7058, 6666, 5490,
+   ".$", "#FCF6CC", 9882, 9647, 8000,
+   ".%", "#B4A68C", 7058, 6509, 5490,
+   ".&", "#FCF2CC", 9882, 9490, 8000,
+   ".*", "#9C9E9C", 6117, 6196, 6117,
+   ".=", "#9C9A9C", 6117, 6039, 6117,
+   ".-", "#ACA284", 6745, 6352, 5176,
+   ".;", "#AC9E84", 6745, 6196, 5176,
+   ".:", "#BCA66C", 7372, 6509, 4235,
+   ".>", "#F4E6C4", 9568, 9019, 7686,
+   ".,", "#949694", 5803, 5882, 5803,
+   ".<", "#949294", 5803, 5725, 5803,
+   ".1", "#B4A664", 7058, 6509, 3921,
+   ".2", "#DCD6D4", 8627, 8392, 8313,
+   ".3", "#8C8E8C", 5490, 5568, 5490,
+   ".4", "#8C8A8C", 5490, 5411, 5490,
+   ".5", "#8C868C", 5490, 5254, 5490,
+   ".6", "#848A84", 5176, 5411, 5176,
+   ".7", "#848684", 5176, 5254, 5176,
+   ".8", "#E4CEB4", 8941, 8078, 7058,
+   ".9", "#848284", 5176, 5098, 5176,
+   ".0", "#E4CAB4", 8941, 7921, 7058,
+   ".q", "#DCD6AC", 8627, 8392, 6745,
+   ".w", "#CCCAC4", 8000, 7921, 7686,
+   ".e", "#CCC6C4", 8000, 7764, 7686,
+   ".r", "#CCC2C4", 8000, 7607, 7686,
+   ".t", "#C4C6BC", 7686, 7764, 7372,
+   ".y", "#5C5656", 3607, 3372, 3372,
+   ".u", "#C4C2BC", 7686, 7607, 7372,
+   ".i", "#C4BABC", 7686, 7294, 7372,
+   ".p", "#BCBAB4", 7372, 7294, 7058,
+   ".a", "#24262C", 1411, 1490, 1725,
+   ".s", "#24222C", 1411, 1333, 1725,
+   ".d", "#FCFEEC", 9882, 9960, 9254,
+   ".f", "#C4BA94", 7686, 7294, 5803,
+   ".g", "#FCFAEC", 9882, 9803, 9254,
+   ".h", "#FCF6EC", 9882, 9647, 9254,
+   ".j", "#BCB28C", 7372, 6980, 5490,
+   ".k", "#BCAE8C", 7372, 6823, 5490,
+   ".l", "#F4EEE4", 9568, 9333, 8941,
+   ".z", "#5C5E5C", 3607, 3686, 3607,
+   ".x", "#BCA68C", 7372, 6509, 5490,
+   ".c", "#5C5A5C", 3607, 3529, 3607,
+   ".v", "#B4AA84", 7058, 6666, 5176,
+   ".b", "#FCF6C4", 9882, 9647, 7686,
+   ".n", "#B4A684", 7058, 6509, 5176,
+   ".m", "#ECE6DC", 9254, 9019, 8627,
+   ".M", "#B4A284", 7058, 6352, 5176,
+   ".N", "#FCEEC4", 9882, 9333, 7686,
+   ".B", "#ECE2DC", 9254, 8862, 8627,
+   ".V", "#545654", 3294, 3372, 3294,
+   ".C", "#545254", 3294, 3215, 3294,
+   ".Z", "#FCE6C4", 9882, 9019, 7686,
+   ".A", "#ACA67C", 6745, 6509, 4862,
+   ".S", "#544E54", 3294, 3058, 3294,
+   ".D", "#9C9A94", 6117, 6039, 5803,
+   ".F", "#ACA27C", 6745, 6352, 4862,
+   ".G", "#ECE2C8", 9254, 8862, 7843,
+   ".H", "#E4DAD4", 8941, 8549, 8313,
+   ".J", "#4C4E4C", 2980, 3058, 2980,
+   ".K", "#94928C", 5803, 5725, 5490,
+   ".L", "#948A8C", 5803, 5411, 5490,
+   ".P", "#8C9284", 5490, 5725, 5176,
+   ".I", "#8C8A84", 5490, 5411, 5176,
+   ".U", "#8C8684", 5490, 5254, 5176,
+   ".Y", "#E4CEAC", 8941, 8078, 6745,
+   ".T", "#84827C", 5176, 5098, 4862,
+   ".R", "#948E8F", 5803, 5568, 5607,
+   ".E", "#CCC2BC", 8000, 7607, 7372,
+   ".W", "#C4BEB4", 7686, 7450, 7058,
+   ".Q", "#2C2E2C", 1725, 1803, 1725,
+   ".!", "#D4C29C", 8313, 7607, 6117,
+   ".~", "#2C2A2C", 1725, 1647, 1725,
+   ".^", "#2C262C", 1725, 1490, 1725,
+   "./", "#242624", 1411, 1490, 1411,
+   ".(", "#CCBA94", 8000, 7294, 5803,
+   ".)", "#242224", 1411, 1333, 1411,
+   "._", "#241E24", 1411, 1176, 1411,
+   ".`", "#241A24", 1411, 1019, 1411,
+   ".'", "#FCFEE4", 9882, 9960, 8941,
+   ".]", "#1C221C", 1098, 1333, 1098,
+   ".[", "#FCFAE4", 9882, 9803, 8941,
+   ".{", "#1C1E1C", 1098, 1176, 1098,
+   ".}", "#FCF6E4", 9882, 9647, 8941,
+   ".|", "#1C1A1C", 1098, 1019, 1098,
+   "X ", "#FCF2E4", 9882, 9490, 8941,
+   "X.", "#1C161C", 1098, 862, 1098,
+   "XX", "#64625C", 3921, 3843, 3607,
+   "Xo", "#645E5C", 3921, 3686, 3607,
+   "XO", "#BCAE84", 7372, 6823, 5176,
+   "X+", "#CCBE97", 8000, 7450, 5921,
+   "X@", "#BCAA84", 7372, 6666, 5176,
+   "X#", "#5C5A54", 3607, 3529, 3294,
+   "X$", "#BCA284", 7372, 6352, 5176,
+   "X%", "#B4AE7C", 7058, 6823, 4862,
+   "X&", "#5C5254", 3607, 3215, 3294,
+   "X*", "#B4A67C", 7058, 6509, 4862,
+   "X=", "#ECE6D4", 9254, 9019, 8313,
+   "X-", "#B4A27C", 7058, 6352, 4862,
+   "X;", "#B49E7C", 7058, 6196, 4862,
+   "X:", "#FCEABC", 9882, 9176, 7372,
+   "X>", "#54524C", 3294, 3215, 2980,
+   "X,", "#ACA674", 6745, 6509, 4549,
+   "X<", "#544E4C", 3294, 3058, 2980,
+   "X1", "#FCE2BC", 9882, 8862, 7372,
+   "X2", "#ACA274", 6745, 6352, 4549,
+   "X3", "#F4EAB4", 9568, 9176, 7058],[
+   " d d E f E d f E d d E f R d f R d ^ d d E l d E d R f d E d R f f R d E d f R d f R d E d d R f E d g E d d ^ d Y l d Y f ~ d d E d E d d E",
+   " ~ d d d d f d d d d f d g d d g d f d d f d d g d f d d l f d d d d f g d d f d d d f f d f f d f d d f d d f d g d d l d f d d d d f f d f",
+   " d d g d d d d f d d d d d d f d d d d f d d d d d d d d d d d d d d d d f d d d d d d d f d d d d d d d d f d d d d d d d d d d d d d d f d",
+   " Q d d d d d f d d d d d d d l d d d d d d f d d d d d f d d f d d f d d f d d d d f d d f d d f d d f d d d d d d l d d d d d d d f f d d ~",
+   " d d d d f d d f d d d d d d d d d d d d d d d d d d f d d d d d d d d d d f d d d d d f d d d d d d d d d d d d d d d d d d d d f d d d f d",
+   " d d d d d d d d d d d d d f d f d d d f d d d d d d d d d f d d d d f d d d d d f d f d d f d d d d d d f d d d f d f d d d f d d d d f d Y",
+   " ~ d d d d d f d d d d d d d d d d d d d d d d d d f d d d d d d d d d d d d d d d d d d d d f d d d d d d d d d d d d d d d d d d d f d d f",
+   " d d f d d d d d d d d d d d f d d d d d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d f d d d d d d d f d d d d d d d d d d d d",
+   " R f d d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f Y",
+   " d f d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d l",
+   " g d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f d d d d d",
+   " R d d d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f d f Y",
+   " d f d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f d d f d f",
+   " d d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f d d d R",
+   " ~ d d d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f",
+   " d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d",
+   " R g d d d d d d d d d d d d d d d d d d d d d d d d f d d f f g z Q.4 f g d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d E",
+   " f d d f d d d d d d d d d d d d d d f d d d d d d [ d [ C.U # * + > # * + 3.3.e d l d d d d d d d d d d d d d d d d d d d d d d d d d d d d",
+   " d g d d d f d d d d d d d d d d d d d f d d d d f d C.c * + * * * & 1 & > + o > # ^ d f d d d d d d d d d d d d d d d d d d d d d d d d d E",
+   " E d d f d d d d d d d d d d d d d d k d d f d d {.z 1 * &.y.u [ [.h '. .h.t.T O >._.C ^ d d d d d d d d d d d d d d d d d d d d d d d d d d",
+   " d d f d d d d d d d d d d d d d d d d d d d '.p * * >.3 l f d d f d d d d d d l.R 1 # # ) [ d d d d d d d d d d d d d d d d d d d d d d d d",
+   " Q d d f d d f d d d d d d d d d d d d d ' {.w * *X< d d d d d d d f d f d f d d d dX> = O.r [ d d d d d d d d d d d d d d d d d d d d d d E",
+   " d d d f d d d d d d d d d d d d d d d ' d.W * =.C [ d g d d d d d d d d d d d d g f d.4 3 + C f d d d d d d d d d d d d d d d d d d d d f d",
+   " d d d d d d d d d d d d d d d d d d d d l & =.y [ f d d d d d d d d d d d d d d d g f d.4 - +.r d d d d d d d d d d d d d d d d d d d d d E",
+   " R g d d d d d d d d d d d d d d d d d f.y *.C ' d f d d d d d d d d d f d d d d d d d g g.c >.C f d d d d d f d d d d d d d d d d d d d d f",
+   " f d d f d d d d d d d d d d d d d f f ~ = *.X f f d f d f d d d d [ d d d d d d d f d d ' d 1 O ~ f d d d f d d d d f d d d d f d d f d d d",
+   " d g d d d f d d d d d d d d d d g d d.C >.c d d d d d d f d d ' d f d f d d d d d d d d d |.3.] = l d d d d d d d d d f l d d d d d d d f E",
+   " E d d f d d d d d d d d d d d d d j g O > d g d d f d d d [ '.d '.d.g.h d [ f d d d d d d ' ' * >., g d d d d g d d f d d d d f d d d d d f",
+   " d d f d d d d d d d d d d d d d d f K *.c l d d d f f d d [.d ,.8.n.M.# u.d ' ' d d d d g d f K 1.3 f d d d d d f d d f d d f d d d d d d d",
+   " Q d d f d d f d d d d d d d d d g dX< *.K ' d d d d d d '.d.' _ q D 9.x.F ].d ' [ d d d d d d ^ + > d d f d d f d d d d d d d d d f d f d R",
+   " d d d f d d d d d d d d d d d d d f + 1 l d d d d d d d '.d.q.- Z.o.@ <X-.% S [ ' f d d d d f z # # z d d d d d.= z f d d f d f d d d f d f",
+   " d d d d d d d d d d d d d d d d d { = & [ d d d d d d d '.' ]X* DX:.@ XX-.x u [ ' d d d f d f f # > d f f d d l.4 +.< f f d f d d f d d d E",
+   " E d d d d d d d d d d d d d d d d l + 1 g d f d d d d d '.gX@ J w ; b.0X$.M y.h [ d d d d d d [ # #.C.=.<.D.R.R.y._ >.c ~ d f d d d d d d d",
+   " d d d d d d f d d d d d f d d d ' R 1 # f f f d d d d d [.} 8 A 5 b :.8 8X; u ' d d @ d d d ' } * 1.R { g d z d.4 # 1.c ~ d d d d d d d d f",
+   " ~ d d d d d d d f d f f d d d d d.. & = { f f d d d d d f.gX- q A.O.&.! wX* N.d d d d @ d d d.h = #.e f d d d g.< = ^ d f d d f d f d d d Y",
+   " d d d d f d d d d d d d d g d d d l & = j d f d d d f d d 'X+ t 0X3X: 0 HX-.'.[ ' d d @ d d } [ + 1 g d d d f d ~ f d d f d d d f d d f d f",
+   " d d d d d d d d d d d l d d d d d.p 1 #.i d d d d d d d d ' S.jX, 9X2X*XO.N , ' d d d $ d d d f = + { d g d d d f f d d d d d d d d f d f Y",
+   " Q d d d d d d d d d f d d g d f.4 * # =.L j d d d d d d d.g.d e `.A.#.f.G.'.d ' ' d d d d f {.L >.c z { d d d d d d d d f d f d f d d d d d",
+   " d d d d d d f d d d d d d d ~.y 1 =.U = * d d d d d d d d d '.d.[.d '.d.d.g ' d d d d $ f d f.y >.y i d g d d f d f d f d d d f d d d d d g",
+   " E d d d d d d d d d d f f Q +._ = # n * = C d d d d d f d d [ ' d f [ f f f f d d d d d d %.e = # z.< d d f d d d d d d d d g d d d d d f R",
+   " f d d d d d d d d f d d ~.P P.y = = }.K 1 * d d d @ d d d d d d d f d f g d d d d f f d d f.C >.c f {.< d d f d d d d d d d d d d d d d d d",
+   " d f f d d f d d d d f d d d %.3.y O { [ + *.I f d d d d d d f f d g d d g d d f d d d d d ( + * { f d., { g d f d d d d d d d d d d d d d f",
+   " E k d d d d d d d d d d d f.= z {.R g d.u > +.u d d f d d d d d d d f f d d f d f d d f C + 1.5 d d d f.< d f d d d d d d d d d d f d d d Y",
+   " d d d d d d d d d f d d g d.< d d Q d [ f.c > # a d d d ' d d d d d ' d d f d d d d f f.y *.y d f f f f ~ E d d d d d d d d d d f d d f d f",
+   " f d d d d d d d f d d f d.= f d d d f d d. .y._._ ( d.h ' d d d d d.d [ d d d d d {.e._ *.c f % d d d d f.< f d d d d d d d d d d d f d f Y",
+   " Y d d f d d f d d d d d f.< d d d d d f d d f.y._ #.U '.h ' d d d ' ' d d l d ' '.I # 1X> ~ g d d d f d d ~ Q d d d d d d d d d f d d d d d",
+   " f d d d f f d d d f d d., d f d f d d d d d [ f.+._ # * ..e f f f z ' d % d z.K > # =.c f ' f d f d d d d f., d d d d d d d d d d d d d d g",
+   " E f d f d d d d d d d d.< g d d d d d d d d d d f C.y * * >._ P.4.=.6.4.<.C + > #X> K g d d d d d f d d d d ~ E d d d d d d d d d d d d f R",
+   " d d d d d d d d d d f E ^ d d d d d d d d d d d d f [.wX> & # #.] > # > # + =.y.< l d f d f d f d f d d f d d.< f d d d d d d d d d d d d f",
+   " d d d f d d d f d d d.< d l d d d d d d d d d d d d d z d %.4.4 K.J O.4.6.4 $ f l d f d d f d d d d d d d d z.= d d d d d d f d d f d d f R",
+   " Q d d f d d f d f d g., d d d f d d d d d d d d f d d d f f d d d f f d f d d d d f d d d d d d f d d f d d d l.= l d d f d d d d d d d d d",
+   " d d f d d d d d d f., d f d f d d d d d d d d d d d d d d d d d d f g d d f d d d f d d f d d d d d d d d d d d.5 d d d d d f f d d d d d l",
+   " R f d d d d d d d d.= l d d d d d d d d d d d d d f d f f d l d d d d f d d d d d d d d d d d d d f f d d d f f.= f f d d d d d d d d d f Y",
+   " d g d d f d d d f d.< f d d d d d d d d d d d d d d d d d d d d d d d d d f f d f d f d d d d d d d d d f d d d ~ ~ d d f d d f d d f d d d",
+   " f d d f d d d d d ^ E f d d d d d d d d d d d d d d d d d d f d d d d d d d d d d d d d f d d d d f d d d d d d d.= z d d d d d d f d d d Y",
+   " R g d d d d d d d.< d d d d d d d d d d d d d d d d d d d d d d d d d f d d d d d g d d d d d d d d d d d f d d f.< d d d d d d d d d d d f",
+   " d d d d d f d d d., f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d., g d d d d d d d f d d f",
+   " d d d f d d d f f., d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d g.= d f d d f d d d d d f R",
+   " Q d d f d d f d d.= f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d ~ E f d d d d d d d d f d",
+   " d d f d d d d d f.< d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f.R d f d d f d d d d d l",
+   " R f d d d d d d d., f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d.< d d d d d d d d d d Y",
+   " d g d d f d d d f.= d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f d.= d d d d d d d g d d d",
+   " f d d f d d d d d.< f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d.3 d d d d d d f d d d E",
+   " R g d d d d d d f., d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d g.= f d d d d d d d d d d",
+   " f d d d d d d d f., g d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d.< d d f d d d d d d d f",
+   " R f d f d d d d d.< d l d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d g., d f d d d d f d d d R",
+   " d f d d d g d d f., d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d.< d f d d f d d d g d d d",
+   " d d d g d d d d f.< d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f.= f d d d d d d d d d f Y",
+   " ~ z d d d d d d d.* g d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d.< d f d d d d d d d d d l",
+   " d d d d f d d d f.R d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d.3 d d d d g d d d d d f d",
+   " E f d d d d f d d.= f l d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d.< f d f d d d d f d d f R",
+   " d d d d d d d d f d., f d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d ~ E d d d d d d d d d d d f",
+   " f d d d d d d d d f., d d d d d d d d d d d d d d d d d d d d d d f d d d d d d d d d d d d d d d d d d d f d f.3 d d d d f d d d d d d d d",
+   " R f d d d d d d d d.< d d d d f d d d d d d d d d d d f d d d d d d f d f d f d d d d d d d d d d d d d d d z d.= d d d d d d d d f d d d R",
+   " d f d d d g d d d f E E f d d d d d d d d d d d f d d d d d f d d d d d d d f d f d d f f d d f d d d f d d d d., c d d d d d d d d f d d d",
+   " d d f g d d d f d d f., d d f d d d d d d d d d d d f d d d d d d d g f d d d d d d d d d d d d d d d d d f f.< d d d f d d d d d d d d f Y",
+   " ~ z d d d d d d d d d.R d d d f d d d d d d d d d d d d f f d g c.R.3 f z g d f f d d f d f d d d d d d d d d.= l d d d d d f d d d d d d l",
+   " d d d d f d d d d d d d.< d d d d d d d d d d d d d g d ^.6 # + O 1 # = # #.5 E g f d d d d f d d d f d d d ~ Q d d d d d d d d d d d d d d",
+   " E d d d d d f d d d % d., d g d d d d d d d d d d g R.C # + >.] 3 O 1 + # # 1 # +.R v d g d d f d d d d d f.* l d d d d f d d d d f d d f E",
+   " d d d d d d d d d d d d E ^ d f d d d d d d d d l.c >.] #.4 ~ g f l f % [ (.<.C > #.c ^ d d f d d d d d d f.< d d d d d d d d d d d f d d f",
+   " d d d d d d d d d d d d f., f d d d d d d d d ^ # 1 *.4 f f d d d f d d d f [ f.R - * &.t d f d d d d d d.< d d d d d d d d d d d d d d f R",
+   " E f d d d d f d d d f d d ^ Y f d d g d d [.r = >Xo d [ d f d d d d d d ' d d f d f.c 1 * C d d d d d d d., d d d d d d d d d d d d d d d l",
+   " d d d d f d d d d d d d f d.3 d d f d f f ~ = +.C l [ d % d d d d d d d d d d d f f [.3 = #.i f d.e d {.< [ d d d d d d d d d d f d d d d d",
+   " Q z d d d d d d d d d d d d z.= d d d d d > =.C d d d d d d f d d d d d ' d d d d d d d.4._._ a g.3XX z.D d d f d d d d d d d d d d f d f Y",
+   " d d d g d d d d d d d g d d d.< d d z d.C O.c l f d d d d d d d d d d d d d d d d d d [ d.C.` # }.4 1 + z [ d d d d d d d d d d f d d f d f",
+   " d f d d d f d d d d f d d d d d., f d E 1 > f d d f d d d f d d d d d d d d d d d d d d [ [ + 3.7 + 1 1 +.c d d d d d d d d d d d f d d d R",
+   " R f d f d d f d d f d d d d d f Q Q l.y #.z.. d f d f d d d d d d d ' ' d d d d d d d d ' '.U + # 6 > +.y [ f d d d d d d d d d d d d d d f",
+   " f d d d d d d d d d d d d d d d d.< z # 1 g d d d d d d d d d d d '.d.' ' d d d d d f d d d f > 3 + = C d f d d d d d d d d d d d d d d d d",
+   " d d d d d d d d d d d d d d d d d f.c =.c f d d d d f f d d d d.g.8.q.qX= ' d d d f d d d d g P >.c ~ l d [ d d d d d d d f d d d d d d f Y",
+   " E f d d d d f d d d d d d d d d d d.C >.< { d d d d d d d d d.m.% q rXO W.g f d d d d d d d d a 1 * z d d d d { d d d d f d d d d d d d d l",
+   " d d d d f d d d d d d d d d d d d d = # f d d f d f d d f d d  .x 8 H G / [ d g d d d f d d d z # # d d d d d d.R i { d d d d d f d d d d d",
+   " Q z d d d d d d d d d d d d d d d.. + = l d d d d d d d f d f.H u.Y.: H T d { d d d d d d d d d._ 1 [ [ f d [ f.3._., z d f d d d d f d f Y",
+   " d d d f d d d d d d d d d d d d f f + * f f d d d d d d d d d }X .0 G Z e f d f d.g d d d d d { + +.y.<.,.D.4.<.c 3 1 O i d d d f d d f d f",
+   " d f d d d g d d d d d d d d d d f.e > * f d f f d d d d d d d '.g.Y G 9.g f g d d d d d d ' '. .] 3.3 { f f d '.5.Q.].y f d d d d f d d d R",
+   " R f d f d d d d d d d d d d d d d { + 1 f d d d d d d d d d [ '.}X@ L 0.[ d d d d d d d d d d f # +.p d d d d f.R.C ~ f d d d d d d d d d f",
+   " f d d d d d d d d d d d d d d d d [ > * f d d d d d d d d d d ' ,X@ 9 r.d [ d d d d d f d d d f * > d [ d d d ' Q d d f d d d d d d d d d d",
+   " R g d d d d d d d d d d d d d f {.e._ * ~ f d d d d d d d d d d.'X*.F.v.' ' d d f d d d f d g { =.] d d d d d f d d d d d d d d d f d d d R",
+   " f d d f d d d d f d d d d d f d.y =.9 #.I d f d d d d d d d d ' :.k.-.#.}.d d d d d f d d { d.< >.c l g d d d d d d d d d d d d d d f d d f",
+   " d g d d d f d d d d d g d g ~ > # # ( + > { d d d d d d d d d '.d W u p ' ' d d d d d d f d f.y 1.z f d d f d d d d d d d d d d d f d d d Y",
+   " E d d f d d d d d g d d f.c # 1 1.y.. * #.u f d d d d d d d d d '.g ' ' d [ d d f d d d d d.u > + z.< d l d d d d d d d d d d d d d d d d f",
+   " d d f d d d d d d d d l.,.<.4 + #.I f.7 # O z f f f d d d d d d d ' d d d d d d d d d d d [.y +.y d., g d d d d d d d d d d d d d d d d d f",
+   " Q d d f d d f d f d d d d v ^ ( *.R d d 1 >.< f d d d d d d d d d d d d d d d d d d d d f.w 1 = l d f., f d f d d d d d d d d d d f d d f E",
+   " d d d f d d d f d d d d d d.< d.3., d [ ~ # 1 C z d d f d d d d d d d d d d d d d d d d ^ > +.< d d g E R g d d d d d d d d d d d d f d d d",
+   " d d d d d d d d f d d d f E E f E [ f d f.L # # E } d f d d f d d d d d d d d d d d d l.y #.y g d d d k.< d d f d d d d d d d d d d d d d f",
+   " R g d d d d d d d d d f d., f d d d d d f f.y._ > ~ f f d d d d d d d d d d d d d d.e 1 #.y } d d f d d f., d d d d d d d d d d d d d d d E",
+   " f d d f d d d d d d d d ^ E d f d d d f d f d.y #._.C f d d f d d d d d d d ' d [.I 1 #.C Q f f d d d d d.4 d d d d d d d d d d d d d d d d",
+   " d g d d d f d d d d d f.* l d d d d d d d f g f.y > # *.R.u d f d { g d [ f '.U * = *.c f f j d d f f d d d.= l d d d d d d d d d d d d d E",
+   " E d d f d d d d d d f E Q d d d d d f d d d d g d ).c # 3 + #.I.4.P.K.U.3 = = * -.c.4 } d f d d f d d f d f.< d d d d d f d d d d d d d d d",
+   " d d f d d d d d d d f., f d d d d f d d d f { d f d d.u.c # = + 1 # + = = O =.y.3 [ d d d f f f d d d d d d ~ E f d d d d d d d d d d d d d",
+   " Q d d f d d f d d d l., d d d d d d f d d d d d d f d d { d.7.R.K.cX<.R.R.I { [ d g d f d d d f d d d d d f f.< d d d d d d d d d d d d d E",
+   " d d d f d d d d d d E R g d d d d d d d d d d d d d d d d { d f.. f d [ d g d d d d d d f d d d d d d d d d d., z d d f d d d d d d d d f d",
+   " d d d d d d d d d d.< f d d d d d d d d d d f d d f d d d d [ d d d d d d d f d d d d d d d d d d d d d d d d Q R f d d d d d d d d d d d E",
+   " E f d f d d d d d f., d g d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d.< d d d d d d d d d d d d f",
+   " f d d d d f d d d ~ ^ d d f d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d.= z d d f d d d d d f d d d",
+   " R d d f d d f d f.= d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d.R d d d d z d d d d d d f E",
+   " f d d d d d d d f.= l d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d %.= l d d d f d d d d d d f",
+   " d d d d d d d d f.< d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d.< d f d d d d d d d d d d",
+   " E f d d d d d d d., d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f.< d d d d d d d f d f d R",
+   " d f d d d f d d d.R d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d.R f d d d d d d d d f d f",
+   " d d f d d d d f., d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d., f d d d d d d f d d d E",
+   " E d d d d d d d., f f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d.< d d d d d d d d d d d d",
+   " d f d d f d d f.R d d f d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f., f d d d d d d d d d d f",
+   " ~ d d d d d d d.* z d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d.= f d d d d d d f d d d Y",
+   " d d d d f d d f.R d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f.< d d d d d d f d d f d f",
+   " d d d d f d d f., f d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d., f d d d d d d d f d f Y",
+   " Q d d d d d d d.< f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f.= d d d d d d f d d d d d",
+   " d d d d f d d f., d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d.< f d d d d d d d d d d g",
+   " E d d d d d d d f.< d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f., d d d d d d d d d d f R",
+   " d d d d d d d d d.< f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d.< d f d d d d d d d d d d",
+   " d d d f d d d d d., d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f f.= l d d d d d f d d d d E",
+   " Q d d f d d f d d.4 d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f d d d ~ ~ d d f d d f d d d d d d",
+   " d d f d d d d d f.= f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f d d d d f f.= f f d d d d d d d d d f d",
+   " R f d d d d d d d E E f d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d.7 d d d d d f f d d d d d R",
+   " d g d d d f d d d l.< d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f d d f d d d l.= g d d g d d d d d d d d z",
+   " f d d g d d d d d d.= l d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d z.= d d d d d d f d d d d d d d",
+   " R f d d d d d d d f ~ E f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f d d d d d.< f d d d d d d d d d d d f R",
+   " f d d d d d d d d d d.= f f d d d d d d d d d d d d d f d d f g f.r f d g f { d d d f d d d d d d d f d d d d., d d d d d d d d d d d d d f",
+   " d d d f d d d d f d f.< d d d d d f d d f d d d f d f d ^.5 # > = # *._ #.y.< { g d d d d d d d d d d d f f.= g d d d d d d d d d f d d f R",
+   " Q d d f d d f d d f d f., f d d d d d d d d g f d }.4 1 # # 3 # # + > > + > #.].c.w f f d d f d d f d f d d.3 d d d d d d d d d d d d d f d",
+   " d d f d d d d d d d d d.< d f d d d d f d d d d ^ + #._ +.4 E l l { f { [.3.C *._ 1.< [ d f d d d d d d f ^ Y f d d d d d d d d d d d d d l",
+   " R f d d d d d d d d d f d.= f l d f d d g d g C # # #.p f l d f d d d d [ d f.u.C + *.C [ f d d d d f d d.3 d d d d d d d d d d d d d d d Y",
+   " d g d d f d d d d d d d l.< d d d d d f d z.4 + =.3 g d d d f d [ d d d d d { d d C + # # [ d d d d d d R Q d f d d d d d d d d d d f d d d",
+   " f d d f d d d d d d d d d d.< f d d g d f.R #._ ^ g d g f d d d d d d f d d d d d d }.c =.y f d d Q d d.4 d f d d d d d d d d d d f d d d Y",
+   " R g d d d d d d d d d f d f.< d d d f d C # > ^ f d d d d d g d d f d d ' d d d d d d l.c 1Xo g { + ~ C E d d d d d d d d d d d d d d d d f",
+   " d d d d d d d d d d d d d d d.< d f d f._._.c f d f d d d d d f d d d d d d ' d d ' d d.u._._.R z O >X> f l f d d d f d d d d d d d f d d f",
+   " Q d d d d f d d d d d d d d d.e E d f.4 +.C d f d d d ' d d d f f d d d d d d d d d ' d d Q._.` z 1 1 + +.z d d d d d d f d d d d d d d f R",
+   " d d d f d d d d d d d d d d d f., { % +._ a d d d d d d d d d d d d d j f d d f d d d d [ }.C._X> # > 1.R l d d f d d d d d d d d d d d f d",
+   " d f d d f d d d d d d d d d d d f.D.4 1.S f f d d d d d d [ d d ' [ d f f g f d f d d d d d.r * 3 *.y ~ { d d d d d d d d d d d d d d d d l",
+   " R d d d d f d d d d f d d d f d d.. + =.R d d d d d d d ' d d.g.[.'.g.g.g d f f d d d d d [ { = #.C l d d d f d f f d d d d d d d d d d f Y",
+   " g d d f d d d d d d d d f d d d d d > + } d d d d d d d d d.X.E.%.#.v.nX+ 7 ' d d f d d [ d d.4 1.I d d [ d d d d d d d d d d d d d g d d d",
+   " d f d d f d d d d d d d d d d d d.I * * { d d d d d d f ' '.2 4 M.; 0 L FX% U ' d d d d d d j.4 + > d [ d d d f { d d d d d d d d f d d d R",
+   " R f d d d f d d d d d d d d d d d.R * > { d f d d d d d d [.l.B.g :.b B L r U.g d d d d d f d.R > # { d d d d d.<.e g d d d d d d d d d d f",
+   " f d d d d d d d d d d d d d d d d.I =.3 f [ d d d d d d d d '.h [X X1.1.1 9.G d f f d d d d f j 1 > f f [ d f [.R #.y f f d d d d d d d d d",
+   " R f d f d d d d d d d d d d d d d 1 +.L { d { d d d d d d '.h 'X  VX@ A 0X+.d f f d d d d [ d.R # =.K.K.<.D.K.<.C >.] # E f d d d f d d d R",
+   " d f d d d g d d d d d d d d d d f.K =.I d d d f d d d d d '.d.[.Z D D q.( 2 ' f d d d d ' d { ^ = 1 d d f f d [.3._ #.3 f d g d d d f d d d",
+   " d d d f d d d d d d d d d d d d f.< 3 * [ d d d d d d d ' '.d.> Z H A.( :.d ' d d f d d d d {.< * # l f d d d l.R.y ~ f d f d d d d d d f Y",
+   " ~ z d d d d d d d d d d d d d d f ^ # * d { d d d d d d '.d s.n.1.1 !.$ ;.d [ [ d d d d f l d.I >.C d d d d d d E f $ d d f l d d d d d d l",
+   " d d d d f d d d d d d d d d d d d d = -.t d d d d d f d '.d 4.v G G H.n.M M.h d d d d d d d f.C >.R d [ d d d d f d d d d d d d d d d d d d",
+   " E f d d d d f d d d d d d d d d d c.R +.U { d d f d d d '.[.%.nX@X-X-.x m 4 ' { d d d d d f g._ # ' { d d d f d d d g d d d d d d f d d f E",
+   " d d d d d d d d d d d d d d d d f d ~ 1 O l d d d d d d [ '.d.}.[.[.[.d.g.g d d d d d d d f.< 1 # { d f d d d d d f d d f d d d d d f d d f",
+   " d d d d d d d d d d d d d d d d d f f.y.].R d d f d d d d ' d ' d [ d ' d d d d d d d d f {._ + E l d d d d d d d d d d d d d d d d d d f R",
+   " E d d d d d f d d d d d d d d d d d { Q # 1 d f d g d d d d d d d d d d f d d f d d d g d.c 1.c z d d f d d d d d d d d d d d d d d d d d d",
+   " d d d d f d d d d d d d d d d d d f d d.C =.y f d d d d f d d d d d f d d d d d f d d f.e 1 # ^ d d d d d d d d d d d d d d d d d d d d d z",
+   " Q z d d d d d d d d d d d d d d d d d g d.c 1.y l f d d d d d d d d d $ d f d d d g f.e 1 # ^ f f d d d d d d d d d d d d d d d d d d d d R",
+   " d d d g d d d d d d d d d d d d d d d d g ^ # +.y d f d d d g d d d d d d d d d d d ^ > #.c d f d d d d d d d d d d d d d d d d d d d d f d",
+   " d f d d d f d d d d d d d d d d d d d d d d ) # > # ^ d f d d d d d d d f d f f %.c # >.y l d d d d d d d d d d d d d d d d d d d d d d d d",
+   " R f d f d d f d d d d d d d d d d d d d d d d f.c._ =.y.4 f } d f d g f d z E.4 =.] + ( d d d d d d d d d d d d d d d d d d d d f d d d d E",
+   " f d d d d d d d d d d d d d d d d d d d d d f d $.R > #._ =.c.5.R.5.3.<.7._ + 1 #.c C d d g d f d d d d d d d d d d d d d d d d d d d d d d",
+   " d d d d d d d d d d d d d d d d d d d d d d d d d f g K * 1 + = # 1 # 1 # = >.c E l d d d d d d d d d d d d d d d d d d d d d d d d d d f Y",
+   " E f d d d d f d d d d d d d d d d d d d d d d d d d d f l E.4.R.y + =.R.3.4 f f l d d f d d d d d d d d d d d d d d d d d d d d d d d d d l",
+   " d d d d f d d d d d d d d d d d d d d d d d d d d d d g d d c f f g l f f d d f d d d d d d d d d d d d d d d d d d d d d d d d f d d d d d",
+   " Q z d d d d d d d d d d d d d d d d d d d d d d d d d d f d d d d d f d f g d d d f d d d d d d d d d d d d d d d d d d d d d d d d f d f Y",
+   " d d d f d d d d d d d d d d d d d d d d d d d d d d g d d d f d f d d f d d f f d d d d d d d d d d d d d d d d d d d d d d d d f d d f d f",
+   " d f d d d g d d d d d d d d d d d d d d d d d d f d d d d d d d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f d d d R",
+   " R f d f d d d d d d d d d d d d d d d d d d d d d f d d d d d d d d d d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f",
+   " f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d",
+   " R f d d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f Y",
+   " d f d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d l",
+   " f d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f d d d d d",
+   " E d d d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f d f I",
+   " d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f d d f d f",
+   " d d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d f d d d Y",
+   " ~ d d d d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d l",
+   " d f d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d",
+   " E f E d d E d E d d E d E d d E d d E d E d d E d E d d E d d E d E d d E d E d d E d d E d E d d R d E d d E d E d d E d d E d E d d E d Q"],[
+])
+],
+1726092,0,0,[
+attr("Declaration=", "", 0, 1, 0,
+text('CadetBlue',300,160,11,0,1,378,176,1726063,13,3,0,0,0,0,2,378,176,0,0,"",0,0,0,0,173,'',[
+minilines(378,176,0,0,0,0,0,[
+mini_line(108,13,3,0,0,0,[
+str_block(0,108,13,3,0,-1,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,108,13,3,0,-1,0,0,0,0,0,
+	"Declaration=")])
+]),
+mini_line(45,13,3,0,0,0,[
+str_block(0,45,13,3,0,-1,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,45,13,3,0,-1,0,0,0,0,0,
+	"  Var")])
+]),
+mini_line(342,13,3,0,0,0,[
+str_block(0,342,13,3,0,-2,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,342,13,3,0,-2,0,0,0,0,0,
+	"   State: Status;/*This var represents")])
+]),
+mini_line(378,13,3,0,0,0,[
+str_block(0,378,13,3,0,-4,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,378,13,3,0,-4,0,0,0,0,0,
+	"                  the level of the source.")])
+]),
+mini_line(180,13,3,0,0,0,[
+str_block(0,180,13,3,0,-2,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,180,13,3,0,-2,0,0,0,0,0,
+	"                  */")])
+]),
+mini_line(63,13,3,0,0,0,[
+str_block(0,63,13,3,0,-2,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,63,13,3,0,-2,0,0,0,0,0,
+	"  Const")])
+]),
+mini_line(216,13,3,0,0,0,[
+str_block(0,216,13,3,0,-4,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,216,13,3,0,-4,0,0,0,0,0,
+	"   Integer: FLUID_CLASS;")])
+]),
+mini_line(324,13,3,0,0,0,[
+str_block(0,324,13,3,0,-8,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,324,13,3,0,-8,0,0,0,0,0,
+	"   Float  : RATE_0, RATE_1, RATE_2, ")])
+]),
+mini_line(306,13,3,0,0,0,[
+str_block(0,306,13,3,0,-8,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,306,13,3,0,-8,0,0,0,0,0,
+	"            TRANS_0_1, TRANS_1_0, ")])
+]),
+mini_line(297,13,3,0,0,0,[
+str_block(0,297,13,3,0,-4,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,297,13,3,0,-4,0,0,0,0,0,
+	"            TRANS_1_2, TRANS_2_1;")])
+]),
+mini_line(171,13,3,0,0,0,[
+str_block(0,171,13,3,0,-4,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,171,13,3,0,-4,0,0,0,0,0,
+	"   Port : PORT_OUT;")])
+])
+])])),
+attr("name=", "MMFS_source", 1, 1, 0,
+text('#0000ff',112,16,1,0,1,144,16,1726062,13,3,0,0,0,0,2,144,16,0,0,"",0,0,0,0,29,'',[
+minilines(144,16,0,0,0,0,0,[
+mini_line(144,13,3,0,0,0,[
+str_block(0,144,13,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,80640,144,13,3,0,-1,0,0,0,0,0,
+	"name=MMFS_source")])
+])
+])])),
+attr("Events=", "", 0, 1, 0,
+text('#42ce55',316,360,41,0,1,351,656,1726061,13,3,0,0,0,0,2,351,656,0,0,"",0,0,0,0,373,'',[
+minilines(351,656,0,0,0,0,0,[
+mini_line(63,13,3,0,0,0,[
+str_block(0,63,13,3,0,-1,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,63,13,3,0,-1,0,0,0,0,0,
+	"Events=")])
+]),
+mini_line(351,13,3,0,0,0,[
+str_block(0,351,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,351,13,3,0,-4,0,0,0,0,0,
+	" event= Transition_0_1 (EXP, TRANS_0_1)")])
+]),
+mini_line(225,13,3,0,0,0,[
+str_block(0,225,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,225,13,3,0,-4,0,0,0,0,0,
+	" condition= (Status == 0)")])
+]),
+mini_line(90,13,3,0,0,0,[
+str_block(0,90,13,3,0,-3,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,90,13,3,0,-3,0,0,0,0,0,
+	" action= {")])
+]),
+mini_line(270,13,3,0,0,0,[
+str_block(0,270,13,3,0,-8,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,270,13,3,0,-8,0,0,0,0,0,
+	"           float msg_vec[2];  ")])
+]),
+mini_line(306,13,3,0,0,0,[
+str_block(0,306,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,306,13,3,0,-4,0,0,0,0,0,
+	"           msg_vec[0]=FLUID_CLASS;")])
+]),
+mini_line(270,13,3,0,0,0,[
+str_block(0,270,13,3,0,-8,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,270,13,3,0,-8,0,0,0,0,0,
+	"           msg_vec[1]=RATE_1; ")])
+]),
+mini_line(333,13,3,0,0,0,[
+str_block(0,333,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,333,13,3,0,-4,0,0,0,0,0,
+	"           msg(PORT_OUT,all,msg_vec);")])
+]),
+mini_line(297,13,3,0,0,0,[
+str_block(0,297,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,297,13,3,0,-4,0,0,0,0,0,
+	"           set_cr(output,RATE_1);")])
+]),
+mini_line(315,13,3,0,0,0,[
+str_block(0,315,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,315,13,3,0,-4,0,0,0,0,0,
+	"           set_st(\"Status\", 1);  };")])
+]),
+mini_line(0,13,3,0,0,0,[
+str_block(0,0,13,3,0,0,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,0,13,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(351,13,3,0,0,0,[
+str_block(0,351,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,351,13,3,0,-4,0,0,0,0,0,
+	" event= Transition_1_0 (EXP, TRANS_1_0)")])
+]),
+mini_line(225,13,3,0,0,0,[
+str_block(0,225,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,225,13,3,0,-4,0,0,0,0,0,
+	" condition= (Status == 1)")])
+]),
+mini_line(90,13,3,0,0,0,[
+str_block(0,90,13,3,0,-3,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,90,13,3,0,-3,0,0,0,0,0,
+	" action= {")])
+]),
+mini_line(270,13,3,0,0,0,[
+str_block(0,270,13,3,0,-8,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,270,13,3,0,-8,0,0,0,0,0,
+	"           float msg_vec[2];  ")])
+]),
+mini_line(306,13,3,0,0,0,[
+str_block(0,306,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,306,13,3,0,-4,0,0,0,0,0,
+	"           msg_vec[0]=FLUID_CLASS;")])
+]),
+mini_line(270,13,3,0,0,0,[
+str_block(0,270,13,3,0,-8,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,270,13,3,0,-8,0,0,0,0,0,
+	"           msg_vec[1]=RATE_0; ")])
+]),
+mini_line(333,13,3,0,0,0,[
+str_block(0,333,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,333,13,3,0,-4,0,0,0,0,0,
+	"           msg(PORT_OUT,all,msg_vec);")])
+]),
+mini_line(297,13,3,0,0,0,[
+str_block(0,297,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,297,13,3,0,-4,0,0,0,0,0,
+	"           set_cr(output,RATE_0);")])
+]),
+mini_line(315,13,3,0,0,0,[
+str_block(0,315,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,315,13,3,0,-4,0,0,0,0,0,
+	"           set_st(\"Status\", 0);  };")])
+]),
+mini_line(0,13,3,0,0,0,[
+str_block(0,0,13,3,0,0,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,0,13,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(351,13,3,0,0,0,[
+str_block(0,351,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,351,13,3,0,-4,0,0,0,0,0,
+	" event= Transition_1_2 (EXP, TRANS_1_2)")])
+]),
+mini_line(225,13,3,0,0,0,[
+str_block(0,225,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,225,13,3,0,-4,0,0,0,0,0,
+	" condition= (Status == 1)")])
+]),
+mini_line(90,13,3,0,0,0,[
+str_block(0,90,13,3,0,-3,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,90,13,3,0,-3,0,0,0,0,0,
+	" action= {")])
+]),
+mini_line(270,13,3,0,0,0,[
+str_block(0,270,13,3,0,-8,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,270,13,3,0,-8,0,0,0,0,0,
+	"           float msg_vec[2];  ")])
+]),
+mini_line(306,13,3,0,0,0,[
+str_block(0,306,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,306,13,3,0,-4,0,0,0,0,0,
+	"           msg_vec[0]=FLUID_CLASS;")])
+]),
+mini_line(270,13,3,0,0,0,[
+str_block(0,270,13,3,0,-8,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,270,13,3,0,-8,0,0,0,0,0,
+	"           msg_vec[1]=RATE_2; ")])
+]),
+mini_line(333,13,3,0,0,0,[
+str_block(0,333,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,333,13,3,0,-4,0,0,0,0,0,
+	"           msg(PORT_OUT,all,msg_vec);")])
+]),
+mini_line(297,13,3,0,0,0,[
+str_block(0,297,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,297,13,3,0,-4,0,0,0,0,0,
+	"           set_cr(output,RATE_2);")])
+]),
+mini_line(315,13,3,0,0,0,[
+str_block(0,315,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,315,13,3,0,-4,0,0,0,0,0,
+	"           set_st(\"Status\", 2);  };")])
+]),
+mini_line(0,13,3,0,0,0,[
+str_block(0,0,13,3,0,0,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,0,13,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(351,13,3,0,0,0,[
+str_block(0,351,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,351,13,3,0,-4,0,0,0,0,0,
+	" event= Transition_2_1 (EXP, TRANS_2_1)")])
+]),
+mini_line(225,13,3,0,0,0,[
+str_block(0,225,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,225,13,3,0,-4,0,0,0,0,0,
+	" condition= (Status == 2)")])
+]),
+mini_line(90,13,3,0,0,0,[
+str_block(0,90,13,3,0,-3,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,90,13,3,0,-3,0,0,0,0,0,
+	" action= {")])
+]),
+mini_line(270,13,3,0,0,0,[
+str_block(0,270,13,3,0,-8,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,270,13,3,0,-8,0,0,0,0,0,
+	"           float msg_vec[2];  ")])
+]),
+mini_line(306,13,3,0,0,0,[
+str_block(0,306,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,306,13,3,0,-4,0,0,0,0,0,
+	"           msg_vec[0]=FLUID_CLASS;")])
+]),
+mini_line(270,13,3,0,0,0,[
+str_block(0,270,13,3,0,-8,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,270,13,3,0,-8,0,0,0,0,0,
+	"           msg_vec[1]=RATE_1; ")])
+]),
+mini_line(333,13,3,0,0,0,[
+str_block(0,333,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,333,13,3,0,-4,0,0,0,0,0,
+	"           msg(PORT_OUT,all,msg_vec);")])
+]),
+mini_line(297,13,3,0,0,0,[
+str_block(0,297,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,297,13,3,0,-4,0,0,0,0,0,
+	"           set_cr(output,RATE_1);")])
+]),
+mini_line(315,13,3,0,0,0,[
+str_block(0,315,13,3,0,-4,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,315,13,3,0,-4,0,0,0,0,0,
+	"           set_st(\"Status\", 1);  };")])
+]),
+mini_line(0,13,3,0,0,0,[
+str_block(0,0,13,3,0,0,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,0,13,3,0,0,0,0,0,0,0,
+	"")])
+])
+])])),
+attr("Messages=", "", 0, 1, 0,
+text('#fffe00000000',114,471,1,0,1,81,16,1726060,13,3,0,0,0,0,2,81,16,0,0,"",0,0,0,0,484,'',[
+minilines(81,16,0,0,0,0,0,[
+mini_line(81,13,3,0,0,0,[
+str_block(0,81,13,3,0,-1,0,0,0,[
+str_seg('#fffe00000000','Courier',0,80640,81,13,3,0,-1,0,0,0,0,0,
+	"Messages=")])
+])
+])])),
+attr("Initialization=", "", 0, 1, 0,
+text('magenta',112,291,11,0,1,105,154,1726059,11,3,0,0,0,0,2,105,154,0,0,"",0,0,0,0,302,'',[
+minilines(105,154,0,0,0,0,0,[
+mini_line(105,11,3,0,0,0,[
+str_block(0,105,11,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,69120,105,11,3,0,-1,0,0,0,0,0,
+	"Initialization=")])
+]),
+mini_line(56,11,3,0,0,0,[
+str_block(0,56,11,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,69120,56,11,3,0,-1,0,0,0,0,0,
+	" Status=")])
+]),
+mini_line(91,11,3,0,0,0,[
+str_block(0,91,11,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,69120,91,11,3,0,-1,0,0,0,0,0,
+	" FLUID_CLASS=")])
+]),
+mini_line(56,11,3,0,0,0,[
+str_block(0,56,11,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,69120,56,11,3,0,-1,0,0,0,0,0,
+	" RATE_0=")])
+]),
+mini_line(56,11,3,0,0,0,[
+str_block(0,56,11,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,69120,56,11,3,0,-1,0,0,0,0,0,
+	" RATE_1=")])
+]),
+mini_line(56,11,3,0,0,0,[
+str_block(0,56,11,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,69120,56,11,3,0,-1,0,0,0,0,0,
+	" RATE_2=")])
+]),
+mini_line(77,11,3,0,0,0,[
+str_block(0,77,11,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,69120,77,11,3,0,-1,0,0,0,0,0,
+	" TRANS_0_1=")])
+]),
+mini_line(77,11,3,0,0,0,[
+str_block(0,77,11,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,69120,77,11,3,0,-1,0,0,0,0,0,
+	" TRANS_1_0=")])
+]),
+mini_line(77,11,3,0,0,0,[
+str_block(0,77,11,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,69120,77,11,3,0,-1,0,0,0,0,0,
+	" TRANS_1_2=")])
+]),
+mini_line(77,11,3,0,0,0,[
+str_block(0,77,11,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,69120,77,11,3,0,-1,0,0,0,0,0,
+	" TRANS_2_1=")])
+]),
+mini_line(70,11,3,0,0,0,[
+str_block(0,70,11,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,69120,70,11,3,0,-1,0,0,0,0,0,
+	" PORT_OUT=")])
+])
+])])),
+attr("exec=", "", 0, 1, 0,
+text('black',-234,38,5,0,1,313,85,1726058,14,3,0,0,0,0,2,313,85,0,0,"",0,0,0,0,52,'',[
+minilines(313,85,0,0,0,0,0,[
+mini_line(36,14,3,0,0,0,[
+str_block(0,36,14,3,0,-1,0,0,0,[
+str_seg('black','Times-Roman',0,80640,36,14,3,0,-1,0,0,0,0,0,
+	"exec=")])
+]),
+mini_line(92,14,3,0,0,0,[
+str_block(0,92,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,92,14,3,0,-2,0,0,0,0,0,
+	" disable_undo();")])
+]),
+mini_line(270,14,3,0,0,0,[
+str_block(0,270,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,270,14,3,0,-2,0,0,0,0,0,
+	" if(\"$(__status__)\"==\"all\",_show_init_,NULL);")])
+]),
+mini_line(282,14,3,0,0,0,[
+str_block(0,282,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,282,14,3,0,-2,0,0,0,0,0,
+	" if(\"$(__status__)\"==\"init\",_show_vars_,NULL);")])
+]),
+mini_line(313,14,3,0,0,0,[
+str_block(0,313,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,313,14,3,0,-2,0,0,0,0,0,
+	" if(\"$(__status__)\"==\"state_vars\",_show_all_,NULL);")])
+])
+])])),
+attr("__status__=", "state_vars", 0, 1, 0,
+text('black',-232,12,1,0,1,130,17,1726057,14,3,0,0,0,0,2,130,17,0,0,"",0,0,0,0,26,'',[
+minilines(130,17,0,0,0,0,0,[
+mini_line(130,14,3,0,0,0,[
+str_block(0,130,14,3,0,-1,0,0,0,[
+str_seg('black','Times-Roman',0,80640,130,14,3,0,-1,0,0,0,0,0,
+	"__status__=state_vars")])
+])
+])])),
+attr("_show_init_=", "", 0, 1, 0,
+text('black',-240,136,15,0,1,147,255,1726056,14,3,0,0,0,0,2,147,255,0,0,"",0,0,0,0,150,'',[
+minilines(147,255,0,0,0,0,0,[
+mini_line(77,14,3,0,0,0,[
+str_block(0,77,14,3,0,-1,0,0,0,[
+str_seg('black','Times-Roman',0,80640,77,14,3,0,-1,0,0,0,0,0,
+	"_show_init_=")])
+]),
+mini_line(135,14,3,0,0,0,[
+str_block(0,135,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,135,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(Declaration);")])
+]),
+mini_line(119,14,3,0,0,0,[
+str_block(0,119,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,119,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(Watches);")])
+]),
+mini_line(108,14,3,0,0,0,[
+str_block(0,108,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,108,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(Events);")])
+]),
+mini_line(127,14,3,0,0,0,[
+str_block(0,127,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,127,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(Messages);")])
+]),
+mini_line(120,14,3,0,0,0,[
+str_block(0,120,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,120,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(Rewards);")])
+]),
+mini_line(130,14,3,0,0,0,[
+str_block(0,130,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,130,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(__status__);")])
+]),
+mini_line(96,14,3,0,0,0,[
+str_block(0,96,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,96,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(exec);")])
+]),
+mini_line(92,14,3,0,0,0,[
+str_block(0,92,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,92,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(stop);")])
+]),
+mini_line(137,14,3,0,0,0,[
+str_block(0,137,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,137,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(_show_init_);")])
+]),
+mini_line(145,14,3,0,0,0,[
+str_block(0,145,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,145,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(_show_vars_);")])
+]),
+mini_line(133,14,3,0,0,0,[
+str_block(0,133,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,133,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(_show_all_);")])
+]),
+mini_line(144,14,3,0,0,0,[
+str_block(0,144,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,144,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Initialization);")])
+]),
+mini_line(147,14,3,0,0,0,[
+str_block(0,147,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,147,14,3,0,-2,0,0,0,0,0,
+	" strcpy(__status__,\"init\");")])
+]),
+mini_line(41,14,3,0,0,0,[
+str_block(0,41,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,41,14,3,0,-2,0,0,0,0,0,
+	" stop();")])
+])
+])])),
+attr("_show_vars_=", "", 0, 1, 0,
+text('black',-232,412,5,0,1,190,85,1726055,14,3,0,0,0,0,2,190,85,0,0,"",0,0,0,0,426,'',[
+minilines(190,85,0,0,0,0,0,[
+mini_line(85,14,3,0,0,0,[
+str_block(0,85,14,3,0,-1,0,0,0,[
+str_seg('black','Times-Roman',0,80640,85,14,3,0,-1,0,0,0,0,0,
+	"_show_vars_=")])
+]),
+mini_line(137,14,3,0,0,0,[
+str_block(0,137,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,137,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(Initialization);")])
+]),
+mini_line(126,14,3,0,0,0,[
+str_block(0,126,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,126,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Watches);")])
+]),
+mini_line(190,14,3,0,0,0,[
+str_block(0,190,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,190,14,3,0,-2,0,0,0,0,0,
+	" strcpy(__status__,\"state_vars\");")])
+]),
+mini_line(41,14,3,0,0,0,[
+str_block(0,41,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,41,14,3,0,-2,0,0,0,0,0,
+	" stop();")])
+])
+])])),
+attr("_show_all_=", "", 0, 1, 0,
+text('magenta',-72,170,11,0,1,144,187,1726054,14,3,0,0,0,0,2,144,187,0,0,"",0,0,0,0,184,'',[
+minilines(144,187,0,0,0,0,0,[
+mini_line(73,14,3,0,0,0,[
+str_block(0,73,14,3,0,-1,0,0,0,[
+str_seg('black','Times-Roman',0,80640,73,14,3,0,-1,0,0,0,0,0,
+	"_show_all_=")])
+]),
+mini_line(142,14,3,0,0,0,[
+str_block(0,142,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,142,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Declaration);")])
+]),
+mini_line(144,14,3,0,0,0,[
+str_block(0,144,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,144,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Initialization);")])
+]),
+mini_line(126,14,3,0,0,0,[
+str_block(0,126,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,126,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Watches);")])
+]),
+mini_line(126,14,3,0,0,0,[
+str_block(0,126,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,126,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Watches);")])
+]),
+mini_line(115,14,3,0,0,0,[
+str_block(0,115,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,115,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Events);")])
+]),
+mini_line(134,14,3,0,0,0,[
+str_block(0,134,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,134,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Messages);")])
+]),
+mini_line(127,14,3,0,0,0,[
+str_block(0,127,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,127,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Rewards);")])
+]),
+mini_line(107,14,3,0,0,0,[
+str_block(0,107,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,107,14,3,0,-2,0,0,0,0,0,
+	" show_attr(name);")])
+]),
+mini_line(143,14,3,0,0,0,[
+str_block(0,143,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,143,14,3,0,-2,0,0,0,0,0,
+	" strcpy(__status__,\"all\");")])
+]),
+mini_line(41,14,3,0,0,0,[
+str_block(0,41,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,41,14,3,0,-2,0,0,0,0,0,
+	" stop();")])
+])
+])])),
+attr("stop=", "", 0, 1, 0,
+text('magenta',-128,14,2,0,1,93,34,1726053,14,3,0,0,0,0,2,93,34,0,0,"",0,0,0,0,28,'',[
+minilines(93,34,0,0,0,0,0,[
+mini_line(32,14,3,0,0,0,[
+str_block(0,32,14,3,0,-1,0,0,0,[
+str_seg('black','Times-Roman',0,80640,32,14,3,0,-1,0,0,0,0,0,
+	"stop=")])
+]),
+mini_line(93,14,3,0,0,0,[
+str_block(0,93,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,93,14,3,0,-2,0,0,0,0,0,
+	"  enable_undo();")])
+])
+])])),
+attr("Watches=", "", 1, 1, 0,
+text('magenta',126,243,2,0,1,56,28,1726052,11,3,0,0,0,0,2,56,28,0,0,"",0,0,0,0,254,'',[
+minilines(56,28,0,0,0,0,0,[
+mini_line(56,11,3,0,0,0,[
+str_block(0,56,11,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,69120,56,11,3,0,-1,0,0,0,0,0,
+	"Watches=")])
+]),
+mini_line(42,11,3,0,0,0,[
+str_block(0,42,11,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,69120,42,11,3,0,-1,0,0,0,0,0,
+	"Status")])
+])
+])])),
+attr("Rewards=", "", 0, 1, 0,
+text('magenta',113,503,6,0,1,162,96,1726051,13,3,0,0,0,0,2,162,96,0,0,"",0,0,0,0,516,'',[
+minilines(162,96,0,0,0,0,0,[
+mini_line(72,13,3,0,0,0,[
+str_block(0,72,13,3,0,-1,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,72,13,3,0,-1,0,0,0,0,0,
+	"Rewards=")])
+]),
+mini_line(162,13,3,0,0,0,[
+str_block(0,162,13,3,0,-2,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,162,13,3,0,-2,0,0,0,0,0,
+	"rate_reward=output")])
+]),
+mini_line(153,13,3,0,0,0,[
+str_block(0,153,13,3,0,-4,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,153,13,3,0,-4,0,0,0,0,0,
+	"condition=(FALSE)")])
+]),
+mini_line(72,13,3,0,0,0,[
+str_block(0,72,13,3,0,-4,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,72,13,3,0,-4,0,0,0,0,0,
+	"value=0;")])
+]),
+mini_line(0,13,3,0,0,0,[
+str_block(0,0,13,3,0,0,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,0,13,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(9,13,3,0,0,0,[
+str_block(0,9,13,3,0,-8,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,9,13,3,0,-8,0,0,0,0,0,
+	" ")])
+])
+])]))
+]).

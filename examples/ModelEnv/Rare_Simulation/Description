@@ -1,0 +1,1 @@
+This model represents a M/M/1/k system with a Poisson Source and an exponencial queue. Because the rate of Packet Generation is much less than the service rate, buffer overflows become a rare condition, requiring the rare event simulation technique to be used.

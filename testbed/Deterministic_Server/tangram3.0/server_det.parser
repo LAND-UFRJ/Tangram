@@ -1,0 +1,99 @@
+ 
+Object_Desc On_Off_Source (
+Declaration {
+
+  Var
+   State: Status /* 1 - ON; 0 - OFF */;
+  Const
+   Float: ONOFF_RATE, OFFON_RATE, 
+          TRANSMISSION_RATE;
+   Port:PORT_OUT;
+}
+Initialization {
+
+  Status     = 0
+  ONOFF_RATE = 1000
+  OFFON_RATE = 500
+  TRANSMISSION_RATE = 1000000
+  PORT_OUT=send_port 
+ 
+}
+Events {
+
+event= On_Off (EXP, ONOFF_RATE)
+condition= (Status == 1)
+action= {  ;set_st("Status",0); };
+
+event= Off_On (EXP, OFFON_RATE) 
+condition= (Status == 0)
+action= { ;set_st("Status", 1); };
+
+event=Packet_Generation (EXP,TRANSMISSION_RATE)
+condition=(Status == 1)
+action= {msg(PORT_OUT,all,0);};
+}
+Messages {
+
+}
+Rewards {
+
+
+ 
+
+}
+)
+Object_Desc Server_Queue_Det (
+Declaration {
+
+ Var
+  State:Queue;
+
+ Const
+  Float: SERVICE_RATE;
+  Integer: QUEUE_SIZE;
+  Port: PORT_IN;
+
+}
+Initialization {
+
+Queue =0 
+SERVICE_RATE =800000
+QUEUE_SIZE=10
+PORT_IN = send_port
+
+}
+Events {
+
+ event=Service(DET,SERVICE_RATE)
+ condition= (Queue > 0)
+ action= { int queue; 
+           queue = Queue - 1; 
+           set_st("Queue", queue);
+          };
+}
+Messages {
+
+ msg_rec=PORT_IN
+ action= { int queue;
+           queue = Queue;
+           if (queue < QUEUE_SIZE)
+              queue = queue  + 1;
+           set_st("Queue", queue);
+         };
+}
+Rewards {
+
+rate_reward=utilization
+condition=(Queue>0)
+value=1;
+
+}
+)
+Global_Rewards {
+}
+Independent_Chains {
+
+  event= Server_Queue_Det.Service       
+  chain=On_Off_Source,Server_Queue_Det
+
+}

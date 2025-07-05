@@ -1,0 +1,341 @@
+ 
+Object_Desc System_2 (
+Declaration {
+
+State Var
+
+Integer:Operational_Procs, /* Total number of operational processors */
+        Operational_Switch,/* 0 if switch is not operational; 1 if switch is operational */
+        Operational_Memory;/* 0 if memory is not operational; 1 if memory is operational */
+
+Const
+
+Integer: N_PROCS /* Total number of processors in the system*/;
+
+Float: FAILURE_RATE,REPAIR_RATE, /* Both of switch and memory have the same failure and repair rates */
+       PROC_FAILURE_RATE, PROC_REPAIR_RATE, PROB;
+
+Port: DATABASE /* This port sends a message that causes the fail in database */;
+}
+Initialization {
+
+Operational_Procs         = 2
+Operational_Switch        = 1
+Operational_Memory     = 1
+N_PROCS                     = 2
+FAILURE_RATE            = 0.0004
+REPAIR_RATE              = 1
+PROC_FAILURE_RATE = 0.008
+PROC_REPAIR_RATE   = 1
+PROB                             = 0.8
+DATABASE                     = fail_database
+}
+Events {
+
+/*events related with Processor  1*/
+event     = Fail_Processor(EXP,Operational_Procs*PROC_FAILURE_RATE)
+condition = ( Operational_Procs > 0)
+action={
+          int operational_procs;
+	  operational_procs = Operational_Procs - 1;
+          msg(DATABASE,all,0);
+          set_st("Operational_Procs",operational_procs);
+
+	}: prob=1-PROB;
+
+       {
+          int operational_procs;
+	  operational_procs = Operational_Procs - 1;
+          set_st("Operational_Procs",operational_procs);
+
+       }: prob=PROB;
+
+event     =  Repair_Processor(EXP,(N_PROCS - Operational_Procs) * PROC_REPAIR_RATE)
+condition = (Operational_Procs <= 1)
+action={
+         int operational_procs;
+         operational_procs = Operational_Procs + 1;
+         set_st("Operational_Procs",operational_procs);
+
+       };
+
+
+/*events related with memory*/
+event     = Fail_Memory(EXP,FAILURE_RATE)
+condition = ( Operational_Memory == 1 )
+action={
+         ;set_st("Operational_Memory",0);
+       };
+
+event     =  Repair_Memory(EXP,REPAIR_RATE)
+condition = ( Operational_Memory == 0 )
+action={
+         ;set_st("Operational_Memory",1);
+       };
+
+
+/*events related with switch*/
+event     =  Fail_Switch(EXP,FAILURE_RATE)
+condition = ( Operational_Switch == 1 )
+action={
+         ;set_st("Operational_Switch",0);
+       };
+
+
+event     = Repair_Switch(EXP,REPAIR_RATE)
+condition = ( Operational_Switch == 0 )
+action={
+         ;set_st("Operational_Switch",1);
+       };
+}
+Messages {
+
+
+
+ 
+
+
+}
+Rewards {
+
+
+rate_reward = system_2_availability
+condition   = ((Operational_Memory ==1)
+               &&(Operational_Switch==1)&&
+               (Operational_Procs >0))
+value       = 1;
+}
+)
+Object_Desc Front_End (
+Declaration {
+
+State Var
+Integer: Operational;
+
+Const
+Float:FAILURE_RATE,REPAIR_RATE;
+
+
+}
+Initialization {
+
+Operational  = 1
+FAILURE_RATE = 0.0004
+REPAIR_RATE  = 1
+
+
+
+
+
+
+}
+Events {
+
+event     = Fail (EXP,FAILURE_RATE)
+condition = ( Operational == 1 )
+action={
+           ;set_st("Operational",0);
+        };
+
+event     =  Repair (EXP,REPAIR_RATE)
+condition = ( Operational == 0 )
+action={
+           ;set_st("Operational",1);
+        };
+}
+Messages {
+
+
+
+}
+Rewards {
+
+rate_reward =front_end_availability
+condition   = ( Operational == 1 )
+value       = 1;
+
+}
+)
+Object_Desc Database (
+Declaration {
+
+State Var
+
+Integer: Operational;
+
+
+Const
+
+Float:FAILURE_RATE,REPAIR_RATE;
+Port: DATABASE;
+
+
+}
+Initialization {
+
+Operational          = 1
+FAILURE_RATE  = 0.0004
+REPAIR_RATE   = 1
+DATABASE         =fail_database
+
+
+
+
+}
+Events {
+
+event     = Fail (EXP,FAILURE_RATE)
+condition = (Operational == 1)
+action={
+           ;set_st("Operational",0);
+        };
+
+event     = Repair (EXP,REPAIR_RATE)
+condition = (Operational == 0)
+action={
+           ;set_st("Operational",1);
+        };
+
+
+}
+Messages {
+
+msg_rec= DATABASE
+action = {
+           if (Operational == 1)
+             ;set_st("Operational",0);
+         };
+             
+
+
+}
+Rewards {
+
+
+rate_reward  =database_availability
+condition       =(Operational == 1)
+value             = 1;
+
+}
+)
+Object_Desc System_1 (
+Declaration {
+
+State Var
+
+Integer:Operational_Procs, /* Total number of operational processors */
+        Operational_Switch,/* 0 if switch is not operational; 1 if switch is operational */ Operational_Memory;/* 0 if memory is not operational; 1 if memory is operational */
+
+Const
+
+Integer: N_PROCS /* Total number of processors in the system*/;
+
+Float: FAILURE_RATE,REPAIR_RATE, /* Both of switch and memory have the same failure and repair rates */
+       PROC_FAILURE_RATE, PROC_REPAIR_RATE, PROB;
+
+Port: DATABASE /* This port sends a message that causes the fail in database */;
+}
+Initialization {
+
+Operational_Procs          = 2
+Operational_Switch         = 1
+Operational_Memory       = 1
+N_PROCS                       = 2
+FAILURE_RATE              = 0.0004
+REPAIR_RATE                = 1
+PROC_FAILURE_RATE  = 0.008
+PROC_REPAIR_RATE    = 1
+PROB                              = 0.8
+DATABASE                      = fail_database
+}
+Events {
+
+/*events related with Processor  1*/
+event     = Fail_Processor(EXP,Operational_Procs*PROC_FAILURE_RATE)
+condition = ( Operational_Procs > 0)
+action={
+          int operational_procs;
+	  operational_procs = Operational_Procs - 1;
+          msg(DATABASE,all,0);
+          set_st("Operational_Procs",operational_procs);
+
+	}: prob=1-PROB;
+
+       {
+          int operational_procs;
+	  operational_procs = Operational_Procs - 1;
+          set_st("Operational_Procs",operational_procs);
+
+       }: prob=PROB;
+
+event     =  Repair_Processor(EXP,(N_PROCS - Operational_Procs) * PROC_REPAIR_RATE)
+condition = (Operational_Procs <= 1)
+action={
+         int operational_procs;
+         operational_procs = Operational_Procs + 1;
+         set_st("Operational_Procs",operational_procs);
+
+       };
+
+
+/*events related with memory*/
+event     = Fail_Memory(EXP,FAILURE_RATE)
+condition = ( Operational_Memory == 1 )
+action={
+         ;set_st("Operational_Memory",0);
+       };
+
+event     =  Repair_Memory(EXP,REPAIR_RATE)
+condition = ( Operational_Memory == 0 )
+action={
+         ;set_st("Operational_Memory",1);
+       };
+
+
+/*events related with switch*/
+event     =  Fail_Switch(EXP,FAILURE_RATE)
+condition = ( Operational_Switch == 1 )
+action={
+         ;set_st("Operational_Switch",0);
+       };
+
+
+event     = Repair_Switch(EXP,REPAIR_RATE)
+condition = ( Operational_Switch == 0 )
+action={
+         ;set_st("Operational_Switch",1);
+       };
+}
+Messages {
+
+
+
+ 
+
+
+}
+Rewards {
+
+
+rate_reward = system_1_availability
+condition   = ((Operational_Memory ==1)
+               &&(Operational_Switch==1)&&
+               (Operational_Procs >0))
+value       = 1;
+}
+)
+Global_Rewards {
+ 
+rate_reward=system_availability
+condition=((Database.database_availability ==1)&&
+           (Front_End.front_end_availability == 1)&&
+           ((System_1.system_1_availability == 1)||
+            (System_2.system_2_availability == 1)))
+value = 1;
+           
+ 
+
+
+}
+Independent_Chains {
+}

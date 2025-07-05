@@ -1,0 +1,7 @@
+Getting names ...
+getNames -v MM1k
+ Warning: Float variable will not be set in your model
+ Warning: Float variable will not be set in your model
+getMaxValues.sh MM1k
+Enter max value for Server_Queue.Queue
+make: *** [getnames] Interrupt

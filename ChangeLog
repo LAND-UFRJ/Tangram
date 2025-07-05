@@ -1,0 +1,1535 @@
+
+ Version Number 3.5.1 contains all bug fixes since the last dist version was
+ made available on the site.
+
+####################
+version 3.5.1
+cvs tag ver_3_5_1
+
+Modified files:
+    
+-----------------
+Added files:
+    
+-----------------
+
+
+Version Number Fix
+
+####################
+version 3.5.0
+cvs tag ver_3_5_0
+
+Modified files:
+    
+-----------------
+Added files:
+    
+-----------------
+
+
+GD (29/Nov/2013): T2main_app.java has a hardcoded Tangram2 version number in it.
+                  I updated it to 3.5.0. We still need to this automatically.
+
+####################
+version 3.4.4
+cvs tag ver_3_4_4
+
+Modified files:
+    RCS file: /export/CVS/tangram2/interface/Tangram2_Interface/T2main_app.java
+-----------------
+Added files:
+    
+-----------------
+
+
+GD 27/11/2013: Daniel Sadoc discovered a "segmentation fault" bug while
+developing a model using "parameters". This bug was fixed.
+
+####################
+version 3.4.3
+cvs tag ver_3_4_3
+
+Modified files:
+    RCS file: /export/CVS/tangram2/ModelEnv/chain_generator/general.h
+RCS file: /export/CVS/tangram2/ModelEnv/trans_param/trans_param.c
+-----------------
+Added files:
+    
+-----------------
+
+
+GD (20/11/2013) -> getNames.c had a limited model file name length. It was
+increased from 40 bytes to 400 bytes.
+
+####################
+version 3.4.2
+cvs tag ver_3_4_2
+
+Modified files:
+    RCS file: /export/CVS/tangram2/ModelEnv/getNames/getNames.c
+-----------------
+Added files:
+    
+-----------------
+
+
+####################
+version 3.4.1
+cvs tag ver_3_4_1
+
+Modified files:
+    RCS file: /export/CVS/tangram2/configure.ac
+RCS file: /export/CVS/tangram2/ModelEnv/chain_generator/clone_ev.cpp
+RCS file: /export/CVS/tangram2/ModelEnv/chain_generator/distribution.cpp
+RCS file: /export/CVS/tangram2/ModelEnv/chain_generator/random.cpp
+RCS file: /export/CVS/tangram2/ModelEnv/chain_generator/rew_measure.cpp
+RCS file: /export/CVS/tangram2/ModelEnv/chain_generator/simul_event.cpp
+RCS file: /export/CVS/tangram2/ModelEnv/chain_generator/simulator.cpp
+RCS file: /export/CVS/tangram2/ModelEnv/chain_generator/system_desc.cpp
+RCS file: /export/CVS/tangram2/ModelEnv/mtk/user_interface.cpp
+RCS file: /export/CVS/tangram2/ModelEnv/mtk/plugins/Makefile.inc
+RCS file: /export/CVS/tangram2/ModelEnv/mtk/plugins/example/Makefile.am
+RCS file: /export/CVS/tangram2/ModelEnv/mtk/plugins/floatvalue/Makefile.am
+RCS file: /export/CVS/tangram2/ModelEnv/mtk/plugins/ghmm/Makefile.am
+RCS file: /export/CVS/tangram2/ModelEnv/mtk/plugins/hmm/Makefile.am
+RCS file: /export/CVS/tangram2/ModelEnv/mtk/plugins/hmm_batch/Makefile.am
+RCS file: /export/CVS/tangram2/ModelEnv/mtk/plugins/hmm_batch_variable/Makefile.am
+RCS file: /export/CVS/tangram2/ModelEnv/mtk/plugins/hmm_batch_variable/batches.c
+RCS file: /export/CVS/tangram2/ModelEnv/mtk/plugins/hmm_batch_variable/batches.h
+RCS file: /export/CVS/tangram2/ModelEnv/mtk/plugins/hmm_batch_variable/hmm_batch.cpp
+RCS file: /export/CVS/tangram2/ModelEnv/mtk/plugins/intvalue/Makefile.am
+RCS file: /export/CVS/tangram2/ModelEnv/mtk/plugins/ma/Makefile.am
+RCS file: /export/CVS/tangram2/TraffGen/Traffgen_IP/adjust_trace.c
+RCS file: /export/CVS/tangram2/TraffGen/Traffgen_IP/band.c
+RCS file: /export/CVS/tangram2/TraffGen/Traffgen_IP/buffer.c
+RCS file: /export/CVS/tangram2/TraffGen/Traffgen_IP/check_dup.c
+RCS file: /export/CVS/tangram2/TraffGen/Traffgen_IP/convolution.c
+RCS file: /export/CVS/tangram2/TraffGen/Traffgen_IP/delay_histogram.c
+RCS file: /export/CVS/tangram2/TraffGen/Traffgen_IP/linear.c
+RCS file: /export/CVS/tangram2/TraffGen/Traffgen_IP/mse.c
+RCS file: /export/CVS/tangram2/TraffGen/Traffgen_IP/offset.c
+RCS file: /export/CVS/tangram2/TraffGen/Traffgen_IP/row.c
+RCS file: /export/CVS/tangram2/TraffGen/Traffgen_IP/shift.c
+RCS file: /export/CVS/tangram2/TraffGen/Traffgen_IP/traffmeasures.c
+RCS file: /export/CVS/tangram2/TraffGen/Traffgen_IP/verif_loss.c
+RCS file: /export/CVS/tangram2/scripts/Makefile.am
+RCS file: /export/CVS/tangram2/scripts/tangram2.base
+-----------------
+Added files:
+    
+-----------------
+
+13-03-2013 Gaspare:
+  -- Added initial support for 64 bits machines: It runs on 64 bits with 32 bits layer emulator
+  -- Added support for Macosx >= 10.6
+
+
+
+GD 07/Dec/2011
+New matrix visualization (mtx_vis-st_permut) implemented by Daniel Sadoc. Among
+the new features, it is now possible to print a matrix to a .obj file.
+
+
+####################
+version 3.4.0
+cvs tag ver_3_4_0
+
+Modified files:
+    RCS file: /export/CVS/tangram2/config.h.in
+RCS file: /export/CVS/tangram2/ModelEnv/mtx_vis-st_permut/matrix.c
+-----------------
+Added files:
+    
+-----------------
+
+
+Condition expression added.
+ - Now the rate of an event may include expresion in the form?
+   EXPR1 < EXPR2  ?  EXPR3 ? EXPR4.
+
+ - All expression within the model (i.e. action code) may also use this feature
+
+ GD,  May/16/2011
+
+####################
+version 3.3.0
+cvs tag ver_3_3_0
+
+Modified files:
+    RCS file: /export/CVS/tangram2/ModelEnv/grammar/gramatica.bison.y
+RCS file: /export/CVS/tangram2/ModelEnv/grammar/gramatica.lex.l
+-----------------
+Added files:
+    
+-----------------
+
+
+####################
+version 3.2.11
+cvs tag ver_3_2_11
+
+Modified files:
+    interface/Tangram2_Interface/T2main_app.java
+-----------------
+Added files:
+    
+-----------------
+
+GD:  Typo on the beginning of the first comment. File was not compiling (my
+        mistake)
+
+####################
+version 3.2.10
+cvs tag ver_3_2_10
+
+Modified files:
+    ModelEnv/mtk/Makefile.am
+-----------------
+Added files:
+    
+-----------------
+
+GD: Removed a CXXFLAGS override I had added by mistake
+
+####################
+version 3.2.9
+cvs tag ver_3_2_9
+
+Modified files:
+    ModelEnv/getNames/getNames.c
+ModelEnv/mtk/Makefile.am
+interface/Tangram2_Interface/T2main_app.java
+interface/Tangram2_Interface/T2modelgen.java
+interface/Tangram2_Interface/T2simulation.java
+-----------------
+Added files:
+    
+-----------------
+
+
+GD, GDom e Gaspare:  Added new verifications during the .parser, .events,
+    .state_variables and .reward files generation procedures. Error messages were improve so that
+    user wont see the older and misterious "GetNames error" message.
+     Also, tgif is now called with "-tgrm2" option so that newer tgif versions
+     will work.
+
+####################
+version 3.2.8
+cvs tag ver_3_2_8
+
+Modified files:
+    interface/Tangram2_Interface/T2main_app.java
+-----------------
+Added files:
+    
+-----------------
+Allyson 04/02/2010
+
+interface/Tangram2_Interface/T2main_app.java
+    * modified for Tangram to use tgif 4.2.* new command line parameter -tgrm2
+
+####################
+version 3.2.7
+cvs tag ver_3_2_7
+
+Modified files:
+    ModelEnv/trans_param/formulc.c
+-----------------
+Added files:
+    
+-----------------
+
+by Edmundo Grune (19/10/2009)
+
+Left-over warning from gcc 4.2.4 (ubuntu 8.04)
+
+in directory /ModelEnv/trans_param/
+formulc.c:842: warning: dereferencing type-punned pointer will break strict-aliasing rules
+  - Foi criada uma nova variavel, (char *tempc) que é utilizada no lugar da
+    variável (unsigned char *tempu), na qual estava sendo dado um type cast
+    para  (char *) que, então, gerava o warning acima.
+
+
+####################
+version 3.2.6
+cvs tag ver_3_2_6
+
+Modified files:
+    config.h.in
+configure.ac
+ModelEnv/chain_generator/mark_find.cpp
+ModelEnv/chain_generator/simul_interactive.cpp
+ModelEnv/mtx_to_obj/Makefile.am
+ModelEnv/mtx_to_obj/markov_mtx2obj.c
+ModelEnv/mtx_vis-st_permut/matrix.c
+ModelEnv/pmf/formulc.c
+ModelEnv/pmf/output.c
+ModelEnv/pmf/readfiles.c
+TraffGen/Traffgen_IP/traffgen_recv_ip.c
+-----------------
+Added files:
+    ModelEnv/mtx_to_obj/tgif_template.h
+-----------------
+
+by Edmundo Grune and Luiz Hoffmann (19/10/2009)
+
+Warnings given by gcc 4.2.4 (in Ubuntu 8.04) were removed. Also, configure is
+now checking for readline header files.
+
+The following lines show the warnings removed and the solution given to each:
+
+mark_find.cpp:69: warning: deprecated conversion from string constant to ‘char*’
+  - a declaração "char *nowhere = "\n";" foi alterada para "char nowhere = '\n';"
+
+mark_find.cpp:441: warning: the address of ‘base_filename’ will always evaluate as ‘true’
+  - o 'if(!base_filename)' foi alterado para 'if( (strcmp( base_filename, "" )) == 0)'
+
+simul_interactive.cpp:90: warning: deprecated conversion from string constant to ‘char*’
+  - a declaração "char *protocol = "udp";" foi alterada para "char protocol[] =
+    "udp";"
+
+tgif_template.c:18: warning: ‘tgif_template’ defined but not used
+  - esse arquivo .c só contém a declaração da variável 'tgif_template'. Não há
+        qualquer código inserido. A solução foi transformar esse .c em um .h.
+
+matrix.c:2934: warning: pointer targets in passing argument 3 of ‘XCreateBitmapFromData’ differ in signedness
+  - a imagen que era declarada como (unsigned char) foi modificada para (char).
+    Isso nao provoca qualquer alteração prática, uma vez que ela era passada
+    como parâmetro para a função 'XCreateBitmapFromData' que pede um (char *).
+
+matrixc:2939: warning: pointer targets in passing argument 3 of ‘XCreateBitmapFromData’ differ in signedness
+  - a imagen que era declarada como (unsigned char) foi modificada para (char).
+    Isso nao provoca qualquer alteração prática, uma vez que ela era passada
+    como parâmetro para a função 'XCreateBitmapFromData' que pede um (char *).
+
+matrix.c:2948: warning: pointer targets in passing argument 3 of ‘XCreateBitmapFromData’ differ in signedness
+  - a imagen que era declarada como (unsigned char) foi modificada para (char).
+    Isso nao provoca qualquer alteração prática, uma vez que ela era passada
+    como parâmetro para a função 'XCreateBitmapFromData' que pede um (char *).
+
+output.c:141: warning: unused variable ‘i’
+  - variável foi removida
+
+output.c:194: warning: unused variable ‘i’
+  - variável foi removida
+
+readfiles.c:37: warning: ‘compVarLength’ defined but not used
+  - Essa rotina foi comentada. Ela era usada em um qsort em outra função, só que
+    esse qsort está comentado.
+
+formulc.c:846: warning: dereferencing type-punned pointer will break strict-aliasing rules
+  - Foi criada uma nova variavel, (char *tempc) que é utilizada no lugar da
+    variável (unsigned char *tempu), na qual estava sendo dado um type cast
+    para (char *) que, então, gerava o warning acima.
+
+traffgen_recv_ip.c:107: warning: pointer targets in passing argument 6 of ‘recvfrom’ differ in signedness
+  - variável len foi trocada de (int) para (unsigned int), que é o mesmo tipo
+    de socklen_t
+
+####################
+version 3.2.5
+cvs tag ver_3_2_5
+
+Modified files:
+    ModelEnv/mtk/Makefile.am
+ModelEnv/mtk/gui/Makefile.am
+ModelEnv/mtk/libmtk/plugin_manager.cpp
+ModelEnv/mtk/plugins/Makefile.am
+ModelEnv/mtk/plugins/Makefile.inc
+ModelEnv/mtk/plugins/example/Makefile.am
+ModelEnv/mtk/plugins/floatvalue/Makefile.am
+ModelEnv/mtk/plugins/ghmm/Makefile.am
+ModelEnv/mtk/plugins/ghmm/ghmm.cpp
+ModelEnv/mtk/plugins/ghmm/train.c
+ModelEnv/mtk/plugins/ghmm/train_fast.c
+ModelEnv/mtk/plugins/hmm/Makefile.am
+ModelEnv/mtk/plugins/hmm/hmm.cpp
+ModelEnv/mtk/plugins/hmm_batch/Makefile.am
+ModelEnv/mtk/plugins/hmm_batch/hmm_batch.cpp
+ModelEnv/mtk/plugins/hmm_batch_variable/Makefile.am
+ModelEnv/mtk/plugins/hmm_batch_variable/hmm_batch.cpp
+ModelEnv/mtk/plugins/intvalue/Makefile.am
+ModelEnv/mtk/plugins/ma/Makefile.am
+-----------------
+Added files:
+
+-----------------
+
+by Edmundo Grune (04/09/2009)
+
+.Bugs Fixed:
+    1) The training method of the ghmm plugin would cause a segmentation fault
+       if the number of training observations was not exactly divisible by the
+       batch size. The error was at the end of the training, when the state
+       distribution, at time t (were t is the time when the last observation in
+       the training sequence was emited), is calculated. This was fixed.
+
+    2) The MTK Makefiles were, most of them, re-done, and adapted to the libtool
+       paradigm. However, they still need work, as do ALL the Makefiles from
+       Tangram-II.
+
+
+####################
+version 3.2.4
+cvs tag ver_3_2_4
+
+Modified files:
+    ModelEnv/mtk/gui/GHMMActions.cpp
+ModelEnv/mtk/gui/HMMActions.cpp
+ModelEnv/mtk/plugins/ghmm/ghmm.cpp
+ModelEnv/mtk/plugins/ghmm/ghmm.h
+ModelEnv/mtk/plugins/hmm/hmm.cpp
+ModelEnv/mtk/plugins/hmm/hmm.h
+ModelEnv/mtk/plugins/hmm_batch/hmm_batch.cpp
+ModelEnv/mtk/plugins/hmm_batch/hmm_batch.h
+ModelEnv/mtk/plugins/hmm_batch_variable/hmm_batch.cpp
+ModelEnv/mtk/plugins/hmm_batch_variable/hmm_batch.h
+ModelEnv/mtk/plugins/libTangramMTK/import_from_tangram.c
+ModelEnv/mtx_vis-st_permut/matrix.c
+interface/Tangram2_Interface/T2MTKCommon.java
+interface/Tangram2_Interface/T2MTKHierarchicalHmmImportFromTangram.java
+interface/Tangram2_Interface/T2MTKHierarchicalHmmMatrixperm.java
+interface/Tangram2_Interface/T2MTKHierarchicalHmmMethods.form
+interface/Tangram2_Interface/T2MTKHierarchicalHmmMethods.java
+interface/Tangram2_Interface/T2MTKHierarchicalHmmReadForm.java
+interface/Tangram2_Interface/T2MTKHmmImportFromTangram.java
+interface/Tangram2_Interface/T2MTKHmmMatrixperm.java
+interface/Tangram2_Interface/T2MTKHmmMethods.form
+interface/Tangram2_Interface/T2MTKHmmMethods.java
+interface/Tangram2_Interface/T2MTKHmmReadForm.form
+interface/Tangram2_Interface/T2MTKHmmReadForm.java
+interface/Tangram2_Interface/T2MTKHmmView.java
+interface/Tangram2_Interface/T2modelenv.java
+-----------------
+Added files:
+    Domain/TANGRAM2_OBJECTS/Markov_Chain.sym
+-----------------
+
+Edmundo Grune - 27/08/2009
+
+Bugs Fixed:
+    1) The number displayed in the hierarquical HMM's "number of symbols" field
+       was one less then than the real one. This was fixed.
+
+    2) The HMM import_from_tangram function was not correctly checking all
+       transitions specified by the user. Thus, it would assume that a
+       recurrent transition would be (1 - sum_of_transitions) even if the user
+       hadn't specified any, and "sum_of_transitions" was less than 1. This
+       was fixed and, now, it forces the user to specify EVERY transition in
+       the Markov chain.
+
+    3) The parameter visualization matrix, in the T2MTKHMMReadForm was not
+       beeing correctly sized. This was fixed.
+
+    4) The HMM Module would call the mtk program that was installed in the
+       user's account. Now, it calls the mtk that is in
+       "$TANGRAM2_HOME/bin/mtk"
+
+Features added:
+    1) A Markov_Chain.sym object was created for Tangram-II.
+
+    2) The file names generated by the HMM Module were changed from
+       *.hmm_mod.* to *.HMM.* in order to comply with Tangram-II's output file
+       format.
+
+    3) The matrix visualization for a HMM symbol distribution, in the HMM
+       Module, now shows the label "Symbol j in State i", instead of
+       "Transition: i->j" when a matrix cell is clicked on.
+
+    4) In mtk, the method's name "train" was changed to "training".
+
+####################
+version 3.2.3
+cvs tag ver_3_2_3
+
+Modified files:
+    interface/Tangram2_Interface/T2MTKHierarchicalHmmImportFromTangram.form
+interface/Tangram2_Interface/T2MTKHierarchicalHmmImportFromTangram.java
+interface/Tangram2_Interface/T2MTKHierarchicalHmmMatrixperm.java
+interface/Tangram2_Interface/T2MTKHierarchicalHmmReadForm.form
+interface/Tangram2_Interface/T2MTKHierarchicalHmmReadForm.java
+-----------------
+Added files:
+
+-----------------
+
+Fixes:
+    1) A few lables were modified in the HMM Module Interface. Basically, the
+    "bottom-level" and "top-level" labels were changed to "lower-level" and
+    "upper-level" respectively.
+
+by
+Edmundo Grune (13/08/2009)
+
+
+####################
+version 3.2.2
+cvs tag ver_3_2_2
+
+Modified files:
+    TGcommit.sh
+-----------------
+Added files:
+
+-----------------
+
+Bugs Fixed:
+   1) Automatic version update command corrected in file TGcommit.sh
+
+by
+Edmundo Grune (12/08/2009)
+
+####################
+version 3.2.1
+cvs tag ver_3_2_1
+
+Modified files:
+    TGcommit.sh
+interface/Tangram2_Interface/T2main_app.java
+interface/Tangram2_Interface/T2modelenv.java
+interface/Tangram2_Interface/T2modelgen.java
+interface/Tangram2_Interface/T2simulation.java
+interface/Tangram2_Interface/threadWaitFor.java
+-----------------
+Added files:
+
+-----------------
+
+Fixes:
+   1) Automatic version update was implemented,
+   2) Tangram-II can now be used with tgif 4.1.46 or higher.
+
+by
+Edmundo Grune and Allyson (21/08/2009)
+
+
+Feature added:
+     - HMM Module was created and inserted into Tangram-II.
+
+Bugs Fixed and Corrections Made:
+     - In MTK
+       1) Existing help messages were improved, and others were created,
+       2) Plugins Method's outputs were improved,
+       3) Parameter visualization was improved,
+       4) Function "loss_rate" was split into two different ones, and it's name
+          was changed,
+       5) Functions "autocorrelation" and "burst_size" were commented out do to
+          further analysis needed. They will be added in a later version.
+
+    - In Tangram-II
+       1) The file <>.trans_same_st was not updated after a variable
+          permutation. This is now fixed.
+
+by
+Edmundo Grune (11/08/2009)
+
+####################
+version 3.2.0
+cvs tag ver_3_2_0
+
+Modified files:
+    ModelEnv/getNames/getNames.c
+ModelEnv/grammar/gramatica.bison.y
+ModelEnv/grammar/gramatica.c
+ModelEnv/grammar/gramatica.h
+ModelEnv/mtk/help_messages.h
+ModelEnv/mtk/gui/CreateObject.cpp
+ModelEnv/mtk/gui/HMMBatchVariableEdit.cpp
+ModelEnv/mtk/gui/HMMBatchVariableEdit.h
+ModelEnv/mtk/gui/ImportFromTangram.cpp
+ModelEnv/mtk/plugins/arima_common/acf.c
+ModelEnv/mtk/plugins/floatvalue/floatvalue.cpp
+ModelEnv/mtk/plugins/floatvalue/floatvalue.h
+ModelEnv/mtk/plugins/ghmm/ghmm.cpp
+ModelEnv/mtk/plugins/ghmm/ghmm.h
+ModelEnv/mtk/plugins/ghmm/ghmm_io.cpp
+ModelEnv/mtk/plugins/ghmm/ghmm_struct.cpp
+ModelEnv/mtk/plugins/ghmm/param.c
+ModelEnv/mtk/plugins/hmm/Makefile.am
+ModelEnv/mtk/plugins/hmm/forecast.c
+ModelEnv/mtk/plugins/hmm/forecast.h
+ModelEnv/mtk/plugins/hmm/hmm.cpp
+ModelEnv/mtk/plugins/hmm/hmm.h
+ModelEnv/mtk/plugins/hmm/hmm_io.cpp
+ModelEnv/mtk/plugins/hmm/hmm_struct.cpp
+ModelEnv/mtk/plugins/hmm/steady.c
+ModelEnv/mtk/plugins/hmm/steady.h
+ModelEnv/mtk/plugins/hmm/transient.c
+ModelEnv/mtk/plugins/hmm/transient.h
+ModelEnv/mtk/plugins/hmm_batch/hmm_batch.cpp
+ModelEnv/mtk/plugins/hmm_batch/hmm_batch.h
+ModelEnv/mtk/plugins/hmm_batch/hmm_batch_io.cpp
+ModelEnv/mtk/plugins/hmm_batch/hmm_batch_struct.cpp
+ModelEnv/mtk/plugins/hmm_batch_variable/batches.c
+ModelEnv/mtk/plugins/hmm_batch_variable/forward.c
+ModelEnv/mtk/plugins/hmm_batch_variable/hmm_batch.cpp
+ModelEnv/mtk/plugins/hmm_batch_variable/hmm_batch.h
+ModelEnv/mtk/plugins/hmm_batch_variable/hmm_batch_io.cpp
+ModelEnv/mtk/plugins/hmm_batch_variable/hmm_batch_struct.cpp
+ModelEnv/mtk/plugins/hmm_common/forward.c
+ModelEnv/mtk/plugins/hmm_common/forward.h
+ModelEnv/mtk/plugins/hmm_common/steady.c
+ModelEnv/mtk/plugins/hmm_common/steady.h
+ModelEnv/mtk/plugins/hmm_common/transient.c
+ModelEnv/mtk/plugins/hmm_common/transient.h
+ModelEnv/mtk/plugins/include/object_base.h
+ModelEnv/mtk/plugins/intvalue/intvalue.cpp
+ModelEnv/mtk/plugins/intvalue/intvalue.h
+ModelEnv/mtk/plugins/libTangramMTK/import_from_tangram.c
+ModelEnv/mtk/plugins/libTangramMTK/import_from_tangram.h
+ModelEnv/mtx_vis-st_permut/matrix.c
+examples/ModelEnv/MMPP_Leaky_Bucket/MMPP_Leaky_Bucket.obj
+interface/Tangram2_Interface/Makefile.am
+interface/Tangram2_Interface/T2modelenv.java
+-----------------
+Added files:
+    interface/Tangram2_Interface/T2MTKCommon.java
+interface/Tangram2_Interface/T2MTKGhmm.java
+interface/Tangram2_Interface/T2MTKGhmmIO.java
+interface/Tangram2_Interface/T2MTKHierarchicalHmm.java
+interface/Tangram2_Interface/T2MTKHierarchicalHmmIO.java
+interface/Tangram2_Interface/T2MTKHierarchicalHmmImportFromTangram.form
+interface/Tangram2_Interface/T2MTKHierarchicalHmmImportFromTangram.java
+interface/Tangram2_Interface/T2MTKHierarchicalHmmMatrixperm.form
+interface/Tangram2_Interface/T2MTKHierarchicalHmmMatrixperm.java
+interface/Tangram2_Interface/T2MTKHierarchicalHmmMethods.form
+interface/Tangram2_Interface/T2MTKHierarchicalHmmMethods.java
+interface/Tangram2_Interface/T2MTKHierarchicalHmmReadForm.form
+interface/Tangram2_Interface/T2MTKHierarchicalHmmReadForm.java
+interface/Tangram2_Interface/T2MTKHmm.java
+interface/Tangram2_Interface/T2MTKHmmIO.java
+interface/Tangram2_Interface/T2MTKHmmImportFromTangram.form
+interface/Tangram2_Interface/T2MTKHmmImportFromTangram.java
+interface/Tangram2_Interface/T2MTKHmmMatrixperm.form
+interface/Tangram2_Interface/T2MTKHmmMatrixperm.java
+interface/Tangram2_Interface/T2MTKHmmMethods.form
+interface/Tangram2_Interface/T2MTKHmmMethods.java
+interface/Tangram2_Interface/T2MTKHmmReadForm.form
+interface/Tangram2_Interface/T2MTKHmmReadForm.java
+interface/Tangram2_Interface/T2MTKHmmReadFormSymbol.form
+interface/Tangram2_Interface/T2MTKHmmReadFormSymbol.java
+interface/Tangram2_Interface/T2MTKHmmResults.form
+interface/Tangram2_Interface/T2MTKHmmResults.java
+interface/Tangram2_Interface/T2MTKHmmSymbolsView.form
+interface/Tangram2_Interface/T2MTKHmmSymbolsView.java
+interface/Tangram2_Interface/T2MTKHmmView.form
+interface/Tangram2_Interface/T2MTKHmmView.java
+interface/Tangram2_Interface/T2MTKMain.form
+interface/Tangram2_Interface/T2MTKMain.java
+interface/Tangram2_Interface/T2MTKMessages.java
+interface/Tangram2_Interface/imgs/hmm.gif
+interface/Tangram2_Interface/imgs/hmm_off.jpg
+interface/Tangram2_Interface/imgs/hmm_on.jpg
+interface/Tangram2_Interface/imgs/tang_hmm_param_vis.gif
+interface/Tangram2_Interface/imgs/tang_hmmgen.gif
+-----------------
+
+
+Bugs fixed:
+
+   - save and load functions (HMM) 
+
+####################
+version 3.1.16
+cvs tag ver_3_1_16
+
+Modified files:
+    ModelEnv/mtk/gui/CreateObject.cpp
+ModelEnv/mtk/gui/HMMActions.cpp
+ModelEnv/mtk/gui/HMMBatchEdit.cpp
+ModelEnv/mtk/gui/HMMEdit.cpp
+-----------------
+Added files:
+    
+-----------------
+
+
+####################
+version 3.1.15
+cvs tag ver_3_1_15
+
+Modified files:
+    ModelEnv/chain_generator/Makefile.am
+ModelEnv/mtk/libmtk/Makefile.am
+ModelEnv/mtk/plugins/Makefile.am
+-----------------
+Added files:
+    
+-----------------
+
+Allyson 03/20/2009
+
+ModelEnv/chain_generator/Makefile.am
+ModelEnv/mtk/libmtk/Makefile.am
+ModelEnv/mtk/plugins/Makefile.am
+    - Modified to solve some "make dist", but that is still not working yet, some files are missing in the generated tar.gz
+
+####################
+version 3.1.14
+cvs tag ver_3_1_14
+
+Modified files:
+    Makefile.am
+TGcommit.sh
+ModelEnv/chain_generator/general.cpp
+ModelEnv/chain_generator/general.h
+ModelEnv/chain_generator/object_state.cpp
+ModelEnv/chain_generator/output.cpp
+ModelEnv/chain_generator/rate_reward_desc.cpp
+ModelEnv/chain_generator/simul_interactive.cpp
+ModelEnv/chain_generator/simulator.h
+ModelEnv/chain_generator/system_desc.cpp
+ModelEnv/chain_generator/system_desc.h
+ModelEnv/chain_generator/system_state.h
+-----------------
+Added files:
+    
+-----------------
+
+Allyson 02/02/2009
+
+Makefile.am
+    - added $(DESTDIR) to install testbed properly when using
+      "make DESTDIR=/dest/dir install"
+
+TGcommit.sh
+    - added separation marks between Modified and Added files
+
+ModelEnv/chain_generator/general.cpp
+ModelEnv/chain_generator/general.h
+ModelEnv/chain_generator/mark_find.cpp
+ModelEnv/chain_generator/object_state.cpp
+ModelEnv/chain_generator/output.cpp
+ModelEnv/chain_generator/rate_reward_desc.cpp
+ModelEnv/chain_generator/simul_interactive.cpp
+ModelEnv/chain_generator/simulator.h
+ModelEnv/chain_generator/system_desc.cpp
+ModelEnv/chain_generator/system_desc.h
+ModelEnv/chain_generator/system_state.h
+    - modified some functions parameters to use "const char*" instead of "char*"
+      because passing quoted strings to functions which require "char*"
+      is now deprecated on gcc
+    - code clean up
+
+
+Bugs Fixed:
+
+- mtk:
+   1) "Load" and "Save" functions were treated as special methods in the hmm
+      plugins (hmm, ghmm, hmm_batch, hmm_batch_variable) and, because of this,
+      could not be recognized by tangram2's parser. Thus, both were changed to
+      regular methods (commands), and are now usable inside tangram2.
+
+   2) Tangram2's parser had a reduce/reduce conflict, in the "mtk_arg" rule.
+      This was solved.
+
+   3) The "result" atribute for the "loss_rate" method of the hmm plugin was not      correctly saving the results. This was corrected.     
+
+####################
+version 3.1.13
+cvs tag ver_3_1_13
+
+Modified files:
+    ModelEnv/chain_generator/general.h
+ModelEnv/chain_generator/indep_chain.cpp
+ModelEnv/end_user_needed/user_code.h
+ModelEnv/grammar/code_generator.c
+ModelEnv/grammar/gramatica.bison.y
+ModelEnv/mtk/action.cpp
+ModelEnv/mtk/action.h
+ModelEnv/mtk/command.cpp
+ModelEnv/mtk/core_interface.cpp
+ModelEnv/mtk/core_interface.h
+ModelEnv/mtk/gui/CreateObject.cpp
+ModelEnv/mtk/gui/GHMMActions.cpp
+ModelEnv/mtk/gui/GHMMEdit.cpp
+ModelEnv/mtk/gui/HMMActions.cpp
+ModelEnv/mtk/gui/HMMBatchEdit.cpp
+ModelEnv/mtk/gui/HMMEdit.cpp
+ModelEnv/mtk/libmtk/object.h
+ModelEnv/mtk/libmtk/token.cpp
+ModelEnv/mtk/libmtk/token.h
+ModelEnv/mtk/plugins/ghmm/ghmm.cpp
+ModelEnv/mtk/plugins/ghmm/ghmm.h
+ModelEnv/mtk/plugins/ghmm/ghmm_io.cpp
+ModelEnv/mtk/plugins/hmm/hmm.cpp
+ModelEnv/mtk/plugins/hmm/hmm.h
+ModelEnv/mtk/plugins/hmm/hmm_io.cpp
+ModelEnv/mtk/plugins/hmm/train.c
+ModelEnv/mtk/plugins/hmm/transient.c
+ModelEnv/mtk/plugins/hmm_batch/hmm_batch.cpp
+ModelEnv/mtk/plugins/hmm_batch/hmm_batch.h
+ModelEnv/mtk/plugins/hmm_batch/hmm_batch_io.cpp
+ModelEnv/mtk/plugins/hmm_batch_variable/hmm_batch.cpp
+ModelEnv/mtk/plugins/hmm_batch_variable/hmm_batch.h
+ModelEnv/mtk/plugins/hmm_batch_variable/hmm_batch_io.cpp
+ModelEnv/mtk/plugins/hmm_common/steady.c
+ModelEnv/mtk/plugins/include/object_base.h
+Added files:
+    
+
+
+GD,Ede (01/Dez/2008)
+
+BUG: When User Model Action code timed out, the simulation/chain generation
+stopped without any user friendly warning. Instead, there was an "Alarm Clock"
+(which was not present in Graphical Interface, only in command line).
+
+Fix:
+Action code processing time now prints warning message when above 
+USER_CODE_MAX_TIME which is defined in user_code.h.
+
+The simulation/chain generation will go on until it ends or the user
+chooses to cancel it.
+.
+
+####################
+version 3.1.12
+cvs tag ver_3_1_12
+
+Modified files:
+    ModelEnv/end_user_needed/user_code.h
+ModelEnv/grammar/code_generator.c
+ModelEnv/grammar/code_generator.h
+Added files:
+    
+
+
+Bugs Fixed:
+
+ 1) The method state_prob() in hmm_batch_variable plugin tried to analize a sample without checking if it existed or not, thus causing segmentation fault in     the later case. This check is now performed.
+    Modified Files: hmm_batch.cpp
+
+ 2) All hmm plugins now store the last know state distribution in order to use it as the initial pi in other calculations.
+    Modified Files: */*hmm*.cpp, */train.c, transient.c
+
+####################
+version 3.1.11
+cvs tag ver_3_1_11
+
+Modified files:
+    ModelEnv/mtk/gui/MainWindow.cpp
+ModelEnv/mtk/plugins/ghmm/ghmm.cpp
+ModelEnv/mtk/plugins/ghmm/ghmm_io.cpp
+ModelEnv/mtk/plugins/ghmm/param.h
+ModelEnv/mtk/plugins/ghmm/train.c
+ModelEnv/mtk/plugins/ghmm/train_fast.c
+ModelEnv/mtk/plugins/hmm/hmm.cpp
+ModelEnv/mtk/plugins/hmm/transient.c
+ModelEnv/mtk/plugins/hmm_batch/hmm_batch.cpp
+ModelEnv/mtk/plugins/hmm_batch/hmm_batch_io.cpp
+ModelEnv/mtk/plugins/hmm_batch/param.h
+ModelEnv/mtk/plugins/hmm_batch/train.c
+ModelEnv/mtk/plugins/hmm_batch/train_fast.c
+ModelEnv/mtk/plugins/hmm_batch_variable/batches.c
+ModelEnv/mtk/plugins/hmm_batch_variable/hmm_batch.cpp
+ModelEnv/mtk/plugins/hmm_batch_variable/hmm_batch_io.cpp
+ModelEnv/mtk/plugins/hmm_batch_variable/param.h
+ModelEnv/mtk/plugins/hmm_batch_variable/train.c
+ModelEnv/mtk/plugins/hmm_batch_variable/train_fast.c
+ModelEnv/mtk/plugins/hmm_batch_variable/transient.c
+ModelEnv/mtk/plugins/hmm_common/transient.c
+Added files:
+    
+
+
+Bugs Fixed:
+ 1) In the previous commit, the HMM's load/save method were enhanced in order to allow user to load/save individual parameters. However, this new feature
+    changed the way these commands were parsed, thus making the load/save methods from the intvalue/floatvalue plugins unrecognazible to the parser. This new    version fixed this problem by modifing the parser, making it able to recognize both structures from load/save functions.
+    Files modified: command.cpp, core_interface.cpp, user_interface.cpp, HMMActions.cpp, HMMActions.h, terminal.cpp, intvalue.cpp
+
+ 2) When the parser was unable to recognize a certain command, mtk crashed (segmentation fault). This happened because the variable "context.file_name" in
+    user_interface.cpp was uninitialized.
+    Files modified: user_interface.cpp
+
+ 3) The HMM forecast function was corrected.
+    Files modified: forecast.c, forecast.h, hmm.cpp, hmm.h
+
+ 4) A new variable "gamma" was created in the Param structure, to allow program to save the last know hmm state distribution given the recent symbol history.    This allows mtk to update PI correctly as it receives new symbols, using gamma as the initial PI in this calculation.
+    Files modified: param.h, train.c, forecast.c
+
+####################
+version 3.1.10
+cvs tag ver_3_1_10
+
+Modified files:
+    ModelEnv/mtk/command.cpp
+ModelEnv/mtk/core_interface.cpp
+ModelEnv/mtk/user_interface.cpp
+ModelEnv/mtk/gui/HMMActions.cpp
+ModelEnv/mtk/gui/HMMActions.h
+ModelEnv/mtk/libmtk/terminal.cpp
+ModelEnv/mtk/plugins/hmm/forecast.c
+ModelEnv/mtk/plugins/hmm/forecast.h
+ModelEnv/mtk/plugins/hmm/hmm.cpp
+ModelEnv/mtk/plugins/hmm/hmm.h
+ModelEnv/mtk/plugins/hmm/hmm_io.cpp
+ModelEnv/mtk/plugins/hmm/param.h
+ModelEnv/mtk/plugins/hmm/train.c
+ModelEnv/mtk/plugins/intvalue/intvalue.cpp
+Added files:
+    
+
+
+####################
+version 3.1.9
+cvs tag ver_3_1_9
+
+Modified files:
+    ModelEnv/mtk/gui/IntValueEdit.cpp
+ModelEnv/mtk/gui/StreamReader.cpp
+Added files:
+    
+Edmundo Grune - 26-set-2008
+File modified: StreamReader.cpp
+Reason for modification: The constant EXIT_FAILURE was moved from its previous library so, in order to compile in gcc 4.3.2, I substituted it with the value "1".
+
+####################
+version 3.1.8
+cvs tag ver_3_1_8
+
+Changed 3.1.1 to 3.2 on the Tangram2-Interface
+
+Modified files:
+    interface/Tangram2_Interface/T2main_app.java
+Added files:
+    
+
+
+Changed copyright information in all files( from 1999-2005 to 1999-2009)
+
+####################
+version 3.1.7
+cvs tag ver_3_1_7
+
+Modified files:
+    ModelEnv/CAC_Algorithms/admission.cpp
+ModelEnv/CAC_Algorithms/admission.h
+ModelEnv/CAC_Algorithms/chained_list.cpp
+ModelEnv/CAC_Algorithms/chained_list.h
+ModelEnv/CAC_Algorithms/connections_list.cpp
+ModelEnv/CAC_Algorithms/connections_list.h
+ModelEnv/CAC_Algorithms/elwalidmitra95.cpp
+ModelEnv/CAC_Algorithms/guerin91.cpp
+ModelEnv/animplot/data_queue.c
+ModelEnv/animplot/data_queue.h
+ModelEnv/animplot/globals.h
+ModelEnv/animplot/main.c
+ModelEnv/animplot/options.c
+ModelEnv/animplot/options.h
+ModelEnv/animplot/plot.c
+ModelEnv/animplot/plot.h
+ModelEnv/avgReward/avgReward.cpp
+ModelEnv/chain_generator/T2String.cpp
+ModelEnv/chain_generator/T2String.h
+ModelEnv/chain_generator/action_desc.cpp
+ModelEnv/chain_generator/chained_list.cpp
+ModelEnv/chain_generator/chained_list.h
+ModelEnv/chain_generator/clone_ev.cpp
+ModelEnv/chain_generator/debug.h
+ModelEnv/chain_generator/distribution.cpp
+ModelEnv/chain_generator/distribution.h
+ModelEnv/chain_generator/event_msg_desc.cpp
+ModelEnv/chain_generator/expr_val.cpp
+ModelEnv/chain_generator/expression.cpp
+ModelEnv/chain_generator/general.cpp
+ModelEnv/chain_generator/general.h
+ModelEnv/chain_generator/imp_reward.cpp
+ModelEnv/chain_generator/imp_reward_desc.cpp
+ModelEnv/chain_generator/indep_chain.cpp
+ModelEnv/chain_generator/known_state.cpp
+ModelEnv/chain_generator/mark_find.cpp
+ModelEnv/chain_generator/mem_debug.h
+ModelEnv/chain_generator/object_desc.cpp
+ModelEnv/chain_generator/object_state.cpp
+ModelEnv/chain_generator/output.cpp
+ModelEnv/chain_generator/output.h
+ModelEnv/chain_generator/pending_message.cpp
+ModelEnv/chain_generator/prototypes.h
+ModelEnv/chain_generator/queue_type.cpp
+ModelEnv/chain_generator/queue_type.h
+ModelEnv/chain_generator/random.cpp
+ModelEnv/chain_generator/random.h
+ModelEnv/chain_generator/rate_reward.cpp
+ModelEnv/chain_generator/rate_reward_desc.cpp
+ModelEnv/chain_generator/rew_measure.cpp
+ModelEnv/chain_generator/rew_sum.cpp
+ModelEnv/chain_generator/seeds_table.cpp
+ModelEnv/chain_generator/seeds_table.h
+ModelEnv/chain_generator/simul_control.cpp
+ModelEnv/chain_generator/simul_event.cpp
+ModelEnv/chain_generator/simul_interactive.cpp
+ModelEnv/chain_generator/simul_level.cpp
+ModelEnv/chain_generator/simul_result.cpp
+ModelEnv/chain_generator/simul_run.cpp
+ModelEnv/chain_generator/simul_sched.cpp
+ModelEnv/chain_generator/simul_split.cpp
+ModelEnv/chain_generator/simul_split.h
+ModelEnv/chain_generator/simulator.cpp
+ModelEnv/chain_generator/simulator.h
+ModelEnv/chain_generator/state_var.cpp
+ModelEnv/chain_generator/string_list.cpp
+ModelEnv/chain_generator/string_list.h
+ModelEnv/chain_generator/symbol_desc.cpp
+ModelEnv/chain_generator/system_desc.cpp
+ModelEnv/chain_generator/system_desc.h
+ModelEnv/chain_generator/system_state.cpp
+ModelEnv/chain_generator/system_state.h
+ModelEnv/chain_generator/transition.cpp
+ModelEnv/descriptors/markovian_models_descriptors/burst_initial_prob.c
+ModelEnv/descriptors/markovian_models_descriptors/descriptors.c
+ModelEnv/descriptors/markovian_models_descriptors/interface_omega.c
+ModelEnv/descriptors/markovian_models_descriptors/operational_time.c
+ModelEnv/descriptors/traces_descriptors/measure_descs.c
+ModelEnv/end_user_needed/tangram_macros.h
+ModelEnv/end_user_needed/tangram_types.h
+ModelEnv/end_user_needed/user_code.h
+ModelEnv/getNames/getNames.c
+ModelEnv/grammar/code_generator.c
+ModelEnv/grammar/code_generator.h
+ModelEnv/grammar/gramatica.bison.y
+ModelEnv/grammar/gramatica.c
+ModelEnv/grammar/gramatica.h
+ModelEnv/grammar/gramatica.lex.l
+ModelEnv/grammar/tangram_types.h
+ModelEnv/hash_table/hash.cpp
+ModelEnv/hash_table/hash.h
+ModelEnv/hash_table/hashlib.h
+ModelEnv/hash_table/node.cpp
+ModelEnv/hash_table/node.h
+ModelEnv/hash_table/tree.h
+ModelEnv/hash_table/tree_avl.h
+ModelEnv/hash_table/tree_avl_lib.h
+ModelEnv/histogram_mtx_generator/trace2mtx.c
+ModelEnv/libMatrix/Matrix.c
+ModelEnv/libMatrix/Matrix.h
+ModelEnv/libMatrix/define.h
+ModelEnv/libMatrix/io.c
+ModelEnv/libMatrix/io.h
+ModelEnv/libMatrix/misc.c
+ModelEnv/libMatrix/misc.h
+ModelEnv/libMatrix/sparseMatrix.h
+ModelEnv/mtx_to_obj/config.h
+ModelEnv/mtx_to_obj/markov_mtx2obj.c
+ModelEnv/mtx_to_obj/tgif_template.c
+ModelEnv/mtx_vis-st_permut/llist.c
+ModelEnv/mtx_vis-st_permut/matrix.c
+ModelEnv/mtx_vis-st_permut/stack.c
+ModelEnv/pmf/btools.c
+ModelEnv/pmf/calcul.c
+ModelEnv/pmf/output.c
+ModelEnv/pmf/pmf.c
+ModelEnv/pmf/pmf.h
+ModelEnv/pmf/readfiles.c
+ModelEnv/pmf/standalone.c
+ModelEnv/solver/ImpMatrix.c
+ModelEnv/solver/ImpMatrix.h
+ModelEnv/solver/bounds.c
+ModelEnv/solver/bounds.h
+ModelEnv/solver/breward.c
+ModelEnv/solver/convergence.c
+ModelEnv/solver/cumulative_reward_iterative.c
+ModelEnv/solver/det_event.c
+ModelEnv/solver/det_event.h
+ModelEnv/solver/espa_direct.c
+ModelEnv/solver/espa_iterative.c
+ModelEnv/solver/expected_trans_imp_rew.c
+ModelEnv/solver/expected_trans_reward.c
+ModelEnv/solver/functions_espa.c
+ModelEnv/solver/functions_espa_esra.h
+ModelEnv/solver/gauss_siedel.c
+ModelEnv/solver/gth.c
+ModelEnv/solver/gth_no_block.c
+ModelEnv/solver/interface_breward.c
+ModelEnv/solver/interface_breward.h
+ModelEnv/solver/interface_omega.c
+ModelEnv/solver/interface_omega.h
+ModelEnv/solver/interfaces_solvers.c
+ModelEnv/solver/iterative_methods_reward.c
+ModelEnv/solver/jacobi.c
+ModelEnv/solver/operational_time.c
+ModelEnv/solver/parameters.c
+ModelEnv/solver/parameters.h
+ModelEnv/solver/pmf.h
+ModelEnv/solver/power.c
+ModelEnv/solver/rate_cumulative_approximation.c
+ModelEnv/solver/solv.c
+ModelEnv/solver/sor-flex.c
+ModelEnv/solver/sor.c
+ModelEnv/solver/structs.h
+ModelEnv/solver/uniformization.c
+ModelEnv/spmd/master.c
+ModelEnv/trans_param/comp_matrix.c
+ModelEnv/trans_param/trans_param.c
+TraffGen/Traffgen_ATM/Linux/common_pvc.c
+TraffGen/Traffgen_ATM/Linux/common_pvc.h
+TraffGen/Traffgen_ATM/Linux/traffgen_atm.c
+TraffGen/Traffgen_ATM/Linux/traffgen_atm.h
+TraffGen/Traffgen_ATM/Linux/traffgen_recv_atm.c
+TraffGen/Traffgen_ATM/Linux/traffgen_recv_atm.h
+TraffGen/Traffgen_ATM/SunOS/traffgen_atm.c
+TraffGen/Traffgen_ATM/SunOS/traffgen_atm.h
+TraffGen/Traffgen_ATM/SunOS/traffgen_recv_atm.c
+TraffGen/Traffgen_ATM/SunOS/traffgen_recv_atm.h
+TraffGen/Traffgen_IP/adjust_trace.c
+TraffGen/Traffgen_IP/adjust_trace.h
+TraffGen/Traffgen_IP/band.c
+TraffGen/Traffgen_IP/band.h
+TraffGen/Traffgen_IP/buffer.c
+TraffGen/Traffgen_IP/buffer.h
+TraffGen/Traffgen_IP/calc_loc.c
+TraffGen/Traffgen_IP/calc_loc.h
+TraffGen/Traffgen_IP/calc_rem.c
+TraffGen/Traffgen_IP/calc_rem.h
+TraffGen/Traffgen_IP/check_dup.c
+TraffGen/Traffgen_IP/check_dup.h
+TraffGen/Traffgen_IP/common.c
+TraffGen/Traffgen_IP/common.h
+TraffGen/Traffgen_IP/convolution.c
+TraffGen/Traffgen_IP/convolution.h
+TraffGen/Traffgen_IP/delay_histogram.c
+TraffGen/Traffgen_IP/delay_histogram.h
+TraffGen/Traffgen_IP/linear.c
+TraffGen/Traffgen_IP/linear.h
+TraffGen/Traffgen_IP/mcast.c
+TraffGen/Traffgen_IP/mcast.h
+TraffGen/Traffgen_IP/mse.c
+TraffGen/Traffgen_IP/mse.h
+TraffGen/Traffgen_IP/offset.c
+TraffGen/Traffgen_IP/offset.h
+TraffGen/Traffgen_IP/packloss_loc.c
+TraffGen/Traffgen_IP/packloss_loc.h
+TraffGen/Traffgen_IP/packloss_rem.c
+TraffGen/Traffgen_IP/packloss_rem.h
+TraffGen/Traffgen_IP/row.c
+TraffGen/Traffgen_IP/row.h
+TraffGen/Traffgen_IP/rtt_traffgen.c
+TraffGen/Traffgen_IP/rtt_traffgen.h
+TraffGen/Traffgen_IP/rtt_traffrec.c
+TraffGen/Traffgen_IP/rtt_traffrec.h
+TraffGen/Traffgen_IP/shift.c
+TraffGen/Traffgen_IP/shift.h
+TraffGen/Traffgen_IP/traffgen_ip.c
+TraffGen/Traffgen_IP/traffgen_ip.h
+TraffGen/Traffgen_IP/traffgen_recv_ip.c
+TraffGen/Traffgen_IP/traffgen_recv_ip.h
+TraffGen/Traffgen_IP/traffmeasures.c
+TraffGen/Traffgen_IP/traffmeasures.h
+TraffGen/Traffgen_IP/verif_loss.c
+TraffGen/Traffgen_IP/verif_loss.h
+interface/Input_Parser/Entrada.c
+interface/Input_Parser/Entrada.java
+interface/Tangram2_Interface/Entrada.java
+interface/Tangram2_Interface/ExampleFileFilter.java
+interface/Tangram2_Interface/ExampleFileFilterEx.java
+interface/Tangram2_Interface/JMultiFileChooser.java
+interface/Tangram2_Interface/Processo.java
+interface/Tangram2_Interface/SwingWorker.java
+interface/Tangram2_Interface/T2Analytical_Iterative_Methods.java
+interface/Tangram2_Interface/T2Analytical_Stationary_Exact.java
+interface/Tangram2_Interface/T2Analytical_Stationary_Iterative.java
+interface/Tangram2_Interface/T2Analytical_Stationary_Non_markovian.java
+interface/Tangram2_Interface/T2Analytical_Transient_Dist_Cumulative_Reward.java
+interface/Tangram2_Interface/T2Analytical_Transient_Dist_Operational_Time.java
+interface/Tangram2_Interface/T2Analytical_Transient_EV_ECR_ESRA_Direct.java
+interface/Tangram2_Interface/T2Analytical_Transient_EV_ECR_ESRA_Iterative.java
+interface/Tangram2_Interface/T2Analytical_Transient_EV_ExpCumImpRew.java
+interface/Tangram2_Interface/T2Analytical_Transient_EV_ExpCumRew.java
+interface/Tangram2_Interface/T2Analytical_Transient_EV_FracTime_CR_AbLev.java
+interface/Tangram2_Interface/T2Analytical_Transient_PP_ESPA_Direct.java
+interface/Tangram2_Interface/T2Analytical_Transient_PP_ESPA_Iterative.java
+interface/Tangram2_Interface/T2Analytical_Transient_PP_Uniformization.java
+interface/Tangram2_Interface/T2Analytical_Transient_Probability_and_Intervals.java
+interface/Tangram2_Interface/T2Matrix_Blocks_Manager.java
+interface/Tangram2_Interface/T2about.java
+interface/Tangram2_Interface/T2analytical.java
+interface/Tangram2_Interface/T2animplot.java
+interface/Tangram2_Interface/T2cacalg.java
+interface/Tangram2_Interface/T2command.java
+interface/Tangram2_Interface/T2config.java
+interface/Tangram2_Interface/T2descriptors.java
+interface/Tangram2_Interface/T2enable_plot.java
+interface/Tangram2_Interface/T2functions.java
+interface/Tangram2_Interface/T2histogram_mse.java
+interface/Tangram2_Interface/T2inputdialog.java
+interface/Tangram2_Interface/T2intsimulation.java
+interface/Tangram2_Interface/T2literal.java
+interface/Tangram2_Interface/T2main_app.java
+interface/Tangram2_Interface/T2matrixperm.java
+interface/Tangram2_Interface/T2measures.java
+interface/Tangram2_Interface/T2modelenv.java
+interface/Tangram2_Interface/T2modelgen.java
+interface/Tangram2_Interface/T2output.java
+interface/Tangram2_Interface/T2plot.java
+interface/Tangram2_Interface/T2plotprop.java
+interface/Tangram2_Interface/T2progressDialog.java
+interface/Tangram2_Interface/T2reward_data.java
+interface/Tangram2_Interface/T2simulation.java
+interface/Tangram2_Interface/T2simulation_options.java
+interface/Tangram2_Interface/T2simulation_reward.java
+interface/Tangram2_Interface/T2status.java
+interface/Tangram2_Interface/T2traffic.java
+interface/Tangram2_Interface/T2traffic_measures.java
+interface/Tangram2_Interface/TangramFilter.java
+interface/Tangram2_Interface/myCombo.java
+interface/Tangram2_Interface/threadCapOut.java
+interface/Tangram2_Interface/threadWaitFor.java
+interface/libTangram/Processo.c
+interface/libTangram/Processo.java
+Added files:
+    
+
+
+GD - 23/sep/2008
+Updated Copyright in all files from 1999-2005 to 1999-2009
+
+####################
+version 3.1.6
+cvs tag ver_3_1_6
+
+Modified files:
+    ModelEnv/CAC_Algorithms/admission.cpp
+ModelEnv/CAC_Algorithms/admission.h
+ModelEnv/CAC_Algorithms/chained_list.cpp
+ModelEnv/CAC_Algorithms/chained_list.h
+ModelEnv/CAC_Algorithms/connections_list.cpp
+ModelEnv/CAC_Algorithms/connections_list.h
+ModelEnv/CAC_Algorithms/elwalidmitra95.cpp
+ModelEnv/CAC_Algorithms/guerin91.cpp
+ModelEnv/animplot/data_queue.c
+ModelEnv/animplot/data_queue.h
+ModelEnv/animplot/globals.h
+ModelEnv/animplot/main.c
+ModelEnv/animplot/options.c
+ModelEnv/animplot/options.h
+ModelEnv/animplot/plot.c
+ModelEnv/animplot/plot.h
+ModelEnv/avgReward/avgReward.cpp
+ModelEnv/chain_generator/T2String.cpp
+ModelEnv/chain_generator/T2String.h
+ModelEnv/chain_generator/action_desc.cpp
+ModelEnv/chain_generator/chained_list.cpp
+ModelEnv/chain_generator/chained_list.h
+ModelEnv/chain_generator/clone_ev.cpp
+ModelEnv/chain_generator/debug.h
+ModelEnv/chain_generator/distribution.cpp
+ModelEnv/chain_generator/distribution.h
+ModelEnv/chain_generator/event_msg_desc.cpp
+ModelEnv/chain_generator/expr_val.cpp
+ModelEnv/chain_generator/expression.cpp
+ModelEnv/chain_generator/general.cpp
+ModelEnv/chain_generator/general.h
+ModelEnv/chain_generator/imp_reward.cpp
+ModelEnv/chain_generator/imp_reward_desc.cpp
+ModelEnv/chain_generator/indep_chain.cpp
+ModelEnv/chain_generator/known_state.cpp
+ModelEnv/chain_generator/mark_find.cpp
+ModelEnv/chain_generator/mem_debug.h
+ModelEnv/chain_generator/object_desc.cpp
+ModelEnv/chain_generator/object_state.cpp
+ModelEnv/chain_generator/output.cpp
+ModelEnv/chain_generator/output.h
+ModelEnv/chain_generator/pending_message.cpp
+ModelEnv/chain_generator/prototypes.h
+ModelEnv/chain_generator/queue_type.cpp
+ModelEnv/chain_generator/queue_type.h
+ModelEnv/chain_generator/random.cpp
+ModelEnv/chain_generator/random.h
+ModelEnv/chain_generator/rate_reward.cpp
+ModelEnv/chain_generator/rate_reward_desc.cpp
+ModelEnv/chain_generator/rew_measure.cpp
+ModelEnv/chain_generator/rew_sum.cpp
+ModelEnv/chain_generator/seeds_table.cpp
+ModelEnv/chain_generator/seeds_table.h
+ModelEnv/chain_generator/simul_control.cpp
+ModelEnv/chain_generator/simul_event.cpp
+ModelEnv/chain_generator/simul_interactive.cpp
+ModelEnv/chain_generator/simul_level.cpp
+ModelEnv/chain_generator/simul_result.cpp
+ModelEnv/chain_generator/simul_run.cpp
+ModelEnv/chain_generator/simul_sched.cpp
+ModelEnv/chain_generator/simul_split.cpp
+ModelEnv/chain_generator/simul_split.h
+ModelEnv/chain_generator/simulator.cpp
+ModelEnv/chain_generator/simulator.h
+ModelEnv/chain_generator/state_var.cpp
+ModelEnv/chain_generator/string_list.cpp
+ModelEnv/chain_generator/string_list.h
+ModelEnv/chain_generator/symbol_desc.cpp
+ModelEnv/chain_generator/system_desc.cpp
+ModelEnv/chain_generator/system_desc.h
+ModelEnv/chain_generator/system_state.cpp
+ModelEnv/chain_generator/system_state.h
+ModelEnv/chain_generator/transition.cpp
+ModelEnv/descriptors/markovian_models_descriptors/burst_initial_prob.c
+ModelEnv/descriptors/markovian_models_descriptors/descriptors.c
+ModelEnv/descriptors/markovian_models_descriptors/interface_omega.c
+ModelEnv/descriptors/markovian_models_descriptors/operational_time.c
+ModelEnv/descriptors/traces_descriptors/measure_descs.c
+ModelEnv/end_user_needed/tangram_macros.h
+ModelEnv/end_user_needed/tangram_types.h
+ModelEnv/end_user_needed/user_code.h
+ModelEnv/getNames/getNames.c
+ModelEnv/grammar/code_generator.c
+ModelEnv/grammar/code_generator.h
+ModelEnv/grammar/gramatica.bison.y
+ModelEnv/grammar/gramatica.c
+ModelEnv/grammar/gramatica.h
+ModelEnv/grammar/gramatica.lex.l
+ModelEnv/grammar/tangram_types.h
+ModelEnv/hash_table/hash.cpp
+ModelEnv/hash_table/hash.h
+ModelEnv/hash_table/hashlib.h
+ModelEnv/hash_table/node.cpp
+ModelEnv/hash_table/node.h
+ModelEnv/hash_table/tree.h
+ModelEnv/hash_table/tree_avl.h
+ModelEnv/hash_table/tree_avl_lib.h
+ModelEnv/histogram_mtx_generator/trace2mtx.c
+ModelEnv/libMatrix/Matrix.c
+ModelEnv/libMatrix/Matrix.h
+ModelEnv/libMatrix/define.h
+ModelEnv/libMatrix/io.c
+ModelEnv/libMatrix/io.h
+ModelEnv/libMatrix/misc.c
+ModelEnv/libMatrix/misc.h
+ModelEnv/libMatrix/sparseMatrix.h
+ModelEnv/mtx_to_obj/config.h
+ModelEnv/mtx_to_obj/markov_mtx2obj.c
+ModelEnv/mtx_to_obj/tgif_template.c
+ModelEnv/mtx_vis-st_permut/llist.c
+ModelEnv/mtx_vis-st_permut/matrix.c
+ModelEnv/mtx_vis-st_permut/stack.c
+ModelEnv/pmf/btools.c
+ModelEnv/pmf/calcul.c
+ModelEnv/pmf/output.c
+ModelEnv/pmf/pmf.c
+ModelEnv/pmf/pmf.h
+ModelEnv/pmf/readfiles.c
+ModelEnv/pmf/standalone.c
+ModelEnv/solver/ImpMatrix.c
+ModelEnv/solver/ImpMatrix.h
+ModelEnv/solver/bounds.c
+ModelEnv/solver/bounds.h
+ModelEnv/solver/breward.c
+ModelEnv/solver/convergence.c
+ModelEnv/solver/cumulative_reward_iterative.c
+ModelEnv/solver/det_event.c
+ModelEnv/solver/det_event.h
+ModelEnv/solver/espa_direct.c
+ModelEnv/solver/espa_iterative.c
+ModelEnv/solver/expected_trans_imp_rew.c
+ModelEnv/solver/expected_trans_reward.c
+ModelEnv/solver/functions_espa.c
+ModelEnv/solver/functions_espa_esra.h
+ModelEnv/solver/gauss_siedel.c
+ModelEnv/solver/gth.c
+ModelEnv/solver/gth_no_block.c
+ModelEnv/solver/interface_breward.c
+ModelEnv/solver/interface_breward.h
+ModelEnv/solver/interface_omega.c
+ModelEnv/solver/interface_omega.h
+ModelEnv/solver/interfaces_solvers.c
+ModelEnv/solver/iterative_methods_reward.c
+ModelEnv/solver/jacobi.c
+ModelEnv/solver/operational_time.c
+ModelEnv/solver/parameters.c
+ModelEnv/solver/parameters.h
+ModelEnv/solver/pmf.h
+ModelEnv/solver/power.c
+ModelEnv/solver/rate_cumulative_approximation.c
+ModelEnv/solver/solv.c
+ModelEnv/solver/sor-flex.c
+ModelEnv/solver/sor.c
+ModelEnv/solver/structs.h
+ModelEnv/solver/uniformization.c
+ModelEnv/spmd/master.c
+ModelEnv/trans_param/comp_matrix.c
+ModelEnv/trans_param/trans_param.c
+TraffGen/Traffgen_ATM/Linux/common_pvc.c
+TraffGen/Traffgen_ATM/Linux/common_pvc.h
+TraffGen/Traffgen_ATM/Linux/traffgen_atm.c
+TraffGen/Traffgen_ATM/Linux/traffgen_atm.h
+TraffGen/Traffgen_ATM/Linux/traffgen_recv_atm.c
+TraffGen/Traffgen_ATM/Linux/traffgen_recv_atm.h
+TraffGen/Traffgen_ATM/SunOS/traffgen_atm.c
+TraffGen/Traffgen_ATM/SunOS/traffgen_atm.h
+TraffGen/Traffgen_ATM/SunOS/traffgen_recv_atm.c
+TraffGen/Traffgen_ATM/SunOS/traffgen_recv_atm.h
+TraffGen/Traffgen_IP/adjust_trace.c
+TraffGen/Traffgen_IP/adjust_trace.h
+TraffGen/Traffgen_IP/band.c
+TraffGen/Traffgen_IP/band.h
+TraffGen/Traffgen_IP/buffer.c
+TraffGen/Traffgen_IP/buffer.h
+TraffGen/Traffgen_IP/calc_loc.c
+TraffGen/Traffgen_IP/calc_loc.h
+TraffGen/Traffgen_IP/calc_rem.c
+TraffGen/Traffgen_IP/calc_rem.h
+TraffGen/Traffgen_IP/check_dup.c
+TraffGen/Traffgen_IP/check_dup.h
+TraffGen/Traffgen_IP/common.c
+TraffGen/Traffgen_IP/common.h
+TraffGen/Traffgen_IP/convolution.c
+TraffGen/Traffgen_IP/convolution.h
+TraffGen/Traffgen_IP/delay_histogram.c
+TraffGen/Traffgen_IP/delay_histogram.h
+TraffGen/Traffgen_IP/linear.c
+TraffGen/Traffgen_IP/linear.h
+TraffGen/Traffgen_IP/mcast.c
+TraffGen/Traffgen_IP/mcast.h
+TraffGen/Traffgen_IP/mse.c
+TraffGen/Traffgen_IP/mse.h
+TraffGen/Traffgen_IP/offset.c
+TraffGen/Traffgen_IP/offset.h
+TraffGen/Traffgen_IP/packloss_loc.c
+TraffGen/Traffgen_IP/packloss_loc.h
+TraffGen/Traffgen_IP/packloss_rem.c
+TraffGen/Traffgen_IP/packloss_rem.h
+TraffGen/Traffgen_IP/row.c
+TraffGen/Traffgen_IP/row.h
+TraffGen/Traffgen_IP/rtt_traffgen.c
+TraffGen/Traffgen_IP/rtt_traffgen.h
+TraffGen/Traffgen_IP/rtt_traffrec.c
+TraffGen/Traffgen_IP/rtt_traffrec.h
+TraffGen/Traffgen_IP/shift.c
+TraffGen/Traffgen_IP/shift.h
+TraffGen/Traffgen_IP/traffgen_ip.c
+TraffGen/Traffgen_IP/traffgen_ip.h
+TraffGen/Traffgen_IP/traffgen_recv_ip.c
+TraffGen/Traffgen_IP/traffgen_recv_ip.h
+TraffGen/Traffgen_IP/traffmeasures.c
+TraffGen/Traffgen_IP/traffmeasures.h
+TraffGen/Traffgen_IP/verif_loss.c
+TraffGen/Traffgen_IP/verif_loss.h
+interface/Input_Parser/Entrada.c
+interface/Input_Parser/Entrada.java
+interface/Tangram2_Interface/Entrada.java
+interface/Tangram2_Interface/ExampleFileFilter.java
+interface/Tangram2_Interface/ExampleFileFilterEx.java
+interface/Tangram2_Interface/JMultiFileChooser.java
+interface/Tangram2_Interface/Processo.java
+interface/Tangram2_Interface/SwingWorker.java
+interface/Tangram2_Interface/T2Analytical_Iterative_Methods.java
+interface/Tangram2_Interface/T2Analytical_Stationary_Exact.java
+interface/Tangram2_Interface/T2Analytical_Stationary_Iterative.java
+interface/Tangram2_Interface/T2Analytical_Stationary_Non_markovian.java
+interface/Tangram2_Interface/T2Analytical_Transient_Dist_Cumulative_Reward.java
+interface/Tangram2_Interface/T2Analytical_Transient_Dist_Operational_Time.java
+interface/Tangram2_Interface/T2Analytical_Transient_EV_ECR_ESRA_Direct.java
+interface/Tangram2_Interface/T2Analytical_Transient_EV_ECR_ESRA_Iterative.java
+interface/Tangram2_Interface/T2Analytical_Transient_EV_ExpCumImpRew.java
+interface/Tangram2_Interface/T2Analytical_Transient_EV_ExpCumRew.java
+interface/Tangram2_Interface/T2Analytical_Transient_EV_FracTime_CR_AbLev.java
+interface/Tangram2_Interface/T2Analytical_Transient_PP_ESPA_Direct.java
+interface/Tangram2_Interface/T2Analytical_Transient_PP_ESPA_Iterative.java
+interface/Tangram2_Interface/T2Analytical_Transient_PP_Uniformization.java
+interface/Tangram2_Interface/T2Analytical_Transient_Probability_and_Intervals.java
+interface/Tangram2_Interface/T2Matrix_Blocks_Manager.java
+interface/Tangram2_Interface/T2about.java
+interface/Tangram2_Interface/T2analytical.java
+interface/Tangram2_Interface/T2animplot.java
+interface/Tangram2_Interface/T2cacalg.java
+interface/Tangram2_Interface/T2command.java
+interface/Tangram2_Interface/T2config.java
+interface/Tangram2_Interface/T2descriptors.java
+interface/Tangram2_Interface/T2enable_plot.java
+interface/Tangram2_Interface/T2functions.java
+interface/Tangram2_Interface/T2histogram_mse.java
+interface/Tangram2_Interface/T2inputdialog.java
+interface/Tangram2_Interface/T2intsimulation.java
+interface/Tangram2_Interface/T2literal.java
+interface/Tangram2_Interface/T2main_app.java
+interface/Tangram2_Interface/T2matrixperm.java
+interface/Tangram2_Interface/T2measures.java
+interface/Tangram2_Interface/T2modelenv.java
+interface/Tangram2_Interface/T2modelgen.java
+interface/Tangram2_Interface/T2output.java
+interface/Tangram2_Interface/T2plot.java
+interface/Tangram2_Interface/T2plotprop.java
+interface/Tangram2_Interface/T2progressDialog.java
+interface/Tangram2_Interface/T2reward_data.java
+interface/Tangram2_Interface/T2simulation.java
+interface/Tangram2_Interface/T2simulation_options.java
+interface/Tangram2_Interface/T2simulation_reward.java
+interface/Tangram2_Interface/T2status.java
+interface/Tangram2_Interface/T2traffic.java
+interface/Tangram2_Interface/T2traffic_measures.java
+interface/Tangram2_Interface/TangramFilter.java
+interface/Tangram2_Interface/myCombo.java
+interface/Tangram2_Interface/threadCapOut.java
+interface/Tangram2_Interface/threadWaitFor.java
+interface/libTangram/Processo.c
+interface/libTangram/Processo.java
+Added files:
+    
+
+
+####################
+version 3.1.5
+cvs tag ver_3_1_5
+
+Modified files:
+    ChangeLog
+Added files:
+    
+20080920 Allyson
+
+ChangeLog
+   - Added missed log info to version 3.1.4
+
+####################
+version 3.1.4
+cvs tag ver_3_1_4
+
+Modified files:
+    configure.ac
+Added files:
+
+20080920 Allyson
+
+configure.ac
+    - Removed white spaces from AC_INIT parameters
+
+####################
+version 3.1.3
+cvs tag ver_3_1_3
+
+Modified files:
+    ChangeLog
+Added files:
+    
+20080920 Allyson
+
+ChangeLog
+    - clean up
+
+####################
+version 3.1.2
+cvs tag ver_3_1_2
+
+Modified files:
+
+Added files:
+    TGcommit.sh
+
+20080920 Allyson
+
+TGcommit.sh
+    - Added to cvs
+    - Now instead of using 'cvs commit' everyone must use './TGcommit.sh'
+      to commit changes to the cvs
+
+####################
+20060904 Hugo
+    * Grammar modifications:
+      - New feature: #include "file" statement
+      - Sintax bug removal:  { set_st(...); } action code is now accepted.
+
+20060312 Allyson
+    * Version 3.1.1 (cvs TAG ver_3_1_01)
+    * Fixed some issues that were prevented Tangram2 to compile properly with
+      gcc 4
+    * Added multicast support to traffgen. Now traffgen can generate and
+      receive multicast traffic

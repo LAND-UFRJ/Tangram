@@ -1,0 +1,1 @@
+SUBDIRS=markovian_models_descriptors traces_descriptors

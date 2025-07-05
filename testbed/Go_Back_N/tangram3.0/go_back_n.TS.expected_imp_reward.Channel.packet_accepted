@@ -1,0 +1,7 @@
+#Solution method: Expected Transient Impulse Reward                     (Uniformization)
+#Lambda = 2.501000e+00, Precision = 1.000000e-06 
+
+#Time (t)             E[NR(t)] 
+#Time = 1.00000e+01, N_min = 0, N_max = 52
+1.00000e+01   6.9999887781e+00
+#**************************

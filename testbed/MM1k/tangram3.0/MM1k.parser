@@ -1,0 +1,97 @@
+ 
+Object_Desc Poisson_Source (
+Declaration {
+
+ Const
+    Float: TX;
+    Port: PORT_OUT;
+    
+
+
+}
+Initialization {
+
+   PORT_OUT=wire 
+   TX=10
+
+}
+Events {
+
+
+ event= Packet_Generation(EXP, TX)
+ condition= (TRUE)
+ action= {
+           msg(PORT_OUT, all, 0);
+         };
+}
+Messages {
+
+
+}
+Rewards {
+
+ 
+
+}
+)
+Object_Desc Server_Queue (
+Declaration {
+
+ State Var
+  Integer: Queue;
+
+ Const
+  Integer: QUEUE_SIZE;
+  Port: PORT_IN;
+  Float:SERVICE_RATE;
+
+ 
+
+}
+Initialization {
+
+  Queue = 0
+  QUEUE_SIZE = 10
+  PORT_IN = wire
+  SERVICE_RATE = 20
+}
+Events {
+
+ event=Packet_Service (EXP, SERVICE_RATE)
+ condition= (Queue > 0)
+ action= { int queue; 
+           queue = Queue - 1; 
+           set_st("Queue", queue);
+          };
+}
+Messages {
+
+ msg_rec=PORT_IN
+ action= { int queue;
+           queue = Queue;
+           if (Queue < QUEUE_SIZE)
+              queue = Queue  + 1;
+           set_st("Queue", queue);
+         };
+}
+Rewards {
+ 
+rate_reward=utilization
+condition=(Queue>0)
+value=1;
+rate_reward=q_size
+condition=(TRUE)
+value=Queue;
+rate_reward=empty
+condition=(Queue == 0)
+value= 1; 
+
+
+
+
+}
+)
+Global_Rewards {
+}
+Independent_Chains {
+}

@@ -1,0 +1,6 @@
+This models represents two sources that share one channel (using TDM). 
+The objects (Queue_1) and (Queue_2) represent the packet generation and
+service events. The queue having the token can serve the packets until
+queue size is equal to zero or a timeout event occurs. In this case,
+the token is passed to another queue. The token is managed by the 
+channel object.

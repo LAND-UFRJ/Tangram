@@ -1,0 +1,4 @@
+This model has two Poisson sources that send packets to a FIFO queue. 
+The queue has a limited buffer with size equal to 10. 
+We use a vector state variable with 10 positions to represent the buffer 
+of the queue.

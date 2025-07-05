@@ -1,0 +1,17 @@
+06 May 2005 - 12:00 - 0.2a
+--------------------------
+- First documented release.
+- Available Plugins:
+   binvalue - Binary Valued Samples
+    gilbert - Gilbert Models
+        hmm - Hidden Markov Models
+   intvalue - Integer Valued Samples
+
+18 Jun 2005 - 20:00 - 0.4a
+--------------------------
+- Fixed a lot of bugs since 0.2a
+- Added some plugins:
+  mintvalue - multiple integer samples
+  bhmm      - Bernoulli batch HMMs
+  ghmm      - Gilbert batch HMMs
+- Added a lot of new functions to old plugins

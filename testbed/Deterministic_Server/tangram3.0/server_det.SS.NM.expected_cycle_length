@@ -1,0 +1,4 @@
+Expected length of intervals between embedded points:
+ intervals with no deterministic events enabled = 4.5383660589e-07
+ intervals with deterministic event number 1 enabled = 2.2830034042e-07
+Expected length between embedded points = 6.8213694631e-07

@@ -1,0 +1,179 @@
+---------------------------------------------------------------------------
+                                TANGRAM-II
+---------------------------------------------------------------------------
+
+    TANGRAM-II is a modeling environment developed for research and 
+    educational purpose that provides a flexible user  interface  to 
+    describe computer and communication system models.
+
+    The interface is built on  java 2  language and the  models  are
+    described  based on  an  object  oriented  description  language
+    supported by the public domain software  package  TGIF  ( TANGRAM 
+    Graphic Interface Facility ).
+
+    The tools are implemented in C / C++ and has several solvers for
+    transient and steady state analysis of performance and availabi-
+    lity metrics. Furthermore you can use  the  powerful  simulation
+    tool to get the measures of interest.
+
+    Please, for a detailed description of TANGRAM-II see the tutorial.
+    Also visit, http://www.land.ufrj.br for updated information.
+
+---------------------------------------------------------------------------
+
+Installation
+
+*************
+Font specified in font.properties not found
+
+Abstract:Explanation of how to eliminate the problem that causes this error on Linux.
+
+Question:
+
+When I run Tangram II I get a series of errors stating:
+
+Font specified in font.properties not found [--symbol-medium-r-normal--*-%d-*-*-p-*-adobe-fontspecific]
+
+How can I fix this?
+
+Answer:
+
+These errors happen because the Java Virtual Machine (JVM) that is running JBuilder can't find a font that has been specified.
+
+The font that the JVM is looking for is "symbol.ttf". This font should be available on any Windows machine. You need to get a copy of the font and copy it to the JDK fonts directory, for example "/usr/local/jdk1.2.2/jre/lib/fonts".
+
+In the "fonts" directory there is a file named "fonts.dir" that lists the available, scalable fonts for the Sun JDK. Edit this file (you may need to be root) to include the symbol.ttf font file like:
+
+symbol.ttf -urw-symbol-medium-r-normal--0-0-0-0-p-0-adobe-fontspecific
+
+You may notice whitespace in the file after the other font names. Note that these are spaces and not tabs. After you have added the above line, increment the number on the first line of the file by one (to indicate the total number of fonts listed in the file).
+
+Run Tangram II to verify that the problem is fixed.
+
+Based on article: http://community.borland.com/article/0,1410,21836,00.html
+
+*************
+Error in VirtualBinding
+
+Abstract:Explanation of how to eliminate the problem that causes this error on Linux.
+
+Question:
+
+When I run Tangram II I get a series of errors stating:
+
+Warning: Cannot convert string "<Key>Escape,_Key_Cancel" to type VirtualBinding
+Warning: Cannot convert string "<Key>Home,_Key_Begin" to type VirtualBinding
+Warning: Cannot convert string "<Key>F1,_Key_Help" to type VirtualBinding
+Warning: Cannot convert string "Shift<Key>F10,_Key_Menu" to type VirtualBinding
+Warning: Cannot convert string "<Key>F10,Shift_Key_Menu" to type VirtualBinding
+Warning: Cannot convert string "<Key>KP_Enter,_Key_Execute" to type VirtualBinding
+Warning: Cannot convert string "Alt<Key>Return,Alt_Key_KP_Enter" to type VirtualBinding
+
+How can I fix this?
+
+Answer:
+
+Download the file motifbind, and copy it to your home directory "~/.motifbind". Then, run xmbind.
+
+Run Tangram II to verify that the problem is fixed.
+
+*************
+Running Tangram II
+
+Error of Permission denied
+
+Abstract: Explanation of how to eliminate the problem that causes this error when running some modules of Tangram II (for instance, interactive simulation).
+
+Question:
+
+When I run some modules of Tangram II, for instance, interactive simulation, I get the following error messages:
+
+java.io.FileNotFoundException: /dev/pts/6 (Permission denied)
+        at java.io.FileOutputStream.openAppend(Native Method)
+        at java.io.FileOutputStream.<init>(FileOutputStream.java:100)
+        at java.io.FileWriter.<init>(FileWriter.java:39)
+        at Tangram2.threadCapOut.<init>(threadCapOut.java:32)
+        at Tangram2.threadCapOut.<init>(threadCapOut.java:41)
+
+Answer:  If you have issued a "su -" command, or something alike, and then run Tangram-II this error will occurr. This is because Tangram II tries to write in the /dev/pts/xx but, in this case, doesn't have permission to do so.
+
+Logout, and login using the proper account (i.e., using the same login as you will use to run Tangram-II).
+
+
+********************************************************************
+                              USAGE
+
+*********************
+
+There is a <modelname>.SIMUL.steps file when I simulate the model in batch 
+ mode with reward trace, how can I get rid of it?
+ 
+ - In fact you can't, but if you want you can redirect this file to /dev/null,
+ so the file will have size zero.
+     # ln -sf /dev/null <modelname>.SIMUL.steps
+    This method can be used to zeroes the reward traces that are not important to
+    your measures.
+    
+*********************
+
+When I try to use the "Trace to Histogram Mtx" tool or the trace2mtx command,
+  it generates an invalid Markov transition matrix. Why?
+  
+  - Your trace does not support so many levels as you have chosen, drop the number
+  of levels until you get a valid matrix.
+  
+*********************
+
+When I create an event that have two or more actions, which executes based on 
+certain probabilities associated with some Integer state variable, most of
+these actions don't execute.
+
+    - Remember that the division of integer variables in C++ is an integer 
+    division. So, if you are using this to calculate probabilities, it will
+    only assign 0 or 1. To correct this problem, multiply your Integer state
+    variables by 1.0, in order to typecast them into float values.
+
+*********************
+
+When I try to generate a chain, it says that the product of all max values 
+exceeded 10^19.
+
+    - Your model have more states than the maximum possible (10^19). You should
+    reduce the number of states in your model.
+
+*********************
+  
+When I execute my simulation, it ends before finishing.
+
+    - Probably there is some "segmentation fault" bug in your code. 
+    To track this error, run your simulation with some debugger like gdb or ddd.
+    - Execute ./mark_find on the shell in your model's directory and see the 
+    appropriate parameters for your simulation (mostly just the simulation
+    time) - and use these parameters in your favorite debugger. 
+
+    Example with gdb:
+
+    gdb --args ./mark_find -f MM1k -d 0 -S -B -o debug_test -u 1 -t 2000
+    
+    and then type "run" <ENTER>
+    
+    - Another problem can be the absence of a new event (the simulator writes
+    a warning "No more events").
+
+*********************
+
+Float State variables:
+    The maximum size allowed is 127 for Float state variables.
+    
+*********************
+My simulation reward trace files are too big, is there any way I can compress them?
+
+	On Tangram II there is no built-in compress function, but you can
+create pipes to do the job. Example: Reward "utilization" in MM1k:
+	rm -f MM1k.Server_queue.utilization.CR.trace
+	mknod MM1k.Server_queue.utilization.CR.trace p
+	bzip2 -c MM1k.Server_queue.utilization.CR.trace > MM1k.Server_queue.utilization.CR.trace.bz2 2> /dev/null&
+
+	When you start your simulation, your trace will be compressed with 
+bzip2 in "MM1k.Server_queue.utilization.CR.trace.bz2". You can use your trace
+without uncompressing it with bzcat.

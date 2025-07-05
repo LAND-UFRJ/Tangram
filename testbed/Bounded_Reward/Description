@@ -1,0 +1,4 @@
+This model is a birth death traffic source. The traffic source
+has a bounded rate reward which represents the buffer size. 
+The transient buffer distribution can be obtained using the 
+Bounded Cumulative Reward Method.

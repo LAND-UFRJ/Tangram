@@ -1,0 +1,2 @@
+This is a model of the Go_back_n protocol with a potential deadlock when 
+the variable p_losing_ack > 0.

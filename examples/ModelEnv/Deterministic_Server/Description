@@ -1,0 +1,1 @@
+This model has an On_Off source which feeds a deterministic server. It has a special object (independent_chains) to be solved using a Non_Markovian Analytical Method.

@@ -1,0 +1,61 @@
+ 
+Object_Desc birth_death (
+Declaration {
+
+State Var
+ Integer: Active_Sources;
+
+Const
+ Float: ALFA, BETA, RATE, CAPACITY;
+ Integer: MAXIMUM;
+
+ 
+}
+Initialization {
+
+  Active_Sources = 0
+  MAXIMUM =  20
+  ALFA = 0.0712
+  BETA = 0.1525
+  RATE = 500.0
+  CAPACITY= 225
+}
+Events {
+
+ event=Enable_Source (EXP, (MAXIMUM - Active_Sources) * ALFA)
+ condition= (Active_Sources < MAXIMUM)
+ action= { 
+           int active_sources;
+           active_sources = Active_Sources + 1; 
+           set_st("Active_Sources", active_sources);
+         };
+
+ event= Disable_Source (EXP, Active_Sources * BETA)
+ condition= (Active_Sources > 0)
+ action= { 
+           int active_sources;
+           active_sources = Active_Sources - 1; 
+           set_st("Active_Sources", active_sources);
+         };
+
+}
+Messages {
+
+
+}
+Rewards {
+
+  rate_reward=buffer
+    bounds = 0, 100
+    condition= (Active_Sources> 0)
+    value= (Active_Sources * RATE) - CAPACITY;
+
+    condition= (Active_Sources == 0)
+    value = -CAPACITY;
+
+}
+)
+Global_Rewards {
+}
+Independent_Chains {
+}

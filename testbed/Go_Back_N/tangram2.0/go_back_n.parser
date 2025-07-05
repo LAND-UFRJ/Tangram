@@ -1,0 +1,233 @@
+ 
+Object_Desc Channel (
+Declaration {
+
+State Var
+  Integer: Ack_RN, N_Acks;
+Const
+  Integer: TRANS_WIN;
+  Float:DELAY_RATE, P_LOSING_PKT;
+  Port: SEND_ACK_PORT, RECV_ACK_PORT;
+
+}
+Initialization {
+
+Ack_RN = 0
+N_Acks = 0
+TRANS_WIN = 2
+DELAY_RATE = 0.5
+P_LOSING_PKT = 0.1
+SEND_ACK_PORT = channel_sender
+RECV_ACK_PORT = receiver_channel 
+
+
+
+}
+Events {
+
+event     = Delayer(EXP, N_Acks * DELAY_RATE)
+condition = (N_Acks > 0)
+action = {
+             /* Sends the ack and 
+                sets ACK_RN and N_acks variables. */
+             int n_acks,ack_rn;
+             ack_rn = (Ack_RN + 1)%(TRANS_WIN + 1);
+             msg(SEND_ACK_PORT,all,ack_rn);
+             n_acks = N_Acks - 1;
+             set_st("N_Acks",n_acks);
+             set_st("Ack_RN",ack_rn);
+         }:prob = 1 - P_LOSING_PKT;
+         {
+             /* Just sets ACK_RN and N_acks variables. */ 
+             int ack_rn, n_acks;
+             ack_rn = (Ack_RN + 1)%(TRANS_WIN + 1);
+             n_acks = N_Acks - 1;
+             set_st("N_Acks",n_acks);
+             set_st("Ack_RN",ack_rn);
+         }:prob = P_LOSING_PKT;
+
+}
+Messages {
+
+msg_rec = RECV_ACK_PORT
+action={ 
+           int n_acks; /* number of acks stored in channel */
+           int ack_rn; /* serial number of the last ack transmitted from channel.
+                       Note this last ack may have been lost */
+           int module;
+           int sn_last_ack; /* serial number of the last ack in channel to be 
+                            or last ack sent if n_acks=0 */
+        
+           module = TRANS_WIN + 1;
+           n_acks = N_Acks;
+           ack_rn = Ack_RN;
+           sn_last_ack = (ack_rn + n_acks)%module;
+           if (msg_data == (sn_last_ack+1)%module)
+           /* this is a new ack that is entering the channel */
+           {
+               n_acks = N_Acks + 1;
+           }
+           else
+           /* this is a duplicate ack */
+           {
+               if (n_acks == 0)
+           /* acks in channel have been lost, so send this duplicate ack */
+               {
+                   n_acks = N_Acks + 1;
+                   /* ack_rn = ack_rn - 1, in Module */
+                   ack_rn = (ack_rn + TRANS_WIN)%module;
+               }
+           }
+           set_st("N_Acks",n_acks);
+           set_st("Ack_RN",ack_rn);
+       };  
+}
+Rewards {
+
+impulse_reward= packet_accepted
+Port = RECV_ACK_PORT,1
+value= 1;
+
+
+}
+)
+Object_Desc Receiver (
+Declaration {
+
+State Var
+  Integer: RN;
+Const
+  Float: P_LOSING_PKT;
+  Integer: TRANS_WIN;
+  Port: ACK_PORT, PKT_PORT;
+
+}
+Initialization {
+
+RN = 0 /* expected serial number */
+P_LOSING_PKT = 0.3
+TRANS_WIN = 2
+ACK_PORT = receiver_channel
+PKT_PORT = sender_receiver
+}
+Events {
+
+
+
+}
+Messages {
+
+msg_rec = PKT_PORT
+action ={ 
+            int s;
+            s = RN;
+            if (msg_data == RN)
+            {
+                s = (RN + 1) % (TRANS_WIN+1);
+                msg(ACK_PORT,all,s);    
+                set_st("RN",s);
+            }
+            else 
+            {
+                msg(ACK_PORT,all,s);
+            }
+        }:prob = 1 - P_LOSING_PKT;
+        {
+            /*do nothing*/
+            ;
+        }:prob = P_LOSING_PKT;
+}
+Rewards {
+
+
+
+}
+)
+Object_Desc Sender (
+Declaration {
+
+State Var
+  Integer:Win_Begin, SN;
+Const
+  Integer:TRANS_WIN;
+  Float:TRANSMISSION_RATE;
+  Port: ACK_PORT, PKT_PORT; 
+
+}
+Initialization {
+
+Win_Begin = 0
+SN = 0
+TRANS_WIN = 2
+PKT_PORT = sender_receiver
+ACK_PORT = channel_sender
+TRANSMISSION_RATE = 1.0
+
+
+}
+Events {
+
+event=SN_Transmission(EXP,TRANSMISSION_RATE)
+condition=(TRUE)
+action={
+           int s, module, win_end;
+           s = SN;
+           module = TRANS_WIN + 1;
+           win_end = (Win_Begin + TRANS_WIN - 1)%module;
+           msg(PKT_PORT,all,SN);
+           if (SN != win_end )
+           /* increment SN since we haven't reached the end
+              of the windown */
+           {
+               s = (SN + 1)%module;
+           }
+           else
+           /* Since we transmitted the last packet in the window
+              Go Back to the beginning of the window */ 
+           {
+               s = Win_Begin;
+           }
+           set_st("SN",s);
+       };
+         
+            
+
+}
+Messages {
+
+msg_rec = ACK_PORT
+action = {
+             int w_b, w_e, s, module, diff,
+                 order_of_SN_in_window,order_of_RN_in_window;
+
+             w_b = Win_Begin; 
+             module = TRANS_WIN + 1;
+             s = SN; 
+
+             /* The key steps below are used to identify the order 
+                of RN and SN inside the window. */
+
+             diff = module - Win_Begin;
+             order_of_SN_in_window = ( s + diff ) % module;
+             order_of_RN_in_window = (int)(msg_data + diff ) % module;
+
+             w_b = (int)(msg_data) % module;
+ 
+             if ( order_of_RN_in_window > order_of_SN_in_window )
+             {
+                 s = (int)(msg_data) % module;
+             }
+           
+             set_st("Win_Begin",w_b);
+             set_st("SN",s);
+         }; 
+}
+Rewards {
+
+
+}
+)
+Global_Rewards {
+}
+Independent_Chains {
+}

@@ -1,0 +1,163 @@
+################################################################################
+# File: Makefile                                                               #
+# Authors: {gdjaime,allyson,bnetto,anapaula}@land.ufrj.br                      #
+# Copyright 2004 LAND/UFRJ                                                     #
+# http://www.land.ufrj.br                                                      #
+#                                                                              #
+# Description: This makefile was created to allow users to run TANGRAM-II      #
+#              without its graphical interface                                 #
+#                                                                              #
+################################################################################
+
+TGIF= tgif
+GRAMATICA= gramatica
+GEN_CHAIN= generate_chain
+SOLV= solv
+GETNAMES= getNames
+GETMAXVALUES= getMaxValues.sh
+MATRIX_VISU= mtx_vis-st_permut
+MARKFIND_MAKEFILE = $TANGRAM2_HOME/lib/Makefile.mark_find
+METHOD= 1
+SOLUTION=s
+PRECISION= 1e-6
+ITERATIONS= 10000
+MAX_STATES= 0
+ERLANG_STAGES=50
+REWARD_OPTION= 1
+MEASURE_OPT=2
+SUFFIX = result
+DEBUG_LEVEL = 0
+RUNS = 1
+CLEANFILES=*.init_prob  *.reward_input *.intervals  *.reward_levels.* \
+           *.absorb_st *.generator_mtx* *.maxvalues *.parameter \
+           *.rate_reward.* *.impulse_reward.* *.SS.* *.TS.* *.states \
+           *.trans_same_st *.uniform_rate *.parser *.user_code.c \
+           *.user_code.o *.tables_dump mark_find *.vstat *.events \
+           *.trace *state_variable *.INTSIMUL *.reward *.config *.out \
+           *.NM.chns_betw_embed_pnts *.NM.parameters *.vstat \
+           *.NM.embedded_chain_mapping  *.NM.states_det_ev \
+           *.NM.embedded_points*  *.NM.st_trans_prob_mtx \
+           *.NM.interest_measures
+
+.SUFFIXES:
+
+.SUFFIXES: .obj .parser .user_code.c
+
+.obj.parser:
+	@echo "Generating $(BASE).parser from $(BASE).obj file..."
+	$(TGIF) -print -tg2genparser="0;0;teste" $(BASE).obj
+
+.parser.user_code.c:
+	@echo "Generating $(BASE).user_code.c from $(BASE).parser file..."
+	$(GRAMATICA) -G $(BASE).parser $(BASE) $(DEBUG_LEVEL)
+
+all:  compile run
+
+getnames: $(BASE).parser
+	@echo "Getting names ..."
+	$(GETNAMES) -v $(BASE)
+	#$(GETMAXVALUES) $(BASE)
+
+chain: getnames $(BASE).maxvalues $(BASE).user_code.c
+	@echo "Generating chain ..."
+	$(GEN_CHAIN) $(BASE) $(MAX_STATES) $(DEBUG_LEVEL) $(REWARD_OPTION)
+    
+mtx_vist:chain
+	@echo "Permuting variables ..."
+	$(MATRIX_VISU) -fn $(BASE) -ps "2 0 1 3 5 4 6 7 8 9 10"  -ng -gf
+
+
+iterative-solv: chain
+	@echo "Solving model using $(METHOD)"
+	$(SOLV) $(BASE) $(METHOD) $(PRECISION) $(ITERATIONS)
+
+nonmarkovian-gth-solv: $(BASE).NM.chns_betw_embed_pnts \
+                   $(BASE).NM.embedded_chain_mapping \
+                   $(BASE).NM.embedded_points \
+                   $(BASE).NM.embedded_points.expr \
+                   $(BASE).NM.interest_measures chain
+	@echo "Solving model using non-Markovian"
+	$(SOLV) $(BASE) 11 $(PRECISION) g
+
+nonmarkovian-it-solv: $(BASE).NM.chns_betw_embed_pnts \
+                   $(BASE).NM.embedded_chain_mapping \
+                   $(BASE).NM.embedded_points \
+                   $(BASE).NM.embedded_points.expr \
+                   $(BASE).NM.interest_measures chain
+	@echo "Solving model using non-Markovian"
+	$(SOLV) $(BASE) 11 $(PRECISION) $(SOLUTION) $(ITERATIONS)
+
+reward-solv: $(BASE).init_prob $(BASE).intervals \
+             $(BASE).reward_levels.$(REWARD_NAME) chain
+	@echo "Solving model using reward methods"
+	$(SOLV) $(BASE) $(METHOD) $(REWARD_NAME) $(PRECISION)
+
+expected-reward-solv: $(BASE).init_prob $(BASE).intervals chain
+	@echo "Solving model using expected cumulative reward"
+	$(SOLV) $(BASE) $(METHOD) $(REWARD_NAME) $(PRECISION)
+
+cumul-reward-direct-solv: $(BASE).init_prob $(BASE).int_direct \
+             $(BASE).int_rewd $(BASE).partition chain
+	@echo "Solving model using cumulative rate reward direct"
+	$(SOLV) $(BASE) 13 $(ERLANG_STAGES) $(REWARD_NAME) $(MEASURE_OPT)
+
+cumul-reward-it-solv: $(BASE).init_prob $(BASE).int_iterative \
+             $(BASE).int_rewi chain
+	@echo "Solving model using cumulative rate reward iterative"
+	$(SOLV) $(BASE) 14 $(REWARD_NAME) $(MEASURE_OPT) $(METHOD) $(PRECISION) $(ITERATIONS)
+
+approx-prob-direct-solv: $(BASE).init_prob $(BASE).int_direct chain
+	@echo "Solving model using efficient transient state prob approx direct"
+	$(SOLV) $(BASE) 15 $(ERLANG_STAGES) $(MEASURE_OPT)
+
+approx-prob-it-solv: $(BASE).init_prob $(BASE).int_iterative chain
+	@echo "Solving model using efficient transient state prob approx iterative"
+	$(SOLV) $(BASE) 16 $(MEASURE_OPT) $(METHOD) $(PRECISION) $(ITERATIONS)
+
+pointprob-solv: $(BASE).init_prob $(BASE).intervals chain
+	@echo "Solving model using point probability"
+	$(SOLV) $(BASE) 7 $(PRECISION)
+
+gth-solv: chain
+	@echo "Solving model using gth"
+	$(SOLV) $(BASE) 5
+    
+gthblock-solv: $(BASE).partition chain
+	@echo "Solving model using 6"
+	$(SOLV) $(BASE) 6
+    
+compile: $(BASE).user_code.c
+	@echo "Generating new mark_find from $(BASE).obj file"
+	make -f $(MARKFIND_MAKEFILE) BASE=$(BASE)
+
+run:
+	rm -f mark_find
+	make -f $(MARKFIND_MAKEFILE) BASE=$(BASE) 
+	./mark_find -f $(BASE) -d $(DEBUG_LEVEL) -S -B -o SIMUL.$(SUFFIX) -u $(RUNS) -w 4 -y -c 1 -t $(TIME)  # sem trace :-w 4 -c 1 -t  #
+	@echo
+	@echo "*************************************************************************"
+	@echo "Simulation results stored in $(BASE).SIMUL.$(SUFFIX) file"
+	@echo "To change the result file suffix set the SUFFIX variable (default=result)"
+	@echo "*************************************************************************"
+	@echo
+
+clean:
+	rm -f $(CLEANFILES)
+
+help:
+	@echo
+	@echo "********************************************************************************"
+	@echo "Usage: "
+	@echo "  make clean"
+	@echo "  or"
+	@echo "  make compile <BASE=model_base_name>"
+	@echo "  or"
+	@echo "  make [all|run] <BASE=model_base_name> <TIME=simul_time> [RUNS=num_of_runs]"
+	@echo
+	@echo "where:"
+	@echo "  compile: generates mark_find from <model_base_name>.obj (compiles the model)"
+	@echo "  run: generates a new mark_find from an existing $(BASE).user_code.c and runs "
+	@echo "       and runs the simulation"
+	@echo "  all: generates mark_find file from <model_base_name>.obj and runs a simulation"
+	@echo "********************************************************************************"
+	@echo

@@ -1,0 +1,5 @@
+Channel.Ack_RN    50
+Channel.N_Acks    50
+Receiver.RN    50
+Sender.Win_Begin    50
+Sender.SN    50

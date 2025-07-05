@@ -1,0 +1,5 @@
+This model represents a  $2X2$ output queue ATM  switch architecture.
+In this model, when the packet arrives at the switch it is immediately
+routed to the appropriate output channel and no blocking occurs in the
+switch fabrics.
+There are two On_Off sources that transmits packets to the Switch_2x2 object.

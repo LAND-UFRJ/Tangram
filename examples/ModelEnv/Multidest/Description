@@ -1,0 +1,3 @@
+This model represents a token bus protocol. Station (i) sends the token
+for all other stations but only station (i+1) (the next in the logical
+ring) gets the token. Each station stays an exponential time with the token.

@@ -1,0 +1,2 @@
+The main purpose of the model is to show how we can change the value of 
+a specific reward using the commands get_cr() and set_cr().

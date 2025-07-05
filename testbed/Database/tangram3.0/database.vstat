@@ -1,0 +1,11 @@
+Repair_Center.Component_Status[0]
+Repair_Center.Component_Status[1]
+Repair_Center.Component_Status[2]
+Repair_Center.Component_Status[3]
+Processor.Proc1_Fail
+Processor.Proc2_Fail
+Processor.Can_Fail
+Front_End.Failed
+Front_End.Can_Fail
+Database.Failed
+Database.Can_Fail

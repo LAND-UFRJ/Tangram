@@ -1,0 +1,37 @@
+****************************************************************************
+*                                                                          *
+*                      KNOWN BUGS and FIXED BUGS                           *
+*                                                                          *
+****************************************************************************
+
+- configure script is not able to detect that flex is missing. The error occurs
+  when the user tries to compile gramatica.
+
+
+- the use of a non-queue variables in queue functions (save_at_tail,
+  restore_from_head, etc) is not reporting as error.
+  Example:
+      save_at_tail( Integer, double ); /* Wrong   */
+      save_at_tail( Queue, vector );   /* Correct */
+
+
+- Setting "State" as stop condition in batch simulation is not working.
+
+
+- If your model's name has more than one ".", the interface makes mistakes 
+  creating files.
+
+
+- The Java interfaces don't seem to work at RedHat 8.0 with JDK 1.2.
+
+
+- Num Lock seems to lock whole keyboard when actived with JDK 1.3.
+
+
+- IMPULSE reward:
+
+   i) If an object generates a message to another object and the action
+      related to the received message includes sending another message,
+      then the impulse reward is not generated correctly. The bug is related
+      to the calculation of the probabilities of the possible paths from
+      one tangible state to another.

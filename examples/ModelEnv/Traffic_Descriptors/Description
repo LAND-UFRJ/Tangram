@@ -1,0 +1,11 @@
+This directory contains two files: histogram_source.obj (a traffic model) and 
+traffic_source.trace (a traffic source trace).
+
+It is possible to obtain traffic descriptors (autocorrelation, IDC, mean, etc)
+from both the model and the trace.
+
+The histogram_source.obj is a traffic source model. The rate reward associated
+with the traffic source object represents the source rate.
+
+Each line of the file traffic_source.trace represents the traffic source rate
+collected at fixed intervals of time.

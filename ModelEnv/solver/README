@@ -1,0 +1,73 @@
+Usage: solv <choice> <basename> [precision]
+
+choice:    1- Gauss-Siedel, 2- Jacobi, 3- SOR, 4- Power Method
+           5- GTH without partitions, 6- GTH with partitions 
+           7- Uniformization (transient measure)
+basename:  transition matrix filename without the extension (.generator_mtx)
+precision: error bound for iterative and transient methods (1, 2, 3, 4 and 7)
+
+-----------------------------------------------------------------------------
+GTH block elimination solution:
+
+In option 6, solv program reads a partition description file named
+"basename.partition" of the form:
+
+number of partitions
+(in crescent order)
+final state of the first partition
+...
+final state of the ith partition
+or a definition of blocks with the same size:
+"s " block size " " final state of the last block
+...
+
+The final state of the last block must be the equal to the dimension of the
+chain.
+
+Ex: 4 partitions where the last 3 have a size of 2 (final states of each
+block are 3, 5, 7 and 9, in crescent order).
+
+4
+3
+s 2 9
+
+----------------------------------------------------------------------------
+Uniformization method (transient point probability):
+
+In option 7, solv program reads an initial probability description file, 
+named "basename.init_prob" and a time intervals description file named
+"basename.intervals".
+
+The initial probability description file is of the form:
+
+state probability
+or a definition of an equiprobable block:
+"e " initial state of the block " " end state of the block
+
+Ex: 5 states with the last 3 with equal probabilities.
+
+1 1.0e-01
+2 3.0e-01
+e 3 5 2.0e-01
+
+
+The time intervals description file is of the form:
+
+number of time intervals
+(in crescent order)
+first time interval
+...
+ith time interval
+or a definition of an equispaced range of time intervals:
+"n " total time interval of the range " " number of points in the range
+...
+
+Ex: 6 time intervals with an equispaced range between 2.0 and 8.0
+(time intervals are 1.0, 2.0, 4.0, 6.0, 8.0 and 9.5).
+
+6
+1.0e+00
+2.0e+00
+n 6.0e+00 3
+9.5e+00
+

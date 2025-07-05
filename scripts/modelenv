@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# Checking for TANGRAM2_HOME environment variable
+if [ -z $TANGRAM2_HOME ]; then
+    echo
+    echo " $0 error:"
+    echo "   TANGRAM2_HOME environment variable not set!"
+    echo "   For the bash shell you can use the following command"
+    echo "       export TANGRAM2_HOME=TANGRAM2_DIR"
+    echo "   Where TANGRAM2_DIR is the full path to the Tangram-II directory"
+    echo
+    
+    exit 1
+else
+# Checking for JAVA_HOME environment variable
+    if [ -z $JAVA_HOME ]; then
+        echo
+        echo " $0 error:"
+        echo "   JAVA_HOME environment variable not set!"
+        echo "   For the bash shell you can use the following command"
+        echo "       export JAVA_HOME=JAVA_DIR"
+        echo "   Where JAVA_DIR is the full path to the jdk or jre directory"
+        echo
+        
+        exit 1
+    else
+# Checking for $JAVA_HOME/bin/java
+        if [ ! -x $JAVA_HOME/bin/java ]; then
+            echo
+            echo " $0 error:"
+            echo "  No java found at $JAVA_HOME/bin"
+            echo "  Please check your JAVA_HOME environment variable"
+            echo
+                
+            exit 1
+        fi
+    fi
+fi
+
+# Setting the STDOUT variable
+TTY=`which tty`
+if [ -x "$TTY" ]; then
+    STDOUT=`tty`
+else
+    STDOUT=/dev/stderr
+fi
+
+# Adjusting PATH and LD_LIBRARY_PATH variables
+PATH=$TANGRAM2_HOME/bin:$PATH
+LD_LIBRARY_PATH="$TANGRAM2_HOME/lib:$LD_LIBRARY_PATH"
+
+export LD_LIBRARY_PATH
+
+# Calling the java application
+$JAVA_HOME/bin/java -classpath $TANGRAM2_HOME/class/TimerBean.jar:$TANGRAM2_HOME/class/Tangram2.jar:$TANGRAM2_HOME/class/AbsoluteLayout.jar -DSTDOUT=$STDOUT -DTANGRAM2_HOME=$TANGRAM2_HOME Tangram2.T2modelenv
+

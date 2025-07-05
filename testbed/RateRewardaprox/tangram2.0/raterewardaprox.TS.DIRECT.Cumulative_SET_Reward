@@ -1,0 +1,7 @@
+#Solution Method:    Cumulative Rate Reward (Approximation Method).
+#Uniformization Rate:2.001000e+00  Total Number of Erlang Stages: 50 
+#Reward:             Database.database_availability 
+#Cumulative Set Reward given the initial probability
+#Time                       Cumulative Reward
+#--------------------------------------------
+1                        9.998514e-01

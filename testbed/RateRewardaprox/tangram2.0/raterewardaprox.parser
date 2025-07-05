@@ -1,0 +1,111 @@
+ 
+Object_Desc Front_End (
+Declaration {
+
+Var
+State: operational;
+Const
+Float:failure_rate,repair_rate;
+
+
+}
+Initialization {
+
+operational=1
+failure_rate=0.0004
+repair_rate=1
+
+
+
+
+
+
+}
+Events {
+
+event = Fail (EXP,failure_rate)
+condition = (operational == 1)
+action={
+           ;set_st("operational",0);
+        };
+event = Repair (EXP,repair_rate)
+condition = (operational == 0)
+action={
+           ;set_st("operational",1);
+        };
+}
+Messages {
+
+
+
+}
+Rewards {
+
+rate_reward=front_end_availability
+condition=(operational == 1)
+value= 1;
+
+}
+)
+Object_Desc Database (
+Declaration {
+
+Var
+State: operational;
+Const
+Float:failure_rate,repair_rate;
+
+
+}
+Initialization {
+
+operational=1
+failure_rate=0.0004
+repair_rate=1
+
+
+
+
+}
+Events {
+ 
+event = Fail (EXP,failure_rate)
+condition = (operational == 1)
+action={
+          ;set_st("operational",0);
+        };
+event = Repair (EXP,repair_rate)
+condition = (operational == 0)
+action={
+           ;set_st("operational",1);
+        };
+
+
+}
+Messages {
+
+
+}
+Rewards {
+
+
+rate_reward=database_availability
+condition=(operational == 1)
+value= 1;
+rate_reward = states
+condition = (TRUE)
+value = 1;
+
+}
+)
+Global_Rewards {
+
+rate_reward = states
+condition = (TRUE)
+value = 1;
+ 
+
+
+}
+Independent_Chains {
+}

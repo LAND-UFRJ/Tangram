@@ -1,0 +1,796 @@
+%TGIF 4.1.43-QPL
+state(0,37,100.000,24,128,0,16,1,9,1,1,0,0,1,0,1,0,'Courier',0,80640,0,0,0,10,0,0,1,1,0,16,0,0,1,1,1,1,1088,1408,1,0,2880,0).
+%
+% @(#)$Header: /export/CVS/tangram2/Domain/TANGRAM2_OBJECTS/System.sym,v 1.1.1.1 2005/01/19 16:14:32 develop Exp $
+% %W%
+%
+unit("1 pixel/pixel").
+color_info(14,65535,0,[
+	"magenta", 65535, 0, 65535, 65535, 0, 65535, 1,
+	"red", 65535, 0, 0, 65535, 0, 0, 1,
+	"green", 0, 65535, 0, 0, 65535, 0, 1,
+	"blue", 0, 0, 65535, 0, 0, 65535, 1,
+	"yellow", 65535, 65535, 0, 65535, 65535, 0, 1,
+	"pink", 65535, 49344, 52171, 65535, 49344, 52171, 1,
+	"cyan", 0, 65535, 65535, 0, 65535, 65535, 1,
+	"CadetBlue", 24415, 40606, 41120, 24415, 40606, 41120, 1,
+	"white", 65535, 65535, 65535, 65535, 65535, 65535, 1,
+	"black", 0, 0, 0, 0, 0, 0, 1,
+	"DarkSlateGray", 12079, 20303, 20303, 12079, 20303, 20303, 1,
+	"#00000000c000", 0, 0, 49344, 0, 0, 49152, 1,
+	"#42ce55", 16962, 52942, 21845, 16896, 52736, 21760, 1,
+	"#0000ff", 0, 0, 65535, 0, 0, 65280, 1
+]).
+script_frac("0.6").
+fg_bg_colors('black','white').
+dont_reencode("FFDingbests:ZapfDingbats").
+page(1,"",1,'').
+sym([
+poly('black','',2,[
+	144,128,160,160],0,1,1,1716039,0,0,0,0,0,0,0,'1',0,0,
+    "0","",[
+    0,8,3,0,'8','3','0'],[0,8,3,0,'8','3','0'],[
+]),
+group([
+box('black','',80,96,144,128,0,1,1,1716038,0,0,0,0,0,'1',0,[
+]),
+box('black','',80,192,144,224,0,1,1,1716037,0,0,0,0,0,'1',0,[
+]),
+oval('black','',160,144,192,176,0,1,1,1716036,0,0,0,0,0,'1',0,[
+]),
+box('black','',224,144,288,176,0,1,1,1716035,0,0,0,0,0,'1',0,[
+]),
+poly('black','',2,[
+	192,160,224,160],0,1,1,1716034,0,0,0,0,0,0,0,'1',0,0,
+    "0","",[
+    0,8,3,0,'8','3','0'],[0,8,3,0,'8','3','0'],[
+]),
+poly('black','',2,[
+	160,160,144,192],0,1,1,1716033,0,0,0,0,0,0,0,'1',0,0,
+    "0","",[
+    0,8,3,0,'8','3','0'],[0,8,3,0,'8','3','0'],[
+]),
+text('black',80,99,1,0,1,63,16,1716032,13,3,0,0,0,0,2,63,16,0,0,"",0,0,0,0,112,'',[
+minilines(63,16,0,0,0,0,0,[
+mini_line(63,13,3,0,0,0,[
+str_block(0,63,13,3,0,-3,0,0,0,[
+str_seg('black','Courier',0,80640,63,13,3,0,-3,0,0,0,0,0,
+	" Proc_1")])
+])
+])]),
+text('black',80,195,1,0,1,63,16,1716031,13,3,0,0,0,0,2,63,16,0,0,"",0,0,0,0,208,'',[
+minilines(63,16,0,0,0,0,0,[
+mini_line(63,13,3,0,0,0,[
+str_block(0,63,13,3,0,-2,0,0,0,[
+str_seg('black','Courier',0,80640,63,13,3,0,-2,0,0,0,0,0,
+	" Proc_2")])
+])
+])]),
+text('black',96,147,1,0,1,54,16,1716030,13,3,0,0,0,0,2,54,16,0,0,"",0,0,0,0,160,'',[
+minilines(54,16,0,0,0,0,0,[
+mini_line(54,13,3,0,0,0,[
+str_block(0,54,13,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,80640,54,13,3,0,-1,0,0,0,0,0,
+	"Switch")])
+])
+])]),
+text('black',224,147,1,0,1,63,16,1716029,13,3,0,0,0,0,2,63,16,0,0,"",0,0,0,0,160,'',[
+minilines(63,16,0,0,0,0,0,[
+mini_line(63,13,3,0,0,0,[
+str_block(0,63,13,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,80640,63,13,3,0,-1,0,0,0,0,0,
+	" Memory")])
+])
+])]),
+box('black','',64,80,304,240,0,1,1,1716028,0,0,0,0,0,'1',0,[
+]),
+group([
+polygon('black','',5,[
+	312,160,304,152,312,144,320,152,312,160],1,1,1,0,1716027,0,0,0,0,0,'1',0,
+    "00",[
+]),
+box('black','',308,148,316,156,1,1,0,1716024,0,0,0,0,0,'1',0,[
+attr("", "auto_center_attr", 0, 1, 0,
+text('black',312,147,1,1,1,144,16,1716026,13,3,0,0,0,0,2,144,16,0,0,"",0,0,0,0,160,'',[
+minilines(144,16,0,0,1,0,0,[
+mini_line(144,13,3,0,0,0,[
+str_block(0,144,13,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,80640,144,13,3,0,-1,0,0,0,0,0,
+	"auto_center_attr")])
+])
+])])),
+attr("label=", "", 1, 0, 0,
+text('black',312,143,1,1,1,0,16,1716025,13,3,0,0,0,0,2,0,16,0,0,"",0,0,0,0,156,'',[
+minilines(0,16,0,0,1,0,0,[
+mini_line(0,13,3,0,0,0,[
+str_block(0,0,13,3,0,0,0,0,0,[
+str_seg('black','Courier',0,80640,0,13,3,0,0,0,0,0,0,0,
+	"")])
+])
+])]))
+])
+],
+1716023,0,0,[
+])
+],
+1716022,0,0,[
+])
+],
+1716021,0,0,[
+attr("stop=", "", 0, 1, 0,
+text('magenta',-96,74,2,0,1,93,34,1716053,14,3,0,0,0,0,2,93,34,0,0,"",0,0,0,0,88,'',[
+minilines(93,34,0,0,0,0,0,[
+mini_line(32,14,3,0,0,0,[
+str_block(0,32,14,3,0,-1,0,0,0,[
+str_seg('black','Times-Roman',0,80640,32,14,3,0,-1,0,0,0,0,0,
+	"stop=")])
+]),
+mini_line(93,14,3,0,0,0,[
+str_block(0,93,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,93,14,3,0,-2,0,0,0,0,0,
+	"  enable_undo();")])
+])
+])])),
+attr("Watches=", "", 1, 1, 0,
+text('magenta',104,267,5,0,1,162,80,1716052,13,3,0,0,0,0,2,162,80,0,0,"",0,0,0,0,280,'',[
+minilines(162,80,0,0,0,0,0,[
+mini_line(72,13,3,0,0,0,[
+str_block(0,72,13,3,0,-1,0,0,0,[
+str_seg('DarkSlateGray','Courier',0,80640,72,13,3,0,-1,0,0,0,0,0,
+	"Watches=")])
+]),
+mini_line(162,13,3,0,0,0,[
+str_block(0,162,13,3,0,-3,0,0,0,[
+str_seg('DarkSlateGray','Courier',0,80640,162,13,3,0,-3,0,0,0,0,0,
+	"Operational_Proc_1")])
+]),
+mini_line(162,13,3,0,0,0,[
+str_block(0,162,13,3,0,-2,0,0,0,[
+str_seg('DarkSlateGray','Courier',0,80640,162,13,3,0,-2,0,0,0,0,0,
+	"Operational_Proc_2")])
+]),
+mini_line(162,13,3,0,0,0,[
+str_block(0,162,13,3,0,-1,0,0,0,[
+str_seg('DarkSlateGray','Courier',0,80640,162,13,3,0,-1,0,0,0,0,0,
+	"Operational_Switch")])
+]),
+mini_line(162,13,3,0,0,0,[
+str_block(0,162,13,3,0,-1,0,0,0,[
+str_seg('DarkSlateGray','Courier',0,80640,162,13,3,0,-1,0,0,0,0,0,
+	"Operational_Memory")])
+])
+])])),
+attr("_show_all_=", "", 0, 1, 0,
+text('magenta',-40,230,11,0,1,144,187,1716051,14,3,0,0,0,0,2,144,187,0,0,"",0,0,0,0,244,'',[
+minilines(144,187,0,0,0,0,0,[
+mini_line(73,14,3,0,0,0,[
+str_block(0,73,14,3,0,-1,0,0,0,[
+str_seg('black','Times-Roman',0,80640,73,14,3,0,-1,0,0,0,0,0,
+	"_show_all_=")])
+]),
+mini_line(142,14,3,0,0,0,[
+str_block(0,142,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,142,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Declaration);")])
+]),
+mini_line(144,14,3,0,0,0,[
+str_block(0,144,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,144,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Initialization);")])
+]),
+mini_line(126,14,3,0,0,0,[
+str_block(0,126,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,126,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Watches);")])
+]),
+mini_line(126,14,3,0,0,0,[
+str_block(0,126,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,126,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Watches);")])
+]),
+mini_line(115,14,3,0,0,0,[
+str_block(0,115,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,115,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Events);")])
+]),
+mini_line(134,14,3,0,0,0,[
+str_block(0,134,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,134,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Messages);")])
+]),
+mini_line(127,14,3,0,0,0,[
+str_block(0,127,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,127,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Rewards);")])
+]),
+mini_line(107,14,3,0,0,0,[
+str_block(0,107,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,107,14,3,0,-2,0,0,0,0,0,
+	" show_attr(name);")])
+]),
+mini_line(143,14,3,0,0,0,[
+str_block(0,143,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,143,14,3,0,-2,0,0,0,0,0,
+	" strcpy(__status__,\"all\");")])
+]),
+mini_line(41,14,3,0,0,0,[
+str_block(0,41,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,41,14,3,0,-2,0,0,0,0,0,
+	" stop();")])
+])
+])])),
+attr("Initialization=", "", 0, 1, 0,
+text('magenta',88,371,10,0,1,171,160,1716050,13,3,0,0,0,0,2,171,160,0,0,"",0,0,0,0,384,'',[
+minilines(171,160,0,0,0,0,0,[
+mini_line(135,13,3,0,0,0,[
+str_block(0,135,13,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,80640,135,13,3,0,-1,0,0,0,0,0,
+	"Initialization=")])
+]),
+mini_line(171,13,3,0,0,0,[
+str_block(0,171,13,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,80640,171,13,3,0,-1,0,0,0,0,0,
+	"Operational_Proc_1=")])
+]),
+mini_line(171,13,3,0,0,0,[
+str_block(0,171,13,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,80640,171,13,3,0,-1,0,0,0,0,0,
+	"Operational_Proc_2=")])
+]),
+mini_line(171,13,3,0,0,0,[
+str_block(0,171,13,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,80640,171,13,3,0,-1,0,0,0,0,0,
+	"Operational_Switch=")])
+]),
+mini_line(171,13,3,0,0,0,[
+str_block(0,171,13,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,80640,171,13,3,0,-1,0,0,0,0,0,
+	"Operational_Memory=")])
+]),
+mini_line(117,13,3,0,0,0,[
+str_block(0,117,13,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,80640,117,13,3,0,-1,0,0,0,0,0,
+	"FAILURE_RATE=")])
+]),
+mini_line(108,13,3,0,0,0,[
+str_block(0,108,13,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,80640,108,13,3,0,-1,0,0,0,0,0,
+	"REPAIR_RATE=")])
+]),
+mini_line(162,13,3,0,0,0,[
+str_block(0,162,13,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,80640,162,13,3,0,-1,0,0,0,0,0,
+	"PROC_FAILURE_RATE=")])
+]),
+mini_line(153,13,3,0,0,0,[
+str_block(0,153,13,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,80640,153,13,3,0,-1,0,0,0,0,0,
+	"PROC_REPAIR_RATE=")])
+]),
+mini_line(0,13,3,0,0,0,[
+str_block(0,0,13,3,0,0,0,0,0,[
+str_seg('black','Courier',0,80640,0,13,3,0,0,0,0,0,0,0,
+	"")])
+])
+])])),
+attr("Rewards=", "", 0, 1, 0,
+text('#00000000c000',92,588,2,0,1,72,32,1716049,13,3,0,0,0,0,2,72,32,0,0,"",0,0,0,0,601,'',[
+minilines(72,32,0,0,0,0,0,[
+mini_line(72,13,3,0,0,0,[
+str_block(0,72,13,3,0,-1,0,0,0,[
+str_seg('#00000000c000','Courier',0,80640,72,13,3,0,-1,0,0,0,0,0,
+	"Rewards=")])
+]),
+mini_line(0,13,3,0,0,0,[
+str_block(0,0,13,3,0,0,0,0,0,[
+str_seg('#00000000c000','Courier',0,80640,0,13,3,0,0,0,0,0,0,0,
+	"")])
+])
+])])),
+attr("_show_vars_=", "", 0, 1, 0,
+text('black',-200,472,5,0,1,190,85,1716048,14,3,0,0,0,0,2,190,85,0,0,"",0,0,0,0,486,'',[
+minilines(190,85,0,0,0,0,0,[
+mini_line(85,14,3,0,0,0,[
+str_block(0,85,14,3,0,-1,0,0,0,[
+str_seg('black','Times-Roman',0,80640,85,14,3,0,-1,0,0,0,0,0,
+	"_show_vars_=")])
+]),
+mini_line(137,14,3,0,0,0,[
+str_block(0,137,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,137,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(Initialization);")])
+]),
+mini_line(126,14,3,0,0,0,[
+str_block(0,126,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,126,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Watches);")])
+]),
+mini_line(190,14,3,0,0,0,[
+str_block(0,190,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,190,14,3,0,-2,0,0,0,0,0,
+	" strcpy(__status__,\"state_vars\");")])
+]),
+mini_line(41,14,3,0,0,0,[
+str_block(0,41,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,41,14,3,0,-2,0,0,0,0,0,
+	" stop();")])
+])
+])])),
+attr("_show_init_=", "", 0, 1, 0,
+text('black',-208,196,15,0,1,147,255,1716047,14,3,0,0,0,0,2,147,255,0,0,"",0,0,0,0,210,'',[
+minilines(147,255,0,0,0,0,0,[
+mini_line(77,14,3,0,0,0,[
+str_block(0,77,14,3,0,-1,0,0,0,[
+str_seg('black','Times-Roman',0,80640,77,14,3,0,-1,0,0,0,0,0,
+	"_show_init_=")])
+]),
+mini_line(135,14,3,0,0,0,[
+str_block(0,135,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,135,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(Declaration);")])
+]),
+mini_line(119,14,3,0,0,0,[
+str_block(0,119,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,119,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(Watches);")])
+]),
+mini_line(108,14,3,0,0,0,[
+str_block(0,108,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,108,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(Events);")])
+]),
+mini_line(127,14,3,0,0,0,[
+str_block(0,127,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,127,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(Messages);")])
+]),
+mini_line(120,14,3,0,0,0,[
+str_block(0,120,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,120,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(Rewards);")])
+]),
+mini_line(130,14,3,0,0,0,[
+str_block(0,130,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,130,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(__status__);")])
+]),
+mini_line(96,14,3,0,0,0,[
+str_block(0,96,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,96,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(exec);")])
+]),
+mini_line(92,14,3,0,0,0,[
+str_block(0,92,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,92,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(stop);")])
+]),
+mini_line(137,14,3,0,0,0,[
+str_block(0,137,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,137,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(_show_init_);")])
+]),
+mini_line(145,14,3,0,0,0,[
+str_block(0,145,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,145,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(_show_vars_);")])
+]),
+mini_line(133,14,3,0,0,0,[
+str_block(0,133,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,133,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(_show_all_);")])
+]),
+mini_line(144,14,3,0,0,0,[
+str_block(0,144,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,144,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Initialization);")])
+]),
+mini_line(147,14,3,0,0,0,[
+str_block(0,147,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,147,14,3,0,-2,0,0,0,0,0,
+	" strcpy(__status__,\"init\");")])
+]),
+mini_line(41,14,3,0,0,0,[
+str_block(0,41,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,41,14,3,0,-2,0,0,0,0,0,
+	" stop();")])
+])
+])])),
+attr("__status__=", "state_vars", 0, 1, 0,
+text('black',-200,72,1,0,1,130,17,1716046,14,3,0,0,0,0,2,130,17,0,0,"",0,0,0,0,86,'',[
+minilines(130,17,0,0,0,0,0,[
+mini_line(130,14,3,0,0,0,[
+str_block(0,130,14,3,0,-1,0,0,0,[
+str_seg('black','Times-Roman',0,80640,130,14,3,0,-1,0,0,0,0,0,
+	"__status__=state_vars")])
+])
+])])),
+attr("exec=", "", 0, 1, 0,
+text('black',-202,98,5,0,1,313,85,1716045,14,3,0,0,0,0,2,313,85,0,0,"",0,0,0,0,112,'',[
+minilines(313,85,0,0,0,0,0,[
+mini_line(36,14,3,0,0,0,[
+str_block(0,36,14,3,0,-1,0,0,0,[
+str_seg('black','Times-Roman',0,80640,36,14,3,0,-1,0,0,0,0,0,
+	"exec=")])
+]),
+mini_line(92,14,3,0,0,0,[
+str_block(0,92,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,92,14,3,0,-2,0,0,0,0,0,
+	" disable_undo();")])
+]),
+mini_line(270,14,3,0,0,0,[
+str_block(0,270,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,270,14,3,0,-2,0,0,0,0,0,
+	" if(\"$(__status__)\"==\"all\",_show_init_,NULL);")])
+]),
+mini_line(282,14,3,0,0,0,[
+str_block(0,282,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,282,14,3,0,-2,0,0,0,0,0,
+	" if(\"$(__status__)\"==\"init\",_show_vars_,NULL);")])
+]),
+mini_line(313,14,3,0,0,0,[
+str_block(0,313,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,313,14,3,0,-2,0,0,0,0,0,
+	" if(\"$(__status__)\"==\"state_vars\",_show_all_,NULL);")])
+])
+])])),
+attr("Messages=", "", 0, 1, 0,
+text('red',92,544,2,0,1,81,32,1716044,13,3,0,0,0,0,2,81,32,0,0,"",0,0,0,0,557,'',[
+minilines(81,32,0,0,0,0,0,[
+mini_line(81,13,3,0,0,0,[
+str_block(0,81,13,3,0,-1,0,0,0,[
+str_seg('red','Courier',0,80640,81,13,3,0,-1,0,0,0,0,0,
+	"Messages=")])
+]),
+mini_line(0,13,3,0,0,0,[
+str_block(0,0,13,3,0,0,0,0,0,[
+str_seg('red','Courier',0,80640,0,13,3,0,0,0,0,0,0,0,
+	"")])
+])
+])])),
+attr("Events=", "", 0, 1, 0,
+text('#42ce55',332,162,49,0,1,369,784,1716043,13,3,0,0,0,0,2,369,784,0,0,"",0,0,0,0,175,'',[
+minilines(369,784,0,0,0,0,0,[
+mini_line(63,13,3,0,0,0,[
+str_block(0,63,13,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,80640,63,13,3,0,-1,0,0,0,0,0,
+	"Events=")])
+]),
+mini_line(252,13,3,0,0,0,[
+str_block(0,252,13,3,0,-2,0,0,0,[
+str_seg('black','Courier',0,80640,252,13,3,0,-2,0,0,0,0,0,
+	"/*events related to proc_1*/")])
+]),
+mini_line(360,13,3,0,0,0,[
+str_block(0,360,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,360,13,3,0,-4,0,0,0,0,0,
+	"event=Fail_Proc_1(EXP,PROC_FAILURE_RATE)")])
+]),
+mini_line(333,13,3,0,0,0,[
+str_block(0,333,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,333,13,3,0,-4,0,0,0,0,0,
+	"condition = (Operational_Proc_1 == 1)")])
+]),
+mini_line(72,13,3,0,0,0,[
+str_block(0,72,13,3,0,-3,0,0,0,[
+str_seg('black','Courier',0,80640,72,13,3,0,-3,0,0,0,0,0,
+	"action={")])
+]),
+mini_line(369,13,3,0,0,0,[
+str_block(0,369,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,369,13,3,0,-4,0,0,0,0,0,
+	"         ;set_st(\"Operational_Proc_1\",0);")])
+]),
+mini_line(81,13,3,0,0,0,[
+str_block(0,81,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,81,13,3,0,-4,0,0,0,0,0,
+	"       };")])
+]),
+mini_line(369,13,3,0,0,0,[
+str_block(0,369,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,369,13,3,0,-4,0,0,0,0,0,
+	"event=Repair_Proc_1(EXP,PROC_REPAIR_RATE)")])
+]),
+mini_line(333,13,3,0,0,0,[
+str_block(0,333,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,333,13,3,0,-4,0,0,0,0,0,
+	"condition = (Operational_Proc_1 == 0)")])
+]),
+mini_line(72,13,3,0,0,0,[
+str_block(0,72,13,3,0,-3,0,0,0,[
+str_seg('black','Courier',0,80640,72,13,3,0,-3,0,0,0,0,0,
+	"action={")])
+]),
+mini_line(369,13,3,0,0,0,[
+str_block(0,369,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,369,13,3,0,-4,0,0,0,0,0,
+	"         ;set_st(\"Operational_Proc_1\",1);")])
+]),
+mini_line(81,13,3,0,0,0,[
+str_block(0,81,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,81,13,3,0,-4,0,0,0,0,0,
+	"       };")])
+]),
+mini_line(0,13,3,0,0,0,[
+str_block(0,0,13,3,0,0,0,0,0,[
+str_seg('black','Courier',0,80640,0,13,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(252,13,3,0,0,0,[
+str_block(0,252,13,3,0,-2,0,0,0,[
+str_seg('black','Courier',0,80640,252,13,3,0,-2,0,0,0,0,0,
+	"/*events related to proc_2*/")])
+]),
+mini_line(360,13,3,0,0,0,[
+str_block(0,360,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,360,13,3,0,-4,0,0,0,0,0,
+	"event=Fail_Proc_2(EXP,PROC_FAILURE_RATE)")])
+]),
+mini_line(333,13,3,0,0,0,[
+str_block(0,333,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,333,13,3,0,-4,0,0,0,0,0,
+	"condition = (Operational_Proc_2 == 1)")])
+]),
+mini_line(72,13,3,0,0,0,[
+str_block(0,72,13,3,0,-3,0,0,0,[
+str_seg('black','Courier',0,80640,72,13,3,0,-3,0,0,0,0,0,
+	"action={")])
+]),
+mini_line(369,13,3,0,0,0,[
+str_block(0,369,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,369,13,3,0,-4,0,0,0,0,0,
+	"         ;set_st(\"Operational_Proc_2\",0);")])
+]),
+mini_line(81,13,3,0,0,0,[
+str_block(0,81,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,81,13,3,0,-4,0,0,0,0,0,
+	"       };")])
+]),
+mini_line(369,13,3,0,0,0,[
+str_block(0,369,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,369,13,3,0,-4,0,0,0,0,0,
+	"event=Repair_Proc_2(EXP,PROC_REPAIR_RATE)")])
+]),
+mini_line(333,13,3,0,0,0,[
+str_block(0,333,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,333,13,3,0,-4,0,0,0,0,0,
+	"condition = (Operational_Proc_2 == 0)")])
+]),
+mini_line(72,13,3,0,0,0,[
+str_block(0,72,13,3,0,-3,0,0,0,[
+str_seg('black','Courier',0,80640,72,13,3,0,-3,0,0,0,0,0,
+	"action={")])
+]),
+mini_line(369,13,3,0,0,0,[
+str_block(0,369,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,369,13,3,0,-4,0,0,0,0,0,
+	"         ;set_st(\"Operational_Proc_2\",1);")])
+]),
+mini_line(81,13,3,0,0,0,[
+str_block(0,81,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,81,13,3,0,-4,0,0,0,0,0,
+	"       };")])
+]),
+mini_line(0,13,3,0,0,0,[
+str_block(0,0,13,3,0,0,0,0,0,[
+str_seg('black','Courier',0,80640,0,13,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(252,13,3,0,0,0,[
+str_block(0,252,13,3,0,-2,0,0,0,[
+str_seg('black','Courier',0,80640,252,13,3,0,-2,0,0,0,0,0,
+	"/*events related to memory*/")])
+]),
+mini_line(315,13,3,0,0,0,[
+str_block(0,315,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,315,13,3,0,-4,0,0,0,0,0,
+	"event=Fail_Memory(EXP,FAILURE_RATE)")])
+]),
+mini_line(333,13,3,0,0,0,[
+str_block(0,333,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,333,13,3,0,-4,0,0,0,0,0,
+	"condition = (Operational_Memory == 1)")])
+]),
+mini_line(72,13,3,0,0,0,[
+str_block(0,72,13,3,0,-3,0,0,0,[
+str_seg('black','Courier',0,80640,72,13,3,0,-3,0,0,0,0,0,
+	"action={")])
+]),
+mini_line(369,13,3,0,0,0,[
+str_block(0,369,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,369,13,3,0,-4,0,0,0,0,0,
+	"         ;set_st(\"Operational_Memory\",0);")])
+]),
+mini_line(81,13,3,0,0,0,[
+str_block(0,81,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,81,13,3,0,-4,0,0,0,0,0,
+	"       };")])
+]),
+mini_line(324,13,3,0,0,0,[
+str_block(0,324,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,324,13,3,0,-4,0,0,0,0,0,
+	"event=Repair_Memory(EXP,REPAIR_RATE)")])
+]),
+mini_line(333,13,3,0,0,0,[
+str_block(0,333,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,333,13,3,0,-4,0,0,0,0,0,
+	"condition = (Operational_Memory == 0)")])
+]),
+mini_line(72,13,3,0,0,0,[
+str_block(0,72,13,3,0,-3,0,0,0,[
+str_seg('black','Courier',0,80640,72,13,3,0,-3,0,0,0,0,0,
+	"action={")])
+]),
+mini_line(369,13,3,0,0,0,[
+str_block(0,369,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,369,13,3,0,-4,0,0,0,0,0,
+	"         ;set_st(\"Operational_Memory\",1);")])
+]),
+mini_line(81,13,3,0,0,0,[
+str_block(0,81,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,81,13,3,0,-4,0,0,0,0,0,
+	"       };")])
+]),
+mini_line(0,13,3,0,0,0,[
+str_block(0,0,13,3,0,0,0,0,0,[
+str_seg('black','Courier',0,80640,0,13,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(0,13,3,0,0,0,[
+str_block(0,0,13,3,0,0,0,0,0,[
+str_seg('black','Courier',0,80640,0,13,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(297,13,3,0,0,0,[
+str_block(0,297,13,3,0,-2,0,0,0,[
+str_seg('black','Courier',0,80640,297,13,3,0,-2,0,0,0,0,0,
+	"/*events relationed with switch*/")])
+]),
+mini_line(315,13,3,0,0,0,[
+str_block(0,315,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,315,13,3,0,-4,0,0,0,0,0,
+	"event=Fail_Switch(EXP,FAILURE_RATE)")])
+]),
+mini_line(333,13,3,0,0,0,[
+str_block(0,333,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,333,13,3,0,-4,0,0,0,0,0,
+	"condition = (Operational_Switch == 1)")])
+]),
+mini_line(72,13,3,0,0,0,[
+str_block(0,72,13,3,0,-3,0,0,0,[
+str_seg('black','Courier',0,80640,72,13,3,0,-3,0,0,0,0,0,
+	"action={")])
+]),
+mini_line(369,13,3,0,0,0,[
+str_block(0,369,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,369,13,3,0,-4,0,0,0,0,0,
+	"         ;set_st(\"Operational_Switch\",0);")])
+]),
+mini_line(81,13,3,0,0,0,[
+str_block(0,81,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,81,13,3,0,-4,0,0,0,0,0,
+	"       };")])
+]),
+mini_line(324,13,3,0,0,0,[
+str_block(0,324,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,324,13,3,0,-4,0,0,0,0,0,
+	"event=Repair_Switch(EXP,REPAIR_RATE)")])
+]),
+mini_line(333,13,3,0,0,0,[
+str_block(0,333,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,333,13,3,0,-4,0,0,0,0,0,
+	"condition = (Operational_Switch == 0)")])
+]),
+mini_line(72,13,3,0,0,0,[
+str_block(0,72,13,3,0,-3,0,0,0,[
+str_seg('black','Courier',0,80640,72,13,3,0,-3,0,0,0,0,0,
+	"action={")])
+]),
+mini_line(369,13,3,0,0,0,[
+str_block(0,369,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,369,13,3,0,-4,0,0,0,0,0,
+	"         ;set_st(\"Operational_Switch\",1);")])
+]),
+mini_line(81,13,3,0,0,0,[
+str_block(0,81,13,3,0,-4,0,0,0,[
+str_seg('black','Courier',0,80640,81,13,3,0,-4,0,0,0,0,0,
+	"       };")])
+])
+])])),
+attr("name=", "System", 1, 1, 0,
+text('#0000ff',110,44,1,0,1,99,16,1716042,13,3,0,0,0,0,2,99,16,0,0,"",0,0,0,0,57,'',[
+minilines(99,16,0,0,0,0,0,[
+mini_line(99,13,3,0,0,0,[
+str_block(0,99,13,3,0,0,0,0,0,[
+str_seg('#0000ff','Courier',0,80640,99,13,3,0,0,0,0,0,0,0,
+	"name=System")])
+])
+])])),
+attr("Declaration=", "", 0, 1, 0,
+text('CadetBlue',332,24,9,0,1,441,144,1716041,13,3,0,0,0,0,2,441,144,0,0,"",0,0,0,0,37,'',[
+minilines(441,144,0,0,0,0,0,[
+mini_line(108,13,3,0,0,0,[
+str_block(0,108,13,3,0,-1,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,108,13,3,0,-1,0,0,0,0,0,
+	"Declaration=")])
+]),
+mini_line(81,13,3,0,0,0,[
+str_block(0,81,13,3,0,-1,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,81,13,3,0,-1,0,0,0,0,0,
+	"State Var")])
+]),
+mini_line(0,13,3,0,0,0,[
+str_block(0,0,13,3,0,0,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,0,13,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(414,13,3,0,0,0,[
+str_block(0,414,13,3,0,-4,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,414,13,3,0,-4,0,0,0,0,0,
+	"Integer:Operational_Proc_1,Operational_Proc_2,")])
+]),
+mini_line(414,13,3,0,0,0,[
+str_block(0,414,13,3,0,-4,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,414,13,3,0,-4,0,0,0,0,0,
+	"        Operational_Switch,Operational_Memory;")])
+]),
+mini_line(45,13,3,0,0,0,[
+str_block(0,45,13,3,0,-2,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,45,13,3,0,-2,0,0,0,0,0,
+	"Const")])
+]),
+mini_line(441,13,3,0,0,0,[
+str_block(0,441,13,3,0,-4,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,441,13,3,0,-4,0,0,0,0,0,
+	"Float:FAILURE_RATE,REPAIR_RATE,PROC_FAILURE_RATE,")])
+]),
+mini_line(207,13,3,0,0,0,[
+str_block(0,207,13,3,0,-4,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,207,13,3,0,-4,0,0,0,0,0,
+	"      PROC_REPAIR_RATE;")])
+]),
+mini_line(0,13,3,0,0,0,[
+str_block(0,0,13,3,0,0,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,0,13,3,0,0,0,0,0,0,0,
+	"")])
+])
+])])),
+attr("edit_attrs_in_context_menu=", "", 0, 1, 0,
+text('black',58,371,7,0,1,243,112,1716040,13,3,2,0,0,0,2,243,112,0,0,"",0,0,0,0,384,'',[
+minilines(243,112,0,0,0,0,0,[
+mini_line(243,13,3,0,0,0,[
+str_block(0,243,13,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,80640,243,13,3,0,-1,0,0,0,0,0,
+	"edit_attrs_in_context_menu=")])
+]),
+mini_line(63,13,3,0,0,0,[
+str_block(0,63,13,3,0,-2,0,0,0,[
+str_seg('black','Courier',0,80640,63,13,3,0,-2,0,0,0,0,0,
+	"Watches")])
+]),
+mini_line(126,13,3,0,0,0,[
+str_block(0,126,13,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,80640,126,13,3,0,-1,0,0,0,0,0,
+	"Initialization")])
+]),
+mini_line(99,13,3,0,0,0,[
+str_block(0,99,13,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,80640,99,13,3,0,-1,0,0,0,0,0,
+	"Declaration")])
+]),
+mini_line(72,13,3,0,0,0,[
+str_block(0,72,13,3,0,-2,0,0,0,[
+str_seg('black','Courier',0,80640,72,13,3,0,-2,0,0,0,0,0,
+	"Messages")])
+]),
+mini_line(63,13,3,0,0,0,[
+str_block(0,63,13,3,0,-2,0,0,0,[
+str_seg('black','Courier',0,80640,63,13,3,0,-2,0,0,0,0,0,
+	"Rewards")])
+]),
+mini_line(54,13,3,0,0,0,[
+str_block(0,54,13,3,0,-2,0,0,0,[
+str_seg('black','Courier',0,80640,54,13,3,0,-2,0,0,0,0,0,
+	"Events")])
+])
+])]))
+]).

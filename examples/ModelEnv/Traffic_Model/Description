@@ -1,0 +1,4 @@
+This model represents a Birth-Death traffic source which feeds a FIFO queue.
+There are two objects: a FIFO queue and a Birth-Death Source. 
+Each state of the Birth-Death source represents the number of on_off active
+sources. 

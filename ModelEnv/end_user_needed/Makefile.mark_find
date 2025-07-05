@@ -1,0 +1,74 @@
+#======================================================================
+
+CC       = g++
+CFLAGS   = -O2 -w -g -rdynamic
+RM       = /bin/rm -f
+
+INCFLAGS = -I. -I$(HOME)/include -I$(TANGRAM2_HOME)/include \
+           -I$(TANGRAM2_HOME)/include/mtk
+
+LDFLAGS  = -L. -L$(HOME)/lib -L$(TANGRAM2_HOME)/lib \
+           -Wl,-rpath $(TANGRAM2_HOME)/lib
+LIBS     = -lmark_find -lmtk -lhash_lib -lm -lpthread -ldl
+
+DLDFLAGS = -L. -L$(PVM_ROOT)/lib/$(ARCH) -L$(HOME)/lib -L$(TANGRAM2_HOME)/lib 
+DLIBS    = -ldistributed_mark_find -lmtk -lhash_lib -lm -lpthread -lpvm3
+
+# Solaris socket libs
+SLIBS    = -lsocket -lnsl
+
+
+#======================================================================
+
+.SUFFIXES: .o .c .cpp
+
+.c.o:
+	@$(CC) $(CFLAGS) $(INCFLAGS) -c $*.c
+
+.cpp.o:
+	@$(CC) $(CFLAGS) $(INCFLAGS) -c $*.cpp
+
+#======================================================================
+
+all: CHECK_FOR_BASEFILE mark_find
+
+CHECK_FOR_BASEFILE:
+	@if [ ! -f $(BASE).user_code.c ]; then \
+            echo "ERROR: could not find $(BASE).user_code.c"; \
+            exit 1; \
+        fi
+
+mark_find: $(BASE).user_code.o
+
+	@if [ ! -f $(TANGRAM2_HOME)/lib/libmark_find.a -a ! -f $(HOME)/lib/libmark_find.a ]; then \
+            echo "ERROR: could not find {$(HOME)/lib,$(TANGRAM2_HOME)/lib}/libmark_find.a"; \
+	    exit 1; \
+	fi
+
+	@if [ `uname` = SunOS ]; then \
+            $(CC) $(CFLAGS) -o mark_find $(OBJS) $(BASE).user_code.o $(LDFLAGS) $(SLIBS) $(LIBS) ; \
+        else \
+            $(CC) $(CFLAGS) -o mark_find $(OBJS) $(BASE).user_code.o $(LDFLAGS) $(LIBS); \
+        fi
+
+distributed: CHECK_FOR_BASEFILE $(BASE).user_code.o
+
+	@if [ ! -f $(TANGRAM2_HOME)/lib/libdistributed_mark_find.a -a ! -f $(HOME)/lib/libdistributed_mark_find.a ]; then \
+            echo ; \
+            echo "ERROR: could not find {$(HOME)/lib,$(TANGRAM2_HOME)/lib}/libdistributed_mark_find.a"; \
+            echo ; \
+            exit 1; \
+	fi
+
+	@if [ `uname` = SunOS ]; then \
+            ARCH=SUNOS \
+            $(CC) $(CFLAGS) -o mark_find $(OBJS) $(BASE).user_code.o $(DLDFLAGS) $(SLIBS) $(DLIBS) ; \
+        else \
+            ARCH=LINUX \
+            $(CC) $(CFLAGS) -o mark_find $(OBJS) $(BASE).user_code.o $(DLDFLAGS) $(DLIBS); \
+        fi
+	
+clean:
+	$(RM) .\#* *~ *.o *core a.out mark_find 
+
+

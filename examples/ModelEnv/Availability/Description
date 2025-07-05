@@ -1,0 +1,2 @@
+This model represents a system, with a Database, a Front_End and two processing subsystems. Each one of the components can fail. We obtain the availability
+of the system.

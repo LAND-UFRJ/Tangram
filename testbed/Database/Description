@@ -1,0 +1,4 @@
+This model represents a system, with a Database, a Front_End, a Processor
+and a Repair Center.
+The components can fail and the failure can affect the behavior of others
+components. We obtain the availability of the system. 

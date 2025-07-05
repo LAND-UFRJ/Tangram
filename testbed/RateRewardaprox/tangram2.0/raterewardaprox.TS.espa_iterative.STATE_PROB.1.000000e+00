@@ -1,0 +1,9 @@
+#Solution Method:    Efficient transient State Probability (Approximation Method).
+#Uniformization Rate:2.001000e+00  
+#State Probability given the initial probability 
+# Destination State                  State Probability 
+#--------------------------------------------------------- 
+  1                                   9.9949737045e-01
+  2                                   2.5128297533e-04
+  3                                   2.5128297533e-04
+  4                                   6.3711250084e-08

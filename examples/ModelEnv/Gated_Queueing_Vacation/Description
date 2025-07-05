@@ -1,0 +1,7 @@
+This model  describes a system  with  a Poisson source that  generates
+packets to a queue. The queue serves the packets if and only if it has
+the token  (generate by   the  Token_Passer  object). When the   queue
+receives the token, it closes the "gate" and  serves the packets until
+the  timeout expires (the  queue continues receiving packets, but they
+are  stored behind the gate).   If  some packets are  not served, they
+must wait the next token arrival.

@@ -1,0 +1,1768 @@
+%TGIF 4.1.43-QPL
+state(0,37,100.000,0,0,0,16,1,9,1,1,0,0,1,0,1,0,'Courier',0,80640,0,0,0,10,0,0,1,1,0,16,0,0,1,1,1,1,1088,1408,1,0,2880,0).
+%
+% @(#)$Header: /export/CVS/tangram2/Domain/TANGRAM2_FLUID_OBJECTS/server_queue_gps_cp.sym,v 1.1.1.1 2005/01/19 16:14:32 develop Exp $
+% %W%
+%
+unit("1 pixel/pixel").
+color_info(229,65535,0,[
+	"magenta", 65535, 0, 65535, 65535, 0, 65535, 1,
+	"red", 65535, 0, 0, 65535, 0, 0, 1,
+	"green", 0, 65535, 0, 0, 65535, 0, 1,
+	"blue", 0, 0, 65535, 0, 0, 65535, 1,
+	"yellow", 65535, 65535, 0, 65535, 65535, 0, 1,
+	"pink", 65535, 49344, 52171, 65535, 49344, 52171, 1,
+	"cyan", 0, 65535, 65535, 0, 65535, 65535, 1,
+	"CadetBlue", 24415, 40606, 41120, 24415, 40606, 41120, 1,
+	"white", 65535, 65535, 65535, 65535, 65535, 65535, 1,
+	"black", 0, 0, 0, 0, 0, 0, 1,
+	"DarkSlateGray", 12079, 20303, 20303, 12079, 20303, 20303, 1,
+	"#842E2C", 33924, 11822, 11308, 33792, 11776, 11264, 1,
+	"#B4A67F", 46260, 42662, 32639, 46080, 42496, 32512, 1,
+	"#E4DAB8", 58596, 56026, 47288, 58368, 55808, 47104, 1,
+	"#DCD4C4", 56540, 54484, 50372, 56320, 54272, 50176, 1,
+	"#FCEDF4", 64764, 60909, 62708, 64512, 60672, 62464, 1,
+	"#DCBE43", 56540, 48830, 17219, 56320, 48640, 17152, 1,
+	"#FCF2EA", 64764, 62194, 60138, 64512, 61952, 59904, 1,
+	"#848688", 33924, 34438, 34952, 33792, 34304, 34816, 1,
+	"#D42E46", 54484, 11822, 17990, 54272, 11776, 17920, 1,
+	"#E4CEB8", 58596, 52942, 47288, 58368, 52736, 47104, 1,
+	"#742230", 29812, 8738, 12336, 29696, 8704, 12288, 1,
+	"#D47E4C", 54484, 32382, 19532, 54272, 32256, 19456, 1,
+	"#BC7E5C", 48316, 32382, 23644, 48128, 32256, 23552, 1,
+	"#D42446", 54484, 9252, 17990, 54272, 9216, 17920, 1,
+	"#FCF2D6", 64764, 62194, 54998, 64512, 61952, 54784, 1,
+	"#DCCEB0", 56540, 52942, 45232, 56320, 52736, 45056, 1,
+	"#5C5A5A", 23644, 23130, 23130, 23552, 23040, 23040, 1,
+	"#3B1A1C", 15163, 6682, 7196, 15104, 6656, 7168, 1,
+	"#542A24", 21588, 10794, 9252, 21504, 10752, 9216, 1,
+	"#545A52", 21588, 23130, 21074, 21504, 23040, 20992, 1,
+	"#342A2C", 13364, 10794, 11308, 13312, 10752, 11264, 1,
+	"#D47A4F", 54484, 31354, 20303, 54272, 31232, 20224, 1,
+	"#B43747", 46260, 14135, 18247, 46080, 14080, 18176, 1,
+	"#8E283C", 36494, 10280, 15420, 36352, 10240, 15360, 1,
+	"#C4C6C3", 50372, 50886, 50115, 50176, 50688, 49920, 1,
+	"#C4BC98", 50372, 48316, 39064, 50176, 48128, 38912, 1,
+	"#B44654", 46260, 17990, 21588, 46080, 17920, 21504, 1,
+	"#D42A4C", 54484, 10794, 19532, 54272, 10752, 19456, 1,
+	"#BCA56F", 48316, 42405, 28527, 48128, 42240, 28416, 1,
+	"#1C1C14", 7196, 7196, 5140, 7168, 7168, 5120, 1,
+	"#FCEADC", 64764, 60138, 56540, 64512, 59904, 56320, 1,
+	"#5C5660", 23644, 22102, 24672, 23552, 22016, 24576, 1,
+	"#9C6E14", 40092, 28270, 5140, 39936, 28160, 5120, 1,
+	"#CC3951", 52428, 14649, 20817, 52224, 14592, 20736, 1,
+	"#F4F7F5", 62708, 63479, 62965, 62464, 63232, 62720, 1,
+	"#E4C240", 58596, 49858, 16448, 58368, 49664, 16384, 1,
+	"#F4E2D4", 62708, 58082, 54484, 62464, 57856, 54272, 1,
+	"#FCFEDF", 64764, 65278, 57311, 64512, 65024, 57088, 1,
+	"#D4BE44", 54484, 48830, 17476, 54272, 48640, 17408, 1,
+	"#ECE2CC", 60652, 58082, 52428, 60416, 57856, 52224, 1,
+	"#E4C22C", 58596, 49858, 11308, 58368, 49664, 11264, 1,
+	"#945A0C", 38036, 23130, 3084, 37888, 23040, 3072, 1,
+	"#6C4A34", 27756, 19018, 13364, 27648, 18944, 13312, 1,
+	"#845331", 33924, 21331, 12593, 33792, 21248, 12544, 1,
+	"#6C2A34", 27756, 10794, 13364, 27648, 10752, 13312, 1,
+	"#7C2230", 31868, 8738, 12336, 31744, 8704, 12288, 1,
+	"#CC7E50", 52428, 32382, 20560, 52224, 32256, 20480, 1,
+	"#ECD2A4", 60652, 53970, 42148, 60416, 53760, 41984, 1,
+	"#2C2523", 11308, 9509, 8995, 11264, 9472, 8960, 1,
+	"#C4C1C2", 50372, 49601, 49858, 50176, 49408, 49664, 1,
+	"#5C5652", 23644, 22102, 21074, 23552, 22016, 20992, 1,
+	"#948589", 38036, 34181, 35209, 37888, 34048, 35072, 1,
+	"#FCE9C4", 64764, 59881, 50372, 64512, 59648, 50176, 1,
+	"#4C3214", 19532, 12850, 5140, 19456, 12800, 5120, 1,
+	"#7C4E36", 31868, 20046, 13878, 31744, 19968, 13824, 1,
+	"#FCFEFC", 64764, 65278, 64764, 64512, 65024, 64512, 1,
+	"#938C95", 37779, 35980, 38293, 37632, 35840, 38144, 1,
+	"#D4BA8C", 54484, 47802, 35980, 54272, 47616, 35840, 1,
+	"#BCAB7B", 48316, 43947, 31611, 48128, 43776, 31488, 1,
+	"#D0BE88", 53456, 48830, 34952, 53248, 48640, 34816, 1,
+	"#3C2A04", 15420, 10794, 1028, 15360, 10752, 1024, 1,
+	"#D68356", 54998, 33667, 22102, 54784, 33536, 22016, 1,
+	"#F4F2F4", 62708, 62194, 62708, 62464, 61952, 62464, 1,
+	"#E4BD3F", 58596, 48573, 16191, 58368, 48384, 16128, 1,
+	"#DC2A4C", 56540, 10794, 19532, 56320, 10752, 19456, 1,
+	"#3C2204", 15420, 8738, 1028, 15360, 8704, 1024, 1,
+	"#2C161C", 11308, 5654, 7196, 11264, 5632, 7168, 1,
+	"#645A60", 25700, 23130, 24672, 25600, 23040, 24576, 1,
+	"#C4B27C", 50372, 45746, 31868, 50176, 45568, 31744, 1,
+	"#845644", 33924, 22102, 17476, 33792, 22016, 17408, 1,
+	"#9C5234", 40092, 21074, 13364, 39936, 20992, 13312, 1,
+	"#D8BC54", 55512, 48316, 21588, 55296, 48128, 21504, 1,
+	"#AC2E44", 44204, 11822, 17476, 44032, 11776, 17408, 1,
+	"#545250", 21588, 21074, 20560, 21504, 20992, 20480, 1,
+	"#2C220B", 11308, 8738, 2827, 11264, 8704, 2816, 1,
+	"#F4E2CC", 62708, 58082, 52428, 62464, 57856, 52224, 1,
+	"#3C0F11", 15420, 3855, 4369, 15360, 3840, 4352, 1,
+	"#FCE0C0", 64764, 57568, 49344, 64512, 57344, 49152, 1,
+	"#CC2949", 52428, 10537, 18761, 52224, 10496, 18688, 1,
+	"#8C4624", 35980, 17990, 9252, 35840, 17920, 9216, 1,
+	"#A49284", 42148, 37522, 33924, 41984, 37376, 33792, 1,
+	"#ECDEC4", 60652, 57054, 50372, 60416, 56832, 50176, 1,
+	"#CFB997", 53199, 47545, 38807, 52992, 47360, 38656, 1,
+	"#949288", 38036, 37522, 34952, 37888, 37376, 34816, 1,
+	"#D4D2D4", 54484, 53970, 54484, 54272, 53760, 54272, 1,
+	"#B48E6C", 46260, 36494, 27756, 46080, 36352, 27648, 1,
+	"#917A04", 37265, 31354, 1028, 37120, 31232, 1024, 1,
+	"#8C8B8A", 35980, 35723, 35466, 35840, 35584, 35328, 1,
+	"#1C231C", 7196, 8995, 7196, 7168, 8960, 7168, 1,
+	"#742A34", 29812, 10794, 13364, 29696, 10752, 13312, 1,
+	"#F47848", 62708, 30840, 18504, 62464, 30720, 18432, 1,
+	"#CCCECC", 52428, 52942, 52428, 52224, 52736, 52224, 1,
+	"#CCCACC", 52428, 51914, 52428, 52224, 51712, 52224, 1,
+	"#ECC61B", 60652, 50886, 6939, 60416, 50688, 6912, 1,
+	"#FCBE17", 64764, 48830, 5911, 64512, 48640, 5888, 1,
+	"#C47654", 50372, 30326, 21588, 50176, 30208, 21504, 1,
+	"#BCC6BC", 48316, 50886, 48316, 48128, 50688, 48128, 1,
+	"#DCC8A0", 56540, 51400, 41120, 56320, 51200, 40960, 1,
+	"#CB845E", 52171, 33924, 24158, 51968, 33792, 24064, 1,
+	"#342E30", 13364, 11822, 12336, 13312, 11776, 12288, 1,
+	"#E5D5B6", 58853, 54741, 46774, 58624, 54528, 46592, 1,
+	"#342205", 13364, 8738, 1285, 13312, 8704, 1280, 1,
+	"#B4A672", 46260, 42662, 29298, 46080, 42496, 29184, 1,
+	"#2C2A14", 11308, 10794, 5140, 11264, 10752, 5120, 1,
+	"#2C1D1E", 11308, 7453, 7710, 11264, 7424, 7680, 1,
+	"#FCF2F4", 64764, 62194, 62708, 64512, 61952, 62464, 1,
+	"#E42A4C", 58596, 10794, 19532, 58368, 10752, 19456, 1,
+	"#C43654", 50372, 13878, 21588, 50176, 13824, 21504, 1,
+	"#DC7E4A", 56540, 32382, 19018, 56320, 32256, 18944, 1,
+	"#1B1617", 6939, 5654, 5911, 6912, 5632, 5888, 1,
+	"#ECF2E4", 60652, 62194, 58596, 60416, 61952, 58368, 1,
+	"#281010", 10280, 4112, 4112, 10240, 4096, 4096, 1,
+	"#A8384C", 43176, 14392, 19532, 43008, 14336, 19456, 1,
+	"#E42E4F", 58596, 11822, 20303, 58368, 11776, 20224, 1,
+	"#F4E8D8", 62708, 59624, 55512, 62464, 59392, 55296, 1,
+	"#84503C", 33924, 20560, 15420, 33792, 20480, 15360, 1,
+	"#ACAA84", 44204, 43690, 33924, 44032, 43520, 33792, 1,
+	"#7C5634", 31868, 22102, 13364, 31744, 22016, 13312, 1,
+	"#8C8689", 35980, 34438, 35209, 35840, 34304, 35072, 1,
+	"#9C969C", 40092, 38550, 40092, 39936, 38400, 39936, 1,
+	"#DCC23C", 56540, 49858, 15420, 56320, 49664, 15360, 1,
+	"#9C422C", 40092, 16962, 11308, 39936, 16896, 11264, 1,
+	"#77262C", 30583, 9766, 11308, 30464, 9728, 11264, 1,
+	"#E4BE30", 58596, 48830, 12336, 58368, 48640, 12288, 1,
+	"#E47E41", 58596, 32382, 16705, 58368, 32256, 16640, 1,
+	"#DCD3B3", 56540, 54227, 46003, 56320, 54016, 45824, 1,
+	"#7C4634", 31868, 17990, 13364, 31744, 17920, 13312, 1,
+	"#B4A16E", 46260, 41377, 28270, 46080, 41216, 28160, 1,
+	"#E4C61C", 58596, 50886, 7196, 58368, 50688, 7168, 1,
+	"#FCFAFA", 64764, 64250, 64250, 64512, 64000, 64000, 1,
+	"#9C5004", 40092, 20560, 1028, 39936, 20480, 1024, 1,
+	"#8C928C", 35980, 37522, 35980, 35840, 37376, 35840, 1,
+	"#BCA683", 48316, 42662, 33667, 48128, 42496, 33536, 1,
+	"#41161B", 16705, 5654, 6939, 16640, 5632, 6912, 1,
+	"#F4C604", 62708, 50886, 1028, 62464, 50688, 1024, 1,
+	"#AC8A70", 44204, 35466, 28784, 44032, 35328, 28672, 1,
+	"#440F14", 17476, 3855, 5140, 17408, 3840, 5120, 1,
+	"#AC8670", 44204, 34438, 28784, 44032, 34304, 28672, 1,
+	"#DC264A", 56540, 9766, 19018, 56320, 9728, 18944, 1,
+	"#9C8674", 40092, 34438, 29812, 39936, 34304, 29696, 1,
+	"#F4C61B", 62708, 50886, 6939, 62464, 50688, 6912, 1,
+	"#FCFED2", 64764, 65278, 53970, 64512, 65024, 53760, 1,
+	"#2C2B27", 11308, 11051, 10023, 11264, 11008, 9984, 1,
+	"#E4CDAA", 58596, 52685, 43690, 58368, 52480, 43520, 1,
+	"#8C5236", 35980, 21074, 13878, 35840, 20992, 13824, 1,
+	"#B4AA7E", 46260, 43690, 32382, 46080, 43520, 32256, 1,
+	"#D4CAA4", 54484, 51914, 42148, 54272, 51712, 41984, 1,
+	"#4C1E2C", 19532, 7710, 11308, 19456, 7680, 11264, 1,
+	"#E47647", 58596, 30326, 18247, 58368, 30208, 18176, 1,
+	"#DC3050", 56540, 12336, 20560, 56320, 12288, 20480, 1,
+	"#B4846A", 46260, 33924, 27242, 46080, 33792, 27136, 1,
+	"#202214", 8224, 8738, 5140, 8192, 8704, 5120, 1,
+	"#BC374E", 48316, 14135, 20046, 48128, 14080, 19968, 1,
+	"#C4324C", 50372, 12850, 19532, 50176, 12800, 19456, 1,
+	"#846E34", 33924, 28270, 13364, 33792, 28160, 13312, 1,
+	"#C42A4C", 50372, 10794, 19532, 50176, 10752, 19456, 1,
+	"#BC3644", 48316, 13878, 17476, 48128, 13824, 17408, 1,
+	"#D4BC68", 54484, 48316, 26728, 54272, 48128, 26624, 1,
+	"#907618", 37008, 30326, 6168, 36864, 30208, 6144, 1,
+	"#545654", 21588, 22102, 21588, 21504, 22016, 21504, 1,
+	"#60504C", 24672, 20560, 19532, 24576, 20480, 19456, 1,
+	"#1C1D1D", 7196, 7453, 7453, 7168, 7424, 7424, 1,
+	"#E57A4E", 58853, 31354, 20046, 58624, 31232, 19968, 1,
+	"#241D11", 9252, 7453, 4369, 9216, 7424, 4352, 1,
+	"#4C524C", 19532, 21074, 19532, 19456, 20992, 19456, 1,
+	"#9C8E94", 40092, 36494, 38036, 39936, 36352, 37888, 1,
+	"#FCC604", 64764, 50886, 1028, 64512, 50688, 1024, 1,
+	"#DCDACC", 56540, 56026, 52428, 56320, 55808, 52224, 1,
+	"#64363C", 25700, 13878, 15420, 25600, 13824, 15360, 1,
+	"#241E1E", 9252, 7710, 7710, 9216, 7680, 7680, 1,
+	"#E4264A", 58596, 9766, 19018, 58368, 9728, 18944, 1,
+	"#842034", 33924, 8224, 13364, 33792, 8192, 13312, 1,
+	"#B4A17D", 46260, 41377, 32125, 46080, 41216, 32000, 1,
+	"#F4E7C9", 62708, 59367, 51657, 62464, 59136, 51456, 1,
+	"#F4BC27", 62708, 48316, 10023, 62464, 48128, 9984, 1,
+	"#E97A41", 59881, 31354, 16705, 59648, 31232, 16640, 1,
+	"#D88244", 55512, 33410, 17476, 55296, 33280, 17408, 1,
+	"#D4D4B0", 54484, 54484, 45232, 54272, 54272, 45056, 1,
+	"#847E7C", 33924, 32382, 31868, 33792, 32256, 31744, 1,
+	"#FBC206", 64507, 49858, 1542, 64256, 49664, 1536, 1,
+	"#D4CAB0", 54484, 51914, 45232, 54272, 51712, 45056, 1,
+	"#242221", 9252, 8738, 8481, 9216, 8704, 8448, 1,
+	"#BCBEC0", 48316, 48830, 49344, 48128, 48640, 49152, 1,
+	"#EC7E47", 60652, 32382, 18247, 60416, 32256, 18176, 1,
+	"#341E09", 13364, 7710, 2313, 13312, 7680, 2304, 1,
+	"#FCF8E1", 64764, 63736, 57825, 64512, 63488, 57600, 1,
+	"#EC7647", 60652, 30326, 18247, 60416, 30208, 18176, 1,
+	"#DC7A4B", 56540, 31354, 19275, 56320, 31232, 19200, 1,
+	"#C9824C", 51657, 33410, 19532, 51456, 33280, 19456, 1,
+	"#CFC097", 53199, 49344, 38807, 52992, 49152, 38656, 1,
+	"#441C1C", 17476, 7196, 7196, 17408, 7168, 7168, 1,
+	"#242A24", 9252, 10794, 9252, 9216, 10752, 9216, 1,
+	"#6C6264", 27756, 25186, 25700, 27648, 25088, 25600, 1,
+	"#7C664C", 31868, 26214, 19532, 31744, 26112, 19456, 1,
+	"#C43A44", 50372, 14906, 17476, 50176, 14848, 17408, 1,
+	"#BC403C", 48316, 16448, 15420, 48128, 16384, 15360, 1,
+	"#949495", 38036, 38036, 38293, 37888, 37888, 38144, 1,
+	"#9C4644", 40092, 17990, 17476, 39936, 17920, 17408, 1,
+	"#FCE2E4", 64764, 58082, 58596, 64512, 57856, 58368, 1,
+	"#C4AE78", 50372, 44718, 30840, 50176, 44544, 30720, 1,
+	"#948D8B", 38036, 36237, 35723, 37888, 36096, 35584, 1,
+	"#8C5634", 35980, 22102, 13364, 35840, 22016, 13312, 1,
+	"#AC3E2C", 44204, 15934, 11308, 44032, 15872, 11264, 1,
+	"#ECBA3C", 60652, 47802, 15420, 60416, 47616, 15360, 1,
+	"#B42E34", 46260, 11822, 13364, 46080, 11776, 13312, 1,
+	"#AC3A2C", 44204, 14906, 11308, 44032, 14848, 11264, 1,
+	"#F4F1E9", 62708, 61937, 59881, 62464, 61696, 59648, 1,
+	"#2C1E07", 11308, 7710, 1799, 11264, 7680, 1792, 1,
+	"#F4C21C", 62708, 49858, 7196, 62464, 49664, 7168, 1,
+	"#ACA274", 44204, 41634, 29812, 44032, 41472, 29696, 1,
+	"#BC3149", 48316, 12593, 18761, 48128, 12544, 18688, 1,
+	"#B4927C", 46260, 37522, 31868, 46080, 37376, 31744, 1,
+	"#F4BC1C", 62708, 48316, 7196, 62464, 48128, 7168, 1,
+	"#F4FEF6", 62708, 65278, 63222, 62464, 65024, 62976, 1,
+	"#00000000c000", 0, 0, 49344, 0, 0, 49152, 1,
+	"#fffe00000000", 65535, 0, 0, 65534, 0, 0, 1,
+	"#42ce55", 16962, 52942, 21845, 16896, 52736, 21760, 1,
+	"#0000ff", 0, 0, 65535, 0, 0, 65280, 1
+]).
+script_frac("0.6").
+fg_bg_colors('black','white').
+dont_reencode("FFDingbests:ZapfDingbats").
+page(1,"",1,'').
+sym([
+xpm('black','',96,56,281,125,0,214,2,0,1725873,0,185,69,0,0,0,0,0,0,[
+   "  ", "#842E2C", 5176, 1803, 1725,
+   " .", "#B4A67F", 7058, 6509, 4980,
+   " X", "#E4DAB8", 8941, 8549, 7215,
+   " o", "#DCD4C4", 8627, 8313, 7686,
+   " O", "#FCEDF4", 9882, 9294, 9568,
+   " +", "#DCBE43", 8627, 7450, 2627,
+   " @", "#FCF2EA", 9882, 9490, 9176,
+   " #", "#848688", 5176, 5254, 5333,
+   " $", "#D42E46", 8313, 1803, 2745,
+   " %", "#E4CEB8", 8941, 8078, 7215,
+   " &", "#742230", 4549, 1333, 1882,
+   " *", "#D47E4C", 8313, 4941, 2980,
+   " =", "#BC7E5C", 7372, 4941, 3607,
+   " -", "#D42446", 8313, 1411, 2745,
+   " ;", "#FCF2D6", 9882, 9490, 8392,
+   " :", "#DCCEB0", 8627, 8078, 6901,
+   " >", "#5C5A5A", 3607, 3529, 3529,
+   " ,", "#3B1A1C", 2313, 1019, 1098,
+   " <", "#542A24", 3294, 1647, 1411,
+   " 1", "#545A52", 3294, 3529, 3215,
+   " 2", "#342A2C", 2039, 1647, 1725,
+   " 3", "#D47A4F", 8313, 4784, 3098,
+   " 4", "#B43747", 7058, 2156, 2784,
+   " 5", "#8E283C", 5568, 1568, 2352,
+   " 6", "#C4C6C3", 7686, 7764, 7647,
+   " 7", "#C4BC98", 7686, 7372, 5960,
+   " 8", "#B44654", 7058, 2745, 3294,
+   " 9", "#D42A4C", 8313, 1647, 2980,
+   " 0", "#BCA56F", 7372, 6470, 4352,
+   " q", "#1C1C14", 1098, 1098, 784,
+   " w", "#FCEADC", 9882, 9176, 8627,
+   " e", "#5C5660", 3607, 3372, 3764,
+   " r", "#9C6E14", 6117, 4313, 784,
+   " t", "#CC3951", 8000, 2235, 3176,
+   " y", "#F4F7F5", 9568, 9686, 9607,
+   " u", "#E4C240", 8941, 7607, 2509,
+   " i", "#F4E2D4", 9568, 8862, 8313,
+   " p", "#FCFEDF", 9882, 9960, 8745,
+   " a", "#D4BE44", 8313, 7450, 2666,
+   " s", "#ECE2CC", 9254, 8862, 8000,
+   " d", "#E4C22C", 8941, 7607, 1725,
+   " f", "#945A0C", 5803, 3529, 470,
+   " g", "#6C4A34", 4235, 2901, 2039,
+   " h", "#845331", 5176, 3254, 1921,
+   " j", "#6C2A34", 4235, 1647, 2039,
+   " k", "#7C2230", 4862, 1333, 1882,
+   " l", "#CC7E50", 8000, 4941, 3137,
+   " z", "#ECD2A4", 9254, 8235, 6431,
+   " x", "#2C2523", 1725, 1450, 1372,
+   " c", "#C4C1C2", 7686, 7568, 7607,
+   " v", "#5C5652", 3607, 3372, 3215,
+   " b", "#948589", 5803, 5215, 5372,
+   " n", "#FCE9C4", 9882, 9137, 7686,
+   " m", "#4C3214", 2980, 1960, 784,
+   " M", "#7C4E36", 4862, 3058, 2117,
+   " N", "#FCFEFC", 9882, 9960, 9882,
+   " B", "#938C95", 5764, 5490, 5843,
+   " V", "#D4BA8C", 8313, 7294, 5490,
+   " C", "#BCAB7B", 7372, 6705, 4823,
+   " Z", "#D0BE88", 8156, 7450, 5333,
+   " A", "#3C2A04", 2352, 1647, 156,
+   " S", "#D68356", 8392, 5137, 3372,
+   " D", "#F4F2F4", 9568, 9490, 9568,
+   " F", "#E4BD3F", 8941, 7411, 2470,
+   " G", "#DC2A4C", 8627, 1647, 2980,
+   " H", "#3C2204", 2352, 1333, 156,
+   " J", "#2C161C", 1725, 862, 1098,
+   " K", "#645A60", 3921, 3529, 3764,
+   " L", "#C4B27C", 7686, 6980, 4862,
+   " P", "#845644", 5176, 3372, 2666,
+   " I", "#9C5234", 6117, 3215, 2039,
+   " U", "#D8BC54", 8470, 7372, 3294,
+   " Y", "#AC2E44", 6745, 1803, 2666,
+   " T", "#545250", 3294, 3215, 3137,
+   " R", "#2C220B", 1725, 1333, 431,
+   " E", "#F4E2CC", 9568, 8862, 8000,
+   " W", "#3C0F11", 2352, 588, 666,
+   " Q", "#FCE0C0", 9882, 8784, 7529,
+   " !", "#CC2949", 8000, 1607, 2862,
+   " ~", "#8C4624", 5490, 2745, 1411,
+   " ^", "#A49284", 6431, 5725, 5176,
+   " /", "#ECDEC4", 9254, 8705, 7686,
+   " (", "#CFB997", 8117, 7254, 5921,
+   " )", "#949288", 5803, 5725, 5333,
+   " _", "#D4D2D4", 8313, 8235, 8313,
+   " `", "#B48E6C", 7058, 5568, 4235,
+   " '", "#917A04", 5686, 4784, 156,
+   " ]", "#8C8B8A", 5490, 5450, 5411,
+   " [", "#1C231C", 1098, 1372, 1098,
+   " {", "#742A34", 4549, 1647, 2039,
+   " }", "#F47848", 9568, 4705, 2823,
+   " |", "#CCCECC", 8000, 8078, 8000,
+   ". ", "#CCCACC", 8000, 7921, 8000,
+   "..", "#ECC61B", 9254, 7764, 1058,
+   ".X", "#FCBE17", 9882, 7450, 901,
+   ".o", "#C47654", 7686, 4627, 3294,
+   ".O", "#BCC6BC", 7372, 7764, 7372,
+   ".+", "#DCC8A0", 8627, 7843, 6274,
+   ".@", "#CB845E", 7960, 5176, 3686,
+   ".#", "#342E30", 2039, 1803, 1882,
+   ".$", "#E5D5B6", 8980, 8352, 7137,
+   ".%", "#342205", 2039, 1333, 196,
+   ".&", "#B4A672", 7058, 6509, 4470,
+   ".*", "#2C2A14", 1725, 1647, 784,
+   ".=", "#2C1D1E", 1725, 1137, 1176,
+   ".-", "#FCF2F4", 9882, 9490, 9568,
+   ".;", "#E42A4C", 8941, 1647, 2980,
+   ".:", "#C43654", 7686, 2117, 3294,
+   ".>", "#DC7E4A", 8627, 4941, 2901,
+   ".,", "#1B1617", 1058, 862, 901,
+   ".<", "#ECF2E4", 9254, 9490, 8941,
+   ".1", "#281010", 1568, 627, 627,
+   ".2", "#A8384C", 6588, 2196, 2980,
+   ".3", "#E42E4F", 8941, 1803, 3098,
+   ".4", "#F4E8D8", 9568, 9098, 8470,
+   ".5", "#84503C", 5176, 3137, 2352,
+   ".6", "#ACAA84", 6745, 6666, 5176,
+   ".7", "#7C5634", 4862, 3372, 2039,
+   ".8", "#8C8689", 5490, 5254, 5372,
+   ".9", "#9C969C", 6117, 5882, 6117,
+   ".0", "#DCC23C", 8627, 7607, 2352,
+   ".q", "#9C422C", 6117, 2588, 1725,
+   ".w", "#77262C", 4666, 1490, 1725,
+   ".e", "#E4BE30", 8941, 7450, 1882,
+   ".r", "#E47E41", 8941, 4941, 2549,
+   ".t", "#DCD3B3", 8627, 8274, 7019,
+   ".y", "#7C4634", 4862, 2745, 2039,
+   ".u", "#B4A16E", 7058, 6313, 4313,
+   ".i", "#E4C61C", 8941, 7764, 1098,
+   ".p", "#FCFAFA", 9882, 9803, 9803,
+   ".a", "#9C5004", 6117, 3137, 156,
+   ".s", "#8C928C", 5490, 5725, 5490,
+   ".d", "#BCA683", 7372, 6509, 5137,
+   ".f", "#41161B", 2549, 862, 1058,
+   ".g", "#F4C604", 9568, 7764, 156,
+   ".h", "#AC8A70", 6745, 5411, 4392,
+   ".j", "#440F14", 2666, 588, 784,
+   ".k", "#AC8670", 6745, 5254, 4392,
+   ".l", "#DC264A", 8627, 1490, 2901,
+   ".z", "#9C8674", 6117, 5254, 4549,
+   ".x", "#F4C61B", 9568, 7764, 1058,
+   ".c", "#FCFED2", 9882, 9960, 8235,
+   ".v", "#2C2B27", 1725, 1686, 1529,
+   ".b", "#E4CDAA", 8941, 8039, 6666,
+   ".n", "#8C5236", 5490, 3215, 2117,
+   ".m", "#B4AA7E", 7058, 6666, 4941,
+   ".M", "#D4CAA4", 8313, 7921, 6431,
+   ".N", "#4C1E2C", 2980, 1176, 1725,
+   ".B", "#E47647", 8941, 4627, 2784,
+   ".V", "#DC3050", 8627, 1882, 3137,
+   ".C", "#B4846A", 7058, 5176, 4156,
+   ".Z", "#202214", 1254, 1333, 784,
+   ".A", "#BC374E", 7372, 2156, 3058,
+   ".S", "#C4324C", 7686, 1960, 2980,
+   ".D", "#846E34", 5176, 4313, 2039,
+   ".F", "#C42A4C", 7686, 1647, 2980,
+   ".G", "#BC3644", 7372, 2117, 2666,
+   ".H", "#D4BC68", 8313, 7372, 4078,
+   ".J", "#907618", 5647, 4627, 941,
+   ".K", "#545654", 3294, 3372, 3294,
+   ".L", "#60504C", 3764, 3137, 2980,
+   ".P", "#1C1D1D", 1098, 1137, 1137,
+   ".I", "#E57A4E", 8980, 4784, 3058,
+   ".U", "#241D11", 1411, 1137, 666,
+   ".Y", "#4C524C", 2980, 3215, 2980,
+   ".T", "#9C8E94", 6117, 5568, 5803,
+   ".R", "#FCC604", 9882, 7764, 156,
+   ".E", "#DCDACC", 8627, 8549, 8000,
+   ".W", "#64363C", 3921, 2117, 2352,
+   ".Q", "#241E1E", 1411, 1176, 1176,
+   ".!", "#E4264A", 8941, 1490, 2901,
+   ".~", "#842034", 5176, 1254, 2039,
+   ".^", "#B4A17D", 7058, 6313, 4901,
+   "./", "#F4E7C9", 9568, 9058, 7882,
+   ".(", "#F4BC27", 9568, 7372, 1529,
+   ".)", "#E97A41", 9137, 4784, 2549,
+   "._", "#D88244", 8470, 5098, 2666,
+   ".`", "#D4D4B0", 8313, 8313, 6901,
+   ".'", "#847E7C", 5176, 4941, 4862,
+   ".]", "#FBC206", 9843, 7607, 235,
+   ".[", "#D4CAB0", 8313, 7921, 6901,
+   ".{", "#242221", 1411, 1333, 1294,
+   ".}", "#BCBEC0", 7372, 7450, 7529,
+   ".|", "#EC7E47", 9254, 4941, 2784,
+   "X ", "#341E09", 2039, 1176, 352,
+   "X.", "#FCF8E1", 9882, 9725, 8823,
+   "XX", "#EC7647", 9254, 4627, 2784,
+   "Xo", "#DC7A4B", 8627, 4784, 2941,
+   "XO", "#C9824C", 7882, 5098, 2980,
+   "X+", "#CFC097", 8117, 7529, 5921,
+   "X@", "#441C1C", 2666, 1098, 1098,
+   "X#", "#242A24", 1411, 1647, 1411,
+   "X$", "#6C6264", 4235, 3843, 3921,
+   "X%", "#7C664C", 4862, 4000, 2980,
+   "X&", "#C43A44", 7686, 2274, 2666,
+   "X*", "#BC403C", 7372, 2509, 2352,
+   "X=", "#949495", 5803, 5803, 5843,
+   "X-", "#9C4644", 6117, 2745, 2666,
+   "X;", "#FCE2E4", 9882, 8862, 8941,
+   "X:", "#C4AE78", 7686, 6823, 4705,
+   "X>", "#948D8B", 5803, 5529, 5450,
+   "X,", "#8C5634", 5490, 3372, 2039,
+   "X<", "#AC3E2C", 6745, 2431, 1725,
+   "X1", "#ECBA3C", 9254, 7294, 2352,
+   "X2", "#B42E34", 7058, 1803, 2039,
+   "X3", "#AC3A2C", 6745, 2274, 1725,
+   "X4", "#F4F1E9", 9568, 9450, 9137,
+   "X5", "#2C1E07", 1725, 1176, 274,
+   "X6", "#F4C21C", 9568, 7607, 1098,
+   "X7", "#ACA274", 6745, 6352, 4549,
+   "X8", "#BC3149", 7372, 1921, 2862,
+   "X9", "#B4927C", 7058, 5725, 4862,
+   "X0", "#F4BC1C", 9568, 7372, 1098,
+   "Xq", "#F4FEF6", 9568, 9960, 9647],[
+   " 6 N. .p N.  N.  N N | N.p |.p |.p N. .p | N.p | N N. .p | N.p | N |.p N.  N |.p N |.p N.  N |.p.p | N.  N.p | N.p | N.  N N |.p _ y N _.p 6 N N _ y N _.p 6 N N. .p |.p N | N N.  N.  N N.  N.  N N. .p | N.p | N N. .p | N.p | N c N N.  y N.  N |.p N.  N |.p N |.p N.  N |.p N | N.  N N |.p.  N.p.  N N c N _ y N _.p 6 N N _ y N _.p 6 N N.  N.  N N.  N.  N N | N.p |.p | N",
+   " N.p N N.p N N.p N.p.p N N.p N.p N N.p N.p.p N.p N N.p N.p.p N.p N.p N N y.p N N N.p N N y.p N N N.p.p.p N N.p N N N.p.p N.p.p N y N.p y N N N N.- N.p y N N N N.p N.p N N.p.p N N.p N N N N.p N N N.p N.p.p N.p N N.p N.p.p N.p N.p N N.p N N.p N.p N N y.p N N N.p N N y.p N N N N.p.p N.p.p N.p N N.p N N.p N.p N.p y N N N N.- N.p y N.p N N N.p N N N N.p.p N.p.p N N.p N.p N",
+   ". .p N N N N N N N.p N N N N N N N N N N N N.p N N N N N N N.p N N N N.p N N N N N N N.p N N N N N N N N.p N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N N N N N N N N N.p N N N N N N N N N N N N.p N N N N.p N N.p N N N N N N N.p N N N N N N N N.p N N N N.p N N N.p N N N.p N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N. ",
+   " N N N N N N N N N N.p N N N N.p N N N N N N y N N N N N N N y N.p N N.p N N.p N N N N.p N N.p N N.p N N.p N N N N.p N N.p N N.p N.p N N N.p N N N y N N N.p N N.p N N N N.p N.p N N N N N N N N N N N N N N y N N N N N N N y N N N N N N.p N N N N N.p N N.p N N N N.p N N.p N N.p N N.p N N.p N N.p N N N N N N y N N N.p N N N y N N N N N N N N N N N N N N N N.p N N N N.p N",
+   " N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N.p N N N N N N.p N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N N N N N N.p N N N N N N N N N N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N",
+   ".  N N.p N N N.p N N N N N N.p N N N N N N.p N.p N N N N N.p N.p N N.p N N.p N N N N.p N N.p N N N N.p N N N N N.p N.p N N.p N N.p N.p N N N N N.p N.p N N N N N N.p N N N N N N N N.p N N.p N N N N N N N.p N.p N N N N N.p N.p N N N.p N N N N N N N N N.p N N N N.p N N.p N N.p N.p N N.p N N N N N N.p N N N.p N.p N N N N N.p N.p N N N.p N N N.p N N.p N N N N N N N N.p N. ",
+   " N.p N N N N N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N N N.p N N N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N N N N N N N N N N N N N N.p N N N N N N N N N N N N N N N N N.p N N N N N N N N N N N N N N N N N N N N.p N N N",
+   " N N N.p N N N N N N N N N N N N N N N N N N.p N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N.p N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p. ",
+   ".  N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N",
+   " N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N",
+   " 6 N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N. ",
+   " N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N",
+   " N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N. ",
+   ".  N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N",
+   " N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N",
+   ".  N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N. ",
+   " N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p.p.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N N N N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N",
+   " N N N.p N N N N N N N N N N N N N N N N N.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p.p y.p.p.p.p.p.p.p.p.p O.-.p.-.-.p.-.-.p.-.-.p.-.-.p.-.-.p.-.-.p.-.-.p.-.-.p.-.-.p.-.-.p.-.-.p.-.-.-.-.-.-.-.-.p.p O.-.- yXq N N N N N N N N N N.p N N N N N N p.p N N.p.p N.p N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N. ",
+   ". .p N.p N N.p N N N N N N N N N N.p N N N.=.=.{.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.{.Z.=.{.=.=.{.=.{.=.{.=.{.=.{.=.{.=.{.=.{.=.{.=.=.=.=.=.=.=.{ [ [.= ,.f.fX@.fX@.f.fX@.f.fX@.f.fX@.f.fX@.f.fX@.f.fX@.f.fX@.f.fX@.f.fX@.f.fX@.f.fX@.fX@.f.fX@ ,.f W.N.j.f 2.= c N N N N N N N N N N N.p.p N.p N.p N ].8 ] B B B c.p.p N N.p N.- N N N N N N N N N N N N N N N N N N N N N N N N N N",
+   " N N.p N N N N N N N N N N N N N N N.p.p D.v.{.{.{.{.{.{.{.{.{.= x.{.=.{.{.{.{.{.{.{.{.{.{.{.{.{.{.{.{.{.{.{.{.{.{.{.{.{.{.{.{.{.=.=.=.{.=.{.{ [.v.1.W j.w & k & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & & { & k & j.1.=.T.p N N N N N N N N N.p.p.p.p c.8.{ q x.v.{.{ q x.=.=X> c.p N.- N N N N N N N N N N N N N N N N N N N N N N N N N N N",
+   " |.p N.p N N N N N N N N N N N N N.p N N N D.p D.p y.p y.p y.p.p.-X..pX..p y N yXq y y y.p.p.-.p y.p y.p y.p y.p y.p y.p y.p y.p.p.p.p.p.pX..p.pX4.p & Y 4.:.F t.F.:.S.S.S.S.S.S.S.S.S.S.S.S.S.S.S.S.S.S.S.S.S.S.S.S.S.S.S.S.S.S.AX8.:.S !.S.S.S.F tX8 8 W., B.p N N N N N N N N N N.- c e.=.=.=.= x.8 v.LX> T.{.=.=.{.L c N.p.p N N N N N N N N N N N N N N N N N N N N N N N N. ",
+   ".p.p N N N N N N N N N N N N N N N.p N N.p N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N O 5.: $.l G.l G G.l G G.l G G.l G G.l G G.l G G.l G G.l G G.l G G.l G G.l G 9 9 $ G G G G.! G.;.l 9 Y.j., b.p N N N N N N N N N D B.=.=.= B b.p @ N.p N.p.p.p 6.8 x.= x >.- N N N N N N N N N N N N N N N N N N N N N N N N N N",
+   ".p N N.p N N N N N N N N N N N N N N.p.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N NXq N N N N N N O 5.F G.l.!.l.!.l.l.!.l.l.!.l.l.!.l.l.!.l.l.!.l.l.!.l.l.!.l.l.!.l.l.!.l.l.!.l G G.l.!.l.! G.l.! -.!X8 W.{ B.p N N N N N N N N.-.K x.= e c.p.p.p.p N N.p N N N.- N.p # x q v c N.p N N N N N N N N N N N N N N N N N N N N N N N",
+   " |.p N.p N N N N N N N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N O 5.F.; -.!.!.l.!.l.l.!.l.l.!.l.l.!.l.l.!.l.l.!.l.l.!.l.l.!.l.l.!.l.l.!.l.l.l.l.l.!.!.l.l.l.l.l.! GX8 W q B.p N N N N N N.p.p >.v.=.O.p.p.p N N N N N N N N N N.p N.p.} e.v.K.p.p N N N N N N N N N N N N N N N N N N N N N N. ",
+   " N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N.p.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N.- 5.F 9.!.l.l.l.l.l.l - G.l - G.l - G.l - G.l - G.l - G.l - G.l - G.l - G.l.l.l.l.l.l.l.l - G G.l GX8 W [ ].p.p N.p N N N.p 1.Z v c N N N N N N.p N N N N N N N.p N N N.p.Y.v e N.p N N N N N N N N N N N N N N N N N N N N N N",
+   ".  N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N.p.p N.p.p.p N N N N N N N N N N N N N N N N N N N N N N N N N N.p N NX; 5.F 9 G.l - G.l G G G.l G G.l G G.l G G.l G G.l G G.l G G.l G G.l G G G.l G.l.!.!.!.l.l G G.l.l.l 4 W qX>.p N.p N N.- N ].= [ 6 N N N N N N N N N N N N N N N N N N N N N T.= T.p N N N N.p N N N N N N N N N N N N N N N N. ",
+   " N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.-.~ t ! -.3.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.l.!.l.l 9.l.l.l G.A.j.UX>.p.p N N N N c.v.= c N N.p y N N N N N N N N N N N N N N N y N N y.v q.9.p N N.p N N N N N N N N N N N N N N N N N N",
+   " N.p N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N.-.-.~.A.F $ !.V $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ 9 $ 9 $ $ $ G 9 9 9 9 9 9 $ $ ! 4 W.= B N N N.p N N e q.K.p.p N N N N.p N N N N N N N N N N N.p N N N N.pX> q q.- N N N N N N N N N N N N N N N N N N N N N",
+   " | N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N y NX. @X.X.X.X. @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ ;X.X.X.X.X.X.X. w  .2 8X&X&X2.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.A.AX&.A.A.A.A.A 4 4X&.AX8.2.f.1 b.p.p N N N c.= q c N N.p.p N.p N N.p.p.p N.p N N.p.p.-.p.p.p N.- N.p v.v ] D.p N.p N N N N N N N N N N N N N N N N. ",
+   ".p N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N NXq N N @ ^X% M MX,.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.n.5.n h P h h I.qX<X3X3X3X*X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X3X<X- < J.T.p N.p.p.p ] q B.p N.- NX. N p p @.p.p.p N NX. @ N.p N.p.p O N p N.- ]., > N.p.p N N N N N N N N N N N N N N N N N N",
+   " N.p N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.pX..h.C.@ S.> 3Xo * * * 3 * * * 3 * * * 3 * * 3 * 3 * 3XoXo * *.> 3XXXX.B.B.B.B.B.B.B.B.B.B.B.B.B.B.B.B.B.B.B.B.B.B.B.B.B.B.B.B.B.B.B.B.BXX.B.B.BXX.B.B.B.B.BXX }XX.B.o.y RX> y N N N.p.{ xX=.- NX. p.$ :.$.+ X pX. : :.$.t.$./X. p @.4 / : o./ N D.v.,.p N N N N N N N N N N N N N N N N N N N. ",
+   " |.p N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N N.-.C.@.>XoXXXX.).).).).).r.).I.).).I.).r.).).).).).I.).)XX.).I.B.)XXXX.B.).B.B.BXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.BXX.).).B.).I.BXX.)XXXX.B.r l.7X5 ) N N N N.p.= q.p N p o ..^ .X7 . . : p.mX7.^.mX7.^X+X.X+.^X7 ..m.t N N T x ].p N N N N N N N N N N N N N N N N N N N",
+   ".p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N @.C S.IXX.B.).).)Xo.r.>.r.)Xo.).I.).).).).).I.).I.).I.).).).).).)XX.B.).).).).).B.).B.).B.).B.).B.).B.).B.).B.).B.).B.).B.).B.).B.).B.).).).B.).).).).).).B.).)XX.B S gX .8X..p.p N c., x.-X.X+X7 .X7 (.$.t 7 oX. . C.b Q.u 0.u z 0.uX+ :.t o N.p B qX=.p N N N N N N N N N N N N N N N N N N N",
+   " |.p N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N.p N N.p.C l.B.).I.r.).).).).r.).).).)XX.B.).).).).).).).)XX.).B.).).).B.).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).B.).).).).).)Xo.).).)XX.).) 3 MX  vX> ] B ] T x.= @.4X7.& C./X.X. ; p p p C.&.b ; C.u 0.b.uX: L.cX..4 N N ] qX=.p N N N N N N N N N N N N N N N N N N. ",
+   " N.p N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N `.@Xo.).)Xo.B.).B.).).).).).B.).).B.B.B.).).).B.).).B.).).B.).).).B.).B.B.).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).)XXXXXX.).B.)Xo.)XX.) }.) 3.5.1X5.=.= x q.{., v @.$.& L.MX. p o.$.$ E p C.u Z V.u.& % @ V.u 0 Z nX. N.p ).{ ] N.p N N N N N N N N N N N N N N N N N N",
+   " N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N NXqX..h.@.>.|Xo.).).).).)XX.).).).)XX.).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).)XX.)XX.).).).B.).).B.)XXXXXXXXXo h J.LX> ].s ] T.{ x @.`.&X7.b p.-.d.d.u.$ ;.&.u n ..m.t.p.p ;.+ 0 0.u n p.p ].v ].p N N N N N N N N N N N N N N N N N N. ",
+   " 6 D N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.k.@.r.).B.).).).).)XX.).).).).).)XX.B.).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).).B.)Xo.).B.).).).B 3.y J.z.- N.pX..p q.=X. :.u 0 Z ;X. %.u.u %.bX: 0 ;X. pX. N N @X. Q 0 0.m N.p ).,.9 N N N N N N N N N N N N N N N N N N N N",
+   " N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N @.k.@.r.).BXo.r 3.)Xo.B.B.B.).).)XoXo.)Xo *.r.rXo.)XoXo.)XoXo.)XoXo.)XoXo.)XoXo.BXo.BXo.BXo.BXo.BXo.BXo.BXo.BXo.BXo.BXo.BXo.BXo.B.B.rXo.B.rXo.BXo.)Xo.>XoXo.B.).).r S M , b.p N N N y.{.= D p ..&.^ V.+.b.d 0 :.bX7.dX..p N N N.E : :.$.u.^.dX..p v.v ] N.p N N N N N N N N N N N N N N N N N N",
+   ". .p N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.pX9 = *Xo.> 3XOXO._._ 3Xo 3 3._ 3._ 3 *._ 3 3 3 3 * 3Xo 3 3Xo 3 3Xo 3 3Xo 3 3 * 3 * 3 * 3 * 3 * 3 * 3 * 3 * 3 * 3 * 3 * 3 * 3 * 3 * 3 3 3 3 *.r._ * * * 3.>Xo 3.r._XO g.=X> N N N N N q.vX>.-./ 7 C.d ..dX7 . :.$.u C.p.p N N p |.6.m.u.d.^ i N y.{.=X4.p N N N N N N N N N N N N N N N N N N. ",
+   " N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p.z P.n ~ I ~ h h.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a.a f m.U.s N N.p N.p ] q K.-.pX../ :.$ :.t./ p s X.[.p N N N NX4.`.t.t.tX. N.-X= q v N N N N N N N N N N N N N N N N N N N N N",
+   " N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.pX.X. @ @X. @ ; rX1.(X0.XX0X0.(.(.(X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0.X.XX0X0X1X5.U ] N N N N p 6.{.{ c.p @ p NX.X. N N N N N N.p N N p N N NX. p N N NX..v qX= N N N N N N N N N N N N N N N N N N N N. ",
+   ". .p N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p.p ; '.e...R.g.g.g.gX0.g.].].].g.g.g.].g.g.g.g.g.g.g.g.g.].g.g.g.].g.].g.].g.].g.].g.].g.].g.].g.].g.].g.].g.].g.].g.g.g.g.g.g.g.g.g.g.g.g.g.g.].g.gX0.e H.Z ] N N N N N y > q > N N N N N N N N N N N.p.p N N N N N.p.p N.p p N ] q.{X4 N N N N N N N N N N N N N N N N N N N N N",
+   " N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.c '...g.].g.g.g.g.g.g.].R.R.g.].g.].g.].].].].].g.].g.].g.].R.g.].g.].g.].g.].g.].g.].g.].g.].g.].g.].g.].g.].g.].].].].g.].g.g.g.].g.g.R.].R.].].g.eX .U ] N.p N N @ N D.v q c.- N.p N.p N N N N N N N N N N N N.p N N p N.O.{.{.  N.p N.p N N N N N N N N N N N N N N N N N N",
+   ".  D N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.c '.i.g.].g.g.g.g.g.].R.R.].].].R.R.].R.R.g.R.g.R.].R.R.R.R.g.].R.g.R.].R.g.R.].R.g.R.].R.g.R.].R.g.R.].R.g.R.].R.g.].g.R.].].].].R.].].g.].].R.R.R.e H.U ] N.p.p N N N.p ].{ q c.p N N N N NXq N N p N N N N N N N N N.p p 1 [ vX4 N N N N N N N N N N N N N N N N N N N N N. ",
+   " N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.c '...].].R.g.g.g.g.].R.].].g.].g.].g.].g.].].].g.].g.].g.].].R.g.].].g.].].g.].g.].].g.].].g.].g.].].g.].].g.].g.].R.].g.].g.g.g.].].g.].].].R.g.g.e H.UX>.p.p.p.p N N N N 1.{ q.  D.p N NXq NXq N N N N N N N N N.p N.p 1 [ > N N N N N N N N N N N N N N N N N N N N N N N N",
+   " N.p N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.c '...].].R.g.g.g.g.].R.R.R.g.R.g.R.R.g.R.R.R.g.R.R.g.R.R.g.R.g.R.R.g.R.R.g.R.R.R.R.g.R.R.g.R.R.R.R.g.R.R.g.R.R.R.g.R.g.R.R.R.g.R.g.R.].].R.].g.R.g.eX .=X>.p.p.p N N N N.p y.K.=.= c N y N N N N N N N N N N N N.p.-.  >.,.{ c.p N N N N N N N N N N N N N N N N N N N N N N. ",
+   " |.p N.p N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N p '..X0.].].g.g.g.g.g.R.].g.g.g.R.g.g.R.g.g.g.R.g.g.R.g.g.R.g.g.g.g.R.g.g.R.g.g.g.g.R.g.g.R.g.g.g.g.R.g.g.R.g.g.g.R.g.R.g.g.g.g.g.R.g.g.g.g.g.R.g.g d R.U ].p.p N N N N N N N.p > q.{ v 6.p.p N N N.p N N N N N.p.p B J.,X$ y N.p N N N N N N N N N N N N N N N N N N N N N N N",
+   ".p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N p.J uX6.X.x..........X6.....x....X6..X6..X6...x..X6..X6..X6..X6..X6..X6...x..X6..X6..X6...x..X6..X6..X6...x..X6..X6..X6..X6...x...g..X6...x.g.....i.0 R.= ].p N.p N p N p N N.p.-. .U q.v T B.p.p.p.p.p.p N y.O ].=.{.= K D.p N N N N N N N N N N N N N N N N N N N N N N N N N",
+   " |.p N N N N N N N N N N N N N N N N N N N.p.p.p.p.p.p.p.p.p.p.-X..p.-.p.p.pX..p.p.p y.p y.p.-.p @ ;.D.H U U u.0.0.0 + + + + + + + + + + + + + + + + + + + + + + F + + + + + + + F + + + + + + + F + + + + + + + F + + + + + F + + + + F + F + + + a +.HX5.UX>.p N N N N N N N N N N.-.p > q q.=.=.= T BX> ].{ [ q.v q vX>.p N.p N N N N N N N N N N N N N N N N N N N N N N N N. ",
+   ".p N N.p N N N N N N N N N N N N N.p N N.p.{.= x.{.=.{.=.{.=.{ x.{.{ x.{.{.{.{.{.=.{.{.{ x.{.{ x x HX5X  AX X5 A H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H H HX  H H H H H H AX5X5.U.=X>.p N N N N N N N N N.p N.p y.} B q [.=.=.{.{.,.{.= 2.'. .p D N.p N N N N N N N N N N N N N N N N N N N N N N N N N N",
+   " N.p.p N N.p N N N N N N N N N N N N N N.p.# q.=.=.{.=.{.=.{.=.=.{.{.{.{.{.{.{.{.{.{.=.{.=.{.{.= q.= x q R R R R R R R R R R R R RX5 RX5 RX5 RX5 RX5 RX5 RX5 RX5 R R R RX5 RX5 RX5 R R RX5 RX5 RX5 R R RX5 RX5 RX5 R R R R R R R R R RX5X5.=X5X5.U R R.* q.ZX= y N N N N N N N N N N N N N N N.p.p B ] T >X> ] c y.p.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N",
+   ". .p N.p N N N N N N N N N N N N.p N N.p N D y.p.p y.p.p.p.p y.p y.p y.-.p y.-.p y.p.p y.p y.-.p y N.< N yX. p yX..-.p.-.p.-.pX..p.-.p.p.-.p.p.-.p.p.-.p.p.-.p.p.-.p.-.p.-.p.p.-.p.p.-.p.-.p.p.-.p.p.-.p.-.p.p.-.p.p.-.p.-.p.-.p p.-.p.p.p.-.p.p D p y y N y.O N N N N N N N N N N N N N N N.p N N y N.p.p N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N. ",
+   " N N.p N N N N N N N N N N N N N N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N y N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N NXq N.p.p N.p.p N N N p N NXq N N N N N N N N N N N N.p N N N N.- N N N N N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N",
+   ".  N N N N N.p N N N N N N N N N N N.p N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N y p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p y N N N p N N N N N N N N N N N.p N N N N N N N N N N N @.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N. ",
+   " N N N.p N N N N N N N N N N N N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N y N N N N.p N.p.p.p.p.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.- N.p N.p.p N N N N N N N N.p N N N N N N.p N N N y N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N",
+   " N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N.p N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p.p.p.p N N N N N N N N N N.p N N N N N N.p N N N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N",
+   " |.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N. ",
+   ".p N.p.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N",
+   " N.p N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N. ",
+   ". .p N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N",
+   " N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N",
+   ".  N N.p N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N. ",
+   " N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N",
+   " N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N. ",
+   ".  N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N",
+   " N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N N N N N N N N N",
+   " 6 N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N.p N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N.p N N N N N N N N N N N N N N N N N N N N N N N N N N N N.p N N N N N N N.p N N N.p N N.p N N N N N.p N N N N N N N N N N N N N N N N N N N N N N.p N N.p N N N.p N N N N N N N N N N N N N.p. ",
+   " N N N N N.p N N N.p N N N N.p N N.p N N N N.p N N.p N N N N N N N N N.p N N N.p N N N.p N N N.p N N.p N.p.p N N N N.p N.p.p N N N N.p N N.p N N N N.p.p N.p N N.p N N N.p N N N.p N N N.p N N N N.p N N N N.p N N.p N N N N.p N N N N.p N N N.p N N N.p N N N.p N N N N N N.p N N N.p N.p.p N N N N.p N N.p N N N N.p.p N.p N N N.p N N N N N N.p N N N.p N N N N N N N N N.p N N",
+   " c N.p.  N.  N.p | N.  N.p.  N.p.  N.  N N.  N |.p N. .p N.  N. .p N.  N.  N D _.p N.  N.  N D _ N.  N.p | N.  N N.  N.p | N.  N N.  N |.p N.  N N.  N |.p N.  N _ D N.  N.  N.p _ D N.  N.  N.p | N.  N.p.  N.p.  N.  N N.  N |.p N.  N.  N D _.p N.  N.  N D _ N. .p N. .p N | N.  N.p | N.  N N.  N |.p N.  N N.  N |.p N. .p | N.p.  N N.  N _ D N.  N.  N.p | N.  N N.  N.p. "],[
+])
+],
+1725901,0,0,[
+attr("stop=", "", 0, 1, 0,
+text('magenta',-104,58,2,0,1,93,34,1725886,14,3,0,0,0,0,2,93,34,0,0,"",0,0,0,0,72,'',[
+minilines(93,34,0,0,0,0,0,[
+mini_line(32,14,3,0,0,0,[
+str_block(0,32,14,3,0,-1,0,0,0,[
+str_seg('black','Times-Roman',0,80640,32,14,3,0,-1,0,0,0,0,0,
+	"stop=")])
+]),
+mini_line(93,14,3,0,0,0,[
+str_block(0,93,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,93,14,3,0,-2,0,0,0,0,0,
+	"  enable_undo();")])
+])
+])])),
+attr("_show_all_=", "", 0, 1, 0,
+text('magenta',-48,214,11,0,1,144,187,1725885,14,3,0,0,0,0,2,144,187,0,0,"",0,0,0,0,228,'',[
+minilines(144,187,0,0,0,0,0,[
+mini_line(73,14,3,0,0,0,[
+str_block(0,73,14,3,0,-1,0,0,0,[
+str_seg('black','Times-Roman',0,80640,73,14,3,0,-1,0,0,0,0,0,
+	"_show_all_=")])
+]),
+mini_line(142,14,3,0,0,0,[
+str_block(0,142,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,142,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Declaration);")])
+]),
+mini_line(144,14,3,0,0,0,[
+str_block(0,144,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,144,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Initialization);")])
+]),
+mini_line(126,14,3,0,0,0,[
+str_block(0,126,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,126,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Watches);")])
+]),
+mini_line(126,14,3,0,0,0,[
+str_block(0,126,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,126,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Watches);")])
+]),
+mini_line(115,14,3,0,0,0,[
+str_block(0,115,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,115,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Events);")])
+]),
+mini_line(134,14,3,0,0,0,[
+str_block(0,134,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,134,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Messages);")])
+]),
+mini_line(127,14,3,0,0,0,[
+str_block(0,127,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,127,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Rewards);")])
+]),
+mini_line(107,14,3,0,0,0,[
+str_block(0,107,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,107,14,3,0,-2,0,0,0,0,0,
+	" show_attr(name);")])
+]),
+mini_line(143,14,3,0,0,0,[
+str_block(0,143,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,143,14,3,0,-2,0,0,0,0,0,
+	" strcpy(__status__,\"all\");")])
+]),
+mini_line(41,14,3,0,0,0,[
+str_block(0,41,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,41,14,3,0,-2,0,0,0,0,0,
+	" stop();")])
+])
+])])),
+attr("_show_vars_=", "", 0, 1, 0,
+text('black',-208,456,5,0,1,190,85,1725884,14,3,0,0,0,0,2,190,85,0,0,"",0,0,0,0,470,'',[
+minilines(190,85,0,0,0,0,0,[
+mini_line(85,14,3,0,0,0,[
+str_block(0,85,14,3,0,-1,0,0,0,[
+str_seg('black','Times-Roman',0,80640,85,14,3,0,-1,0,0,0,0,0,
+	"_show_vars_=")])
+]),
+mini_line(137,14,3,0,0,0,[
+str_block(0,137,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,137,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(Initialization);")])
+]),
+mini_line(126,14,3,0,0,0,[
+str_block(0,126,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,126,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Watches);")])
+]),
+mini_line(190,14,3,0,0,0,[
+str_block(0,190,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,190,14,3,0,-2,0,0,0,0,0,
+	" strcpy(__status__,\"state_vars\");")])
+]),
+mini_line(41,14,3,0,0,0,[
+str_block(0,41,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,41,14,3,0,-2,0,0,0,0,0,
+	" stop();")])
+])
+])])),
+attr("_show_init_=", "", 0, 1, 0,
+text('black',-216,180,15,0,1,147,255,1725883,14,3,0,0,0,0,2,147,255,0,0,"",0,0,0,0,194,'',[
+minilines(147,255,0,0,0,0,0,[
+mini_line(77,14,3,0,0,0,[
+str_block(0,77,14,3,0,-1,0,0,0,[
+str_seg('black','Times-Roman',0,80640,77,14,3,0,-1,0,0,0,0,0,
+	"_show_init_=")])
+]),
+mini_line(135,14,3,0,0,0,[
+str_block(0,135,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,135,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(Declaration);")])
+]),
+mini_line(119,14,3,0,0,0,[
+str_block(0,119,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,119,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(Watches);")])
+]),
+mini_line(108,14,3,0,0,0,[
+str_block(0,108,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,108,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(Events);")])
+]),
+mini_line(127,14,3,0,0,0,[
+str_block(0,127,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,127,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(Messages);")])
+]),
+mini_line(120,14,3,0,0,0,[
+str_block(0,120,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,120,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(Rewards);")])
+]),
+mini_line(130,14,3,0,0,0,[
+str_block(0,130,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,130,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(__status__);")])
+]),
+mini_line(96,14,3,0,0,0,[
+str_block(0,96,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,96,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(exec);")])
+]),
+mini_line(92,14,3,0,0,0,[
+str_block(0,92,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,92,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(stop);")])
+]),
+mini_line(137,14,3,0,0,0,[
+str_block(0,137,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,137,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(_show_init_);")])
+]),
+mini_line(145,14,3,0,0,0,[
+str_block(0,145,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,145,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(_show_vars_);")])
+]),
+mini_line(133,14,3,0,0,0,[
+str_block(0,133,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,133,14,3,0,-2,0,0,0,0,0,
+	" hide_attr(_show_all_);")])
+]),
+mini_line(144,14,3,0,0,0,[
+str_block(0,144,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,144,14,3,0,-2,0,0,0,0,0,
+	" show_attr(Initialization);")])
+]),
+mini_line(147,14,3,0,0,0,[
+str_block(0,147,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,147,14,3,0,-2,0,0,0,0,0,
+	" strcpy(__status__,\"init\");")])
+]),
+mini_line(41,14,3,0,0,0,[
+str_block(0,41,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,41,14,3,0,-2,0,0,0,0,0,
+	" stop();")])
+])
+])])),
+attr("__status__=", "state_vars", 0, 1, 0,
+text('black',-208,56,1,0,1,130,17,1725882,14,3,0,0,0,0,2,130,17,0,0,"",0,0,0,0,70,'',[
+minilines(130,17,0,0,0,0,0,[
+mini_line(130,14,3,0,0,0,[
+str_block(0,130,14,3,0,-1,0,0,0,[
+str_seg('black','Times-Roman',0,80640,130,14,3,0,-1,0,0,0,0,0,
+	"__status__=state_vars")])
+])
+])])),
+attr("exec=", "", 0, 1, 0,
+text('black',-210,82,5,0,1,313,85,1725881,14,3,0,0,0,0,2,313,85,0,0,"",0,0,0,0,96,'',[
+minilines(313,85,0,0,0,0,0,[
+mini_line(36,14,3,0,0,0,[
+str_block(0,36,14,3,0,-1,0,0,0,[
+str_seg('black','Times-Roman',0,80640,36,14,3,0,-1,0,0,0,0,0,
+	"exec=")])
+]),
+mini_line(92,14,3,0,0,0,[
+str_block(0,92,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,92,14,3,0,-2,0,0,0,0,0,
+	" disable_undo();")])
+]),
+mini_line(270,14,3,0,0,0,[
+str_block(0,270,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,270,14,3,0,-2,0,0,0,0,0,
+	" if(\"$(__status__)\"==\"all\",_show_init_,NULL);")])
+]),
+mini_line(282,14,3,0,0,0,[
+str_block(0,282,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,282,14,3,0,-2,0,0,0,0,0,
+	" if(\"$(__status__)\"==\"init\",_show_vars_,NULL);")])
+]),
+mini_line(313,14,3,0,0,0,[
+str_block(0,313,14,3,0,-2,0,0,0,[
+str_seg('black','Times-Roman',0,80640,313,14,3,0,-2,0,0,0,0,0,
+	" if(\"$(__status__)\"==\"state_vars\",_show_all_,NULL);")])
+])
+])])),
+attr("Watches=", "", 1, 1, 0,
+text('magenta',104,135,2,0,1,72,32,1725880,13,3,0,0,0,0,2,72,32,0,0,"",0,0,0,0,148,'',[
+minilines(72,32,0,0,0,0,0,[
+mini_line(72,13,3,0,0,0,[
+str_block(0,72,13,3,0,-1,0,0,0,[
+str_seg('DarkSlateGray','Courier',0,80640,72,13,3,0,-1,0,0,0,0,0,
+	"Watches=")])
+]),
+mini_line(0,13,3,0,0,0,[
+str_block(0,0,13,3,0,0,0,0,0,[
+str_seg('black','Courier',0,80640,0,13,3,0,0,0,0,0,0,0,
+	"")])
+])
+])])),
+attr("Initialization=", "", 0, 1, 0,
+text('magenta',88,131,20,0,1,196,284,1725879,13,3,0,0,0,0,2,196,284,0,0,"",0,0,0,0,144,'',[
+minilines(196,284,0,0,0,0,0,[
+mini_line(135,13,3,0,0,0,[
+str_block(0,135,13,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,80640,135,13,3,0,-1,0,0,0,0,0,
+	"Initialization=")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('black','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(42,11,3,0,0,0,[
+str_block(0,42,11,3,0,-6,0,0,0,[
+str_seg('black','Courier',0,69120,42,11,3,0,-6,0,0,0,0,0,
+	"  C = ")])
+]),
+mini_line(49,11,3,0,0,0,[
+str_block(0,49,11,3,0,-6,0,0,0,[
+str_seg('black','Courier',0,69120,49,11,3,0,-6,0,0,0,0,0,
+	"  BI = ")])
+]),
+mini_line(7,11,3,0,0,0,[
+str_block(0,7,11,3,0,-6,0,0,0,[
+str_seg('black','Courier',0,69120,7,11,3,0,-6,0,0,0,0,0,
+	" ")])
+]),
+mini_line(98,11,3,0,0,0,[
+str_block(0,98,11,3,0,-6,0,0,0,[
+str_seg('black','Courier',0,69120,98,11,3,0,-6,0,0,0,0,0,
+	"  NUM_CLASS = ")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('black','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(105,11,3,0,0,0,[
+str_block(0,105,11,3,0,-3,0,0,0,[
+str_seg('black','Courier',0,69120,105,11,3,0,-3,0,0,0,0,0,
+	"  Afl = [0,0,0]")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('black','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(56,11,3,0,0,0,[
+str_block(0,56,11,3,0,-6,0,0,0,[
+str_seg('black','Courier',0,69120,56,11,3,0,-6,0,0,0,0,0,
+	"  FI1 = ")])
+]),
+mini_line(56,11,3,0,0,0,[
+str_block(0,56,11,3,0,-6,0,0,0,[
+str_seg('black','Courier',0,69120,56,11,3,0,-6,0,0,0,0,0,
+	"  FI2 = ")])
+]),
+mini_line(56,11,3,0,0,0,[
+str_block(0,56,11,3,0,-6,0,0,0,[
+str_seg('black','Courier',0,69120,56,11,3,0,-6,0,0,0,0,0,
+	"  FI3 = ")])
+]),
+mini_line(14,11,3,0,0,0,[
+str_block(0,14,11,3,0,-6,0,0,0,[
+str_seg('black','Courier',0,69120,14,11,3,0,-6,0,0,0,0,0,
+	"  ")])
+]),
+mini_line(91,11,3,0,0,0,[
+str_block(0,91,11,3,0,-6,0,0,0,[
+str_seg('black','Courier',0,69120,91,11,3,0,-6,0,0,0,0,0,
+	"  PORT_IN  = ")])
+]),
+mini_line(91,11,3,0,0,0,[
+str_block(0,91,11,3,0,-6,0,0,0,[
+str_seg('black','Courier',0,69120,91,11,3,0,-6,0,0,0,0,0,
+	"  PORT_OUT = ")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('black','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(196,11,3,0,0,0,[
+str_block(0,196,11,3,0,-1,0,0,0,[
+str_seg('black','Courier',0,69120,196,11,3,0,-1,0,0,0,0,0,
+	"  MYSELF  = server_queue_GPS")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('black','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(14,11,3,0,0,0,[
+str_block(0,14,11,3,0,-6,0,0,0,[
+str_seg('black','Courier',0,69120,14,11,3,0,-6,0,0,0,0,0,
+	"  ")])
+]),
+mini_line(0,13,3,0,0,0,[
+str_block(0,0,13,3,0,0,0,0,0,[
+str_seg('black','Courier',0,80640,0,13,3,0,0,0,0,0,0,0,
+	"")])
+])
+])])),
+attr("Rewards=", "", 0, 1, 0,
+text('#00000000c000',-10,640,48,0,1,245,674,1725878,13,3,0,0,0,0,2,245,674,0,0,"",0,0,0,0,653,'',[
+minilines(245,674,0,0,0,0,0,[
+mini_line(72,13,3,0,0,0,[
+str_block(0,72,13,3,0,-1,0,0,0,[
+str_seg('#00000000c000','Courier',0,80640,72,13,3,0,-1,0,0,0,0,0,
+	"Rewards=")])
+]),
+mini_line(182,11,3,0,0,0,[
+str_block(0,182,11,3,0,-1,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,182,11,3,0,-1,0,0,0,0,0,
+	"  rate_reward_sum = buffer")])
+]),
+mini_line(245,11,3,0,0,0,[
+str_block(0,245,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,245,11,3,0,-3,0,0,0,0,0,
+	"    rewards = fluid1+fluid2+fluid3;")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(154,11,3,0,0,0,[
+str_block(0,154,11,3,0,-1,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,154,11,3,0,-1,0,0,0,0,0,
+	"  rate_reward = fluid1")])
+]),
+mini_line(140,11,3,0,0,0,[
+str_block(0,140,11,3,0,-1,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,140,11,3,0,-1,0,0,0,0,0,
+	"    cr_bounds = 0,BI")])
+]),
+mini_line(161,11,3,0,0,0,[
+str_block(0,161,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,161,11,3,0,-3,0,0,0,0,0,
+	"    condition = (FALSE)")])
+]),
+mini_line(98,11,3,0,0,0,[
+str_block(0,98,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,98,11,3,0,-3,0,0,0,0,0,
+	"    value = 0;")])
+]),
+mini_line(154,11,3,0,0,0,[
+str_block(0,154,11,3,0,-1,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,154,11,3,0,-1,0,0,0,0,0,
+	"  rate_reward = fluid2")])
+]),
+mini_line(140,11,3,0,0,0,[
+str_block(0,140,11,3,0,-1,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,140,11,3,0,-1,0,0,0,0,0,
+	"    cr_bounds = 0,BI")])
+]),
+mini_line(161,11,3,0,0,0,[
+str_block(0,161,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,161,11,3,0,-3,0,0,0,0,0,
+	"    condition = (FALSE)")])
+]),
+mini_line(98,11,3,0,0,0,[
+str_block(0,98,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,98,11,3,0,-3,0,0,0,0,0,
+	"    value = 0;")])
+]),
+mini_line(154,11,3,0,0,0,[
+str_block(0,154,11,3,0,-1,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,154,11,3,0,-1,0,0,0,0,0,
+	"  rate_reward = fluid3")])
+]),
+mini_line(140,11,3,0,0,0,[
+str_block(0,140,11,3,0,-1,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,140,11,3,0,-1,0,0,0,0,0,
+	"    cr_bounds = 0,BI")])
+]),
+mini_line(161,11,3,0,0,0,[
+str_block(0,161,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,161,11,3,0,-3,0,0,0,0,0,
+	"    condition = (FALSE)")])
+]),
+mini_line(98,11,3,0,0,0,[
+str_block(0,98,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,98,11,3,0,-3,0,0,0,0,0,
+	"    value = 0;")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(126,11,3,0,0,0,[
+str_block(0,126,11,3,0,0,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,126,11,3,0,0,0,0,0,0,0,
+	"  /* debug info */")])
+]),
+mini_line(154,11,3,0,0,0,[
+str_block(0,154,11,3,0,-1,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,154,11,3,0,-1,0,0,0,0,0,
+	"  rate_reward = rew_a1")])
+]),
+mini_line(161,11,3,0,0,0,[
+str_block(0,161,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,161,11,3,0,-3,0,0,0,0,0,
+	"    condition = (FALSE)")])
+]),
+mini_line(98,11,3,0,0,0,[
+str_block(0,98,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,98,11,3,0,-3,0,0,0,0,0,
+	"    value = 0;")])
+]),
+mini_line(154,11,3,0,0,0,[
+str_block(0,154,11,3,0,-1,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,154,11,3,0,-1,0,0,0,0,0,
+	"  rate_reward = rew_a2")])
+]),
+mini_line(161,11,3,0,0,0,[
+str_block(0,161,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,161,11,3,0,-3,0,0,0,0,0,
+	"    condition = (FALSE)")])
+]),
+mini_line(98,11,3,0,0,0,[
+str_block(0,98,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,98,11,3,0,-3,0,0,0,0,0,
+	"    value = 0;")])
+]),
+mini_line(154,11,3,0,0,0,[
+str_block(0,154,11,3,0,-1,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,154,11,3,0,-1,0,0,0,0,0,
+	"  rate_reward = rew_a3")])
+]),
+mini_line(161,11,3,0,0,0,[
+str_block(0,161,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,161,11,3,0,-3,0,0,0,0,0,
+	"    condition = (FALSE)")])
+]),
+mini_line(98,11,3,0,0,0,[
+str_block(0,98,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,98,11,3,0,-3,0,0,0,0,0,
+	"    value = 0;")])
+]),
+mini_line(14,11,3,0,0,0,[
+str_block(0,14,11,3,0,-6,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,14,11,3,0,-6,0,0,0,0,0,
+	"  ")])
+]),
+mini_line(154,11,3,0,0,0,[
+str_block(0,154,11,3,0,-1,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,154,11,3,0,-1,0,0,0,0,0,
+	"  rate_reward = rew_d1")])
+]),
+mini_line(161,11,3,0,0,0,[
+str_block(0,161,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,161,11,3,0,-3,0,0,0,0,0,
+	"    condition = (FALSE)")])
+]),
+mini_line(98,11,3,0,0,0,[
+str_block(0,98,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,98,11,3,0,-3,0,0,0,0,0,
+	"    value = 0;")])
+]),
+mini_line(154,11,3,0,0,0,[
+str_block(0,154,11,3,0,-1,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,154,11,3,0,-1,0,0,0,0,0,
+	"  rate_reward = rew_d2")])
+]),
+mini_line(161,11,3,0,0,0,[
+str_block(0,161,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,161,11,3,0,-3,0,0,0,0,0,
+	"    condition = (FALSE)")])
+]),
+mini_line(98,11,3,0,0,0,[
+str_block(0,98,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,98,11,3,0,-3,0,0,0,0,0,
+	"    value = 0;")])
+]),
+mini_line(154,11,3,0,0,0,[
+str_block(0,154,11,3,0,-1,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,154,11,3,0,-1,0,0,0,0,0,
+	"  rate_reward = rew_d3")])
+]),
+mini_line(161,11,3,0,0,0,[
+str_block(0,161,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,161,11,3,0,-3,0,0,0,0,0,
+	"    condition = (FALSE)")])
+]),
+mini_line(98,11,3,0,0,0,[
+str_block(0,98,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,98,11,3,0,-3,0,0,0,0,0,
+	"    value = 0;")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(161,11,3,0,0,0,[
+str_block(0,161,11,3,0,-1,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,161,11,3,0,-1,0,0,0,0,0,
+	"  rate_reward = rew_IR1")])
+]),
+mini_line(161,11,3,0,0,0,[
+str_block(0,161,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,161,11,3,0,-3,0,0,0,0,0,
+	"    condition = (FALSE)")])
+]),
+mini_line(98,11,3,0,0,0,[
+str_block(0,98,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,98,11,3,0,-3,0,0,0,0,0,
+	"    value = 0;")])
+]),
+mini_line(161,11,3,0,0,0,[
+str_block(0,161,11,3,0,-1,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,161,11,3,0,-1,0,0,0,0,0,
+	"  rate_reward = rew_IR2")])
+]),
+mini_line(161,11,3,0,0,0,[
+str_block(0,161,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,161,11,3,0,-3,0,0,0,0,0,
+	"    condition = (FALSE)")])
+]),
+mini_line(98,11,3,0,0,0,[
+str_block(0,98,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,98,11,3,0,-3,0,0,0,0,0,
+	"    value = 0;")])
+]),
+mini_line(161,11,3,0,0,0,[
+str_block(0,161,11,3,0,-1,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,161,11,3,0,-1,0,0,0,0,0,
+	"  rate_reward = rew_IR3")])
+]),
+mini_line(161,11,3,0,0,0,[
+str_block(0,161,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,161,11,3,0,-3,0,0,0,0,0,
+	"    condition = (FALSE)")])
+]),
+mini_line(98,11,3,0,0,0,[
+str_block(0,98,11,3,0,-3,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,98,11,3,0,-3,0,0,0,0,0,
+	"    value = 0;")])
+]),
+mini_line(7,11,3,0,0,0,[
+str_block(0,7,11,3,0,-6,0,0,0,[
+str_seg('#00000000c000','Courier',0,69120,7,11,3,0,-6,0,0,0,0,0,
+	" ")])
+])
+])])),
+attr("Messages=", "", 0, 1, 0,
+text('#fffe00000000',335,73,108,0,1,483,1514,1725877,13,3,0,0,0,0,2,483,1514,0,0,"",0,0,0,0,86,'',[
+minilines(483,1514,0,0,0,0,0,[
+mini_line(81,13,3,0,0,0,[
+str_block(0,81,13,3,0,-1,0,0,0,[
+str_seg('#fffe00000000','Courier',0,80640,81,13,3,0,-1,0,0,0,0,0,
+	"Messages=")])
+]),
+mini_line(112,11,3,0,0,0,[
+str_block(0,112,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,112,11,3,0,0,0,0,0,0,0,
+	" msg_rec=PORT_IN")])
+]),
+mini_line(77,11,3,0,0,0,[
+str_block(0,77,11,3,0,-6,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,77,11,3,0,-6,0,0,0,0,0,
+	" action= { ")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(462,11,3,0,0,0,[
+str_block(0,462,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,462,11,3,0,0,0,0,0,0,0,
+	"   /*---- var declaration --------------------------------------*/")])
+]),
+mini_line(476,11,3,0,0,0,[
+str_block(0,476,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,476,11,3,0,0,0,0,0,0,0,
+	"   float x[NUM_CLASS];     /* buffer p/ cada fluido - n\355vel-CR(t) */")])
+]),
+mini_line(441,11,3,0,0,0,[
+str_block(0,441,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,441,11,3,0,0,0,0,0,0,0,
+	"   float a[NUM_CLASS];     /* taxa de chegada de cada fluido */")])
+]),
+mini_line(462,11,3,0,0,0,[
+str_block(0,462,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,462,11,3,0,0,0,0,0,0,0,
+	"   float d[NUM_CLASS];     /* nova taxa de sa\355da de cada fluido */")])
+]),
+mini_line(413,11,3,0,0,0,[
+str_block(0,413,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,413,11,3,0,0,0,0,0,0,0,
+	"   float ir[NUM_CLASS];    /* indica o val da recompensa */")])
+]),
+mini_line(392,11,3,0,0,0,[
+str_block(0,392,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,392,11,3,0,0,0,0,0,0,0,
+	"   float d_prev[NUM_CLASS]; /* taxas de sa\355da antigas */")])
+]),
+mini_line(259,11,3,0,0,0,[
+str_block(0,259,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,259,11,3,0,0,0,0,0,0,0,
+	"   float weight[NUM_CLASS];  /* fi */")])
+]),
+mini_line(210,11,3,0,0,0,[
+str_block(0,210,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,210,11,3,0,-3,0,0,0,0,0,
+	"   int   b[NUM_CLASS], i, num;")])
+]),
+mini_line(294,11,3,0,0,0,[
+str_block(0,294,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,294,11,3,0,0,0,0,0,0,0,
+	"   float at, sum, val, rest;  /* outras */")])
+]),
+mini_line(203,11,3,0,0,0,[
+str_block(0,203,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,203,11,3,0,-3,0,0,0,0,0,
+	"   float epsilon, msg_vec[2];")])
+]),
+mini_line(21,11,3,0,0,0,[
+str_block(0,21,11,3,0,-6,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,21,11,3,0,-6,0,0,0,0,0,
+	"   ")])
+]),
+mini_line(462,11,3,0,0,0,[
+str_block(0,462,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,462,11,3,0,0,0,0,0,0,0,
+	"   /*---- initialization ---------------------------------------*/")])
+]),
+mini_line(126,11,3,0,0,0,[
+str_block(0,126,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,126,11,3,0,-3,0,0,0,0,0,
+	"   epsilon = 1e-9;")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(462,11,3,0,0,0,[
+str_block(0,462,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,462,11,3,0,0,0,0,0,0,0,
+	"   /*---- get weight -------------------------------------------*/")])
+]),
+mini_line(371,11,3,0,0,0,[
+str_block(0,371,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,371,11,3,0,-3,0,0,0,0,0,
+	"   weight[0] = FI1; weight[1] = FI2; weight[2] = FI3;")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(462,11,3,0,0,0,[
+str_block(0,462,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,462,11,3,0,0,0,0,0,0,0,
+	"   /*---- get arrival rates ------------------------------------*/")])
+]),
+mini_line(322,11,3,0,0,0,[
+str_block(0,322,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,322,11,3,0,0,0,0,0,0,0,
+	"   get_st( a,\"Afl[]\" ); /* taxas de chegada */")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(469,11,3,0,0,0,[
+str_block(0,469,11,3,0,-6,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,469,11,3,0,-6,0,0,0,0,0,
+	"   /*---- get instantaneous reward -----------------------------*/ ")])
+]),
+mini_line(210,11,3,0,0,0,[
+str_block(0,210,11,3,0,-6,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,210,11,3,0,-6,0,0,0,0,0,
+	"   ir[0] = get_ir ( fluid1 ); ")])
+]),
+mini_line(217,11,3,0,0,0,[
+str_block(0,217,11,3,0,-6,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,217,11,3,0,-6,0,0,0,0,0,
+	"   ir[1] = get_ir ( fluid2 );  ")])
+]),
+mini_line(203,11,3,0,0,0,[
+str_block(0,203,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,203,11,3,0,-3,0,0,0,0,0,
+	"   ir[2] = get_ir ( fluid3 );")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(462,11,3,0,0,0,[
+str_block(0,462,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,462,11,3,0,0,0,0,0,0,0,
+	"   /*---- compute departure rates ------------------------------*/")])
+]),
+mini_line(231,11,3,0,0,0,[
+str_block(0,231,11,3,0,-2,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,231,11,3,0,-2,0,0,0,0,0,
+	"   for( i=0; i < NUM_CLASS; i++){")])
+]),
+mini_line(210,11,3,0,0,0,[
+str_block(0,210,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,210,11,3,0,-3,0,0,0,0,0,
+	"     d_prev[i] = a[i] - ir[i];")])
+]),
+mini_line(35,11,3,0,0,0,[
+str_block(0,35,11,3,0,-6,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,35,11,3,0,-6,0,0,0,0,0,
+	"   } ")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(455,11,3,0,0,0,[
+str_block(0,455,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,455,11,3,0,0,0,0,0,0,0,
+	"   /*---- update the arrival rate that changed ----------------*/")])
+]),
+mini_line(434,11,3,0,0,0,[
+str_block(0,434,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,434,11,3,0,0,0,0,0,0,0,
+	"   if (msg_data >= 0) {  /* if (rate < 0) then event is t0! */")])
+]),
+mini_line(210,11,3,0,0,0,[
+str_block(0,210,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,210,11,3,0,-3,0,0,0,0,0,
+	"     get_msg_data ( msg_vec );")])
+]),
+mini_line(224,11,3,0,0,0,[
+str_block(0,224,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,224,11,3,0,-3,0,0,0,0,0,
+	"     num = (int) msg_vec[0] - 1;")])
+]),
+mini_line(189,11,3,0,0,0,[
+str_block(0,189,11,3,0,-6,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,189,11,3,0,-6,0,0,0,0,0,
+	"     a[num] = msg_vec[1];  ")])
+]),
+mini_line(28,11,3,0,0,0,[
+str_block(0,28,11,3,0,-2,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,28,11,3,0,-2,0,0,0,0,0,
+	"   }")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(462,11,3,0,0,0,[
+str_block(0,462,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,462,11,3,0,0,0,0,0,0,0,
+	"   /*---- read cumulative rewards that represents the buffer ---*/")])
+]),
+mini_line(364,11,3,0,0,0,[
+str_block(0,364,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,364,11,3,0,0,0,0,0,0,0,
+	"   x[0] = get_cr ( fluid1 ); /* cumulative reward */")])
+]),
+mini_line(371,11,3,0,0,0,[
+str_block(0,371,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,371,11,3,0,0,0,0,0,0,0,
+	"   x[1] = get_cr ( fluid2 ); /* id\352ntico a get_rew */")])
+]),
+mini_line(203,11,3,0,0,0,[
+str_block(0,203,11,3,0,-6,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,203,11,3,0,-6,0,0,0,0,0,
+	"   x[2] = get_cr ( fluid3 ); ")])
+]),
+mini_line(28,11,3,0,0,0,[
+str_block(0,28,11,3,0,-6,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,28,11,3,0,-6,0,0,0,0,0,
+	"    ")])
+]),
+mini_line(448,11,3,0,0,0,[
+str_block(0,448,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,448,11,3,0,0,0,0,0,0,0,
+	"   /*---- bandwidth distribution -----------------------------*/")])
+]),
+mini_line(448,11,3,0,0,0,[
+str_block(0,448,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,448,11,3,0,0,0,0,0,0,0,
+	"   /*---- service discipline: GPS ----------------------------*/")])
+]),
+mini_line(231,11,3,0,0,0,[
+str_block(0,231,11,3,0,-2,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,231,11,3,0,-2,0,0,0,0,0,
+	"   for( i=0; i < NUM_CLASS; i++){")])
+]),
+mini_line(84,11,3,0,0,0,[
+str_block(0,84,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,84,11,3,0,-3,0,0,0,0,0,
+	"     b[i]=0;")])
+]),
+mini_line(84,11,3,0,0,0,[
+str_block(0,84,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,84,11,3,0,-3,0,0,0,0,0,
+	"     d[i]=0;")])
+]),
+mini_line(28,11,3,0,0,0,[
+str_block(0,28,11,3,0,-2,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,28,11,3,0,-2,0,0,0,0,0,
+	"   }")])
+]),
+mini_line(84,11,3,0,0,0,[
+str_block(0,84,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,84,11,3,0,-3,0,0,0,0,0,
+	"   rest = C;")])
+]),
+mini_line(231,11,3,0,0,0,[
+str_block(0,231,11,3,0,-2,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,231,11,3,0,-2,0,0,0,0,0,
+	"   for( i=0; i < NUM_CLASS; i++){")])
+]),
+mini_line(266,11,3,0,0,0,[
+str_block(0,266,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,266,11,3,0,-3,0,0,0,0,0,
+	"     if ((a[i] > 0)||(x[i]>0)) b[i]=1;")])
+]),
+mini_line(28,11,3,0,0,0,[
+str_block(0,28,11,3,0,-2,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,28,11,3,0,-2,0,0,0,0,0,
+	"   }")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(448,11,3,0,0,0,[
+str_block(0,448,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,448,11,3,0,0,0,0,0,0,0,
+	"   do { /*--- if bi==0 then fluid i is ok! -------------------*/")])
+]),
+mini_line(35,11,3,0,0,0,[
+str_block(0,35,11,3,0,-6,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,35,11,3,0,-6,0,0,0,0,0,
+	"     ")])
+]),
+mini_line(441,11,3,0,0,0,[
+str_block(0,441,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,441,11,3,0,-3,0,0,0,0,0,
+	"     sum = (weight[0]*b[0] + weight[1]*b[1] + weight[2]*b[2] );")])
+]),
+mini_line(133,11,3,0,0,0,[
+str_block(0,133,11,3,0,-2,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,133,11,3,0,-2,0,0,0,0,0,
+	"     if (sum > 0) {")])
+]),
+mini_line(259,11,3,0,0,0,[
+str_block(0,259,11,3,0,-2,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,259,11,3,0,-2,0,0,0,0,0,
+	"       for( i=0; i < NUM_CLASS; i++){")])
+]),
+mini_line(357,11,3,0,0,0,[
+str_block(0,357,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,357,11,3,0,-3,0,0,0,0,0,
+	"         d[i] = d[i] + weight[i]*b[i] / sum * rest;")])
+]),
+mini_line(56,11,3,0,0,0,[
+str_block(0,56,11,3,0,-2,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,56,11,3,0,-2,0,0,0,0,0,
+	"       }")])
+]),
+mini_line(42,11,3,0,0,0,[
+str_block(0,42,11,3,0,-2,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,42,11,3,0,-2,0,0,0,0,0,
+	"     }")])
+]),
+mini_line(273,11,3,0,0,0,[
+str_block(0,273,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,273,11,3,0,0,0,0,0,0,0,
+	"     /* compute the unused bandwidth */")])
+]),
+mini_line(84,11,3,0,0,0,[
+str_block(0,84,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,84,11,3,0,-3,0,0,0,0,0,
+	"     rest=0;")])
+]),
+mini_line(245,11,3,0,0,0,[
+str_block(0,245,11,3,0,-2,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,245,11,3,0,-2,0,0,0,0,0,
+	"     for( i=0; i < NUM_CLASS; i++){")])
+]),
+mini_line(399,11,3,0,0,0,[
+str_block(0,399,11,3,0,-2,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,399,11,3,0,-2,0,0,0,0,0,
+	"       if ( ((a[i]-d[i])<0) && (x[i]==0) && (b[i]==1) ) {")])
+]),
+mini_line(217,11,3,0,0,0,[
+str_block(0,217,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,217,11,3,0,-3,0,0,0,0,0,
+	"         rest = rest+d[i]-a[i];")])
+]),
+mini_line(217,11,3,0,0,0,[
+str_block(0,217,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,217,11,3,0,-3,0,0,0,0,0,
+	"         d[i] = a[i]; b[i] = 0;")])
+]),
+mini_line(56,11,3,0,0,0,[
+str_block(0,56,11,3,0,-2,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,56,11,3,0,-2,0,0,0,0,0,
+	"       }")])
+]),
+mini_line(42,11,3,0,0,0,[
+str_block(0,42,11,3,0,-2,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,42,11,3,0,-2,0,0,0,0,0,
+	"     }")])
+]),
+mini_line(441,11,3,0,0,0,[
+str_block(0,441,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,441,11,3,0,-3,0,0,0,0,0,
+	"   } while ( (rest > 0) && ((b[0]==1)||(b[1]==1)||(b[2]==1)) );")])
+]),
+mini_line(448,11,3,0,0,0,[
+str_block(0,448,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,448,11,3,0,0,0,0,0,0,0,
+	"   /*---- at this moment we have d[] accordingly with GPS ----*/")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(448,11,3,0,0,0,[
+str_block(0,448,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,448,11,3,0,0,0,0,0,0,0,
+	"   /*---- update IR of the fluids ----------------------------*/")])
+]),
+mini_line(154,11,3,0,0,0,[
+str_block(0,154,11,3,0,-6,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,154,11,3,0,-6,0,0,0,0,0,
+	"   val = a[0] - d[0]; ")])
+]),
+mini_line(175,11,3,0,0,0,[
+str_block(0,175,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,175,11,3,0,-3,0,0,0,0,0,
+	"   set_ir( fluid1, val );")])
+]),
+mini_line(154,11,3,0,0,0,[
+str_block(0,154,11,3,0,-6,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,154,11,3,0,-6,0,0,0,0,0,
+	"   val = a[1] - d[1]; ")])
+]),
+mini_line(175,11,3,0,0,0,[
+str_block(0,175,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,175,11,3,0,-3,0,0,0,0,0,
+	"   set_ir( fluid2, val );")])
+]),
+mini_line(154,11,3,0,0,0,[
+str_block(0,154,11,3,0,-6,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,154,11,3,0,-6,0,0,0,0,0,
+	"   val = a[2] - d[2]; ")])
+]),
+mini_line(175,11,3,0,0,0,[
+str_block(0,175,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,175,11,3,0,-3,0,0,0,0,0,
+	"   set_ir( fluid3, val );")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(462,11,3,0,0,0,[
+str_block(0,462,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,462,11,3,0,0,0,0,0,0,0,
+	"   /*---- send new departure rates --- ( ROUTING ) -------------*/")])
+]),
+mini_line(231,11,3,0,0,0,[
+str_block(0,231,11,3,0,-2,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,231,11,3,0,-2,0,0,0,0,0,
+	"   for( i=0; i < NUM_CLASS; i++){")])
+]),
+mini_line(483,11,3,0,0,0,[
+str_block(0,483,11,3,0,-2,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,483,11,3,0,-2,0,0,0,0,0,
+	"     if (!((d_prev[i]<=d[i]+epsilon) && (d_prev[i]>=d[i]-epsilon))) {")])
+]),
+mini_line(182,11,3,0,0,0,[
+str_block(0,182,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,182,11,3,0,-3,0,0,0,0,0,
+	"       msg_vec[0] = i + 1;")])
+]),
+mini_line(175,11,3,0,0,0,[
+str_block(0,175,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,175,11,3,0,-3,0,0,0,0,0,
+	"       msg_vec[1] = d[i];")])
+]),
+mini_line(259,11,3,0,0,0,[
+str_block(0,259,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,259,11,3,0,-3,0,0,0,0,0,
+	"       msg( PORT_OUT, all, msg_vec );")])
+]),
+mini_line(42,11,3,0,0,0,[
+str_block(0,42,11,3,0,-2,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,42,11,3,0,-2,0,0,0,0,0,
+	"     }")])
+]),
+mini_line(35,11,3,0,0,0,[
+str_block(0,35,11,3,0,-6,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,35,11,3,0,-6,0,0,0,0,0,
+	"   } ")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(189,11,3,0,0,0,[
+str_block(0,189,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,189,11,3,0,0,0,0,0,0,0,
+	"   /*---- debug info ----*/")])
+]),
+mini_line(259,11,3,0,0,0,[
+str_block(0,259,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,259,11,3,0,-3,0,0,0,0,0,
+	"   val = a[0]; set_cr( rew_a1, val );")])
+]),
+mini_line(259,11,3,0,0,0,[
+str_block(0,259,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,259,11,3,0,-3,0,0,0,0,0,
+	"   val = a[1]; set_cr( rew_a2, val );")])
+]),
+mini_line(259,11,3,0,0,0,[
+str_block(0,259,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,259,11,3,0,-3,0,0,0,0,0,
+	"   val = a[2]; set_cr( rew_a3, val );")])
+]),
+mini_line(259,11,3,0,0,0,[
+str_block(0,259,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,259,11,3,0,-3,0,0,0,0,0,
+	"   val = d[0]; set_cr( rew_d1, val );")])
+]),
+mini_line(259,11,3,0,0,0,[
+str_block(0,259,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,259,11,3,0,-3,0,0,0,0,0,
+	"   val = d[1]; set_cr( rew_d2, val );")])
+]),
+mini_line(259,11,3,0,0,0,[
+str_block(0,259,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,259,11,3,0,-3,0,0,0,0,0,
+	"   val = d[2]; set_cr( rew_d3, val );")])
+]),
+mini_line(273,11,3,0,0,0,[
+str_block(0,273,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,273,11,3,0,-3,0,0,0,0,0,
+	"   val = ir[0]; set_cr( rew_IR1, val );")])
+]),
+mini_line(273,11,3,0,0,0,[
+str_block(0,273,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,273,11,3,0,-3,0,0,0,0,0,
+	"   val = ir[1]; set_cr( rew_IR2, val );")])
+]),
+mini_line(273,11,3,0,0,0,[
+str_block(0,273,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,273,11,3,0,-3,0,0,0,0,0,
+	"   val = ir[2]; set_cr( rew_IR3, val );")])
+]),
+mini_line(7,11,3,0,0,0,[
+str_block(0,7,11,3,0,-6,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,7,11,3,0,-6,0,0,0,0,0,
+	" ")])
+]),
+mini_line(462,11,3,0,0,0,[
+str_block(0,462,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,462,11,3,0,0,0,0,0,0,0,
+	"   /*---- update arrival rates ---------------------------------*/")])
+]),
+mini_line(161,11,3,0,0,0,[
+str_block(0,161,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,161,11,3,0,-3,0,0,0,0,0,
+	"   set_st( \"Afl[]\",a );")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(21,11,3,0,0,0,[
+str_block(0,21,11,3,0,-3,0,0,0,[
+str_seg('#fffe00000000','Courier',0,69120,21,11,3,0,-3,0,0,0,0,0,
+	" };")])
+])
+])])),
+attr("Events=", "", 0, 1, 0,
+text('#42ce55',331,-25,7,0,1,560,102,1725876,13,3,0,0,0,0,2,560,102,0,0,"",0,0,0,0,-12,'',[
+minilines(560,102,0,0,0,0,0,[
+mini_line(63,13,3,0,0,0,[
+str_block(0,63,13,3,0,-1,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,63,13,3,0,-1,0,0,0,0,0,
+	"Events=")])
+]),
+mini_line(252,11,3,0,0,0,[
+str_block(0,252,11,3,0,-3,0,0,0,[
+str_seg('#42ce55','Courier',0,69120,252,11,3,0,-3,0,0,0,0,0,
+	" event= muda_taxa_t0(REWARD_REACHED)")])
+]),
+mini_line(560,11,3,0,0,0,[
+str_block(0,560,11,3,0,-3,0,0,0,[
+str_seg('#42ce55','Courier',0,69120,560,11,3,0,-3,0,0,0,0,0,
+	" condition=( (get_cr(fluid1)\\/0) || (get_cr(fluid2)\\/0) || (get_cr(fluid3)\\/0) )")])
+]),
+mini_line(70,11,3,0,0,0,[
+str_block(0,70,11,3,0,-2,0,0,0,[
+str_seg('#42ce55','Courier',0,69120,70,11,3,0,-2,0,0,0,0,0,
+	" action= {")])
+]),
+mini_line(266,11,3,0,0,0,[
+str_block(0,266,11,3,0,-3,0,0,0,[
+str_seg('#42ce55','Courier',0,69120,266,11,3,0,-3,0,0,0,0,0,
+	"           msg( PORT_IN, MYSELF, -1 );")])
+]),
+mini_line(77,11,3,0,0,0,[
+str_block(0,77,11,3,0,-3,0,0,0,[
+str_seg('#42ce55','Courier',0,69120,77,11,3,0,-3,0,0,0,0,0,
+	"         };")])
+]),
+mini_line(0,13,3,0,0,0,[
+str_block(0,0,13,3,0,0,0,0,0,[
+str_seg('#42ce55','Courier',0,80640,0,13,3,0,0,0,0,0,0,0,
+	"")])
+])
+])])),
+attr("name=", "server_queue_GPS", 1, 1, 0,
+text('#0000ff',99,33,1,0,1,189,16,1725875,13,3,0,0,0,0,2,189,16,0,0,"",0,0,0,0,46,'',[
+minilines(189,16,0,0,0,0,0,[
+mini_line(189,13,3,0,0,0,[
+str_block(0,189,13,3,0,-2,0,0,0,[
+str_seg('#BCA56F','Courier',0,80640,189,13,3,0,-2,0,0,0,0,0,
+	"name=server_queue_GPS")])
+])
+])])),
+attr("Declaration=", "", 0, 1, 0,
+text('CadetBlue',-65,461,12,0,1,343,170,1725874,13,3,0,0,0,0,2,343,170,0,0,"",0,0,0,0,474,'',[
+minilines(343,170,0,0,0,0,0,[
+mini_line(108,13,3,0,0,0,[
+str_block(0,108,13,3,0,-1,0,0,0,[
+str_seg('CadetBlue','Courier',0,80640,108,13,3,0,-1,0,0,0,0,0,
+	"Declaration=")])
+]),
+mini_line(42,11,3,0,0,0,[
+str_block(0,42,11,3,0,0,0,0,0,[
+str_seg('CadetBlue','Courier',0,69120,42,11,3,0,0,0,0,0,0,0,
+	" Const")])
+]),
+mini_line(154,11,3,0,0,0,[
+str_block(0,154,11,3,0,-3,0,0,0,[
+str_seg('CadetBlue','Courier',0,69120,154,11,3,0,-3,0,0,0,0,0,
+	"   Integer: NUM_CLASS;")])
+]),
+mini_line(112,11,3,0,0,0,[
+str_block(0,112,11,3,0,-3,0,0,0,[
+str_seg('CadetBlue','Courier',0,69120,112,11,3,0,-3,0,0,0,0,0,
+	"   Float: C, BI;")])
+]),
+mini_line(343,11,3,0,0,0,[
+str_block(0,343,11,3,0,0,0,0,0,[
+str_seg('CadetBlue','Courier',0,69120,343,11,3,0,0,0,0,0,0,0,
+	"   Float: FI1, FI2, FI3; /* weights cuja sum=1 */")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('CadetBlue','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(189,11,3,0,0,0,[
+str_block(0,189,11,3,0,-3,0,0,0,[
+str_seg('CadetBlue','Courier',0,69120,189,11,3,0,-3,0,0,0,0,0,
+	"   Port: PORT_IN, PORT_OUT;")])
+]),
+mini_line(126,11,3,0,0,0,[
+str_block(0,126,11,3,0,-3,0,0,0,[
+str_seg('CadetBlue','Courier',0,69120,126,11,3,0,-3,0,0,0,0,0,
+	"   Object: MYSELF;")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('CadetBlue','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+]),
+mini_line(70,11,3,0,0,0,[
+str_block(0,70,11,3,0,-1,0,0,0,[
+str_seg('CadetBlue','Courier',0,69120,70,11,3,0,-1,0,0,0,0,0,
+	" State Var")])
+]),
+mini_line(175,11,3,0,0,0,[
+str_block(0,175,11,3,0,-3,0,0,0,[
+str_seg('CadetBlue','Courier',0,69120,175,11,3,0,-3,0,0,0,0,0,
+	"   Float: Afl[NUM_CLASS];")])
+]),
+mini_line(0,11,3,0,0,0,[
+str_block(0,0,11,3,0,0,0,0,0,[
+str_seg('CadetBlue','Courier',0,69120,0,11,3,0,0,0,0,0,0,0,
+	"")])
+])
+])]))
+]).

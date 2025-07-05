@@ -1,0 +1,200 @@
+---------------------------------------------------------------------------
+                               TANGRAM-II
+---------------------------------------------------------------------------
+
+    TANGRAM-II is a modeling environment developed for research and 
+    educational purpose that provides a flexible user  interface  to 
+    describe computer and communication system models.
+
+    The interface is built on  java 2  language and the  models  are
+    described  based on  an  object  oriented  description  language
+    suported by the public domain software  package  TGIF  ( TANGRAM 
+    Graphic Interface Facility ).
+
+    The tools are implemented in C / C++ and has several solvers for
+    transient and steady state analysis of performance and availabi-
+    lity metrics. Furthermore you can use  the  powerful  simulation
+    tool to get the measures of interest.
+
+    Please, for a detailed description of TANGRAM-II see the tutorial.
+    Also visit, http://www.land.ufrj.br for updated information.
+
+---------------------------------------------------------------------------
+                                 INSTALL
+---------------------------------------------------------------------------
+
+    See INSTALL file for details.
+                 
+---------------------------------------------------------------------------
+                                  FILES
+---------------------------------------------------------------------------
+
+-------------------------------------------
+main directory:
+-------------------------------------------  
+INSTALL  | Install instructions
+README   | This file
+NEWS     | New features of Tangram2
+-------------------------------------------
+bin directory:
+-------------------------------------------  
+adjust_trace      | remove given Skew and Offset values from a thrid traces
+animplot          | used for online visualization of rewards during batch simulation
+band	          | estimate bottleneck capacity from a packet pair traffgen trace
+buffer	          | estimate buffer size of bottleneck router from traffgen trace
+calc_loc          | traffgen two-way probes generator from local to remote host
+calc_rem          | traffgen two-way probes generator from remote to local host
+check_dup         | elimanate duplicate probes from a traffgen trace
+comp_matrix       | compare the difference between two matrix and return 1 case the differente is greater than the given EPSILON
+convolution       | estimate the convolution function from two distribution traces
+delay_histogram   | estimate delay distribution of a traffgen trace
+descriptors       | evaluate traffic descriptors for markovian models
+generate_chain    | script to compile and link user code to chain
+                  | generator.
+getNames          | auxiliar tool used to extract the state
+                  | variables, rewards and events names.
+gramatica         | model parser.
+measure_descs     | evaluate traffic descriptors for trace files
+modelenv          | modeling environment interface.
+mtx_vis-st_permut | matrix visualizator.
+pmf               | calculates interest measures.
+solv              | is the module for solving the math model.
+tangram2          | tangram2 main interface.
+tgif              | tangram's graphical interface facility.
+traffgen          | traffic generator interface.
+traffgen_atm      | traffic generator for atm networks.
+traffgen_ip       | traffic generator for ip networks.
+trans_param       | convert a literal chain to numeric.
+mse               | estimate MSE of several distribution in coparation to a given traffgen trace
+MtxVisStPermut    | configuration file needed by the matrix visualization module (not a binary)
+avgReward         | calculate measures of interest for both impulse and rate rewards.
+elwalidmitra95    | calculate the effective capacity
+guerin91          | calculate the effective capacity considering the statistical multiplexing
+linear            | calculate and remove skew values from a traffgen trace
+markov_mtx2obj    | converts a markovian matrix file to an TGIF's obj file
+masternode        | manage the distributed simulation using pvm lib
+offset            | estimate values for removing offset value from a traffgen trace
+packloss_loc      | traffgen two-way packet pair generator from local to remote host
+packloss_rem      | traffgen two-way packet pair generator from remote to local host
+row               | select row from traffgen traces to estimate bottleneck capacity 
+rtt_traffgen	  | traffgen round trip probes generator from local to remote host
+rtt_traffrec	  | traffgen round trip probes replication from remote to local host
+shift             | estimate clock update in a traffgen trace
+trace2mtx         | build a model for a given video trace
+traffgen_recv_ip  | traffic receiver for ip networks.
+traffmeasures_ip  | estimate metrics from a one-way traffgen trace
+verif_loss        | verify packet pair loss from traffgen trace
+
+-------------------------------------------
+lib directory:
+-------------------------------------------
+Makefile.mark_find         | the makefile to link user code to chain
+                           | generator.
+libInputParser.so          | check user's input
+libTangram.so              | set necessary environment variables
+libmark_find.a             | is the mathematical model generator 
+libhash_lib.a              | balanced binary tree library used by the
+                           | chain generator.
+libdistributed_mark_find.a | is the distributed mathematical model generator 
+-------------------------------------------
+include directory:
+-------------------------------------------
+user_code.h        | classes prototypes used in user_code.c
+
+-------------------------------------------
+class directory:
+-------------------------------------------
+  all the java .class files that implements the  interface. 
+
+-------------------------------------------
+etc directory:
+-------------------------------------------
+Xdefaults      | an example of how your .Xdefaults file should
+               | look like (if you don't have a .Xdefaults file,
+               | just copy this file to your home directory,
+               | don't forget to rename it to .Xdefaults ).
+               
+tangram2.conf  | main configuration file.
+
+font.properties| an font configuration file for the JRE that you
+               | can use to avoid some font errors.  (See the
+               | TROUBLESHOOTING section below)
+
+-------------------------------------------
+In Domain directory:
+-------------------------------------------
+This directory contains predefined symbols used by the TGIF tool.
+
+TGIF uses domains to relate directories to particular
+applications. The application here will be tangram2. All symbols
+to be used in tgif concerning tangram2 should be stored in
+/usr/local/Tangram2/Domain/objects directory. Besides that, the
+.Xdefaults file in your home directory should be altered to have
+the content described in the etc/Xdefaults (see above).
+
+Only the TANGRAM2 domain and SPICE are distributed in this package.
+The remaining domains and the rest of the .Xdefault file is optional
+and may be found in the tgif man page.
+
+The complete distribution and documentation of TGIF can found at 
+http://bourbon.cs.umd.edu:8001/tgif/
+
+-------------------------------------------
+In examples directory:
+-------------------------------------------
+  some complete ready to run examples.
+
+-------------------------------------------
+In docs directory:
+-------------------------------------------
+  a pdf version of the Tangram-II User's Manual with a tutorial and
+  the modeling language syntax.
+
+---------------------------------------------------------------------------
+EXAMPLE
+---------------------------------------------------------------------------
+    The traditional and simple example with the basics of functions 
+    of modelling is the M/M/1/k queue system. This example can be
+    found in examples/ModelEnv/MM1k/MM1k.obj file.
+    See it and much more in examples directory!
+
+---------------------------------------------------------------------------
+TROUBLESHOOTING
+---------------------------------------------------------------------------
+    FONT ERROR:
+     The "font not found error" shown at the initialization of the
+     tool are dangerless. To avoid this messages , you could change
+     the font.properties file in your jre/lib directory. All lines 
+     containing refences to symbols fonts must be commented with a 
+     "#" at the begining of it, as following: 
+     
+     #dialoginput.bolditalic.2=--symbol-medium-r-normal--*-%d-*-*-p-*
+      -adobe-fontspecific 
+
+     Or you can replace your font.properties file with the one in 
+     the Tangram2 etc directory (usually /usr/local/Tangram2/etc)
+
+
+    TANGRAM2 MAY BE CALLING THE WRONG VERSION OF TGIF:
+     Due the characteristics of the Unix environment, Tangram2 executes
+     any of its applications according to the PATH variable.
+     This means that if you have an application called TGIF (for instance)
+     such that its code is stored in a directory that is searched before
+     the Tangram2 directory due to the PATH environment variable, the TGIF
+     version you have will be used instead of the one that comes with
+     Tangram2 and has all features needed by the tool.
+
+---------------------------------------------------------------------------
+MORE INFORMATION
+---------------------------------------------------------------------------
+    If you have any questions, comments or sugestions, please e-mail
+    to support@land.ufrj.br You can also visit our homepage at: 
+    http://www.land.ufrj.br for latest information.
+
+---------------------------------------------------------------------------
+    LAND Laboratory
+    Federal University of Rio de Janeiro, Brazil
+    dist_date
+---------------------------------------------------------------------------
+
+

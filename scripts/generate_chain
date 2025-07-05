@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# $1 = base file name
+# $2 = max states to be generated
+# $3 = debug level 
+# $4 = reward option [1=Mean,2=Max,3=Min,4=Error]
+
+# remove old files
+\rm -f $1.st_trans_prob_mtx
+
+# Compile and Link the usercode to the mark_find
+echo make -f $TANGRAM2_HOME/lib/Makefile.mark_find BASE=$1
+make -f $TANGRAM2_HOME/lib/Makefile.mark_find BASE=$1
+
+# Execute the mark_find
+echo ./mark_find -G -m $2 -f $1 -d $3 -w $4
+./mark_find -G -m $2 -f $1 -d $3 -w $4
+
+# Remove the unecessary files 
+#echo \rm -f mark_find
+\rm -f mark_find
+#echo \rm -f $1.parser
+#\rm -f $1.parser
+#echo \rm -f $1.user_code.c
+#\rm -f $1.user_code.c
+#echo \rm -f $1.user_code.o
+\rm -f $1.user_code.o
+#echo \rm -f $1.tables_dump
+#\rm -f $1.tables_dump
+

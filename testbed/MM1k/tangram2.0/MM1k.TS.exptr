@@ -1,0 +1,7 @@
+#Solution method: Expected Transient Reward (Uniformization)
+#Lambda = 3.000100e+01, Precision = 1.000000e-06 
+
+#Time (t)             E[ECR(t)] 
+#Time = 1.00000e+01, N_min = 127, N_max = 386
+1.00000e+01   9.7543209071e+00
+#**************************

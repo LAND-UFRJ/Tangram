@@ -1,0 +1,210 @@
+ 
+Object_Desc Dispatcher_CPUS (
+Declaration {
+
+ Var
+    State: Queue[2],UP,UP2;
+
+ Const
+  Integer: QUEUE_SIZE  ;
+  Port   : TASK_PORT,ADD_PORT; 
+  Float  : SERVICE, FAIL,REPAIR;
+  
+}
+Initialization {
+
+/*Constants Initialization*/
+  QUEUE_SIZE     = 50 
+  TASK_PORT      = task_port
+  ADD_PORT       = add_port
+ SERVICE = 30
+  FAIL = 0.00004
+  REPAIR = 10 
+
+/*State Vars Initialization*/
+  Queue        = [0,0] 
+  UP           = 0
+  UP2          = 0
+  
+}
+Events {
+
+ 
+ event=Service1 (EXP, SERVICE)
+ condition= ((Queue[0] > 0) && (UP == 0))
+ action= { 
+             int queue[2]; 
+	     queue[1]=Queue[1];
+             queue[0] = Queue[0] - 1;
+	     msg(ADD_PORT,all,0); 
+             set_st( "Queue[]", queue);
+         };
+ event=Service2 (EXP, SERVICE)
+ condition= ((Queue[1] > 0)&& (UP2 == 0))
+ action= { 
+             int queue[2]; 
+	     queue[0]=Queue[0];
+             queue[1] = Queue[1] - 1;
+	     msg(ADD_PORT,all,0); 
+             set_st( "Queue[]", queue );
+         };
+
+ event= Fail (EXP, FAIL)
+ condition= ((UP == 0))
+ action= { 
+             int queue[2];
+	         queue[0] = Queue[0];
+             queue[1] = Queue[1];
+	      if (UP2 == 0)
+          {
+             queue[1] = queue[1] + queue[0];
+	         queue[0] = 0;
+           }
+             set_st("UP", 1);
+             set_st("Queue[]",queue);
+         };
+ event = Repair (EXP, REPAIR)
+ condition = (UP == 0/*para nao reparar*/)
+ action={
+             ;set_st("UP", 0);};        
+         
+
+ event= Fail2 (EXP, FAIL)
+ condition= ((UP2 == 0))
+ action= { 
+         int queue[2];
+	     queue[0] = Queue[0];
+         queue[1] = Queue[1];
+	     if (UP == 0)
+           { 
+              queue[0] = queue[0] + queue[1];
+	          queue[1] = 0;
+           }
+             set_st("UP2", 1);
+             set_st("Queue[]",queue);
+         };
+ event = Repair2 (EXP, REPAIR)
+ condition = (UP2 == 0)/*para nao reparar*/
+ action={
+             ;set_st("UP2", 0);};        
+         
+}
+Messages {
+
+ msg_rec=TASK_PORT
+ action= { 
+             int queue[2],aux1,aux2;
+             queue[0] = Queue[0];
+	     queue[1] = Queue[1];
+	     aux1 = queue[0];
+	     aux2 = queue[1];
+             if (((aux1 + aux2 )< QUEUE_SIZE))
+               {  if ((aux1 == aux2))
+	           
+		    queue[0] = queue[0]+1;
+	
+		 if ((aux1<aux2))
+		     queue[0]= queue[0]+1;
+		    
+		 if (aux1>aux2)
+		     queue[1] = queue[1]+1;}
+	     set_st("Queue[]",queue);
+	  }:prob = 0.5;   	            
+	 { 
+             int queue[2],aux1,aux2;
+             queue[0] = Queue[0];
+	     queue[1] = Queue[1];
+	     aux1 = queue[0];
+	     aux2 = queue[1];
+             if (((aux1 + aux2) < QUEUE_SIZE))
+              {   if (aux1 == aux2)
+		    queue[1] = queue[1]+1;
+		 if ((aux1<aux2))
+		   
+		     queue[0]= queue[0]+1;
+		  
+		 if (aux1>aux2)
+		     queue[1] = queue[1]+1;}
+	     set_st("Queue[]",queue);
+	  }:prob = 0.5;   	            
+		 
+		 
+		 
+}
+Rewards {
+rate_reward=op1
+condition=(UP == 0)
+value = 1;
+rate_reward=op2
+condition=(UP2 == 0)
+value = 1;
+rate_reward=reliabiliy
+condition=((UP2 == 0)||(UP == 0))
+value = 1;
+}
+)
+Object_Desc Delayer (
+Declaration {
+
+Var
+State:Total_Task,Aux;
+ Const
+   Port: TASK_PORT,ADD_PORT;
+   Integer: MAX;
+   Float:RATE;
+
+}
+Initialization {
+
+  TASK_PORT = task_port
+  ADD_PORT = add_port
+  Total_Task = 50
+  MAX = 50
+Aux = 0
+  RATE= 10
+   
+}
+Events {
+
+
+ event= Delay(EXP, Total_Task * RATE)
+ condition= (Total_Task > 0)
+ action= {
+           int total_task;
+           int aux;
+           aux = Aux;
+         
+           total_task = Total_Task;
+            total_task = total_task - 1;
+               aux = MAX - total_task;    
+        msg(TASK_PORT, all, 0);
+	    set_st("Total_Task", total_task);
+    set_st("Aux", aux);
+             
+         };
+}
+Messages {
+
+msg_rec = ADD_PORT
+action ={int total_task;
+         int aux;
+         aux = Aux;
+        total_task = Total_Task;
+         if (Total_Task < MAX) 
+                {   
+                 total_task = total_task + 1;
+                 aux = aux - 1;
+                 }
+          set_st("Aux", aux);         
+         set_st("Total_Task", total_task);
+};
+
+}
+Rewards {
+
+}
+)
+Global_Rewards {
+}
+Independent_Chains {
+}

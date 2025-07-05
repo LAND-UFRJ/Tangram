@@ -1,0 +1,163 @@
+
+*******************************************************************************
+*                                                                             *
+*                              What is new?!                                  *
+*                                                                             *
+*******************************************************************************
+
+Last updated: Tuesday September 27th 2005 - 17:02
+
+
+
+
+-> TangramII v3.1
+
+********************************************************************************
+- Grammar
+  - << and >> bitwise operators.
+********************************************************************************
+- Code now compiles in gcc 3.4.
+********************************************************************************
+
+
+
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~  //  //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+-> TangramII v3.0
+
+********************************************************************************
+- Modeling Environment
+   - Now, the use of features that are only allowed for simulation produce
+     errors when used for chain generation.
+
+********************************************************************************
+- Grammar
+   - Function pow and sqrt have been inserted.
+   - set_st command accepts a constant.
+   - OR AND bitwise operators.
+
+********************************************************************************
+- Simulation
+   - Printing functions (printf, fprintf).
+   - Function for reading simulation time
+   - Now the user can specify seed values to be used in simulation. Seeds use
+     a special format (12 hexadecimal digits) and can be passed through the
+     interface. The simulation report (<modelname>.SIMUL.<name>) shows the
+     seeds used so the user can "cut-and-paste" them to reproduce the sample
+
+  Simulation language syntax
+   - get_random() - generates a [0,1)-uniform pseudo-random number.
+
+   
+  Interactive Simulation
+   - Now floating point values can be visualized. This includes Float state
+     vars as well as rate and impulse rewards.
+   - Values (both float and integer) can be shown with printf-like
+     format string syntax. e.g.: Utilization<%.4f> shows the value
+     "Utilization" with 4 digit precision in floating point format.
+
+********************************************************************************
+- In Traffic Generator Module:
+   - Several new features in Traffic Generation (see manual).
+   - Module for active measures.
+   - Support for estimate a distribuction from a Trace using MSE and method
+     of Moment.
+
+
+
+
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~  //  //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+-> TangramII v2.0
+
+********************************************************************************
+- Grammar
+   - Model constants can now be used as case's within 'switch' statements.
+   - Little sintax change, but still compatible with the old one, except for
+      "port" that now is a reserved word.
+   - The parser now reports the exact line where the error was detected.
+   - New math functions recognized by the parser:
+       - log
+       - log10
+********************************************************************************
+- New Tools
+   - Probability matrix to OBJ generator tool created (with rewards).
+   - Trace to markovian histogram program included.
+********************************************************************************
+- Simulation
+   - Parallelization on runs added (with PVM).
+   - Fixed all memory leaks.
+   - Instantaneous Reward calculated from Cumulative Reward and vice-versa.
+   - Traces for Instantaneous and Cumulative Rewards.
+   - Doesn't write reward to its trace on every event, just when it changes.
+   - FloatQueue and IntegerQueue type variables added.
+   - Reward Sum added.
+   - Float State Variables for Batch Simulation.
+   - Reward Reached event added.
+   - Reward Levels added to the interface.
+   - Now messages can carry vectors.
+   - New Distributions:
+      - Weibull.
+      - Pareto.
+      - Truncated Pareto (The sample is truncated if a MAXVALUE is exceeded).
+   - Bug fixed in LOGNORMAL distribution.
+      - Formula was corrected.
+   - Fluid Simulation Objects Added
+      - Servers GPS (CS and CP), FIFO and Leaky Bucket.
+      - Source MMF.
+      - Sink and Channel.
+      - Many examples included.
+   - AnimPlot, a program that can plot trace files as they are generated is now
+     included to allow the visualization of cumulative reward traces during the
+     execution of batch simulation.
+********************************************************************************
+- In Traffic Generator Module:
+  - Performance was improved by a custom-made usleep function.
+  - Model specification is more flexible.
+  - IP traffic measures
+	- A bug in Jitter trace measure was fixed.
+********************************************************************************
+- Solution methods:
+  - New solutions to obtain:
+    - Point probabilities at a given time t (approximate solution).
+    - Expected reward in an interval (approximate solution).
+********************************************************************************
+- Manual
+   - Now also in searchabe PDF format. Great for finding out syntax details in
+     examples.
+********************************************************************************
+- Graphical Interface
+   - Some minor fixes.
+   - The Traffic Modeling graphical interfaces have been redesigned.
+   - Interface for simulation trace options has been modified to accommodate
+     new features.
+********************************************************************************
+- Tangram-II Whiteboard
+    - New implementation of the Reliable Multicast Protocol includes a
+      configuration file with many options such as:
+        - Multicast Group IP address and application port: user can choose
+          an IP address and an application port for the whiteboard
+        - Cache size
+        - Log file
+        - Timers parameters
+
+    An example file can be found at $TANGRAM2_HOME/etc/tgwb.config.sample.
+    To use that sample file, modify it to fit your needs and copy it to
+    /etc/tgwb.config or $HOME/.tgwb.config
+
+    Further information and documentation can be found at:
+    http://www.land.ufrj.br/tools/tangram2/wboard/wboard.html
+********************************************************************************
+- Small features added to the matrix visualization and state variables
+  permutation tool.
+- VivaVoz, a fully-featured voice communication tool for the Internet is now
+  included.
+- New example models made available with in the Tangram-II web site.
+********************************************************************************
+
+
+End of File, bye.

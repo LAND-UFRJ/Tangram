@@ -1,0 +1,4 @@
+
+Tgif*MaxDomains:    3
+Tgif*DefaultDomain: 2
+Tgif*DomainPath0:   LOCAL:.

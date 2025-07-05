@@ -1,0 +1,11 @@
+#Solution Method:Efficient transient State Probability (Approximation Method).
+#Uniformization Rate:2.001000e+00
+#Total No of Erlang Stages in each interval: 50 
+#State Probability given the initial probability 
+#Time:1.000000
+# Destination State                  Probability 
+#--------------------------------------------------------- 
+  1                                   9.9949737045e-01
+  2                                   2.5128297224e-04
+  3                                   2.5128297224e-04
+  4                                   6.3603505292e-08

@@ -1,0 +1,3 @@
+This model has a birth_death traffic source which feeds a queue with m
+servers. Each state of the source represents the number of active on_off
+sources. The Server_Queue object has a rate reward with two conditions/values.

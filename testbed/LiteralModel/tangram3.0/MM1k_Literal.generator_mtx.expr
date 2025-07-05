@@ -1,0 +1,6 @@
+2
+a	Poisson_Source.pkt_rate
+b	Server_Queue.service_rate
+2
+0	(a)
+1	(b)

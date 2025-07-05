@@ -1,0 +1,5 @@
+This model represents a source which  feeds a split object.  The split
+object randomly select two out of four queues to serve the packet. The
+queue with the smallest number of waiting packets will serve the packet.
+(The two selected queues exchange messages to decide which one will serve
+it.) 

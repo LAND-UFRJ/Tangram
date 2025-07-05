@@ -1,0 +1,2 @@
+This model represents a FARIMA traffic source which feeds a deterministic 
+queue. It has to be solved using simulation.
