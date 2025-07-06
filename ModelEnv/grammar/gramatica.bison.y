@@ -53,6 +53,8 @@ extern int Can_Simulate;
 
 extern int has_mtk_object;
 
+extern void append_code( char *new_code );
+
 /* Action code recursion depth for improper set_st detection */
 static int action_code_depth = 0;
 static int set_state_used    = 0;
