@@ -1101,16 +1101,27 @@ void print_tables()
 //------------------------------------------------------------------------------
 void sym_trim(char *name)
 {
-    char *p;
+    char *start = name;
+    char *end;
 
-    p = name;
-    while (*p == ' ')
-        p++;
-    strcpy (name, p);
-    p = name;
-    while ( (*p != ' ') && (*p != '\0'))
-        p++;
-    *p = '\0';
+    // Skip leading spaces
+    while (*start == ' ')
+        start++;
+
+    // If the string is all spaces
+    if (*start == '\0') {
+        *name = '\0';
+        return;
+    }
+
+    // Find the end of the first word (non-space)
+    end = start;
+    while (*end != ' ' && *end != '\0')
+        end++;
+
+    // Copy the trimmed word to the beginning of name
+    memmove(name, start, end - start);
+    name[end - start] = '\0';
 }
 //------------------------------------------------------------------------------
 int sym_tb_obj_insert (int type, char *a_name)
