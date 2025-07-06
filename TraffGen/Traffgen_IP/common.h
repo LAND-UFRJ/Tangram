@@ -65,7 +65,7 @@ typedef struct
 
 
 /* prototype of a particular get_time() in usec */
-inline double get_time( void );
+double get_time( void );
 
 int connectsock( char *, char *, char * );
 int connectTCP( char *, char * );

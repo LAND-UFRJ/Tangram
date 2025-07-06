@@ -184,7 +184,7 @@ int connectUDP( char *host, char *service )
 /* Specific get_time() to convert time in units of usec */
 /* Function updated at 02/07/2001 */
 
-inline double get_time()
+double get_time()
 {
     struct timeval time;
     double sec, usec;
