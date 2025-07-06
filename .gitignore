@@ -6,6 +6,8 @@
 *.exe
 *.o
 *.so
+*.la
+*.lo
 
 # Packages #
 ############
@@ -41,6 +43,7 @@ Thumbs.db
 
 Makefile
 Makefile.in
+.libs
 .deps
 /ar-lib
 /mdate-sh
