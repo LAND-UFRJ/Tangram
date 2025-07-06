@@ -39,7 +39,9 @@ Thumbs.db
 
 # http://www.gnu.org/software/automake
 
+Makefile
 Makefile.in
+.deps
 /ar-lib
 /mdate-sh
 /py-compile
@@ -48,11 +50,14 @@ Makefile.in
 
 # http://www.gnu.org/software/autoconf
 
+config.h
+libtool
 autom4te.cache
 /autoscan.log
 /autoscan-*.log
 /aclocal.m4
 /compile
+/config.status
 /config.guess
 /config.h.in
 /config.sub
