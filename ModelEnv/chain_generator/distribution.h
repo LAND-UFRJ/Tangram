@@ -510,7 +510,7 @@ typedef class Trunc_Pareto_Distrib : public Pareto_Distrib {
  private:
 
     Expression               *maximum; /**< Max value of Truncated Pareto     
-                                          generated samples distribution´s. */
+                                          generated samples distributions. */
 } Trunc_Pareto_Distrib;
 
 
@@ -780,7 +780,7 @@ typedef class Init_Distrib : public Distribution
     void    reset(int);
 
  private:    
-    static const TGFLOAT init_event_time = 0.0;  /*< All init events runs at time zero.
+    static constexpr TGFLOAT init_event_time = 0.0;  /*< All init events runs at time zero.
                                                      If other event is scheduled
                                                      at this time, the function
                                                      Simulator_Event_List::show_smallest_time
