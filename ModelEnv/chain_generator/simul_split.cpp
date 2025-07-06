@@ -191,7 +191,7 @@ void Simulator_Split::print_split()
 {
    fprintf( stdout, "\tLevel: %d --- ", level);
    fprintf( stdout, "Status: %d --- ", status);
-   fprintf( stdout, "Thread_id: %d\n", (int)thread_id);
+   fprintf( stdout, "Thread_id: %d\n", (unsigned long)thread_id);
    //   printf ("System_State: ");
    //   simulator->print_curr_st();
    //   printf ("\n");
