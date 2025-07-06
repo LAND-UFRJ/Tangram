@@ -8,7 +8,11 @@ aclocal="aclocal"
 autoconf="autoconf"
 # autoheader="autoheader-2.5x"
 autoheader="autoheader"
-libtoolize="libtoolize --force --copy"
+if [ $(uname) = "Darwin" ]; then
+    libtoolize="glibtoolize --force --copy"
+else
+    libtoolize="libtoolize --force --copy"
+fi
 automake="automake --add-missing --copy"
 
 echo -n "Running $aclocal ..."
