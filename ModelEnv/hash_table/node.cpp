@@ -20,13 +20,7 @@ using namespace std;
 
 #include "node.h"
 
-Node::Node ()
-{ 
-  value = 0;
-  order = 0;
-}
-
-Node::Node ( u_longlong_t val = 0, uint ord = 0 )
+Node::Node ( u_longlong_t val, uint ord )
 {
   value = val; 
   order = ord;   

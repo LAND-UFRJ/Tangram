@@ -45,8 +45,7 @@ class Node {
   
  public:
   // Constructors 
-  Node();
-  Node( u_longlong_t , uint );
+  Node( u_longlong_t=0 , uint=0 );
 
   // Destructor
   ~Node();
