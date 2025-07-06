@@ -39,7 +39,7 @@ extern t_indep_chain indep_chain_tb[MAX_TABLE_ENTRIES];
 extern int Can_Generate_Chain;
 extern int Can_Simulate;
 
-extern has_mtk_object;
+extern int has_mtk_object;
 
 //------------------------------------------------------------------------------
 //     F U N C T I O N S
