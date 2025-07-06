@@ -827,9 +827,21 @@ Object * GHMM::createSized( const Name & name, Arguments & args )
     int N, B;
 
     N = atol( args[0].text.c_str( ) );
-    LOWER_LIMIT(N,1);
+    if( N < 1 )
+    {
+        Terminal::error_stream << "parameter N" \
+                               << " must be greater than or equal to 1" \
+                               << std::endl;
+        return nullptr;
+    }
     B = atol( args[1].text.c_str( ) );
-    LOWER_LIMIT(B,1);
+    if( B < 1 )
+    {
+        Terminal::error_stream << "parameter B" \
+                               << " must be greater than or equal to 1" \
+                               << std::endl;
+        return nullptr;
+    }
 
     return new GHMM( name, N, B );
 }

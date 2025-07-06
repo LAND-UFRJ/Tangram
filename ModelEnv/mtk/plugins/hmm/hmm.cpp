@@ -755,9 +755,21 @@ Object * HMM::createSized( const Name & name, Arguments & args )
     int N, M;
 
     N = atol( args[0].text.c_str( ) );
-    LOWER_LIMIT(N,1);
+    if( N < 1 )
+    {
+        Terminal::error_stream << "parameter N" \
+                               << " must be greater than or equal to 1" \
+                               << std::endl;
+        return nullptr;
+    }
     M = atol( args[1].text.c_str( ) );
-    LOWER_LIMIT(M,1);
+    if( M < 1 )
+    {
+        Terminal::error_stream << "parameter M" \
+                               << " must be greater than or equal to 1" \
+                               << std::endl;
+        return nullptr;
+    }
 
     return new HMM( name, N, M );
 }
