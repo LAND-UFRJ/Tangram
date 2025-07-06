@@ -7,8 +7,7 @@ libInput_parser_la_CFLAGS = -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/linux
 BUILT_SOURCES = Entrada.h
 
 Entrada.h:
-	$(JAVAC) Entrada.java
-	$(JAVAH) -classpath . -jni Entrada
+	$(JAVAC) -h . Entrada.java
 
 EXTRA_DIST = Entrada.java
 CLEANFILES = Entrada.h Entrada.class

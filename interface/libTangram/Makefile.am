@@ -7,8 +7,7 @@ libTangram_la_CFLAGS = -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/linux
 BUILT_SOURCES = Processo.h
 
 Processo.h:
-	$(JAVAC) Processo.java
-	$(JAVAH) -classpath . -jni Processo
+	$(JAVAC) -h . Processo.java
 
 EXTRA_DIST = Processo.java
 

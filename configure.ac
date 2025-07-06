@@ -142,14 +142,6 @@ else
     AC_SUBST([JAR],[$JAVA_HOME/bin/jar])
 fi
 
-# JAVAH
-AC_CHECK_FILE( $JAVA_HOME/bin/javah, HAVE_JAVAH="yes", HAVE_JAVAH="no" )
-if test "$HAVE_JAVAH" = "no"; then
-    AC_MSG_ERROR(javah not found ... please install jsdk - java.sun.com)
-else
-    AC_SUBST([JAVAH],[$JAVA_HOME/bin/javah])
-fi
-
 # JAVA
 AC_CHECK_FILE( $JAVA_HOME/bin/java, HAVE_JAVA="yes", HAVE_JAVA="no" )
 if test "$HAVE_JAVA" = "no"; then
@@ -174,12 +166,6 @@ AC_PROG_SCP
 
 # SSH
 AC_PROG_SSH
-
-# RSH
-AC_CHECK_PROG([HAVE_RSH], [rsh], [yes], [no])
-if test "$HAVE_RSH" = "no"; then
-    AC_MSG_ERROR(rsh not found ... please install rsh.)
-fi
 
 # Gnuplot
 AC_CHECK_PROG([HAVE_GNUPLOT], [gnuplot], [yes], [no])
