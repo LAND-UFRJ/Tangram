@@ -165,10 +165,10 @@ class TreeAVL : public Tree<T>
     {
         if( this->nod )
             delete this->nod;
-        if( left )
-            delete (TreeAVL<T>*)left;
-        if( right )
-            delete (TreeAVL<T>*)right;
+        if( this->left )
+            delete (TreeAVL<T>*)this->left;
+        if( this->right )
+            delete (TreeAVL<T>*)this->right;
     }
 
     TreeAVL* insert( T* value )
@@ -229,11 +229,11 @@ class TreeAVL : public Tree<T>
         if( this->nod )
             this->nod->print();
 
-        if( left )
-            ( (TreeAVL<T> * ) left)->print();
+        if( this->left )
+            ( (TreeAVL<T> * ) this->left)->print();
 
-        if( right )
-            ( ( TreeAVL<T> * ) right)->print();
+        if( this->right )
+            ( ( TreeAVL<T> * ) this->right)->print();
     }
 };
 
