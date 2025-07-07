@@ -22,9 +22,7 @@ using namespace std;
 #include <math.h>
 #include "hashlib.h"
 
-
 Hash::Hash(uint *range, uint num)
-
 {
   uint i;
   
@@ -45,39 +43,27 @@ Hash::Hash(uint *range, uint num)
 
 boolean Hash::init(void){
   uint i;
-  u_longlong_t maxulonglong, maxvalonglong = 1;
-  double maxval = 1;
+  u_longlong_t maxvalonglong = 1ULL;
+  double maxval = 1.0;
 
-
-  mapp_vec  = (u_longlong_t * ) malloc( sizeof(u_longlong_t) * mem_size );
+  mapp_vec  = (u_longlong_t * ) calloc( mem_size, sizeof(u_longlong_t) );
   
   if ( mapp_vec == NULL ) 
     return FALSE;
 
-  for ( i = 0; i < mem_size; i++)
-    mapp_vec[i] = 0;
-
-
-  
-  maxulonglong = (u_longlong_t) pow( 2.0, 8.0*sizeof(u_longlong_t) );
-  
-  maxulonglong--;
-  
   for ( i = 1; i < num_elem; i++ ){
     maxval *= (double) max_vec[i];
     maxvalonglong *= (u_longlong_t) max_vec[i];
   }
-    
-  
-  if ( maxval > (double) maxulonglong)
+
+  if ( maxval > (double) ULLONG_MAX)
     return FALSE;
   
   else
-    {
-      max_value = maxvalonglong;
-      return TRUE;
-    }
-  
+  {
+    max_value = maxvalonglong;
+    return TRUE;
+  }
 }
 
 Hash::~Hash()
@@ -98,7 +84,6 @@ void Hash::print(void)
   tree->print();
 }
 
-
 boolean Hash::vec_to_hash_num( u_longlong_t *num, uint *vec )
 {
   u_longlong_t total, aux;
@@ -107,7 +92,6 @@ boolean Hash::vec_to_hash_num( u_longlong_t *num, uint *vec )
   for ( i = 1; i < num_elem; i++)
     if ( vec[i] > (max_vec[i] - 1 ) )
       return FALSE;
-  
   
   total = (u_longlong_t) vec[1];
   
@@ -125,7 +109,6 @@ boolean Hash::vec_to_hash_num( u_longlong_t *num, uint *vec )
   else
     return TRUE;
 }
-
 
 boolean Hash::hash_num_to_vec( u_longlong_t num, uint *vec )
 {
@@ -179,8 +162,6 @@ boolean Hash::num_to_vec( uint index, uint *vec )
   return TRUE;
 }
 
-
-
 boolean Hash::vec_to_num( uint *index, uint *vec )
 {
   u_longlong_t total, aux, num;
@@ -215,7 +196,6 @@ boolean Hash::vec_to_num( uint *index, uint *vec )
   
   return TRUE;
 }
-
 
 boolean Hash::insert(uint *vec)
 {
@@ -256,7 +236,6 @@ boolean Hash::insert(uint *vec)
   return TRUE;
 }
 
-
 boolean Hash::find( uint index )
 {
   u_longlong_t num;
@@ -275,9 +254,7 @@ boolean Hash::find( uint index )
     return FALSE;  
   else
     return TRUE;
-  
 }
-
 
 boolean Hash::find( uint *vec )
 {
@@ -292,11 +269,5 @@ boolean Hash::find( uint *vec )
     return FALSE;
   else
     return TRUE;
-  
 }
-
-
-
-
-
 
