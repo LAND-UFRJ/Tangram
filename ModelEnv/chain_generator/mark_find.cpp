@@ -50,7 +50,7 @@ using namespace std;
 #include "system_desc.h"
 #include "system_state.h"
 #include "output.h"
-#include "hash.h"
+#include "hashlib.h"
 #include "random.h"
 #include "distribution.h"
 #include "simulator.h"

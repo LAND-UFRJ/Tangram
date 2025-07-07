@@ -42,7 +42,7 @@ using namespace std;
 #include "chained_list.h"
 #include "system_state.h"
 #include "system_desc.h"
-#include "hash.h"
+#include "hashlib.h"
 #include "distribution.h"
 #include "simulator.h"
 

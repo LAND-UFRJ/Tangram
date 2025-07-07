@@ -37,7 +37,7 @@
 #include "system_desc.h"
 #include "system_state.h"
 #include "string_list.h"
-#include "hash.h"
+#include "hashlib.h"
 
 extern System_Description    *the_system_desc;
 

@@ -39,7 +39,7 @@
 #include "system_state.h"
 #include "system_desc.h"
 #include "string_list.h"
-#include "hash.h"
+#include "hashlib.h"
 #include "output.h"
 
 

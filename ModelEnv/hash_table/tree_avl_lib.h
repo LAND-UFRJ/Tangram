@@ -25,18 +25,15 @@ adding the balancing characteristics to these trees.
 #ifndef __TREEAVL_H__
 #define __TREEAVL_H__
 
-
+#include <iostream>
 #include "tree.h"
-
-#ifdef _LIBHASH_
-int need_rotate;
-#endif
 
 template <class T>
 class TreeAVL : public Tree<T>
 {
   private:
     int balance;
+    int need_rotate;
 
     TreeAVL* rotationleft( TreeAVL *pt )
     {
@@ -159,6 +156,7 @@ class TreeAVL : public Tree<T>
     TreeAVL()
     { 
         balance = 0;
+        need_rotate = FALSE;
     }
 
     ~TreeAVL()  
@@ -222,10 +220,9 @@ class TreeAVL : public Tree<T>
         }
     }
 
-
     void print()
     {
-        cout << "Balance " << balance << "\t";
+        std::cout << "Balance " << balance << "\t";
         if( this->nod )
             this->nod->print();
 
