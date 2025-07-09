@@ -30,7 +30,7 @@ void strreplace(char *s1, char *sub, char *repl);
 
 extern struct st_var       *st_var_tb;                /* model's variables table */
 extern struct st_vec       *st_vec_tb;                /* model's states and description table */
-struct interest_vec *interest_vec_list;               /* head of list containing the pmf data */
+extern struct interest_vec *interest_vec_list;        /* head of list containing the pmf data */
 extern int                  n_of_states;              /* total number of states in the model*/
 extern int                  n_of_interest_variables;  /* number of pmf variables choosen by the user */
 extern int                  n_of_variables;           /* number of variables in the model */
