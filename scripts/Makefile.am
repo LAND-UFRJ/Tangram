@@ -15,6 +15,6 @@ endif
 tangram2:
 	cp tangram2.base tangram2
 	chmod u+w tangram2
-	echo '$$JAVA_HOME/bin/java -classpath $$TANGRAM2_HOME/class/TimerBean.jar:$$TANGRAM2_HOME/class/Tangram2.jar:$$TANGRAM2_HOME/class/AbsoluteLayout.jar -Djava.library.path=$TANGRAM2_HOME/lib  -DSTDOUT=$$STDOUT -DTANGRAM2_HOME=$$TANGRAM2_HOME $(DEFINES) Tangram2.T2main_app' >> tangram2        
+	echo '$$JAVA_HOME/bin/java -classpath $$TANGRAM2_HOME/class/TimerBean.jar:$$TANGRAM2_HOME/class/Tangram2.jar:$$TANGRAM2_HOME/class/AbsoluteLayout.jar -Djava.library.path=$$TANGRAM2_HOME/lib  -DSTDOUT=$$STDOUT -DTANGRAM2_HOME=$$TANGRAM2_HOME $(DEFINES) Tangram2.T2main_app' >> tangram2        
 
 CLEANFILES = tangram2
